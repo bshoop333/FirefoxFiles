@@ -1,0 +1,6 @@
+﻿0.关闭退出火狐，才能运行补丁
+1.把补丁 firefoxpassign.cmd 放置在与 firefox.exe 同一个目录里面
+2.双击运行 firefoxpassign.cmd 就可以了
+3.打开火狐测试安装未签名认证的扩展
+
+ps:在 win10 运行，可能需要用管理员权限，否则可能无法写入补丁

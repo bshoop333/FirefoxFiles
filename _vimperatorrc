@@ -1,0 +1,34 @@
+"3.15.0 (created: 2016/10/05 01:11:26)
+
+cmap <C-a> <Home><C-S-End>
+highlight CmdLine background: white; color: black; transition: all 0.25s; font-size: 14px;
+highlight CmdLine>* font-family: 'Consolas';
+highlight CompItem font-size: 14px; font-family: 'Noto Sans CJK SC';
+highlight ErrorMsg color: red; font-weight: bold; font-family: 'Consolas'; font-size: 14px;
+highlight Hint background-color: rgb(255, 215, 110); padding: 1px 2px 0 2px; border: solid 1px #AD810C; border-radius: 5px; box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.3); color: #302505; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6); font-weight: bold; font-size: 12px; text-transform: uppercase;
+highlight HintActive background-color: rgba( 255, 0, 0, 0.1);
+highlight HintElem background: transparent;
+highlight InfoMsg color: magenta; font-size: 14px;
+highlight Message font-size: 14px; font-family: 'Consolas';
+highlight StatusLine font-size: 14px; font-family: 'Consolas'; color: gray;
+imap <C-a> <C-Home><C-S-End>
+imap <C-w> <Esc>d
+imap <C-h> <Esc><C-h>
+nmap , [[
+nmap . ]]
+nmap d D
+nmap <C-a> <C-Home><C-S-End>
+nnoremap P p
+nnoremap p P
+nnoremap zi zI
+nnoremap zI zi
+nnoremap zo zO
+nnoremap zO zo
+nnoremap / /\c
+noremap gi gi<End>
+set hintchars=qwertyuopasdfghjklzxcvbnm
+set nextpattern=((下|后|後)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集)|next|newer|more)(›|▶|→|>|»)*,(›|▶|→|>|»)+
+set prevpattern=(‹|◀|←|<|«)*((上|前)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集)|pre(v)?(ious)?|elder|older|before|back),(‹|◀|←|<|«)+
+source! "C:\\Users\\Yandong\\_vimperatorrc.local"
+
+" vim: set ft=vimperator:

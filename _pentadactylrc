@@ -1,0 +1,81 @@
+" File created by libportable.
+loadplugins '\.(js|penta)$'
+
+
+set hintkeys=asdfghjkl
+
+
+" set fileencoding=gbk
+
+
+" change mapping
+map / <C-f>
+map d D
+map p P
+map gh gH
+map zi zI
+map zo zO
+map zz zZ
+map zr zR
+map zm zM
+map <C-o> <Pass>
+map <C-x> <Pass>
+map -m normal , [[
+map -m normal . ]]
+map -m insert <C-h> <Pass>
+map -m normal,insert <C-i> <Pass>
+map -m normal,ex,insert <C-b> <Pass>
+map -m ex,insert <C-u> <Pass>
+map -m ex,insert,menu <C-v> <Pass>
+map -m ex,insert <C-w> <Pass>
+map -m ex,insert <C-z> <Pass>
+map -m normal,ex,insert,menu <C-a> <Pass>
+map <C-f> <Pass>
+
+
+" Hint Tags
+set hinttags+=a
+
+
+" next/previous pattern
+set nextpattern='^\s*(下|后|後)(一)?(页|頁)>{0,3}\s*$','^\s*(下|后|後)(一)?(张|張)>{0,3}\s*$','^\s*(下|后|後)(一)?篇>{0,3}\s*$','^\s*(下|后|後)(一)?章>{0,3}\s*$','^\s*(下|后|後)(一)?(话|話)>{0,3}\s*$','^\s*(下|后|後)(一)?(卷)>{0,3}\s*$','^\s*(下|后|後)(一)?(本)>{0,3}\s*$','next>{0,3}','→','>>','>','more>{0,3}','newer>{0,3}','^\s*Next Page>{0,3}\s*$','^\s*Next [>»]','\bnext\b',^>$,'^(>>|»)$','^(>|»)','(>|»)$','\bmore\b'
+set previouspattern='^\s*<*(上|前)(一)?(页|頁)\s*$','^\s*<*(上|前)(一)?(张|張)\s*$','^\s*<*(上|前)(一)?篇\s*$','^\s*<*(上|前)(一)?章\s*$','^\s*<*(上|前)(一)?(话|話)\s*$','^\s*<*(上|前)(一)?(卷)\s*$','^\s*<*(上|前)(一)?(本)\s*$','<*previous','←','<<','<','<*older','<*elder','^\s*<*Prev(ious)? Page\s*$','[<«] Prev\s*$','\bprev(ious)?\b',^<$,'^(<<|«)$','^(<|«)','(<|«)$'
+
+
+" highlight
+" 在hint到checkbox,image等时不显示属性信息防止碍事
+hi Hint::after content: attr(number) !important;
+
+" Status Line Background Color
+hi StatusLine /* The status bar */ -moz-appearance: none !important; background: transparent !important;
+hi StatusLineNormal /* The status bar for an ordinary web page */ color: black; background: white;
+hi StatusLineBroken /* The status bar for a broken web page such as taobao */ background: rgba(255,160,160,0.2);
+hi StatusLineSecure /* The status bar for a secure web page such as Google */ background: rgba(160,160,255,0.1);
+hi StatusLineExtended /* The status bar for a secure web page with an Extended Validation (EV) certificate such as MDN */ background: rgba(160,255,160,0.2);
+
+" hi CmdLine /* The command line */ font-family: "Source Code Pro" !important; padding-left:3px !important;
+
+hi CompItem /* A single row of output in the completion list */  font-size: 16px;
+hi CompItem[selected] /* A selected row of completion list */ background: #FFF785;
+hi CompTitle /* Completion row titles */ color: magenta; background: white; font-size:16px;
+
+hi AddonBar -moz-appearance: none !important;
+
+hi StatusCmdLine font-size:14px;
+hi CmdNormal font-size: 14px;
+hi Hint text-transform: uppercase; font-family : "Sans-serif"; font-weight: bold; font-size: 14px; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6); color: #302505; padding: 0px 0px 0px 0px; background: -moz-linear-gradient(top, #FFF785, #FFC542); border: 1px #C38A22 solid; -moz-border-radius: 3px; -moz-box-shadow: 0 6px 14px 0px rgba(0,0,0,0.3);
+hi HintActive background-color: inherit !important
+hi HintElem background-color: inherit !important
+hi HintImage opacity: .5 !important; 
+
+" hi ErrorMsg color: red !important; font-family: 'Source Code Pro';
+
+" hi StatusInfoMsg color: magenta !important;
+
+highlight Message /* A message as displayed in <ex>:messages</ex> */ white-space: pre-wrap !important; font-size: 12px; text-indent: 8px;
+
+
+" "命令行模式禁用输入法
+" "style -name commandline-ime http://*,https://* input,textarea {ime-mode: active;}
+" style -name commandline-ime chrome://* #dactyl-commandline-command input , #dactyl-statusline-field-commandline-command input {ime-mode: inactive;}
+" "cmap <A-i> -js styles.user.get("cmd-ime").enabled ^= true; dactyl.focusedElement.blur();
