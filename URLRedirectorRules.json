@@ -49,7 +49,7 @@
       "types": [],
       "target": "http://$1pic/item/$2",
       "example": "http://imgsrc.baidu.com/forum/w%3D580/sign=621ea05d269759ee4a5060c382fa434e/aa11f4d3572c11dfc3087b73632762d0f503c2ca.jpg",
-      "enable": true
+      "enable": false
     },
     {
       "description": "微信重定向",
