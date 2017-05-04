@@ -121,10 +121,6 @@
     "to": "image.coolapk.com/apk_image/$1",
     "note": "eg.\nhttp://image.coolapk.com/apk_image/2015/0407/257251_1428396799_3611.png.t.jpg"
   },
-  "Firefox中文社区": {
-    "img": "^(www\\.firefox\\.net\\.cn/attachment/)thumb/(.+)",
-    "to": "$1$2"
-  },
   "dereferers": {
     "link": "^[^/]{3,70}/\\??(https?:[^?#]+\\.(?:jpe?g|a?png|gifv?|bmp|svgz?|web[pm]|og[gv])).*",
     "ci": 1,
