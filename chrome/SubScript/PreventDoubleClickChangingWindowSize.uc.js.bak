@@ -1,0 +1,3 @@
+location == 'chrome://browser/content/browser.xul' && gBrowser.tabContainer.addEventListener('dblclick', event => {
+    Array.prototype.some.call(gBrowser.tabs, tab => tab.contains(event.target)) || event.preventDefault();
+});

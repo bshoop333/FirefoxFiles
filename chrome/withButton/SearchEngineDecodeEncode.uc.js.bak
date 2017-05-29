@@ -1,0 +1,42 @@
+// ==UserScript==
+// @namespace     SearchEngineDecodeEncode
+// @namespace     1@1.com
+// @description   运行后选mozlz4文件就是解码，选json就是编码
+// @include       main
+// @charset       UTF-8
+// @author        unknown
+// @version       1
+// ==/UserScript==
+
+var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(Components.interfaces.nsIFilePicker);
+fp.init(window, "Open File", Components.interfaces.nsIFilePicker.modeOpen);
+fp.appendFilter("Mozilla's Lz4 and json files format", "*.jsonlz4; *.mozlz4; *.json");
+if (fp.show() == Components.interfaces.nsIFilePicker.returnOK) {
+    var file = fp.file;
+    if (file.exists() && file.isFile() && file.isReadable()) {
+        Components.utils.import("resource://gre/modules/Task.jsm");
+        Components.utils.import("resource://gre/modules/osfile.jsm");
+        var oldFile = fp.file.path;
+        if (oldFile.endsWith(".json")) {
+            var newFile = oldFile.replace(/(\.json)$/, ".mozlz4");
+
+            function compress(oFilePath, nFilePath) {
+                return Task.spawn(function*() {
+                    var jsonString = yield OS.File.read(oFilePath);
+                    yield OS.File.writeAtomic(nFilePath, jsonString, { compression: "lz4" });
+                })
+            }
+            compress(oldFile, newFile);
+        } else {
+            var newFile = (oldFile.replace(".mozlz4", ".json") || oldFile.replace(".jsonlz4", ".json"));
+
+            function decompress(oFilePath, nFilePath) {
+                return Task.spawn(function*() {
+                    var jsonString = yield OS.File.read(oFilePath, { encoding: "utf-8", compression: "lz4" });
+                    yield OS.File.writeAtomic(nFilePath, JSON.stringify(JSON.parse(jsonString), null, '  '), { encoding: "utf-8" });
+                })
+            }
+            decompress(oldFile, newFile);
+        }
+    }
+};

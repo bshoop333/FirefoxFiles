@@ -1,0 +1,11 @@
+// ==UserScript==
+// @name          DecodeCopyUrl (context menu).uc.js
+// @description   移动或克隆按钮/菜单到任意位置
+// @author        hxzmm
+// @include       main
+// @charset       UTF-8
+// @version       2016.04.20
+// @reviewURL     http://bbs.kafan.cn/forum.php?mod=redirect&goto=findpost&ptid=2037822&pid=37509072
+// @note          将右键复制链接得到的URL解码
+let copylink = document.getElementById("context-copylink");
+copylink.setAttribute("oncommand", "Components.classes['@mozilla.org/widget/clipboardhelper;1'].getService(Components.interfaces.nsIClipboardHelper).copyString(decodeURIComponent(gContextMenu.linkURL));");

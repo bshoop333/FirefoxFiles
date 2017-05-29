@@ -1,0 +1,25 @@
+// ==UserScript==
+// @name        样式随ua切换
+// @namespace   mpc1qddf58oo5nymjyhgn38hk10pye1u
+// @description 手机UA时,缩窄网页宽度
+// @include     *
+// @run-at      document-start
+// @version     1
+// @grant       none
+// ==/UserScript==
+
+var myUa = navigator.userAgent
+
+function mywords(argument) {
+  if (myUa.indexOf(argument) < 0) {
+    return false } else {
+    return true }
+}
+
+if (
+  mywords("iPhone") | mywords("Symbian") | mywords("Android") | mywords('iPad')//|mywords("UA关键字")
+) {
+  var para = document.createElement("style");
+  para.innerHTML = "html *{max-width:800px;}"; //800px为宽度
+  document.getElementsByTagName('html')[0].appendChild(para);
+}

@@ -1,0 +1,40 @@
+﻿// ==UserScript==
+// @name            NoPicture.uc.js
+// @namespace       https://bitbucket.org/AlwaysWithYou/
+// @description     Control whether to load pictures.
+// @author          harv.c
+// @homepage        https://bitbucket.org/AlwaysWithYou/
+// @downloadURL     https://bitbucket.org/AlwaysWithYou/userchromejs/raw/master/withButton/NoPicture.uc.js
+// @version         0.1
+// ==/UserScript==
+
+(function(){
+    if(location != "chrome://browser/content/browser.xul") return;
+// arch
+    var imgOn = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACV0lEQVQ4jWNgwA6YGBgYGFhUTO05NCwcGBgYGBkYGJhxqMVtAH9K32qJnGmboWJEG8AIofiEJPtPf1GdefkXA5eIFLLBhAAzAwMDo6BHWoX6ovv/NZY8/C8bUtAElWMh2gVKJXN2Gq98+l9z7vV/RlOPv2JgYOCDyjHi08zEwMDAIGrhGa6eN3GpXveOy8YLr/+xXPv8v6JfSikxrmBkYGBgsZq4947Hpmf/bWcee+a47OYf25X3/tnPPvGcgYGBF58rmBgYGBiUXSMSIne/+e+29OovqyW3/hvMvfLXYM6lPzbrX/5XCswsx+cKRgYGBnaPWYfvGS+5809yysV/YrPv/Redc/+/yKSL/0WmXv0n23v0NQMDgwA2VzAxMDAwCDjH5skvfPRfoO/MH7EpV/9yuadUcbsnl4tPvfxHbNK5PxLzHv7n8c3BiBGYafwi7QdeiE6+/Fdq7v3/vJF1M2AKeIPL+yTn3v8vNvnCH/EJ574xcArJIFvMxMDAwMDjm9MiOe/hf/H+0z/EZ976w6Jm4cIASRMsrAp6FuLTr/8Rm3D6u1jfqRc8frnNUDlmiAs4haVF+059Epty6Z/EzFv/pZa8+s+iZuoMcwGrnIax5IIn/yVm3/kv1n30JU9YZT+yCxh4I+tnS614/19i2tX/QmUrjnN559RCnQkJKB4eMS7PrFqh0uXHJWbd/i+19PV/br+iTkhIKJs7ik++/IMvsWshq4KeBbboQQasCnrmfIldC8VnXP/HomnuysDjV9DEom7mhBadLGjRhCHGomLhwONX2AwA3WPNsC9sIycAAAAASUVORK5CYII=";
+
+// ubuntu
+    var imgOff = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACwElEQVQ4jXWSXUjTURiH38254XRrzn1Zbs5tOnNLzVraLFEjv1dqibX8bLa/+89NJTHIjCgiKKigEhKjgj4Q6qKLhGIRZBFdRRejbuyiUESvZJmbsf26aITO+V6e8z7nfc7vHKL4xYm3OFqq3h/uV8zMe/UvjTKZaLM+DhGRTEaiExaV5WyJpGvEImSdVoN+kdFMoosATxJuVKlqN4VNcnnKHZuhCsNSgEkCXIlY7df5ptrzK3/1iH/M9W57X66Vq2INuEREU626AZzO8BMRLbIaH1gh0CsKwsWHvyvz3s3m/ENjLeb6tQM5RMQnIu7FCm0xPOJIxMHFdIfxzAGzQnm8IHVfhSbFdKtO1w2PbAGORMAtxMd2/cgG/xV264dwJw9gJcu3G3LqYverTWJpqE/1dcVOf+CRLzTlKxVUqJVIJhrSz40fNTf43QXn0ZMAv0M3FmUSo1fjEpGAiGiiUd+IITHQL8Tbjtw++t2f+xRMIuBKgc+5qwIe6dJ9W7Y9CvHihCzw7JHVewtFh1vNadtpzp17F6wAcEuCrxhrGfpSAw/rs9qizbwYmKNUUvLV6oyea+Uypq9UvZsMRILRUmnPhdr8kpnBousRBxffu9UPohCPiBKiNnwioskjhjYMJgPeJPi6dzDr/AJshi/clQC4RKFHtkx7bIh2i0YHd9pssI3C8Kp+lmslkrXPmOAp1uRhIDWIUzy8aNG5Oq0G/XBZerNjp7zsWWv2CLySUMghXIY7OfT6mMEdO4BLRPS4WtO+Mqh9R0QUcCk+g00CWBHA8PDJmXf5Uk1O3ZVaY+WaXDakTETEHWvMq8VQWgS9yYCLj8BgzvM3jMW26hAEllyKbzbjlqx4B/w3ISJ+lVGZxRRJa7x7FU11Jq1qnsl8gpNcwCvE9YPqqnhwrMm66rWqzbNO1fQXxjBu+PexOH8BVrr3SkG8uqEAAAAASUVORK5CYII=";
+// windows
+//     var imgOff = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADWklEQVQ4jX1Te0zMARz/nt8p192p46Jr6dx1SqpDcQ901RJH3DyuWIbcGREWkmc4d0RemXmex8xQW928nceS6eFxMsfMarRKWqyU0uv3+PrDxRnz2T7b9/vH57Pvd9/vB+A3WG61wEV39IO/wfqjWNx/gPG2t6DimUjY5EyK+/w0Ma4sw8sz3U1MAADbReIPMR9AWCbyIz+NkGKHYgTS57cjWjdji2QoGTaYo4AQgfwfE3DA5QY6IBLfSAKZD+KA3pbEccz3S3vI7rV6qpjwLOSmyDZKbTH00IywfF5q0GpfY8TGyGxNQdCxGOcvg2wO92B1cBBZJwnoak3XkR1Xcnqo2Wo092Nv9dgUcW3qtQmYck+N68q1eOGdBfPf78CoPNXjvhXY1/38appkUuwI8Uc8vBapy7uxXS7pnezrZRBaVc1am4pZcGM8aXo0hyxy5nbvfbqc4ib6ZwIAQDjAsKsEPNjH4efm8gcttQwRZFUqZc9rvL1rhkeLMkKvqOmZhUrKaFfi/nIDU/R2P5V2U98DYq9IAAAWXzoyODI1Z2d4zq0LMRdfFqiyrAcU0cmzFkJ/pWB1yJ0YuwYX3FHhhhIN5r/NxvuNBzHhaHQtAHgAAIBkfYFderIWY69/whXOTrzYiJhVhShUxscFjmLH85eF3ow6ObZZXxTfZbxsaFCZptwjFIMX/TyEOFQUsOPRV9mh51SC/SOZWdlGnq1qJ1NK2loNSQnrWs18hynBZ/20KI9Zulju4ulqXvrp+YPMY31ADAAs4KjnJYkszxj5KSepK2miza/b6TP1NEYeeVKcp/fdgqXhiA4tYvncTnyxrQUbjyIW65gQL/AHAADeXNPpwAOvcZKtDo3OTjxV9b035z1ND1tospSv8bRRpQq60zG7h27YiuS3W0h1nGUcu0bafn3mwA32ZtH2B1+Hm2+/UB4vqbJUtuESB4XjJ2rmdZ3wqe8u1SD1KpnB+t0M+aWwFxuyGYuWt9JlwAZCrtUBjzfE9Q8enqOnzOAbrOcyp4lX4d0gbK+YSlHvUin6s5WieuzIOJbgaCEE/ydgP5E2hj2xKS+gEh/GIlYvR2w4jujc3PVym6zAJWT15Yhwa1iuvi9pRHIoe/KcCG6KXs6bPzMQwtwDCADwA8ZVeo9C3xWUAAAAAElFTkSuQmCC"
+    var switchImg = document.querySelector("#nav-bar-customization-target").appendChild(document.createElement("toolbarbutton"));
+    switchImg.image = (gBrowser.mPrefs.getIntPref("permissions.default.image") == 1 ? imgOn : imgOff);
+    switchImg.onclick = function(){
+        switch(gBrowser.mPrefs.getIntPref("permissions.default.image")) {
+            case 1:
+                gBrowser.mPrefs.setIntPref("permissions.default.image",2);
+                switchImg.image=imgOff;
+                goDoCommand('cmd_scrollTop');
+                gBrowser.reload();
+                break;
+            case 2:
+                gBrowser.mPrefs.setIntPref("permissions.default.image",1);
+                switchImg.image=imgOn;
+                goDoCommand('cmd_scrollTop');
+                gBrowser.reload();
+                break;
+            default:
+                break;
+        }
+    }
+})()

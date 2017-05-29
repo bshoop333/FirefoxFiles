@@ -1,0 +1,171 @@
+// ==UserScript==
+// @name           Colorful Tabs
+// @author         Palatoo Young
+// @include        main
+// @description    Colorful Tabs for Firefox
+// @version        0.1
+// ==/UserScript==
+
+location.href === 'chrome://browser/content/browser.xul' && (function(){
+
+    'use strict';
+
+    if(typeof colorfulTab !== 'undefined') return;
+
+    var ctxt = (function(){
+        const canvas = document.createElementNS('http://www.w3.org/1999/xhtml','canvas');
+        document.documentElement.appendChild(canvas);
+        canvas.width = 16;
+        canvas.height = 16;
+        canvas.style.display = 'none';
+        return canvas.getContext('2d');
+    })();
+
+    var colorfulTab = {       
+    
+        init : function(){
+            colorfulTab.insertCSS();
+            gBrowser.addTabsProgressListener({
+                onLinkIconAvailable : function onLinkIconAvailable(aBrowser){
+                    var tab = colorfulTab.getTabForBrowser(aBrowser);               
+                    var img = new Image,data;
+                    img.src = tab.getAttribute('image');
+
+                    img.onload = function(){
+                        ctxt.drawImage(img,0,0,16,16);
+                        data = ctxt.getImageData(0, 0, 16, 16).data;
+                        colorfulTab.averageColorValue(data,tab);
+                    }             
+                }
+            });    
+        },       
+               
+        averageColorValue : function(data,tab){
+            var r = 0,g = 0,b = 0,a = 0,rr,gg,bb,ll;
+            Array.prototype.forEach.call(data,function(i,j){
+                var color = (j+1) % 4;
+                switch (color){
+                    case 1:
+                        r += i;
+                        break;
+                    case 2:
+                        g += i;
+                        break;
+                    case 3:
+                        b += i;
+                        break;
+                    case 0:
+                        a += i;
+                        break;
+                }
+            });
+			rr = r/256;
+			gg = g/256;
+			bb = b/256;
+			ll = rr*0.299+gg*0.587+bb*0.114-210;
+			if(ll < 0) {
+				rr = Math.min(rr - ll, 256);
+				gg = Math.min(gg - ll, 256);
+				bb = Math.min(bb - ll, 256);
+			}
+            tab.style.setProperty('background',
+                'rgba('+parseInt(rr)+','+parseInt(gg)+','+parseInt(bb)+','+parseInt(a/256)+')',
+                'important');
+        },
+        
+        getTabForBrowser : function(browser) {
+            var mTabs = gBrowser.mTabContainer.childNodes;
+            for (var i=0; i<mTabs.length; i++) {
+                if (mTabs[i].linkedBrowser == browser) {
+                    return mTabs[i];
+                }
+            }
+            return null;
+        },
+        
+        insertCSS : function(){
+        var cssText = (function(){
+/*
+#TabsToolbar {
+background: transparent !important;
+margin-bottom: 0 !important;
+margin-top: -1px !important;
+}
+#TabsToolbar .tab-background{
+margin: 0 !important;
+background: transparent !important;
+}
+#TabsToolbar .tab-background-start,
+#TabsToolbar .tab-background-end{
+display: none !important;
+}
+#TabsToolbar .tab-background-middle{
+margin: -4px -2px !important;
+background: transparent !important;
+}
+#TabsToolbar .tabbrowser-tab:after,
+#TabsToolbar .tabbrowser-tab:before{
+display: none !important;
+}
+#TabsToolbar .arrowscrollbox-scrollbox {
+padding: 0px !important;
+}
+#TabsToolbar .tabs-newtab-button,
+#TabsToolbar .tabbrowser-tab{
+color: #000000 !important;
+height: 24px !important;
+-moz-border-image: none !important;
+border:none!important;
+border-style: solid !important;
+border-color: rgba(0,0,0,.2) !important;
+border-width: 1px 0 0 1px !important;
+text-shadow: 0 0 2px rgba(255,255,255,.75) !important;
+padding: 4px 2px !important;
+background-clip: padding-box !important;
+transition: background-color 1.5s ease 0s !important;
+}
+#TabsToolbar .tabbrowser-tab[first-tab][last-tab],
+#TabsToolbar .tabbrowser-tab[last-visible-tab]{
+border-right-width: 1px !important;
+}
+#TabsToolbar .tabbrowser-tab[afterselected]{
+border-left-color: rgba(0,0,0,.25) !important;
+}
+#TabsToolbar .tabbrowser-tab[selected]{
+background-clip: padding-box !important;
+border-color: rgba(0,0,0,.25) !important;
+color: #ffffff !important;
+font-weight: 800 !important;
+box-shadow:0 1px 0 0 #ffffff inset !important;
+text-shadow: 0 0 2px rgba(0,0,0,.9),  0 0 6px rgba(0,0,0,.8) !important;
+}
+#TabsToolbar .tabs-newtab-button:hover,
+#TabsToolbar .tabbrowser-tab:hover:not([selected]){
+box-shadow:0 2px 0 0 #ffffff inset !important;
+background-image: none !important;
+}
+#TabsToolbar .tabs-newtab-button{
+border-width: 1px 1px 0 0 !important;
+margin: 0 !important;
+width: auto !important;
+padding: 0 5px !important;
+}
+*/}).toString();
+        cssText = cssText.replace(/\r|\n/ig,'');
+        cssText = cssText.substring(cssText.indexOf('/*')+2,cssText.length-3);
+        var css = 'data:text/css,/*colorfulTab*/' + encodeURIComponent(cssText);
+
+        var sss = Components.classes['@mozilla.org/content/style-sheet-service;1']
+            .getService(Components.interfaces.nsIStyleSheetService);
+        var ios = Components.classes['@mozilla.org/network/io-service;1']
+            .getService(Components.interfaces.nsIIOService);
+        var uri = ios.newURI(css, null, null);
+        sss.loadAndRegisterSheet(uri, sss.USER_SHEET);          
+        }
+    }
+
+    window.colorfulTab = colorfulTab;
+    colorfulTab.init();
+    
+}());
+//	我再修改了一下，用反白文字来强调当前标签页，如果不需要可以将文件中137、138和140行清空。颜色会与上面截图的有点差异，主要是觉得原来的亮度调高了，容易使颜色偏白从而变得跟取样色（也就是favicon的平均色）有明显色彩差异，这是稍调暗了一点的，但亮度和色彩都比较平衡。 https://www.firefox.net.cn/read-50549
