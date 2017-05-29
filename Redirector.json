@@ -1,7 +1,55 @@
 {
     "createdBy": "Redirector v3.1.0",
-    "createdAt": "2017-05-13T02:03:22.335Z",
+    "createdAt": "2017-05-29T02:27:58.694Z",
     "redirects": [
+        {
+            "description": "Higher Resolution Images on userstyles.org",
+            "exampleUrl": "https://userstyles.org/style_screenshot_thumbnails/135507_after.png",
+            "exampleResult": "https://userstyles.org/style_screenshots/135507_after.png",
+            "error": null,
+            "includePattern": "https://userstyles.org/style_screenshot_thumbnails/*",
+            "excludePattern": "",
+            "redirectUrl": "https://userstyles.org/style_screenshots/$1",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame",
+                "sub_frame",
+                "image"
+            ]
+        },
+        {
+            "description": "天猫商品链接去多余参数",
+            "exampleUrl": "https://detail.tmall.com/item.htm?id=539367366683&cm_id=140105335569ed55e27b&abbucket=3&skuId=3231679136985",
+            "exampleResult": "https://detail.tmall.com/item.htm?id=539367366683",
+            "error": null,
+            "includePattern": "(https://detail\\.tmall\\.com/item.htm\\?).*?(id=\\d+).*",
+            "excludePattern": "",
+            "redirectUrl": "$1$2",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame",
+                "sub_frame"
+            ]
+        },
+        {
+            "description": "淘宝商品链接去多余参数",
+            "exampleUrl": "https://world.taobao.com/item/38511133980.htm?fromSite=main&spm=a312a.7700846.0.0.y86A2H&_u=e1i52ae3e7ea",
+            "exampleResult": "https://world.taobao.com/item/38511133980.htm",
+            "error": null,
+            "includePattern": "https://(world|detail)\\.taobao\\.com/item/(\\d+\\.htm)\\?.+",
+            "excludePattern": "",
+            "redirectUrl": "https://$1.taobao.com/item/$2",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
         {
             "description": "百度网盘http>>https",
             "exampleUrl": "http://pan.baidu.com/s/1miMYMGo#t9qc",
@@ -22,7 +70,7 @@
             "exampleUrl": "https://getpocket.com/redirect?url=http%3A%2F%2Fwww.topbestalternatives.com%2Fsketsa-svg-editor%2F&formCheck=e6e39328b4c29f46ac0c83227d5f2e4c",
             "exampleResult": "http://www.topbestalternatives.com/sketsa-svg-editor/",
             "error": null,
-            "includePattern": "https://getpocket.com/redirect?url=*&formCheck=e6e39328b4c29f46ac0c83227d5f2e4c",
+            "includePattern": "https://getpocket.com/redirect?url=*&formCheck=*",
             "excludePattern": "",
             "redirectUrl": "$1",
             "patternType": "W",
