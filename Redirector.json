@@ -1,7 +1,44 @@
 {
     "createdBy": "Redirector v3.1.0",
-    "createdAt": "2017-05-29T02:27:58.694Z",
+    "createdAt": "2017-06-12T13:39:23.685Z",
     "redirects": [
+        {
+            "description": "微信图片http>>https",
+            "exampleUrl": "http://wx.qlogo.cn/mmhead/Q3auHgzwzM6m3oHDlAG50VCGgXic7Dib3seArJjkpiaSVZHJDFYD00S5Q/0",
+            "exampleResult": "https://wx.qlogo.cn/mmhead/Q3auHgzwzM6m3oHDlAG50VCGgXic7Dib3seArJjkpiaSVZHJDFYD00S5Q/0",
+            "error": null,
+            "includePattern": "http(://.+)(qpic\\.cn|qlogo\\.cn)(.+)",
+            "excludePattern": "",
+            "redirectUrl": "https$1$2$3",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame",
+                "sub_frame",
+                "stylesheet",
+                "script",
+                "image",
+                "object",
+                "xmlhttprequest",
+                "other"
+            ]
+        },
+        {
+            "description": "去除504 GAEProxy",
+            "exampleUrl": "https://ipv4.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dthermofisher%2Bwater%2Bbath%26ie%3Dutf-8%26oe%3Dutf-8&q=EgTdBiiwGLmY1skFIhkA8aeDSz324T7K52aD3GXEQSo-5Uz9THzKMgNyY24",
+            "exampleResult": "https://www.google.com/search?q=thermofisher+water+bath&ie=utf-8&oe=utf-8",
+            "error": null,
+            "includePattern": "https://ipv4\\.google\\.com/sorry/index\\?continue=(.*)&q=.*",
+            "excludePattern": "",
+            "redirectUrl": "$1",
+            "patternType": "R",
+            "processMatches": "urlDecode",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
         {
             "description": "Higher Resolution Images on userstyles.org",
             "exampleUrl": "https://userstyles.org/style_screenshot_thumbnails/135507_after.png",
@@ -374,13 +411,28 @@
             ]
         },
         {
-            "description": "Mozilla去跳转",
+            "description": "Mozilla去跳转1",
             "exampleUrl": "https://outgoing.mozilla.org/v1/eab29b437a33dd850287aa17798b40a65c3797feaded38cfc9850fcb12785b16/https%3A//bugs.downthemall.net/wiki/NightlyBuilds",
             "exampleResult": "https://bugs.downthemall.net/wiki/NightlyBuilds",
             "error": null,
             "includePattern": "https://outgoing.mozilla.org/*/*/http*",
             "excludePattern": "",
             "redirectUrl": "http$3",
+            "patternType": "W",
+            "processMatches": "urlDecode",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "Mozilla去跳转2",
+            "exampleUrl": "https://outgoing.prod.mozaws.net/v1/221301c720e1488012efd45e7bd7ec2124fb4e20da13ace29eb848f4de2d6215/https%3A//decentraleyes.org/test",
+            "exampleResult": "decentraleyes.org/test",
+            "error": null,
+            "includePattern": "https://outgoing.prod.mozaws.net/*/https%3A//*",
+            "excludePattern": "",
+            "redirectUrl": "$2",
             "patternType": "W",
             "processMatches": "urlDecode",
             "disabled": false,

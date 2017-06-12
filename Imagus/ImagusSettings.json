@@ -2,7 +2,7 @@
   "hz": {
     "deactivate": 1,
     "actTrigger": "ctrl",
-    "delay": 300,
+    "delay": 500,
     "delayOnIdle": true,
     "waitHide": false,
     "markOnHover": "dashed",
@@ -29,7 +29,7 @@
     "move": false,
     "follow": true,
     "minPopupDistance": 0,
-    "hideIdleCursor": 500,
+    "hideIdleCursor": -1,
     "thumbAsBG": false,
     "thumbAsBGColor": "#c3c3c3",
     "thumbAsBGOpacity": 0.3,
@@ -46,7 +46,7 @@
   "keys": {
     "hz_toggle": "",
     "hz_preload": "",
-    "hz_fullZm": "",
+    "hz_fullZm": "F",
     "hz_fullSpace": "",
     "hz_caption": "",
     "hz_open": "",
