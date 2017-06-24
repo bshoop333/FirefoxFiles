@@ -1,7 +1,38 @@
 {
     "createdBy": "Redirector v3.1.0",
-    "createdAt": "2017-06-12T13:39:23.685Z",
+    "createdAt": "2017-06-24T21:11:45.299Z",
     "redirects": [
+        {
+            "description": "哔哩哔哩HTTP>>HTTPS",
+            "exampleUrl": "http://www.bilibili.com/",
+            "exampleResult": "https://www.bilibili.com/",
+            "error": null,
+            "includePattern": "http(://[^/]+\\.bilibili\\.com/.*)",
+            "excludePattern": "",
+            "redirectUrl": "https$1",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame",
+                "sub_frame"
+            ]
+        },
+        {
+            "description": "百度贴吧只看楼主",
+            "exampleUrl": "https://tieba.baidu.com/p/5047656977",
+            "exampleResult": "https://tieba.baidu.com/p/5047656977?see_lz=1",
+            "error": null,
+            "includePattern": "https://tieba.baidu.com/p/*",
+            "excludePattern": "",
+            "redirectUrl": "https://tieba.baidu.com/p/$1?see_lz=1",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": true,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
         {
             "description": "微信图片http>>https",
             "exampleUrl": "http://wx.qlogo.cn/mmhead/Q3auHgzwzM6m3oHDlAG50VCGgXic7Dib3seArJjkpiaSVZHJDFYD00S5Q/0",
@@ -163,14 +194,14 @@
             ]
         },
         {
-            "description": "非正常贴吧域名跳转回去",
+            "description": "非正常贴吧域名>>正常贴吧域名",
             "exampleUrl": "http://partner.tieba.com/f?kw=%E7%94%B5%E6%B3%A2%E5%A5%B3%E4%B8%8E%E9%9D%92%E6%98%A5%E7%94%B7",
-            "exampleResult": "http://tieba.baidu.com/f?kw=%E7%94%B5%E6%B3%A2%E5%A5%B3%E4%B8%8E%E9%9D%92%E6%98%A5%E7%94%B7",
+            "exampleResult": "https://tieba.baidu.com/f?kw=%E7%94%B5%E6%B3%A2%E5%A5%B3%E4%B8%8E%E9%9D%92%E6%98%A5%E7%94%B7",
             "error": null,
-            "includePattern": "http://*.tieba.com/*",
+            "includePattern": "https?://.+\\.tieba\\.com/(.*)",
             "excludePattern": "",
-            "redirectUrl": "http://tieba.baidu.com/$2",
-            "patternType": "W",
+            "redirectUrl": "https://tieba.baidu.com/$1",
+            "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": false,
             "appliesTo": [
@@ -465,7 +496,7 @@
             "redirectUrl": "http://pan.baidu.com/share/home?$3",
             "patternType": "R",
             "processMatches": "noProcessing",
-            "disabled": true,
+            "disabled": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -473,29 +504,14 @@
         {
             "description": "百度盘普通分享手机版>>PC版 2",
             "exampleUrl": "http://pan.baidu.com/wap/link?uk=503340817&shareid=424405520&third=0",
-            "exampleResult": "http://pan.baidu.com/share/link?uk=503340817&shareid=424405520&third=0",
+            "exampleResult": "https://pan.baidu.com/share/link?uk=503340817&shareid=424405520&third=0",
             "error": null,
-            "includePattern": "http://pan.baidu.com/wap/link?uk=*",
+            "includePattern": "https?://pan\\.baidu\\.com/wap(/link\\?.+)",
             "excludePattern": "",
-            "redirectUrl": "http://pan.baidu.com/share/link?uk=$1",
-            "patternType": "W",
+            "redirectUrl": "https://pan.baidu.com/share$1",
+            "patternType": "R",
             "processMatches": "noProcessing",
-            "disabled": true,
-            "appliesTo": [
-                "main_frame"
-            ]
-        },
-        {
-            "description": "百度盘普通分享手机版>>PC版 3",
-            "exampleUrl": "http://pan.baidu.com/wap/link?shareid=2476393188&uk=4131170896&third=0&dir=%2F_Cloud%20Store%2F_Torrent%203%2FTorrent_2015%2F2015%200201-0400&page=1",
-            "exampleResult": "http://pan.baidu.com/share/link?shareid=2476393188&uk=4131170896&third=0&dir=%2F_Cloud%20Store%2F_Torrent%203%2FTorrent_2015%2F2015%200201-0400&page=1",
-            "error": null,
-            "includePattern": "http://pan.baidu.com/wap/link?shareid=*",
-            "excludePattern": "",
-            "redirectUrl": "http://pan.baidu.com/share/link?shareid=$1",
-            "patternType": "W",
-            "processMatches": "noProcessing",
-            "disabled": true,
+            "disabled": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -708,21 +724,6 @@
             "redirectUrl": "http$1",
             "patternType": "W",
             "processMatches": "urlDecode",
-            "disabled": false,
-            "appliesTo": [
-                "main_frame"
-            ]
-        },
-        {
-            "description": "v贴吧>>普通贴吧",
-            "exampleUrl": "http://v.tieba.com/firefox",
-            "exampleResult": "http://tieba.baidu.com/firefox",
-            "error": null,
-            "includePattern": "http://v.tieba.com/*",
-            "excludePattern": "",
-            "redirectUrl": "http://tieba.baidu.com/$1",
-            "patternType": "W",
-            "processMatches": "noProcessing",
             "disabled": false,
             "appliesTo": [
                 "main_frame"
