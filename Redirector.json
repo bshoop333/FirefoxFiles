@@ -1,6 +1,6 @@
 {
     "createdBy": "Redirector v3.1.0",
-    "createdAt": "2017-06-24T21:11:45.299Z",
+    "createdAt": "2017-06-27T13:58:46.305Z",
     "redirects": [
         {
             "description": "哔哩哔哩HTTP>>HTTPS",
@@ -578,12 +578,12 @@
         },
         {
             "description": "Google图片搜索去跳转",
-            "exampleUrl": "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=imgres&cd=&ved=0ahUKEwjtmeSZnYnKAhVC42MKHTv7BjUQjxwIBTAA&url=http%3A%2F%2Fwordsgoingwild.blogspot.com%2F2015%2F03%2Fall-smiles.html&psig=AFQjCNGB7gnKfByCA103VEwHlug7YagOrw&ust=1451758825082207",
-            "exampleResult": "http://wordsgoingwild.blogspot.com/2015/03/all-smiles.html",
+            "exampleUrl": "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwjbjPavlt7UAhUKh7wKHTGUD4gQjBwIBA&url=%68%74%74%70%3a%2f%2f%6c%65%61%72%6e%69%6e%67%2e%75%6f%6e%62%69%2e%61%63%2e%6b%65%2f%63%6f%75%72%73%65%73%2f%53%42%54%34%30%33%2f%73%63%6f%72%6d%50%61%63%6b%61%67%65%73%2f%70%61%74%68%5f%32%2f%50%49%2e%33%31%2e%4a%50%47&psig=AFQjCNFlPCyEKt2iwg2EdLpGFy2V_03YMg&ust=1498658029798348",
+            "exampleResult": "http://learning.uonbi.ac.ke/courses/SBT403/scormPackages/path_2/PI.31.JPG",
             "error": null,
-            "includePattern": "https://www.google.com/url?sa=*&rct=*&q=*&esrc=*&source=*&cd=*&ved=*url=http*&psig=*",
+            "includePattern": "https://www.google.com/url?sa=*&rct=*&q=*&esrc=*&source=*&cd=*&ved=*url=*&psig=*",
             "excludePattern": "",
-            "redirectUrl": "http$8",
+            "redirectUrl": "$8",
             "patternType": "W",
             "processMatches": "urlDecode",
             "disabled": false,
