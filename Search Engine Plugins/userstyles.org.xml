@@ -1,0 +1,9 @@
+<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
+<os:ShortName>userstyles.org</os:ShortName>
+<os:Description>Website Themes & Skins by Stylish | Userstyles.org</os:Description>
+<os:InputEncoding>UTF-8</os:InputEncoding>
+<os:Image width="32" height="32">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAe5JREFUWAntV7FOAkEQnVmOwmBlAlhK6C0IhMZoYYsdwUBhIcFKO3vXL7A1JrYUhJgYbE2MscEQiLYWVyKQmBhjJdw4exECp8DlgLvGTe5ud2f2zdu9mc0MwlCTJMVV4z2DBDkgiLMoRAC+IZWR7nP8DNVEM7XBan83ROyxpA1ANUAshmPbJZTS6GubAGqw/nQcga9embuxvnDa1w6BXxiIdQRMr1budSUT6qWMY7dX5a5t42qdo0YUI6Lq685mRK0X6tjVzokg6AjQ0SIKElCZpBTiuvGxyxiL37mVKJ9Eq36bEQYZWavMtTFRTvx4u2s2Rw1hXDlhaHTS1VFITIrzRVPhaPCZYbhoQ5PwtUlCuzLehbSra9WbC4HwzcOpFdjueC4EEhf6ll2DVr25ECCje2cFtjv23An/CfyfgMZpkrTrsYvQG6Rks4DHz1/G5oTTcLXPy5WTaUrj5IH8m+MbsI+pGeT8HmeQmQl4HwWIoPJ2T5qqGTglQy4avGnsuW31C2remAdArpY4JcOiVwSISzWxnD8s8b+ou06CbaYK0ZLgi9Dw+bU034gd10ggdITQ0hLRMMNwaa+la34t6cpJ8M6F8CcfC2u62vDgHlAkAvtHCZ7KcvVa4ac5jxA1y3M0sSogMJs6iCb6xhWBbzc2h0a44FEWAAAAAElFTkSuQmCC</os:Image>
+<SearchForm>https://greasyfork.org/en/</SearchForm>
+<os:Url type="text/html" method="GET" template="https://userstyles.org/styles/browse?search_terms={searchTerms}" resultDomain="userstyles.org">
+</os:Url>
+</SearchPlugin>
