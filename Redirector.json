@@ -1,9 +1,103 @@
 {
     "createdBy": "Redirector v3.1.0",
-    "createdAt": "2017-06-27T13:58:46.305Z",
+    "createdAt": "2017-07-04T10:19:05.274Z",
     "redirects": [
         {
-            "description": "哔哩哔哩HTTP>>HTTPS",
+            "description": "通用论坛简版>>完整版1",
+            "exampleUrl": "http://g.mozest.com/archiver/tid-40788.html",
+            "exampleResult": "http://g.mozest.com/viewthread.php?tid=40788",
+            "error": null,
+            "includePattern": "(.+)/archiver/tid-(\\d+).html",
+            "excludePattern": "",
+            "redirectUrl": "$1/viewthread.php?tid=$2",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame",
+                "sub_frame"
+            ]
+        },
+        {
+            "description": "通用论坛简版>>完整版2",
+            "exampleUrl": "http://bbs.51cto.com/archiver/tid-812891-page-2.html",
+            "exampleResult": "http://bbs.51cto.com/thread-812891-1.html",
+            "error": null,
+            "includePattern": "*/archiver/tid-*-page-*.html",
+            "excludePattern": "",
+            "redirectUrl": "$1/thread-$2-1.html",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame",
+                "sub_frame"
+            ]
+        },
+        {
+            "description": "通用论坛简版>>完整版3",
+            "exampleUrl": "http://www.asus.com/zentalk/tw/archiver/?tid-84909.html",
+            "exampleResult": "http://www.asus.com/zentalk/tw/thread-84909-1-1.html",
+            "error": null,
+            "includePattern": "(.+)/archiver/\\?tid-(\\d+).html",
+            "excludePattern": "",
+            "redirectUrl": "$1/thread-$2-1-1.html",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame",
+                "sub_frame"
+            ]
+        },
+        {
+            "description": "通用论坛简版>>完整版4",
+            "exampleUrl": "http://bbs.net130.com/archive/index.php/t-194638.html",
+            "exampleResult": "http://bbs.net130.com/showthread.php?t=194638.html",
+            "error": null,
+            "includePattern": "*/archive/index.php/t-*",
+            "excludePattern": "",
+            "redirectUrl": "$1/showthread.php?t=$2",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame",
+                "sub_frame"
+            ]
+        },
+        {
+            "description": "通用论坛手机版>>PC版1",
+            "exampleUrl": "http://bbs.zhiyoo.com/thread-13229669-1-1.html?mobile=yes",
+            "exampleResult": "http://bbs.zhiyoo.com/thread-13229669-1-1.html",
+            "error": null,
+            "includePattern": "*?mobile=yes*",
+            "excludePattern": "",
+            "redirectUrl": "$1$2",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "通用论坛手机版>>PC版1",
+            "exampleUrl": "https://www.firefox.net.cn/3g-read-run?tid=51559",
+            "exampleResult": "https://www.firefox.net.cn/read-51559",
+            "error": null,
+            "includePattern": "*/3g-read-run?tid=*",
+            "excludePattern": "",
+            "redirectUrl": "$1/read-$2",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "哔哩哔哩http>>https",
             "exampleUrl": "http://www.bilibili.com/",
             "exampleResult": "https://www.bilibili.com/",
             "error": null,
@@ -88,7 +182,7 @@
             ]
         },
         {
-            "description": "天猫商品链接去多余参数",
+            "description": "去天猫商品链接多余参数",
             "exampleUrl": "https://detail.tmall.com/item.htm?id=539367366683&cm_id=140105335569ed55e27b&abbucket=3&skuId=3231679136985",
             "exampleResult": "https://detail.tmall.com/item.htm?id=539367366683",
             "error": null,
@@ -104,7 +198,7 @@
             ]
         },
         {
-            "description": "淘宝商品链接去多余参数",
+            "description": "去淘宝商品链接多余参数",
             "exampleUrl": "https://world.taobao.com/item/38511133980.htm?fromSite=main&spm=a312a.7700846.0.0.y86A2H&_u=e1i52ae3e7ea",
             "exampleResult": "https://world.taobao.com/item/38511133980.htm",
             "error": null,
@@ -134,7 +228,7 @@
             ]
         },
         {
-            "description": "Pocket去跳转",
+            "description": "去Pocket跳转",
             "exampleUrl": "https://getpocket.com/redirect?url=http%3A%2F%2Fwww.topbestalternatives.com%2Fsketsa-svg-editor%2F&formCheck=e6e39328b4c29f46ac0c83227d5f2e4c",
             "exampleResult": "http://www.topbestalternatives.com/sketsa-svg-editor/",
             "error": null,
@@ -149,41 +243,11 @@
             ]
         },
         {
-            "description": "通用论坛手机版>>PC版",
-            "exampleUrl": "http://bbs.zhiyoo.com/thread-13229669-1-1.html?mobile=yes",
-            "exampleResult": "http://bbs.zhiyoo.com/thread-13229669-1-1.html",
-            "error": null,
-            "includePattern": "*bbs*thread-*.html?mobile=yes",
-            "excludePattern": "",
-            "redirectUrl": "$1bbs$2thread-$3.html",
-            "patternType": "W",
-            "processMatches": "noProcessing",
-            "disabled": false,
-            "appliesTo": [
-                "main_frame"
-            ]
-        },
-        {
-            "description": "3DM重定向",
-            "exampleUrl": "http://bbs.3dmgame.com/showtopic-1429085.html",
-            "exampleResult": "http://bbs.3dmgame.com/thread-1429085-1-1.html",
-            "error": null,
-            "includePattern": "http://bbs.3dmgame.com/showtopic-*.html",
-            "excludePattern": "",
-            "redirectUrl": "http://bbs.3dmgame.com/thread-$1-1-1.html",
-            "patternType": "W",
-            "processMatches": "noProcessing",
-            "disabled": true,
-            "appliesTo": [
-                "main_frame"
-            ]
-        },
-        {
-            "description": "百度网盘引用链接跳转",
+            "description": "通用百度网盘引用链接跳转",
             "exampleUrl": "https://www.sijihuisuo.club/go/?url=https://pan.baidu.com/s/1hsp2RZI",
             "exampleResult": "https://pan.baidu.com/s/1hsp2RZI",
             "error": null,
-            "includePattern": "^https?://.+\\?url=(https?://pan\\.baidu\\.com/s/.+)",
+            "includePattern": "^https?://.+\\?url=((https?://)?pan\\.baidu\\.com/s/.+)",
             "excludePattern": "",
             "redirectUrl": "$1",
             "patternType": "R",
@@ -194,7 +258,7 @@
             ]
         },
         {
-            "description": "非正常贴吧域名>>正常贴吧域名",
+            "description": "非正常域名贴吧>>正常域名贴吧",
             "exampleUrl": "http://partner.tieba.com/f?kw=%E7%94%B5%E6%B3%A2%E5%A5%B3%E4%B8%8E%E9%9D%92%E6%98%A5%E7%94%B7",
             "exampleResult": "https://tieba.baidu.com/f?kw=%E7%94%B5%E6%B3%A2%E5%A5%B3%E4%B8%8E%E9%9D%92%E6%98%A5%E7%94%B7",
             "error": null,
@@ -224,7 +288,7 @@
             ]
         },
         {
-            "description": "Google去域名跳转",
+            "description": "去Google域名跳转",
             "exampleUrl": "https://www.google.com.sg/",
             "exampleResult": "https://www.google.com/",
             "error": null,
@@ -270,7 +334,7 @@
             ]
         },
         {
-            "description": "微信去跳转",
+            "description": "去微信跳转",
             "exampleUrl": "https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxcheckurl?requrl=http%3A%2F%2Frecord4.gensee.net%2Fgsrecord%2F33162%2Fsbr%2F2016_07_18%2F51df0bffbc2e453d8104e9f306e1ca30_1468843277%2Fhls%2Frecord.m3u8&skey=%40crypt_bd65650d_fa2d33361a86e50da7485e9c64e646c4&deviceid=e202338202882317&pass_ticket=undefined&opcode=2&scene=1&username=@cdab587ebac7fc8a669677a2cf44d2a51d97e91ae921d30f76298abf815e053a",
             "exampleResult": "http://record4.gensee.net/gsrecord/33162/sbr/2016_07_18/51df0bffbc2e453d8104e9f306e1ca30_1468843277/hls/record.m3u8",
             "error": null,
@@ -285,7 +349,7 @@
             ]
         },
         {
-            "description": "G+去跳转",
+            "description": "去G+跳转",
             "exampleUrl": "https://plus.url.google.com/url?sa=j&url=https%3A%2F%2Fwww.androidfilehost.com%2F%3Ffid%3D24591020540822840&uct=1467247321&usg=Zlwhb9dh86OgTQzmFSHtAwdhHhU",
             "exampleResult": "https://www.androidfilehost.com/?fid=24591020540822840&uct=1467247321&usg=Zlwhb9dh86OgTQzmFSHtAwdhHhU",
             "error": null,
@@ -315,7 +379,7 @@
             ]
         },
         {
-            "description": "豆瓣去跳转",
+            "description": "去豆瓣跳转",
             "exampleUrl": "https://www.douban.com/link2/?url=http%3A%2F%2Fblog.sina.com.cn%2Fs%2Fblog_69a4e04201014j4w.html",
             "exampleResult": "http://blog.sina.com.cn/s/blog_69a4e04201014j4w.html",
             "error": null,
@@ -330,7 +394,7 @@
             ]
         },
         {
-            "description": "Google搜索去跳转",
+            "description": "去Google搜索跳转",
             "exampleUrl": "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=0ahUKEwin3sPl8s_MAhVBVGMKHZROAjYQFggjMAE&url=http%3A%2F%2Flife.nju.edu.cn%2F%3Fmod%3D%25D1%25A7%25D4%25BA%25B8%25C5%25BF%25F6%26fun%3D%25BD%25CC%25CA%25A6%25C3%25FB%25C2%25BC%26name%3D%25C0%25BC%25CE%25C4%25D6%25C7%26id%3D40&usg=AFQjCNEKdBXsJMUsl6e5CCX6F-y-M_Pdxg&sig2=U0oZucAse0pNgCW1fJcuLw",
             "exampleResult": "http://life.nju.edu.cn/?mod=%D1%A7%D4%BA%B8%C5%BF%F6&fun=%BD%CC%CA%A6%C3%FB%C2%BC&name=%C0%BC%CE%C4%D6%C7&id=40",
             "error": null,
@@ -360,56 +424,11 @@
             ]
         },
         {
-            "description": "Firefox.net.cn 3G版>>桌面版",
-            "exampleUrl": "https://www.firefox.net.cn/3g-read-run?tid=51559",
-            "exampleResult": "https://www.firefox.net.cn/read-51559",
-            "error": null,
-            "includePattern": "https://www.firefox.net.cn/3g-read-run?tid=*",
-            "excludePattern": "",
-            "redirectUrl": "https://www.firefox.net.cn/read-$1",
-            "patternType": "W",
-            "processMatches": "noProcessing",
-            "disabled": false,
-            "appliesTo": [
-                "main_frame"
-            ]
-        },
-        {
-            "description": "ASUS手机论坛简版>>正常版",
-            "exampleUrl": "http://www.asus.com/zentalk/tw/archiver/?tid-84909.html",
-            "exampleResult": "http://www.asus.com/zentalk/tw/thread-84909-1-1.html",
-            "error": null,
-            "includePattern": "http://www.asus.com/*/*/archiver/?tid-*.html",
-            "excludePattern": "",
-            "redirectUrl": "http://www.asus.com/$1/$2/thread-$3-1-1.html",
-            "patternType": "W",
-            "processMatches": "noProcessing",
-            "disabled": false,
-            "appliesTo": [
-                "main_frame"
-            ]
-        },
-        {
-            "description": "南大邮箱去跳转",
-            "exampleUrl": "http://mail.smail.nju.edu.cn/cgi-bin/readtemplate?t=safety&sid=WrD6GxQ6XertoRJF,7&gourl=https%3A%2F%2Fwww.researchgate.net%2Fgo.In.html%3Fu%3Dprofile.ProfileAuthorClusterClaim.html%26loginT%3D0NKCqZ3CUnxu1OYfOBsSX2-NiHE6OMMTwegZU5XN18cC6asTBdQjKg%26uid%3DPpHXi7T0GKPeMDpnWhx18ptZCS1UvgV0RAcg%26cp%3Dre46_x_p2%26ch%3Dreg&subtemplate=gray&evil=0",
-            "exampleResult": "https://www.researchgate.net/go.In.html?u=profile.ProfileAuthorClusterClaim.html&loginT=0NKCqZ3CUnxu1OYfOBsSX2-NiHE6OMMTwegZU5XN18cC6asTBdQjKg&uid=PpHXi7T0GKPeMDpnWhx18ptZCS1UvgV0RAcg&cp=re46_x_p2&ch=reg",
-            "error": null,
-            "includePattern": "http://mail.smail.nju.edu.cn/cgi-bin/readtemplate?t=safety*&gourl=*&subtemplate=*",
-            "excludePattern": "",
-            "redirectUrl": "$2",
-            "patternType": "W",
-            "processMatches": "urlDecode",
-            "disabled": false,
-            "appliesTo": [
-                "main_frame"
-            ]
-        },
-        {
             "description": "削弱流氓百度战斗力",
-            "exampleUrl": "https://www.baidu.com/s?wd=firefox&pn=10&oq=firefox&tn=monline_dg&ie=utf-8&usm=3&rsv_pq=80baa3a20001056d&rsv_t=d5cfg0vnGBdfgHJ%2FwOwVFifdsCDPBh2eN3lql1KIXrokZtFcZwIUKiF3rX80%2F5WrLQ&rsv_page=1",
-            "exampleResult": "https://www.baidu.com/s?wd=firefox&pn=10&oq=firefox&tn=monline_dg&ie=utf-8&usm=3&rsv_page=1",
+            "exampleUrl": "https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=filetype%3Artf%20firefox&oq=filetype%3Artf%20firefox&rsv_pq=87ad289e00024dff&rsv_t=9abcbrhLcYmA%2FvuWyOx34%2BGOFH4bBbquo%2Bhtyi%2FwS4vyxR2%2B917AcAS5oaI&rqlang=en&rsv_enter=1&gpc=stf%3D1496568065%2C1499160065%7Cstftype%3D1&tfflag=1&rsv_srlang=en&sl_lang=en&rsv_rq=en&bs=filetype%3Artf%20firefox",
+            "exampleResult": "https://www.baidu.com/s?wd=filetype%3Artf%20firefox&gpc=stf%3D1496568065%2C1499160065%7Cstftype%3D1&sl_lang=en",
             "error": null,
-            "includePattern": "https:\\/\\/www\\.baidu\\.com\\/s\\?wd=(.*)&rsv_pq=[^&]+(.*)&rsv_t=[^&]+(.*)",
+            "includePattern": "https://www\\.baidu\\.com/s\\?.*&wd=([^&]*).*(&gpc=[^&]*).*(&sl_lang=[^&]*).*",
             "excludePattern": "",
             "redirectUrl": "https://www.baidu.com/s?wd=$1$2$3",
             "patternType": "R",
@@ -442,29 +461,14 @@
             ]
         },
         {
-            "description": "Mozilla去跳转1",
+            "description": "Mozilla去跳转",
             "exampleUrl": "https://outgoing.mozilla.org/v1/eab29b437a33dd850287aa17798b40a65c3797feaded38cfc9850fcb12785b16/https%3A//bugs.downthemall.net/wiki/NightlyBuilds",
             "exampleResult": "https://bugs.downthemall.net/wiki/NightlyBuilds",
             "error": null,
-            "includePattern": "https://outgoing.mozilla.org/*/*/http*",
-            "excludePattern": "",
-            "redirectUrl": "http$3",
-            "patternType": "W",
-            "processMatches": "urlDecode",
-            "disabled": false,
-            "appliesTo": [
-                "main_frame"
-            ]
-        },
-        {
-            "description": "Mozilla去跳转2",
-            "exampleUrl": "https://outgoing.prod.mozaws.net/v1/221301c720e1488012efd45e7bd7ec2124fb4e20da13ace29eb848f4de2d6215/https%3A//decentraleyes.org/test",
-            "exampleResult": "decentraleyes.org/test",
-            "error": null,
-            "includePattern": "https://outgoing.prod.mozaws.net/*/https%3A//*",
+            "includePattern": "https://outgoing\\.(mozilla.org|prod.mozaws.net)/v\\d+/\\w+/(.+)",
             "excludePattern": "",
             "redirectUrl": "$2",
-            "patternType": "W",
+            "patternType": "R",
             "processMatches": "urlDecode",
             "disabled": false,
             "appliesTo": [
@@ -472,7 +476,7 @@
             ]
         },
         {
-            "description": "百度盘专辑分享手机版>>PC版",
+            "description": "百度网盘分享专辑手机版>>PC版",
             "exampleUrl": "http://pan.baidu.com/wap/album/file?uk=2516707588&album_id=7863091620710589517&fsid=770116008571746&adapt=pc&fr=ftw",
             "exampleResult": "http://pan.baidu.com/pcloud/album/file?uk=2516707588&album_id=7863091620710589517&fsid=770116008571746&adapt=pc&fr=ftw",
             "error": null,
@@ -487,7 +491,7 @@
             ]
         },
         {
-            "description": "百度盘普通分享手机版>>PC版 1",
+            "description": "百度网盘手机版>>PC版1",
             "exampleUrl": "https://pan.baidu.com/wap/share/home?uk=1261797861&third=0&adapt=pc&fr=ftw",
             "exampleResult": "http://pan.baidu.com/share/home?uk=1261797861&third=0&adapt=pc&fr=ftw",
             "error": null,
@@ -502,7 +506,7 @@
             ]
         },
         {
-            "description": "百度盘普通分享手机版>>PC版 2",
+            "description": "百度网盘手机版>>PC版2",
             "exampleUrl": "http://pan.baidu.com/wap/link?uk=503340817&shareid=424405520&third=0",
             "exampleResult": "https://pan.baidu.com/share/link?uk=503340817&shareid=424405520&third=0",
             "error": null,
@@ -510,21 +514,6 @@
             "excludePattern": "",
             "redirectUrl": "https://pan.baidu.com/share$1",
             "patternType": "R",
-            "processMatches": "noProcessing",
-            "disabled": false,
-            "appliesTo": [
-                "main_frame"
-            ]
-        },
-        {
-            "description": "Cisco网络技术论坛简版>>正常",
-            "exampleUrl": "http://bbs.net130.com/archive/index.php/t-194638.html",
-            "exampleResult": "http://bbs.net130.com/showthread.php?t=194638.html",
-            "error": null,
-            "includePattern": "http://bbs.net130.com/archive/index.php/t-*",
-            "excludePattern": "",
-            "redirectUrl": "http://bbs.net130.com/showthread.php?t=$1",
-            "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
             "appliesTo": [
@@ -610,21 +599,6 @@
             ]
         },
         {
-            "description": "简版无线论坛>>正常页面",
-            "exampleUrl": "http://bbs.51cto.com/archiver/tid-812891-page-2.html",
-            "exampleResult": "http://bbs.51cto.com/thread-812891-1.html",
-            "error": null,
-            "includePattern": "*/archiver/tid-*-page-*.html",
-            "excludePattern": "",
-            "redirectUrl": "$1/thread-$2-1.html",
-            "patternType": "W",
-            "processMatches": "noProcessing",
-            "disabled": false,
-            "appliesTo": [
-                "main_frame"
-            ]
-        },
-        {
             "description": "Mozest广场>>http",
             "exampleUrl": "https://j.mozest.com/ucscript/script/7.meta.js",
             "exampleResult": "http://j.mozest.com/ucscript/script/7.meta.js",
@@ -670,13 +644,28 @@
             ]
         },
         {
-            "description": "Google Play去跳转1",
+            "description": "去Google Play跳转",
             "exampleUrl": "https://www.google.com/url?q=https://www.google.com/url?q%3Dhttps://plus.google.com/communities/106927015963860485525%26sa%3DD%26usg%3DAFQjCNEZeOlPexuZ3FURnmrmA_vlvdJ1bg&sa=D&usg=AFQjCNFw5miY6MXDRIV1jSQ-pH5WcXya7A",
             "exampleResult": "https://plus.google.com/communities/106927015963860485525",
             "error": null,
-            "includePattern": "https://www.google.com/url?q=https://www.google.com/url?q%3Dhttp*%26sa%3D*",
+            "includePattern": "https://www\\.google\\.com/url\\?q=(https://www\\.google\\.com/url\\?q%3D)?http(.+?)(%26|&)sa(%3D|=).*",
             "excludePattern": "",
-            "redirectUrl": "http$1",
+            "redirectUrl": "http$2",
+            "patternType": "R",
+            "processMatches": "urlDecode",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "去QQ邮箱类跳转",
+            "exampleUrl": "http://mail.smail.nju.edu.cn/cgi-bin/readtemplate?t=safety&sid=WrD6GxQ6XertoRJF,7&gourl=https%3A%2F%2Fwww.researchgate.net%2Fgo.In.html%3Fu%3Dprofile.ProfileAuthorClusterClaim.html%26loginT%3D0NKCqZ3CUnxu1OYfOBsSX2-NiHE6OMMTwegZU5XN18cC6asTBdQjKg%26uid%3DPpHXi7T0GKPeMDpnWhx18ptZCS1UvgV0RAcg%26cp%3Dre46_x_p2%26ch%3Dreg&subtemplate=gray&evil=0",
+            "exampleResult": "https://www.researchgate.net/go.In.html?u=profile.ProfileAuthorClusterClaim.html&loginT=0NKCqZ3CUnxu1OYfOBsSX2-NiHE6OMMTwegZU5XN18cC6asTBdQjKg&uid=PpHXi7T0GKPeMDpnWhx18ptZCS1UvgV0RAcg&cp=re46_x_p2&ch=reg",
+            "error": null,
+            "includePattern": "*/cgi-bin/readtemplate?t=safety*&gourl=*&subtemplate=*",
+            "excludePattern": "",
+            "redirectUrl": "$3",
             "patternType": "W",
             "processMatches": "urlDecode",
             "disabled": false,
@@ -685,41 +674,11 @@
             ]
         },
         {
-            "description": "Google Play去跳转2",
-            "exampleUrl": "https://www.google.com/url?q=http://superflashcard.com&sa=D&usg=AFQjCNFwKXEfAWTYbYc8a29tOzChrdlv-A",
-            "exampleResult": "http://superflashcard.com",
-            "error": null,
-            "includePattern": "https://www.google.com/url?q=http*&sa*",
-            "excludePattern": "",
-            "redirectUrl": "http$1",
-            "patternType": "W",
-            "processMatches": "noProcessing",
-            "disabled": false,
-            "appliesTo": [
-                "main_frame"
-            ]
-        },
-        {
-            "description": "QQ邮箱去跳转1",
+            "description": "去QQ邮箱跳转",
             "exampleUrl": "https://mail.qq.com/cgi-bin/mail_spam?action=check_link&url=http://www.shanbay.com/help/checkin/why_should_we_punch&mailid=HAQFb3AEDAcAHVMdTENWQwZCXXpOenhgZ3F7eHtlUQVb&spam=0",
             "exampleResult": "http://www.shanbay.com/help/checkin/why_should_we_punch",
             "error": null,
             "includePattern": "https://mail.qq.com/cgi-bin/mail_spam?action=check_link&url=http*&mailid=*",
-            "excludePattern": "",
-            "redirectUrl": "http$1",
-            "patternType": "W",
-            "processMatches": "urlDecode",
-            "disabled": false,
-            "appliesTo": [
-                "main_frame"
-            ]
-        },
-        {
-            "description": "QQ邮箱去跳转2",
-            "exampleUrl": "https://mail.qq.com/cgi-bin/readtemplate?t=safety&check=false&gourl=http%3A%2F%2Ftmail.zhihu.com%2Ft%3Fu%3DaHR0cHM6Ly9iZXNwb2tlLnpoaWh1LmNvbS9kaXZvcmNlP3V0bV9jYW1wYWlnbj16aGlodTAwMyZ1dG1fc291cmNlPXpoaWh1MDAzJnV0bV9tZWRpdW09ZW1haWw%253D%26i%3D724138981%26l%3Dzhihu%26s%3D2%26c%3DaT03MjQxMzg5ODEmbD16aGlodSZzPTI%253D&subtemplate=gray&evil=0",
-            "exampleResult": "http://tmail.zhihu.com/t?u=aHR0cHM6Ly9iZXNwb2tlLnpoaWh1LmNvbS9kaXZvcmNlP3V0bV9jYW1wYWlnbj16aGlodTAwMyZ1dG1fc291cmNlPXpoaWh1MDAzJnV0bV9tZWRpdW09ZW1haWw%3D&i=724138981&l=zhihu&s=2&c=aT03MjQxMzg5ODEmbD16aGlodSZzPTI%3D",
-            "error": null,
-            "includePattern": "https://mail.qq.com/cgi-bin/readtemplate?t=safety&check=false&gourl=http*&subtemplate=gray&evil=0",
             "excludePattern": "",
             "redirectUrl": "http$1",
             "patternType": "W",
@@ -767,22 +726,7 @@
             ]
         },
         {
-            "description": "hao123防跳转",
-            "exampleUrl": "http://www.hao123.com/?",
-            "exampleResult": "http://www.hao123.com",
-            "error": null,
-            "includePattern": "http://www.hao123.com/?*",
-            "excludePattern": "",
-            "redirectUrl": "http://www.hao123.com",
-            "patternType": "W",
-            "processMatches": "noProcessing",
-            "disabled": false,
-            "appliesTo": [
-                "main_frame"
-            ]
-        },
-        {
-            "description": "知乎去跳转",
+            "description": "去知乎跳转",
             "exampleUrl": "http://link.zhihu.com/?target=https://play.google.com",
             "exampleResult": "https://play.google.com",
             "error": null,
