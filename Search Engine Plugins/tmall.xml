@@ -4,7 +4,7 @@
 <os:InputEncoding>gbk</os:InputEncoding>
 <os:Image width="16" height="16">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAQElEQVQ4jWNgYGBg2MzA8J8czADTvIOB4f9+EvEOmCGbydAMwxgGEAtoZwA6RtdA0AujBgxLA4hOyhRlJkqzMwCOOAUjv7eE+gAAAABJRU5ErkJggg==</os:Image>
 <SearchForm>https://list.tmall.com</SearchForm>
-<os:Url type="text/html" method="GET" template="https://list.tmall.com/search_product.htm" resultDomain="list.tmall.com">
+<os:Url type="text/html" method="GET" template="https://list.tmall.com/search_product.htm" resultDomain="www.tmall.com">
   <os:Param name="q" value="{searchTerms}"/>
 </os:Url>
 </SearchPlugin>
