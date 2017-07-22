@@ -1,7 +1,39 @@
 {
     "createdBy": "Redirector v3.1.0",
-    "createdAt": "2017-07-04T10:19:05.274Z",
+    "createdAt": "2017-07-22T10:38:57.023Z",
     "redirects": [
+        {
+            "description": "知乎大图",
+            "exampleUrl": "https://pic2.zhimg.com/v2-83beb31cf01a23d6ab01151731822195_b.png",
+            "exampleResult": "https://pic2.zhimg.com/v2-83beb31cf01a23d6ab01151731822195.png",
+            "error": null,
+            "includePattern": "https://pic*.zhimg.com/*_b.*",
+            "excludePattern": "",
+            "redirectUrl": "https://pic$1.zhimg.com/$2.$3",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame",
+                "image"
+            ]
+        },
+        {
+            "description": "动漫之家PC版>>手机版",
+            "exampleUrl": "http://manhua.dmzj.com/yuekanshaonvyeqijun/56044.shtml",
+            "exampleResult": "http://m.dmzj.com/view/yuekanshaonvyeqijun/56044.html",
+            "error": null,
+            "includePattern": "http://manhua.dmzj.com/*.shtml",
+            "excludePattern": "",
+            "redirectUrl": "http://m.dmzj.com/view/$1.html",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame",
+                "sub_frame"
+            ]
+        },
         {
             "description": "通用论坛简版>>完整版1",
             "exampleUrl": "http://g.mozest.com/archiver/tid-40788.html",
@@ -97,11 +129,11 @@
             ]
         },
         {
-            "description": "哔哩哔哩http>>https",
+            "description": "优酷土豆哔哩哔哩http>>https",
             "exampleUrl": "http://www.bilibili.com/",
             "exampleResult": "https://www.bilibili.com/",
             "error": null,
-            "includePattern": "http(://[^/]+\\.bilibili\\.com/.*)",
+            "includePattern": "http(://[^/]*\\.(bilibili|youku|tudou)\\.com/.*)",
             "excludePattern": "",
             "redirectUrl": "https$1",
             "patternType": "R",
@@ -262,9 +294,9 @@
             "exampleUrl": "http://partner.tieba.com/f?kw=%E7%94%B5%E6%B3%A2%E5%A5%B3%E4%B8%8E%E9%9D%92%E6%98%A5%E7%94%B7",
             "exampleResult": "https://tieba.baidu.com/f?kw=%E7%94%B5%E6%B3%A2%E5%A5%B3%E4%B8%8E%E9%9D%92%E6%98%A5%E7%94%B7",
             "error": null,
-            "includePattern": "https?://.+\\.tieba\\.com/(.*)",
+            "includePattern": "https?://(.+\\.tieba\\.com|jump\\d+\\.bdimg\\.com)/(.*)",
             "excludePattern": "",
-            "redirectUrl": "https://tieba.baidu.com/$1",
+            "redirectUrl": "https://tieba.baidu.com/$2",
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": false,
@@ -409,21 +441,6 @@
             ]
         },
         {
-            "description": "动漫之家左右翻页>>上下滚动",
-            "exampleUrl": "http://manhua.dmzj.com/zhongjiedezhitianshi/48815.shtml#@page=1",
-            "exampleResult": "http://manhua.dmzj.com/zhongjiedezhitianshi/48815.shtml",
-            "error": null,
-            "includePattern": "http://manhua.dmzj.com/*.shtml#@page=1",
-            "excludePattern": "",
-            "redirectUrl": "http://manhua.dmzj.com/$1.shtml",
-            "patternType": "W",
-            "processMatches": "noProcessing",
-            "disabled": false,
-            "appliesTo": [
-                "main_frame"
-            ]
-        },
-        {
             "description": "削弱流氓百度战斗力",
             "exampleUrl": "https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=filetype%3Artf%20firefox&oq=filetype%3Artf%20firefox&rsv_pq=87ad289e00024dff&rsv_t=9abcbrhLcYmA%2FvuWyOx34%2BGOFH4bBbquo%2Bhtyi%2FwS4vyxR2%2B917AcAS5oaI&rqlang=en&rsv_enter=1&gpc=stf%3D1496568065%2C1499160065%7Cstftype%3D1&tfflag=1&rsv_srlang=en&sl_lang=en&rsv_rq=en&bs=filetype%3Artf%20firefox",
             "exampleResult": "https://www.baidu.com/s?wd=filetype%3Artf%20firefox&gpc=stf%3D1496568065%2C1499160065%7Cstftype%3D1&sl_lang=en",
@@ -433,7 +450,7 @@
             "redirectUrl": "https://www.baidu.com/s?wd=$1$2$3",
             "patternType": "R",
             "processMatches": "noProcessing",
-            "disabled": false,
+            "disabled": true,
             "appliesTo": [
                 "main_frame",
                 "sub_frame",
