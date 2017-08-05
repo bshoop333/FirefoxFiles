@@ -1,7 +1,22 @@
 {
     "createdBy": "Redirector v3.1.0",
-    "createdAt": "2017-07-22T10:38:57.023Z",
+    "createdAt": "2017-07-29T03:29:46.877Z",
     "redirects": [
+        {
+            "description": "CSDN手机版>>PC版",
+            "exampleUrl": "http://m.blog.csdn.net/lvshaorong/article/details/52788521",
+            "exampleResult": "http://blog.csdn.net/lvshaorong/article/details/52788521",
+            "error": null,
+            "includePattern": "http://m.blog.csdn.net/*",
+            "excludePattern": "",
+            "redirectUrl": "http://blog.csdn.net/$1",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
         {
             "description": "知乎大图",
             "exampleUrl": "https://pic2.zhimg.com/v2-83beb31cf01a23d6ab01151731822195_b.png",
@@ -601,8 +616,8 @@
         },
         {
             "description": "百度搜索http>>https",
-            "exampleUrl": "http://www.baidu.com/s?wd=萝莉",
-            "exampleResult": "https://www.baidu.com/s?wd=萝莉",
+            "exampleUrl": "http://www.baidu.com/s?wd=测试",
+            "exampleResult": "https://www.baidu.com/s?wd=测试",
             "error": null,
             "includePattern": "http://www.baidu.com/s?wd=*",
             "excludePattern": "",

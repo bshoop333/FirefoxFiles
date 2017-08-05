@@ -1,0 +1,281 @@
+/************************************* VimFx! ********************************************/
+/* hint mode style */
+#VimFxMarkersContainer .marker {
+    padding: 1px 2px 0 2px !important;
+    background-color: #FFD76E !important;
+    border: solid 1px #AD810C !important;
+    border-radius: 2px !important;
+    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.3) !important;
+    font-size: 14px !important;
+    color: #302505 !important;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", "Sans" !important;
+    font-weight: bold !important;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+}
+#VimFxMarkersContainer .marker--matched,
+#VimFxMarkersContainer .marker-char--matched {
+    color: #FFA22A !important;
+}
+#VimFxMarkersContainer .marker--highlighted {
+    background-color: #FFD76E !important;
+}
+/* blur the url bar red when entering caret mode */
+#main-window[vimfx-mode="ignore"] #urlbar {
+    background: red !important;
+}
+
+
+/******************************** Firefox Tabs Counter **************************************/
+#main-window {
+    counter-reset: tabs;
+}
+.tabbrowser-tab:not(:-moz-any([pinned], [concealed])) {
+    counter-increment: tabs;
+}
+#alltabs-button {
+    visibility: visible!important;
+}
+#alltabs-button:after {
+    content: counter(tabs);
+    display: -moz-box;
+}
+#alltabs-button> :-moz-any(label, image) {
+    display: none;
+}
+
+
+/******************************** Interface Adjustment **************************************/
+/* 标签页载入动画图标 */
+/* .tab-throbber {visibility: hidden;} */
+/* 图标黑白化处理 */
+/*
+#nav-bar-customization-target toolbarbutton {
+  filter:grayscale(1) saturate(1) contrast(0.65) brightness(1.4);
+}
+*/
+
+/* Widen Tabs Bar */
+#TabsToolbar {
+    padding-inline-start: 0 !important;
+}
+
+/* Hide Zoom Percentage*/
+#urlbar-zoom-button {
+    display: none;
+}
+
+/* narrow toolbar buttons */
+#nav-bar-customization-target toolbarbutton image {
+    padding: 0px !important;
+}
+#urlbar-search-splitter {
+    min-width: unset;
+}
+#pocket-button image,
+#bookmarks-menu-button image {
+    width: 18px;
+}
+
+/* Hide New Tongwentang icon */
+#tongwen_softcup-browser-action,
+#tongwen_softcup-page-action {
+    display: none;
+}
+
+/* adjustment for Pick & Save Imgaes*/
+#imageSaver-button toolbarbutton image {
+    width: 18px !important;
+}
+
+/* adjustment for Stylish */
+#nav-bar #stylish-toolbar-button>.toolbarbutton-icon {
+    padding-inline-end: 0 !important;
+}
+
+/* Hide Violentmoneky Counters */
+#_aecec67f-0d10-4fa7-b7c7-609a2db280cf_-browser-action>stack>label {
+    display: none;
+}
+
+/* Hide History AutoDelete Counters */
+#_7e79d10d-9667-4d38-838d-471281c568c3_-browser-action>stack>label {
+    display: none;
+}
+
+/* hide triangles */
+/*toolbarbutton:not(#bookmarks-menu-button) dropmarker {display: none;}*/
+toolbarbutton dropmarker {
+    display: none;
+}
+#nav-bar-customization-target {
+    margin-top: -1px;
+    margin-bottom: -1px;
+}
+
+/* adjustment for AutoComplete items */
+.autocomplete-richlistitem>.ac-type-icon {
+    margin-left: 0px !important;
+}
+
+/*===================菜单调整=====================*/
+/* Hide Horizontal Menu */
+#context-navigation {
+    display: none;
+}
+
+/*去可能导致误操作的菜单*/
+#context-showonlythisframe {
+    display: none;
+}
+
+/* Hide Invalid Menu Items */
+menuitem[disabled="true"] {
+    display: none !important;
+}
+
+/* page menu */
+#context-pocket,
+#context-savepage,
+#context-selectall,
+#context-viewpartialsource-selection,
+#xnotifier-bookmark,
+#uacontrol_options,
+#FavIconReloader {
+    display: none;
+}
+
+/* link menu */
+#context-savelinktopocket,
+#context-openlink,
+#context-openlinkintab,
+#context-savelink,
+#context-copylink {
+    display: none;
+}
+
+/* image menu */
+#context-saveimage,
+/*#context-copygif,*/
+#context-copyimage,
+/*#context-setDesktopBackground,*/
+#context-sendimage,
+#context-copyimage-contents {
+    display: none;
+}
+
+/* tab menu */
+#mafMenuSaveTabsInArchive_tabsContextMenu,
+#context_openTabInWindow，#context_reloadTab,
+#context_pinTab,
+#context_unpinTab,
+#context_reloadTab,
+#context_undoCloseTab,
+#printPages2Pdf-men_printThisTab,
+#context_openTabInWindow,
+#xnotifier-tabMenu {
+    display: none;
+}
+
+/* bookmark menu */
+#placesContext_open,
+[command="placesCmd_open:tab"] {
+    display: none;
+}
+
+/* video player menu */
+#context-media-pause,
+#context-media-mute,
+#context-media-unmute,
+#context-media-hidecontrols {
+    display: none;
+}
+
+/* Hide all seperators */
+menuseparator {
+    display: none;
+}
+
+
+@-moz-document regexp("data:text\/html;charset=utf8,.+<link%20rel='stylesheet'%20href='chrome:\/\/devtools\/content\/sourceeditor\/codemirror\/lib\/codemirror\.css'><link%20rel='stylesheet'%20href='chrome:\/\/devtools\/content\/sourceeditor\/codemirror\/addon\/dialog\/dialog\.css'><link%20rel='stylesheet'%20href='chrome:\/\/devtools\/content\/sourceeditor\/codemirror\/mozilla\.css.+") {
+    .CodeMirror-sizer * {
+        font-family: Consolas;
+        font-size: 16px;
+    }
+    /* tint CodeMirror background color */
+    .CodeMirror {
+        background-color: #272822 !important;
+    }
+    /* tint line numbers background color */
+    .CodeMirror-gutters {
+        background-color: #272822 !important;
+    }
+    /* tint current line */
+    .CodeMirror-activeline-gutter,
+    .CodeMirror-linebackground {
+        background-color: #3D4243 !important;
+    }
+    /* tint normal text */
+    .CodeMirror-line {
+        color: #F8F8F2 !important;
+    }
+    /* tint selected text */
+    .CodeMirror-selected {
+        background: #49483E !important;
+    }
+    .cm-def {
+        color: #66D9EF !important;
+    }
+    .cm-property {
+        color: #66D9EF !important;
+        font-style: italic;
+    }
+    .cm-string {
+        color: #E6DB74 !important;
+    }
+    .cm-builtin {
+        color: #A6E22E !important;
+    }
+    .cm-qualifier {
+        color: #A6E22E !important;
+    }
+    .cm-number {
+        color: #AE81FF !important;
+    }
+    .cm-atom {
+        color: #AE81FF !important;
+    }
+    .cm-keyword {
+        color: #F92672 !important;
+    }
+    .cm-tag {
+        color: #F8F8F2 !important;
+    }
+    .cm-variable {
+        color: #33FF33 !important;
+    }
+    .cm-variable-3 {
+        color: #FF9966 !important;
+        font-style: italic;
+    }
+    .cm-searching {
+        background-color: #FFE792;
+        color: black !important;
+    }
+    ul.devtools-autocomplete-listbox>li.autocomplete {
+        font-size: 150% !important;
+    }
+}
+
+@-moz-document url-prefix("about:stylish-edit") {
+    #main-area,
+    #name,
+    #lineNumber,
+    .devtools-toolbarbutton {
+        background-color: #272822 !important;
+        color: white !important;
+    }
+    #errors {
+        color: #FF99FF !important;
+        font-size: 120%;
+    }
+}
