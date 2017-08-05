@@ -64,27 +64,10 @@
     display: none;
 }
 
-/* narrow toolbar buttons */
-#nav-bar-customization-target toolbarbutton image {
-    padding: 0px !important;
-}
-#urlbar-search-splitter {
-    min-width: unset;
-}
-#pocket-button image,
-#bookmarks-menu-button image {
-    width: 18px;
-}
-
 /* Hide New Tongwentang icon */
 #tongwen_softcup-browser-action,
 #tongwen_softcup-page-action {
     display: none;
-}
-
-/* adjustment for Pick & Save Imgaes*/
-#imageSaver-button toolbarbutton image {
-    width: 18px !important;
 }
 
 /* adjustment for Stylish */
