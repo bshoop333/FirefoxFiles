@@ -1,0 +1,8 @@
+<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
+<os:ShortName>MDN</os:ShortName>
+<os:Description>Mozilla Developer Network</os:Description>
+<os:InputEncoding>UTF-8</os:InputEncoding>
+<os:Image width="32" height="32">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAAAAABWESUoAAAA0UlEQVR4AWMYfkA9MNlFCLe0/+4f////f7aqZc5kHSzS/Ev/I8ATQUz5g/+RQQC6POfO/yjgfiALijzLmv/o4FyZIpL+1f+xgI8lMHnGgruXb2FRcZ8VpoKXmXszFgXP+eF2cK/HZsdDTrgCmbTYmBsYCqajeKQFWeovEP/cJoMsH3T57Cuo7LcqI73AacssUUOKg5H5NFRBCY64svsHkf8siUNBEdSAW6w4FHBOhig4jjtBZH0CKdiOJ0XpbQUqWI430Xlv/bWIQLrUMR2CmQkAHmX/UHR6gygAAAAASUVORK5CYII=</os:Image>
+<SearchForm>https://developer.mozilla.org/en-US</SearchForm>
+<os:Url type="text/html" method="GET" template="https://developer.mozilla.org/en-US/search?q={searchTerms}" resultDomain="developer.mozilla.org"/>
+</SearchPlugin>
