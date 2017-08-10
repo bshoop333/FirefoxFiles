@@ -1,7 +1,68 @@
 {
     "createdBy": "Redirector v3.1.0",
-    "createdAt": "2017-07-29T03:29:46.877Z",
+    "createdAt": "2017-08-10T08:38:33.600Z",
     "redirects": [
+        {
+            "description": "去除dilidili广告",
+            "exampleUrl": "http://static.jfrft.com/js/main_list.js",
+            "exampleResult": "https://connect.rom.miui.com/generate_204",
+            "error": null,
+            "includePattern": "http://static.jfrft.com/js/*",
+            "excludePattern": "",
+            "redirectUrl": "https://connect.rom.miui.com/generate_204",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "script"
+            ]
+        },
+        {
+            "description": "SourceForge直接下载",
+            "exampleUrl": "https://sourceforge.net/projects/mpcbe/files/Toolbars/toolbar_ZoNi_Carpelinx.zip/download",
+            "exampleResult": "http://nchc.dl.sourceforge.net/project/mpcbe/Toolbars/toolbar_ZoNi_Carpelinx.zip",
+            "error": null,
+            "includePattern": "https://sourceforge.net/projects/*/files/*/download",
+            "excludePattern": "",
+            "redirectUrl": "http://nchc.dl.sourceforge.net/project/$1/$2",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "去Feedly跳转",
+            "exampleUrl": "http://app.wumii.com/ext/redirect?url=http%3A%2F%2Ffree.apprcn.com%2Fget-steam-game-the-orb-chambers-for-free-7%2F&from=http%3A%2F%2Ffree.apprcn.com%2Fget-steam-game-contract-with-the-devil-for-free%2F",
+            "exampleResult": "http://free.apprcn.com/get-steam-game-the-orb-chambers-for-free-7/",
+            "error": null,
+            "includePattern": "http://app.wumii.com/ext/redirect?url=*&from=*",
+            "excludePattern": "",
+            "redirectUrl": "$1",
+            "patternType": "W",
+            "processMatches": "urlDecode",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "Blogspot原图",
+            "exampleUrl": "https://2.bp.blogspot.com/-WY4opBC2w94/WXRXnPO4lYI/AAAAAAAFhow/x8yLG-8NicIpIWIc1JqPRXbNH4HS2PeowCLcBGAs/s0/Tasker-02.png",
+            "exampleResult": "https://2.bp.blogspot.com/-WY4opBC2w94/WXRXnPO4lYI/AAAAAAAFhow/x8yLG-8NicIpIWIc1JqPRXbNH4HS2PeowCLcBGAs/s0/Tasker-02.png",
+            "error": null,
+            "includePattern": "https://*.bp.blogspot.com/*/*/*/s*/*",
+            "excludePattern": "",
+            "redirectUrl": "https://$1.bp.blogspot.com/$2/$3/$4/s0/$6",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame",
+                "image"
+            ]
+        },
         {
             "description": "CSDN手机版>>PC版",
             "exampleUrl": "http://m.blog.csdn.net/lvshaorong/article/details/52788521",
@@ -363,21 +424,6 @@
             "appliesTo": [
                 "main_frame",
                 "image"
-            ]
-        },
-        {
-            "description": "紫荆显示做种情况",
-            "exampleUrl": "http://zijingbt.njuftp.org/stats.html?id=92053",
-            "exampleResult": "http://zijingbt.njuftp.org/stats.html?id=92053&show=active",
-            "error": null,
-            "includePattern": "http://zijingbt.njuftp.org/stats.html?id=*",
-            "excludePattern": "",
-            "redirectUrl": "http://zijingbt.njuftp.org/stats.html?id=$1&show=active",
-            "patternType": "W",
-            "processMatches": "noProcessing",
-            "disabled": false,
-            "appliesTo": [
-                "main_frame"
             ]
         },
         {
