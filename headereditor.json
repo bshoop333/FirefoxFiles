@@ -393,7 +393,7 @@
       "pattern": "pan\\.baidu\\.com",
       "action": {
         "name": "Referer",
-        "value": "https://www.pan.baidu.com"
+        "value": "https://pan.baidu.com"
       },
       "id": 36
     },
