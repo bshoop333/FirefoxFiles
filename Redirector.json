@@ -1,6 +1,6 @@
 {
     "createdBy": "Redirector v3.1.0",
-    "createdAt": "2017-08-21T14:39:24.330Z",
+    "createdAt": "2017-08-21T14:45:44.788Z",
     "redirects": [
         {
             "description": "Imgur http>>https",
@@ -695,7 +695,7 @@
             ]
         },
         {
-            "description": "手机微博>>电脑微博",
+            "description": "微博手机版>>PC版",
             "exampleUrl": "http://m.weibo.cn/wo",
             "exampleResult": "http://www.weibo.com/wo",
             "error": null,
@@ -703,21 +703,6 @@
             "excludePattern": "",
             "redirectUrl": "http://www.weibo.com/$2",
             "patternType": "R",
-            "processMatches": "noProcessing",
-            "disabled": false,
-            "appliesTo": [
-                "main_frame"
-            ]
-        },
-        {
-            "description": "迅雷离线>>新版",
-            "exampleUrl": "http://dynamic.cloud.vip.xunlei.com/user_task?userid=110",
-            "exampleResult": "http://cloud.vip.xunlei.com/folders/",
-            "error": null,
-            "includePattern": "http://dynamic.cloud.vip.xunlei.com/user_task?userid=*",
-            "excludePattern": "",
-            "redirectUrl": "http://cloud.vip.xunlei.com/folders/",
-            "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
             "appliesTo": [
