@@ -1,10 +1,27 @@
 {
     "createdBy": "Redirector v3.1.0",
-    "createdAt": "2017-08-10T08:38:33.600Z",
+    "createdAt": "2017-08-21T14:39:24.330Z",
     "redirects": [
         {
+            "description": "Imgur http>>https",
+            "exampleUrl": "http://i.imgur.com/Gn0Uw1Ob.jpg",
+            "exampleResult": "https://i.imgur.com/Gn0Uw1Ob.jpg",
+            "error": null,
+            "includePattern": "http://i.imgur.com/*",
+            "excludePattern": "",
+            "redirectUrl": "https://i.imgur.com/$1",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame",
+                "image",
+                "xmlhttprequest"
+            ]
+        },
+        {
             "description": "去除dilidili广告",
-            "exampleUrl": "http://static.jfrft.com/js/main_list.js",
+            "exampleUrl": "http://static.jfrft.com/js/main_video.js?_=1502433512701",
             "exampleResult": "https://connect.rom.miui.com/generate_204",
             "error": null,
             "includePattern": "http://static.jfrft.com/js/*",
@@ -14,7 +31,9 @@
             "processMatches": "noProcessing",
             "disabled": false,
             "appliesTo": [
-                "script"
+                "main_frame",
+                "script",
+                "xmlhttprequest"
             ]
         },
         {
@@ -49,12 +68,12 @@
         },
         {
             "description": "Blogspot原图",
-            "exampleUrl": "https://2.bp.blogspot.com/-WY4opBC2w94/WXRXnPO4lYI/AAAAAAAFhow/x8yLG-8NicIpIWIc1JqPRXbNH4HS2PeowCLcBGAs/s0/Tasker-02.png",
-            "exampleResult": "https://2.bp.blogspot.com/-WY4opBC2w94/WXRXnPO4lYI/AAAAAAAFhow/x8yLG-8NicIpIWIc1JqPRXbNH4HS2PeowCLcBGAs/s0/Tasker-02.png",
+            "exampleUrl": "https://2.bp.blogspot.com/-7gM0HtyWcTM/WZj5K5HmN_I/AAAAAAAFk8c/Soi3yeHW1t0D7Dqd8Ymko8FhW2FhpNx-QCLcBGAs/s640/Sun-Shining-through-Clouds-on-Lake.jpg",
+            "exampleResult": "https://2.bp.blogspot.com/-7gM0HtyWcTM/WZj5K5HmN_I/AAAAAAAFk8c/Soi3yeHW1t0D7Dqd8Ymko8FhW2FhpNx-QCLcBGAs/s0/Sun-Shining-through-Clouds-on-Lake.jpg",
             "error": null,
-            "includePattern": "https://*.bp.blogspot.com/*/*/*/s*/*",
-            "excludePattern": "",
-            "redirectUrl": "https://$1.bp.blogspot.com/$2/$3/$4/s0/$6",
+            "includePattern": "https://*.bp.blogspot.com/*/*/*/*/s*/*",
+            "excludePattern": "https://*.bp.blogspot.com/*/*/*/s0/*",
+            "redirectUrl": "https://$1.bp.blogspot.com/$2/$3/$4/$5/s0/$7",
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
@@ -79,7 +98,7 @@
             ]
         },
         {
-            "description": "知乎大图",
+            "description": "知乎原图",
             "exampleUrl": "https://pic2.zhimg.com/v2-83beb31cf01a23d6ab01151731822195_b.png",
             "exampleResult": "https://pic2.zhimg.com/v2-83beb31cf01a23d6ab01151731822195.png",
             "error": null,
@@ -190,7 +209,7 @@
             ]
         },
         {
-            "description": "通用论坛手机版>>PC版1",
+            "description": "通用论坛手机版>>PC版2",
             "exampleUrl": "https://www.firefox.net.cn/3g-read-run?tid=51559",
             "exampleResult": "https://www.firefox.net.cn/read-51559",
             "error": null,
@@ -273,7 +292,7 @@
             ]
         },
         {
-            "description": "Higher Resolution Images on userstyles.org",
+            "description": "userstyles.org原图",
             "exampleUrl": "https://userstyles.org/style_screenshot_thumbnails/135507_after.png",
             "exampleResult": "https://userstyles.org/style_screenshots/135507_after.png",
             "error": null,
@@ -457,7 +476,7 @@
             ]
         },
         {
-            "description": "京东手机版->电脑版",
+            "description": "京东手机版>>电脑版",
             "exampleUrl": "http://item.m.jd.com/product/2873891.html",
             "exampleResult": "http://item.jd.com/product/2873891.html",
             "error": null,
@@ -539,7 +558,7 @@
             ]
         },
         {
-            "description": "Mozilla去跳转",
+            "description": "去Mozilla跳转",
             "exampleUrl": "https://outgoing.mozilla.org/v1/eab29b437a33dd850287aa17798b40a65c3797feaded38cfc9850fcb12785b16/https%3A//bugs.downthemall.net/wiki/NightlyBuilds",
             "exampleResult": "https://bugs.downthemall.net/wiki/NightlyBuilds",
             "error": null,
@@ -644,7 +663,7 @@
             ]
         },
         {
-            "description": "Google图片搜索去跳转",
+            "description": "去Google图片搜索跳转",
             "exampleUrl": "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwjbjPavlt7UAhUKh7wKHTGUD4gQjBwIBA&url=%68%74%74%70%3a%2f%2f%6c%65%61%72%6e%69%6e%67%2e%75%6f%6e%62%69%2e%61%63%2e%6b%65%2f%63%6f%75%72%73%65%73%2f%53%42%54%34%30%33%2f%73%63%6f%72%6d%50%61%63%6b%61%67%65%73%2f%70%61%74%68%5f%32%2f%50%49%2e%33%31%2e%4a%50%47&psig=AFQjCNFlPCyEKt2iwg2EdLpGFy2V_03YMg&ust=1498658029798348",
             "exampleResult": "http://learning.uonbi.ac.ke/courses/SBT403/scormPackages/path_2/PI.31.JPG",
             "error": null,
@@ -661,23 +680,7 @@
             ]
         },
         {
-            "description": "百度搜索http>>https",
-            "exampleUrl": "http://www.baidu.com/s?wd=测试",
-            "exampleResult": "https://www.baidu.com/s?wd=测试",
-            "error": null,
-            "includePattern": "http://www.baidu.com/s?wd=*",
-            "excludePattern": "",
-            "redirectUrl": "https://www.baidu.com/s?wd=$1",
-            "patternType": "W",
-            "processMatches": "noProcessing",
-            "disabled": false,
-            "appliesTo": [
-                "main_frame",
-                "sub_frame"
-            ]
-        },
-        {
-            "description": "Mozest广场>>http",
+            "description": "Mozest广场https>>http",
             "exampleUrl": "https://j.mozest.com/ucscript/script/7.meta.js",
             "exampleResult": "http://j.mozest.com/ucscript/script/7.meta.js",
             "error": null,
