@@ -72,7 +72,7 @@
             "exampleResult": "https://2.bp.blogspot.com/-7gM0HtyWcTM/WZj5K5HmN_I/AAAAAAAFk8c/Soi3yeHW1t0D7Dqd8Ymko8FhW2FhpNx-QCLcBGAs/s0/Sun-Shining-through-Clouds-on-Lake.jpg",
             "error": null,
             "includePattern": "https://*.bp.blogspot.com/*/*/*/*/s*/*",
-            "excludePattern": "https://*.bp.blogspot.com/*/*/*/s0/*",
+            "excludePattern": "https://*.bp.blogspot.com/*/*/*/*/s0/*",
             "redirectUrl": "https://$1.bp.blogspot.com/$2/$3/$4/$5/s0/$7",
             "patternType": "W",
             "processMatches": "noProcessing",
