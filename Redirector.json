@@ -1,6 +1,6 @@
 {
     "createdBy": "Redirector v3.1.0",
-    "createdAt": "2017-08-21T14:45:44.788Z",
+    "createdAt": "2017-09-01T00:47:37.601Z",
     "redirects": [
         {
             "description": "Imgur http>>https",
@@ -41,10 +41,10 @@
             "exampleUrl": "https://sourceforge.net/projects/mpcbe/files/Toolbars/toolbar_ZoNi_Carpelinx.zip/download",
             "exampleResult": "http://nchc.dl.sourceforge.net/project/mpcbe/Toolbars/toolbar_ZoNi_Carpelinx.zip",
             "error": null,
-            "includePattern": "https://sourceforge.net/projects/*/files/*/download",
+            "includePattern": "https://sourceforge\\.net/projects/(.+)/files/(.+)/download(\\?.+)?",
             "excludePattern": "",
             "redirectUrl": "http://nchc.dl.sourceforge.net/project/$1/$2",
-            "patternType": "W",
+            "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": false,
             "appliesTo": [
