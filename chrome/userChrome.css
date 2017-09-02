@@ -56,6 +56,11 @@
 }
 */
 
+/* Hide PanelUI Button */
+#PanelUI-button {
+    display: none;
+}
+
 /* Widen Tabs Bar */
 #TabsToolbar {
     padding-inline-start: 0 !important;
