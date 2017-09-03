@@ -1,6 +1,6 @@
 {
     "createdBy": "Redirector v3.1.0",
-    "createdAt": "2017-09-01T00:47:37.601Z",
+    "createdAt": "2017-09-03T08:16:43.066Z",
     "redirects": [
         {
             "description": "Imgur http>>https",
@@ -697,14 +697,14 @@
         {
             "description": "微博手机版>>PC版",
             "exampleUrl": "http://m.weibo.cn/wo",
-            "exampleResult": "http://www.weibo.com/wo",
+            "exampleResult": "https://www.weibo.com/wo",
             "error": null,
-            "includePattern": "^http://(m.)?weibo.cn/(.+)",
+            "includePattern": "https?://(m.)?weibo.cn/(.+)",
             "excludePattern": "",
-            "redirectUrl": "http://www.weibo.com/$2",
+            "redirectUrl": "https://www.weibo.com/$2",
             "patternType": "R",
             "processMatches": "noProcessing",
-            "disabled": false,
+            "disabled": true,
             "appliesTo": [
                 "main_frame"
             ]
