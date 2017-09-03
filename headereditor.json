@@ -195,9 +195,10 @@
       "pattern": "qpic\\.cn",
       "action": {
         "name": "Referer",
-        "value": ""
+        "value": "https://qzone.qq.com"
       },
-      "id": 18
+      "id": 18,
+      "exclude": ""
     },
     {
       "name": "soso",
@@ -272,9 +273,10 @@
       "pattern": "sinaimg\\.cn",
       "action": {
         "name": "Referer",
-        "value": ""
+        "value": "https://blog.sina.com.cn/"
       },
-      "id": 25
+      "id": 25,
+      "exclude": ""
     },
     {
       "name": "新浪-2",
@@ -415,9 +417,10 @@
       "pattern": "img.*(126\\.net|163\\.com)",
       "action": {
         "name": "Referer",
-        "value": "bbs.163.com"
+        "value": ""
       },
-      "id": 38
+      "id": 38,
+      "exclude": ""
     },
     {
       "name": "56网",
@@ -456,12 +459,13 @@
       "name": "太平洋电脑网",
       "ruleType": "modifySendHeader",
       "type": "regexp",
-      "pattern": "img\\d\\.pconline\\.com\\.cn",
+      "pattern": "img\\d+\\.pconline\\.com\\.cn",
       "action": {
         "name": "Referer",
-        "value": "http://www.pconline.com.cn"
+        "value": "http://www.pconline.com.cn/"
       },
-      "id": 42
+      "id": 42,
+      "exclude": ""
     },
     {
       "name": "搜狐",
@@ -473,7 +477,76 @@
         "value": "http://pp.sohu.com.cn"
       },
       "id": 43
+    },
+    {
+      "name": "动漫之家 & 动漫屋",
+      "ruleType": "modifySendHeader",
+      "type": "regexp",
+      "pattern": "dmzj|dm5\\.com",
+      "action": {
+        "name": "User-Agent",
+        "value": "Mozilla/5.0 (Linux; Android 7.1.1; ONEPLUS A3000 Build/NMF26F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.132 Mobile Safari/537.36"
+      },
+      "id": 46
+    },
+    {
+      "name": "CCTV & CNTV",
+      "ruleType": "modifySendHeader",
+      "type": "regexp",
+      "pattern": "tv\\.(cctv|cntv)\\.(com|cn)",
+      "action": {
+        "name": "User-Agent",
+        "value": "Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_1_1 like Mac OS X; en) AppleWebKit/534.46.0 (KHTML, like Gecko) CriOS/19.0.1084.60 Mobile/9B206 Safari/7534.48.3"
+      },
+      "id": 47
+    },
+    {
+      "name": "有道云笔记",
+      "ruleType": "modifySendHeader",
+      "type": "regexp",
+      "pattern": "note\\.youdao\\.com",
+      "action": {
+        "name": "User-Agent",
+        "value": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.81 Safari/537.36"
+      },
+      "id": 52
+    },
+    {
+      "name": "海贼小站",
+      "ruleType": "modifySendHeader",
+      "type": "regexp",
+      "pattern": "onepiece\\.cc|one-piece\\.cn",
+      "exclude": "",
+      "action": {
+        "name": "User-Agent",
+        "value": "Mozilla/5.0 (Linux; Android 7.1.1; ONEPLUS A3000 Build/NMF26F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.132 Mobile Safari/537.36"
+      },
+      "id": 54
+    },
+    {
+      "name": "百度-5",
+      "ruleType": "modifySendHeader",
+      "type": "prefix",
+      "pattern": "http://jump.bdimg.com/safecheck/",
+      "exclude": "",
+      "action": {
+        "name": "Referer",
+        "value": "https://tieba.baidu.com"
+      },
+      "id": 55
     }
   ],
-  "receiveHeader": []
+  "receiveHeader": [
+    {
+      "name": "CROS for m3u8 and ts",
+      "ruleType": "modifyReceiveHeader",
+      "type": "regexp",
+      "pattern": "\\.m3u8|\\.ts|/ts",
+      "action": {
+        "name": "Access-Control-Allow-Origin",
+        "value": "*"
+      },
+      "id": 5
+    }
+  ]
 }
