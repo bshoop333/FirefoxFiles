@@ -17,7 +17,12 @@
     "originalMd5": "fa262d174ef8ebac5b946c4a907a68b7",
     "name": "腾讯微博半透明去广告",
     "enabled": 1,
-    "id": 1
+    "id": 1,
+    "advanced": {
+      "item": {},
+      "saved": {},
+      "css": []
+    }
   },
   {
     "sections": [
@@ -38,7 +43,12 @@
     "name": "visited links",
     "enabled": false,
     "id": 2,
-    "autoUpdate": false
+    "autoUpdate": false,
+    "advanced": {
+      "item": {},
+      "saved": {},
+      "css": []
+    }
   },
   {
     "sections": [
@@ -55,9 +65,14 @@
     "md5Url": null,
     "originalMd5": null,
     "name": "去超链接下划线",
-    "enabled": true,
+    "enabled": false,
     "id": 3,
-    "autoUpdate": false
+    "autoUpdate": false,
+    "advanced": {
+      "item": {},
+      "saved": {},
+      "css": []
+    }
   },
   {
     "sections": [
@@ -75,7 +90,12 @@
     "originalMd5": null,
     "name": "鼠标悬停超链接样式",
     "enabled": 0,
-    "id": 4
+    "id": 4,
+    "advanced": {
+      "item": {},
+      "saved": {},
+      "css": []
+    }
   },
   {
     "sections": [
@@ -93,7 +113,12 @@
     "originalMd5": "b77b5ad5f15132e549b7c8f7dd7fa123",
     "name": "鼠标悬停链接指针变化",
     "enabled": 0,
-    "id": 5
+    "id": 5,
+    "advanced": {
+      "item": {},
+      "saved": {},
+      "css": []
+    }
   },
   {
     "sections": [
@@ -113,35 +138,12 @@
     "originalMd5": null,
     "name": "百度网盘手机版调整",
     "enabled": 0,
-    "id": 6
-  },
-  {
-    "sections": [
-      {
-        "urls": [],
-        "urlPrefixes": [],
-        "domains": [],
-        "regexps": [],
-        "code": "@namespace url(http://www.w3.org/1999/xhtml);"
-      },
-      {
-        "urls": [],
-        "urlPrefixes": [],
-        "domains": [],
-        "regexps": [
-          ".+/webui-aria2(-master)?.+"
-        ],
-        "code": ".dropdown-toggle {\n    color: white;\n}\na[ng-click] {\n    color: black;\n}\n.dropdown:hover .dropdown-menu {\n    display: block;\n}\n.btn-group>.btn-group {\n    display: none;\n}\n.fade,\n.modal-dialog {\n    transition: all 0s ease-out 0s !important;\n}"
-      }
-    ],
-    "url": null,
-    "updateUrl": "",
-    "md5Url": null,
-    "originalMd5": null,
-    "name": "Aria2 WebUI",
-    "enabled": true,
-    "id": 7,
-    "autoUpdate": false
+    "id": 6,
+    "advanced": {
+      "item": {},
+      "saved": {},
+      "css": []
+    }
   },
   {
     "sections": [
@@ -167,8 +169,13 @@
     "md5Url": null,
     "originalMd5": null,
     "name": "解除CSS对于选中网页元素的限制",
-    "enabled": 0,
-    "id": 8
+    "enabled": false,
+    "id": 8,
+    "advanced": {
+      "item": {},
+      "saved": {},
+      "css": []
+    }
   },
   {
     "sections": [
@@ -188,43 +195,23 @@
     "originalMd5": null,
     "name": "Hide Baidu ID",
     "enabled": 1,
-    "id": 9
+    "id": 9,
+    "advanced": {
+      "item": {},
+      "saved": {},
+      "css": []
+    }
   },
   {
     "sections": [
-      {
-        "urls": [],
-        "urlPrefixes": [],
-        "domains": [],
-        "regexps": [],
-        "code": "@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);\n#editBMPanel_locationRow, /* 网址 */\n#editBMPanel_feedLocationRow, /* 消息来源网址 */\n#editBMPanel_siteLocationRow, /* 网站网址 */\n#editBMPanel_keywordRow, /* 关键字 */\n#editBMPanel_descriptionRow /* 说明 */ {\nvisibility:visible;\n-moz-box-align:center;"
-      }
-    ],
-    "url": null,
-    "updateUrl": "",
-    "md5Url": null,
-    "originalMd5": null,
-    "name": "DisplayHiddenElementsWhenAddingBookmarks",
-    "enabled": true,
-    "id": 10
-  },
-  {
-    "sections": [
-      {
-        "urls": [],
-        "urlPrefixes": [],
-        "domains": [],
-        "regexps": [],
-        "code": "/*\nunicode-range: U+4E00-9FCB;        汉字字符集\nunicode-range: U+26;               single codepoint\nunicode-range: U+00-7F;            ASC II\nunicode-range: U+0-7F;             Latin, Latin1 Sup., Ext-A, Ext-B\nunicode-range: U+0025-00FF;        codepoint range\nunicode-range: U+4??;              wildcard range\nunicode-range: U+0025-00FF, U+4??; multiple values\nunicode-range: U+3100-312F         注音符号(台湾?)\nunicode-range: U+3040-30FF;        日文假名\n*/\n\n@namespace url(http://www.w3.org/1999/xhtml);"
-      },
       {
         "urls": [],
         "urlPrefixes": [],
         "domains": [],
         "regexps": [
-          "(?!^https:\\/\\/scholar\\.google\\.com).+"
+          "(?!^https://scholar\\.google\\.com).+"
         ],
-        "code": "/*\n  font[face=\"新細明體\"], font[face=\"細明體\"], *[style*=\"font-family: 新細明體\"], *[style*=\"font-family: 細明體\"], *[style*=\"font-family:新細明體\"], *[style*=\"font-family:細明體\"] {\n    font-family: \"Sans-Serif\" !important;\n  }\n  */\n\n  /* serif */\n  @font-face {\n    font-family: '宋体';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: 'SimSun';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: 'NSimSun';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: '新宋体';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: '仿宋';\n    src: local(\"Serif\");\n  }\n  @font-face {\n    font-family: '华文仿宋';\n    src: local(\"Serif\");\n  }\n  @font-face {\n    font-family: 'ming';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: 'MingLiU';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: 'MingLiU_HKSCS';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: 'PMingLiu';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: '細明體';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: '新細明體';\n    src: local('Serif');\n  }\n\n  /* sans-serif */\n  @font-face {\n    font-family: 'Arial';\n    src: local('Sans-Serif');\n  }\n  @font-face {\n    font-family: 'Calibri';\n    src: local('Sans-Serif');\n  }\n  @font-face {\n    font-family: 'SF Pro SC';\n    src: local(\"Sans-Serif\");\n  }\n  @font-face {\n    font-family: 'Microsoft JhengHei';\n    src: local(\"Sans-Serif\");\n  }\n  @font-face {\n    font-family: 'Microsoft JhengHei UI';\n    src: local(\"Sans-Serif\");\n  }\n  @font-face {\n    font-family: '微軟正黑體';\n    src: local(\"Sans-Serif\");\n  }\n  @font-face {\n    font-family: 'MS PGothic';\n    src: local('Sans-Serif');\n  }"
+        "code": "/*\nunicode-range: U+4E00-9FCB;        汉字字符集\nunicode-range: U+26;               single codepoint\nunicode-range: U+00-7F;            ASC II\nunicode-range: U+0-7F;             Latin, Latin1 Sup., Ext-A, Ext-B\nunicode-range: U+0025-00FF;        codepoint range\nunicode-range: U+4??;              wildcard range\nunicode-range: U+0025-00FF, U+4??; multiple values\nunicode-range: U+3100-312F         注音符号(台湾?)\nunicode-range: U+3040-30FF;        日文假名\n*/\n\n/*\n  font[face=\"新細明體\"], font[face=\"細明體\"], *[style*=\"font-family: 新細明體\"], *[style*=\"font-family: 細明體\"], *[style*=\"font-family:新細明體\"], *[style*=\"font-family:細明體\"] {\n    font-family: \"Sans-Serif\" !important;\n  }\n  */\n\n  /* serif */\n  @font-face {\n    font-family: '宋体';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: 'SimSun';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: 'NSimSun';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: '新宋体';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: '仿宋';\n    src: local(\"Serif\");\n  }\n  @font-face {\n    font-family: '华文仿宋';\n    src: local(\"Serif\");\n  }\n  @font-face {\n    font-family: 'ming';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: 'MingLiU';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: 'MingLiU_HKSCS';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: 'PMingLiu';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: '細明體';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: '新細明體';\n    src: local('Serif');\n  }\n\n  /* sans-serif */\n  @font-face {\n    font-family: 'Microsoft YaHei';\n    src: local('Sans-Serif');\n  }\n  @font-face {\n    font-family: 'Microsoft YaHei UI';\n    src: local('Sans-Serif');\n  }\n  @font-face {\n    font-family: '微软雅黑';\n    src: local('Sans-Serif');\n  }\n  @font-face {\n    font-family: 'Arial';\n    src: local('Sans-Serif');\n  }\n  @font-face {\n    font-family: 'Calibri';\n    src: local('Sans-Serif');\n  }\n  @font-face {\n    font-family: 'SF Pro SC';\n    src: local(\"Sans-Serif\");\n  }\n  @font-face {\n    font-family: 'Microsoft JhengHei';\n    src: local(\"Sans-Serif\");\n  }\n  @font-face {\n    font-family: 'Microsoft JhengHei UI';\n    src: local(\"Sans-Serif\");\n  }\n  @font-face {\n    font-family: '微軟正黑體';\n    src: local(\"Sans-Serif\");\n  }\n  @font-face {\n    font-family: 'MS PGothic';\n    src: local('Sans-Serif');\n  }"
       }
     ],
     "url": null,
@@ -234,7 +221,12 @@
     "name": "FontsRefine",
     "enabled": true,
     "autoUpdate": false,
-    "id": 11
+    "id": 11,
+    "advanced": {
+      "item": {},
+      "saved": {},
+      "css": []
+    }
   },
   {
     "sections": [
@@ -262,7 +254,12 @@
     "name": "for.Google.Hestia",
     "enabled": false,
     "autoUpdate": false,
-    "id": 12
+    "id": 12,
+    "advanced": {
+      "item": {},
+      "saved": {},
+      "css": []
+    }
   },
   {
     "sections": [
@@ -289,7 +286,12 @@
     "originalMd5": null,
     "name": "Dailymotion",
     "enabled": 1,
-    "id": 14
+    "id": 14,
+    "advanced": {
+      "item": {},
+      "saved": {},
+      "css": []
+    }
   },
   {
     "sections": [
@@ -316,7 +318,12 @@
     "originalMd5": "a4f6a472040f323c6cbab3fc217afa57",
     "name": "AMO bring back favorites and collections",
     "enabled": false,
-    "id": 15
+    "id": 15,
+    "advanced": {
+      "item": {},
+      "saved": {},
+      "css": []
+    }
   },
   {
     "sections": [
@@ -343,7 +350,12 @@
     "originalMd5": null,
     "name": "Highlight Google Search Keywords",
     "enabled": true,
-    "id": 16
+    "id": 16,
+    "advanced": {
+      "item": {},
+      "saved": {},
+      "css": []
+    }
   },
   {
     "sections": [
@@ -370,7 +382,12 @@
     "originalMd5": "329b2cd5f45df84de8986bb6819258d7",
     "name": "PixivUserBatchDownload UI",
     "enabled": 1,
-    "id": 17
+    "id": 17,
+    "advanced": {
+      "item": {},
+      "saved": {},
+      "css": []
+    }
   },
   {
     "sections": [
@@ -397,7 +414,12 @@
     "originalMd5": null,
     "name": "cleanBilibili",
     "enabled": 1,
-    "id": 18
+    "id": 18,
+    "advanced": {
+      "item": {},
+      "saved": {},
+      "css": []
+    }
   },
   {
     "sections": [
@@ -424,7 +446,12 @@
     "originalMd5": "e0dd4669ee3ecaa5eb45f433c5500166",
     "name": "动漫花园仿极影",
     "enabled": 0,
-    "id": 20
+    "id": 20,
+    "advanced": {
+      "item": {},
+      "saved": {},
+      "css": []
+    }
   },
   {
     "sections": [
@@ -465,26 +492,15 @@
     "name": "论坛悬浮回复框2",
     "enabled": true,
     "id": 21,
-    "autoUpdate": false
+    "autoUpdate": false,
+    "advanced": {
+      "item": {},
+      "saved": {},
+      "css": []
+    }
   },
   {
     "sections": [
-      {
-        "urls": [],
-        "urlPrefixes": [],
-        "domains": [],
-        "regexps": [],
-        "code": "/* i really want this to be global */"
-      },
-      {
-        "urls": [],
-        "urlPrefixes": [
-          "http"
-        ],
-        "domains": [],
-        "regexps": [],
-        "code": ""
-      },
       {
         "urls": [],
         "urlPrefixes": [],
@@ -501,7 +517,7 @@
           "moegirl.org"
         ],
         "regexps": [],
-        "code": ".heimu,\n  .heimu a,\n  .heimu a.new,\n  a .heimu {\n    background: none !important;\n  }"
+        "code": ".heimu,\n  .heimu a,\n  .heimu .new,\n  a .heimu {\n    background: none !important;\n  }"
       },
       {
         "urls": [],
@@ -528,7 +544,7 @@
           "thegradcafe.com"
         ],
         "regexps": [],
-        "code": "div.ipsWidget_inner {\n    display: none;\n  }\n\n\n/*阻止太傻留学内容不让选中*/"
+        "code": ".ipsWidget_inner {\n    display: none;\n  }\n\n\n/*阻止太傻留学内容不让选中*/"
       },
       {
         "urls": [],
@@ -546,7 +562,7 @@
           "dmzj.com"
         ],
         "regexps": [],
-        "code": "#show_tip_bg,\n  div.login_tip.out,\n  #m_r_panelbox,\n  .timeAD/*时间广告*/\n  {\n    display: none !important;\n  }\n\n\n/*UC扩展中心*/"
+        "code": "#show_tip_bg,\n  .login_tip.out,\n  #m_r_panelbox,\n  .timeAD/*时间广告*/\n  {\n    display: none !important;\n  }\n\n\n/*UC扩展中心*/"
       },
       {
         "urls": [],
@@ -564,7 +580,7 @@
           "www.igo.cn"
         ],
         "regexps": [],
-        "code": "div.adBG {\n    display: none !important;\n  }\n\n\n\n/*推广*/"
+        "code": ".adBG {\n    display: none !important;\n  }\n\n\n\n/*推广*/"
       },
       {
         "urls": [],
@@ -573,7 +589,7 @@
           "baike.baidu.com"
         ],
         "regexps": [],
-        "code": "#side-share,\n  /*右侧分享*/\n  #announcement,\n  /*公告*/\n  div.wgt-footer-main/*底部*/\n  {\n    display: none;\n  }"
+        "code": "#side-share,\n  /*右侧分享*/\n  #announcement,\n  /*公告*/\n  .wgt-footer-main/*底部*/\n  {\n    display: none;\n  }"
       },
       {
         "urls": [],
@@ -582,7 +598,7 @@
           "lofter.com"
         ],
         "regexps": [],
-        "code": "div.w-pagelayer.w-pagelayer-reglogin.w-pagelayer-reglogin2 {\n    display: none;\n  }"
+        "code": ".w-pagelayer.w-pagelayer-reglogin.w-pagelayer-reglogin2 {\n    display: none;\n  }"
       },
       {
         "urls": [],
@@ -600,7 +616,7 @@
           "pan.baidu.com, yun.baidu.com"
         ],
         "regexps": [],
-        "code": "  div.context-menu>ul.list>li:last-child,\n  /*增值服务*/\n  div.context-menu>ul.list>li:nth-last-child(2),\n  /*增值服务上方横线*/\n  div.module-mboxDialog,\n  /*\"百度云新功能\"框*/\n  div.banner-active,\n  /*个人网盘右上角*/\n  div.dialog-extra.g-clearfix/*删除文件时的提示升级VIP横条*/\n  {\n    display: none;\n  }\n  i.find-light-icon,\n  /*“更多”右上角的红点*/\n  a.user-level.level-0,\n  /*超级会员*/\n  #show-buyvip-pack,\n  div.module-canvas,\n  /*灰色背景*/\n  div.tips.has-error,\n  /*上传文件时的警告信息*/\n  .feed-issue-guide,\n  .feed-issue-guide-close,\n  /*提示*/\n  div.prev-dom {\n    display: none !important;\n  }\n  /*下载大文件时提示升级VIP*/\n  #feedIssue {\n    border-style: none;\n  }"
+        "code": "  .context-menu>ul.list>li:last-child,\n  /*增值服务*/\n  .context-menu>ul.list>li:nth-last-child(2),\n  /*增值服务上方横线*/\n  .module-mboxDialog,\n  /*\"百度云新功能\"框*/\n  .banner-active,\n  /*个人网盘右上角*/\n  .dialog-extra.g-clearfix/*删除文件时的提示升级VIP横条*/\n  {\n    display: none;\n  }\n  .find-light-icon,\n  /*“更多”右上角的红点*/\n  .user-level.level-0,\n  /*超级会员*/\n  #show-buyvip-pack,\n  .module-canvas,\n  /*灰色背景*/\n  .tips.has-error,\n  /*上传文件时的警告信息*/\n  .feed-issue-guide,\n  .feed-issue-guide-close,\n  /*提示*/\n  .prev-dom {\n    display: none !important;\n  }\n  /*下载大文件时提示升级VIP*/\n  #feedIssue {\n    border-style: none;\n  }"
       },
       {
         "urls": [],
@@ -618,7 +634,7 @@
           "zhidao.baidu.com"
         ],
         "regexps": [],
-        "code": "span.lucky-try {\n    display: none !important;\n  }"
+        "code": ".lucky-try {\n    display: none !important;\n  }"
       },
       {
         "urls": [],
@@ -753,7 +769,7 @@
           "linux.cn"
         ],
         "regexps": [],
-        "code": "#LEccCisOsS {\n    display: none !important;\n  }\n\n\n\n/* Google Image Search Original Source */"
+        "code": "#LEccCisOsS {\n    display: none !important;\n  }"
       },
       {
         "urls": [],
@@ -762,7 +778,7 @@
         "regexps": [
           "^https://www.google.com/.*&tbm=isch.*"
         ],
-        "code": ".x_source_link {\n    color: white !important;\n  }\n  .rg_ilm {\n    display: inline;\n  }"
+        "code": "/* Google Image Search Original Source */\n.x_source_link {\n    color: white !important;\n  }\n  .rg_ilm {\n    display: inline;\n  }"
       }
     ],
     "url": "https://raw.githubusercontent.com/YandLiu/CSS/master/miscellaneous.css",
@@ -772,6 +788,11 @@
     "name": "miscellaneous",
     "enabled": true,
     "id": 22,
-    "autoUpdate": false
+    "autoUpdate": false,
+    "advanced": {
+      "item": {},
+      "saved": {},
+      "css": []
+    }
   }
 ]
