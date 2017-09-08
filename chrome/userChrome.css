@@ -255,17 +255,3 @@ menuseparator {
         font-size: 150% !important;
     }
 }
-
-@-moz-document url-prefix("about:stylish-edit") {
-    #main-area,
-    #name,
-    #lineNumber,
-    .devtools-toolbarbutton {
-        background-color: #272822 !important;
-        color: white !important;
-    }
-    #errors {
-        color: #FF99FF !important;
-        font-size: 120%;
-    }
-}
