@@ -651,6 +651,20 @@
         "value": ""
       },
       "id": 106
+    },
+    {
+      "enable": 1,
+      "name": "煎蛋",
+      "ruleType": "modifySendHeader",
+      "matchType": "regexp",
+      "pattern": "jdstatic\\.tankr\\.net",
+      "exclude": "",
+      "isFunction": 0,
+      "action": {
+        "name": "Referer",
+        "value": "jandan.net"
+      },
+      "id": 107
     }
   ],
   "receiveHeader": [
