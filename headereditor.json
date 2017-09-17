@@ -679,6 +679,20 @@
         "value": ""
       },
       "id": 109
+    },
+    {
+      "enable": 1,
+      "name": "爱稀奇",
+      "ruleType": "modifySendHeader",
+      "matchType": "regexp",
+      "pattern": "images\\.ixiqi\\.com",
+      "exclude": "",
+      "isFunction": 0,
+      "action": {
+        "name": "Referer",
+        "value": ""
+      },
+      "id": 110
     }
   ],
   "receiveHeader": [
