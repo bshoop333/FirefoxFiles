@@ -665,6 +665,20 @@
         "value": "jandan.net"
       },
       "id": 107
+    },
+    {
+      "enable": 1,
+      "name": "178",
+      "ruleType": "modifySendHeader",
+      "matchType": "regexp",
+      "pattern": "img\\d+\\.178\\.com",
+      "exclude": "",
+      "isFunction": 0,
+      "action": {
+        "name": "Referer",
+        "value": ""
+      },
+      "id": 109
     }
   ],
   "receiveHeader": [
