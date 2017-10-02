@@ -1,10 +1,9 @@
 <SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
-<os:ShortName>淘宝</os:ShortName>
-<os:Description>淘宝</os:Description>
+<os:ShortName>咸鱼</os:ShortName>
+<os:Description>淘宝咸鱼</os:Description>
 <os:InputEncoding>gbk</os:InputEncoding>
 <os:Image width="16" height="16">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAqUlEQVQ4jaWTsRGAIAxFs4Gj0DgGtTtQOIY7sAO1EzCOOxgLiCQRUfTf/TtE/zPBCAAAGAPiMvU5BgQRJjkj1zfe7JAguEw5tKfQPBYAX5NWn/YzpADmsQRWLyHcdP8C0IGa+H4TUGtFgy8AZ2Tp3RVwgH7b6wpaLfw6g8cWuGpnwStErHxG/aA2Vw4XQAxpLBtj2xxl+h82OwgQXd/5DGudpX0VOtMVPgBRELV9pv7F+wAAAABJRU5ErkJggg==</os:Image>
-<SearchForm>https://www.taobao.com/</SearchForm>
-<os:Url type="text/html" method="GET" template="http://s.taobao.com/search" resultDomain="www.taobao.com">
-  <os:Param name="q" value="{searchTerms}"/>
+<SearchForm>https://2.taobao.com/</SearchForm>
+<os:Url type="text/html" method="GET" template="http://s.2.taobao.com/list.html?q={searchTerms}" resultDomain="2.taobao.com">
 </os:Url>
 </SearchPlugin>
