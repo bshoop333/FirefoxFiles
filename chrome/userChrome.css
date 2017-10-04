@@ -124,6 +124,7 @@ menuitem[disabled="true"] {
 }
 
 /* page menu */
+#context-sendpagetodevice,
 #context-pocket,
 #context-savepage,
 #context-selectall,
@@ -135,6 +136,7 @@ menuitem[disabled="true"] {
 }
 
 /* link menu */
+#context-sendlinktodevice,
 #context-savelinktopocket,
 #context-openlink,
 #context-openlinkintab,

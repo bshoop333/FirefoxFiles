@@ -103,7 +103,7 @@ var menu = PageMenu({
 		];
 		menu(items);
 	};
-	
+
 // Host Exceptions 设置显示条件
 /* css('#exex-menu {display: none;}')
 page({
@@ -114,7 +114,7 @@ page({
 
 // 标签右键菜单
 tab([
-    
+
     {
         label: "复制标题",
         text: "%TITLE%",
@@ -309,12 +309,12 @@ page([
         id: "menu_firebug_firebugInspect",
         accesskey: "F",
         clone: false
-        }, 
+        },
 	// { // 给 View Page Source 换个快捷键
         // id: "context-viewsource",
         // accesskey: "p",
         // clone: false
-    // }, 
+    // },
 ]);
 
 // var pagesub1 = PageMenu({
@@ -477,7 +477,7 @@ pagesub2([
 	},
         {
 	  label:"复制链接decode地址",
-	  oncommand:"Components.classes['@mozilla.org/widget/clipboardhelper;1'].getService(Components.interfaces.nsIClipboardHelper).copyString(decodeURIComponent(gContextMenu.linkURL));",		
+	  oncommand:"Components.classes['@mozilla.org/widget/clipboardhelper;1'].getService(Components.interfaces.nsIClipboardHelper).copyString(decodeURIComponent(gContextMenu.linkURL));",
 	  image:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAD1BMVEUAAAAqpRUqpRUqpRUqpRXOcSRkAAAABHRSTlMAgDbD2dd/ZQAAADRJREFUCNdjYGBxAQEHBhYRXAyQGmclE4iIE4MKKgMihWKOEYMyhKHAwARhMDAwoKrBxQAAkOYXUkSJqx8AAAAASUVORK5CYII="
 	},
         {
@@ -533,7 +533,7 @@ pagesub2([
 	      Url = "https://open.t.qq.com/api/short_url/shorten?long_url=" + addMenu.convertText("%RLINK_OR_URL_ENCODE%") + "&format=JSON&access_token=" + access_token + "&oauth_consumer_key=" + appkey + "&openid=" + openid + "&oauth_version=2.a";
 	      httpRequest = new XMLHttpRequest();
 	      httpRequest.open("GET", Url, true);
-	      httpRequest.onload = function() {	
+	      httpRequest.onload = function() {
 	      	var obj = JSON.parse(httpRequest.responseText);
 	      	var text = obj.data.short_url;
 	      	var shorturl = "http://url.cn/" + text;
@@ -573,7 +573,7 @@ pagesub2([
 	    style.save();
 	  }
       }
-    }, 
+    },
 	{
 		label: "当前日期+时间",
 		oncommand: function() {
@@ -708,7 +708,7 @@ pagesub2([
 		      ctypes.int32_t,
 		      ctypes.int32_t,
 		      ctypes.int32_t,
-		      ctypes.uint32_t);		
+		      ctypes.uint32_t);
 		    }
 		    var hwndAfter = -2;
                     if (onTop){
@@ -736,7 +736,7 @@ pagesub2([
 	  label:"显示所有链接",
 	  url: "javascript:WN7z=open('','Z6','width=400,height=200,scrollbars,resizable,menubar');DL5e=document.links;with(WN7z.document){write('<base%20target=_blank>');for(lKi=0;lKi<DL5e.length;lKi++){write(DL5e[lKi].toString().link(DL5e[lKi])+'<br><br>')};void(close())}",
 	  image:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABlBMVEUAAAAAAAClZ7nPAAAAAXRSTlMAQObYZgAAABFJREFUCNdjgAPzP0CEkw0DAKqRBzPWW0nIAAAAAElFTkSuQmCC"
-	}, 
+	},
         {
           label: "网页字体查询",
           // url: "javascript:(function(){var%20d=document,s=d.createElement('scr'+'ipt'),b=d.body,l=d.location;s.setAttribute('src','http://chengyinliu.com/wf.js?o='+encodeURIComponent(l.href)+'&t='+(new%20Date().getTime()));b.appendChild(s)})();",
