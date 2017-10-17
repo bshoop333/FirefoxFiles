@@ -1,4 +1,12 @@
 {
+  "知乎-1": {
+    "img": "^(pic\\d+\\.zhimg\\.com/\\w+_)b.jpg",
+    "to": "$1r.jpg"
+  },
+  "知乎-2": {
+    "img": "^pic（\\d+\\.zhimg\\.com/)\\d+/(\\w+_)hd.jpg",
+    "to": "$1$2r.jpg"
+  },
   "new userstyles.org": {
     "img": "^(https://userstyles\\.org/style_screenshot)_thumbnails(/.+)",
     "to": "$1s$2"
@@ -121,6 +129,30 @@
     "to": "image.coolapk.com/apk_image/$1",
     "note": "eg.\nhttp://image.coolapk.com/apk_image/2015/0407/257251_1428396799_3611.png.t.jpg"
   },
+  "fb-g+-so.cl-proxy": {
+    "img": "^(?:(?:(?:fbexternal-[a-z]\\.akamaihd|(?:s-|fb)?external[-a-z\\d]*\\.[a-z]{2}\\.fbcdn|platform\\.ak\\.fbcdn)\\.net|(?:l\\.)?facebook\\.com)/(?:safe_image|www/app_full_proxy|(l))\\.php|images\\d-focus-opensocial\\.googleusercontent\\.com/gadgets/proxy|cdn\\d+\\.so\\.cl/handlers/thumbnail)\\?(?:[^&]+&)*?(?:u(?:rl)?|src)=(http[^&]+).*",
+    "to": ":\nvar u=decodeURIComponent($[2].replace(/\\+/g,' ')), n=this.find({href: u, IMGS_TRG: this.node})\nreturn n&&typeof n!='number'||n===null? (Array.isArray(n) ? n.join('\\n') : n) : ($[1]?'':u)"
+  },
+  "ffffound": {
+    "link": "^(ffffound\\.com/)image/([\\da-z]{40}).*",
+    "url": "$1image/$2",
+    "res": "<a id=\"asset[^-]+-link-img\" href=\"([^\"]+)",
+    "img": "^img(?:-thumb)?\\.(ffffound\\.com/)static-data/assets/\\d+/([\\da-z]{40})_(?:m|x?s).*",
+    "note": "// -link-img\" href=\"([^\"]+)\" target=\"_blank\""
+  },
+  "eroshare": {
+    "link": "^(?:igowild|eroshare)\\.com/(?:embed/|(i/))?([\\da-z]{8}).*",
+    "url": ": '//eroshare.com/' + ($[1] ? $[1] + $[2] : 'api/v1/albums/'+$[2]+'.json')",
+    "res": ":\nif($[1]) {$=$._.match(RegExp('src=\"((?:https?:)?//[vi]\\.eroshare\\.com\\/'+$[2]+'[^\"]+)')); return $&&$[1]}\n$=JSON.parse($._)\nif(!$)return !1;\nvar t=$.title\nreturn $.items.map(function(x, i){\n var d=x.description||''\n return [x.urls ? x.urls.mp4 || x.urls.full : x.url_mp4 || x.url_full, (!i&&t ? (d ? '['+t+'] ' : t) : '') + d]\n})"
+  },
+  "XFileSharing": {
+    "useimg": 1,
+    "link": "^([^/]+)(/)([\\da-z]{12}/[\\w.-]+\\.(?:[Jj][Pp][Ee]?[Gg]|png|PNG|gif|GIF|bmp|BMP)(?:\\.html)?)$",
+    "url": "$1$2$3",
+    "res": "src=\"(https?://[^\"]+)\" (?:class=\"pic|id=\"[^\"]+\"\\s*>)",
+    "img": "^(?:i\\D{0,3}\\d*\\.)?([^/]+/)(?:i/\\d{5}/([\\da-z]{12})_[^.]+|th/\\d{5}/([\\da-z]{12}))\\.jpg$",
+    "note": "http://sibsoft.net/xfilesharing_free.html"
+  },
   "dereferers": {
     "link": "^[^/]{3,70}/\\??(https?:[^?#]+\\.(?:jpe?g|a?png|gifv?|bmp|svgz?|web[pm]|og[gv])).*",
     "ci": 1,
@@ -128,9 +160,9 @@
     "loop": 1,
     "to": "$1"
   },
-  "fb-g+-so.cl-proxy": {
-    "img": "^(?:(?:(?:fbexternal-[a-z]\\.akamaihd|(?:s-|fb)?external[-a-z\\d]*\\.[a-z]{2}\\.fbcdn|platform\\.ak\\.fbcdn)\\.net|(?:l\\.)?facebook\\.com)/(?:safe_image|www/app_full_proxy|(l))\\.php|images\\d-focus-opensocial\\.googleusercontent\\.com/gadgets/proxy|cdn\\d+\\.so\\.cl/handlers/thumbnail)\\?(?:[^&]+&)*?(?:u(?:rl)?|src)=(http[^&]+).*",
-    "to": ":\nvar u=decodeURIComponent($[2].replace(/\\+/g,' ')), n=this.find({href: u, IMGS_TRG: this.node})\nreturn n&&typeof n!='number'||n===null? (Array.isArray(n) ? n.join('\\n') : n) : ($[1]?'':u)"
+  "fb-g+-ddg-proxy": {
+    "img": "^(?:(?:(?:fbexternal-[a-z]\\.akamaihd|(?:s-|fb)?external[^.]*(?:\\.[-\\da-z]+)+?\\.fbcdn|platform\\.ak\\.fbcdn)\\.net|(?:l\\.)?facebook\\.com)/(?:safe_image|www/app_full_proxy|(l))\\.php|images\\d-focus-opensocial\\.googleusercontent\\.com/gadgets/proxy|^images\\.duckduckgo\\.com/iu/)\\?(?:[^&]+&)*?(?:u(?:rl)?|src)=(http[^&]+).*",
+    "to": ":\nvar u=decodeURIComponent($[2].replace(/\\+/g,' ')),n\nthis.node.IMGS_fallback_zoom=u\nn=this.find({href: u, IMGS_TRG: this.node})\nreturn n&&typeof n!='number'||n===null? (Array.isArray(n) ? n.join('\\n') : n) : ($[1]?'':u)"
   },
   "GoogleImages": {
     "link": "^(?:(?:images|encrypted)\\.)?google\\.[^/]+/(?:imgres\\?(?:[^&]+&)*?imgurl=([^&]+)|search\\?(?:[^&]+&)*?imgil=([^%;]+)).*",
@@ -171,6 +203,10 @@
     "dc": 2,
     "loop": 2,
     "to": ":\nvar m=$[1].match(/(https?)(?::\\/\\/?|%3A(?:%2F){1,2})(?!.+https?:\\/)(.+)/)\nreturn m ? m[1]+'://'+m[2] : $[1]"
+  },
+  "startpage": {
+    "img": "^s\\d+-eu\\d+\\.ixquick\\.com/cgi-bin/serveimage\\?url=http.*",
+    "to": ":\nvar i=/^pics-image-(\\d+)-(\\d+)$/.exec(this.node.id),x\nreturn i && (x=this._('responseData')) && (x=x.pics) && (i = x[i[1]][i[2]]) && (i.ORIGIMGURL + '\\n' + decodeURIComponent(/url=([^&]+)/.exec(i.ORIGIMGURL)[1])) || $[0]"
   },
   "image.baidu": {
     "link": "^image\\.baidu\\.com/(?:i|search/detail)/?\\?(?:[^&]*&)*objurl=([^&]+).*",
@@ -242,9 +278,17 @@
     "img": "^((?:image\\.tmdb\\.org|d3gtl9l2a4fn1j\\.cloudfront\\.net)/+t/p/)[^/]+",
     "to": "$1original"
   },
+  "trakt.tv": {
+    "img": "^(walter\\.trakt\\.tv/images/(?:[^/]+/)+?)(?:thumb|medium|large)/",
+    "to": "$1#full large#/"
+  },
   "youtube": {
     "img": "^(i(?:\\d|mg)?\\.ytimg\\.com/vi[^/]*/[\\w\\-]{11}/)(?!maxresdefault)[^.]+([^?]+).*",
     "to": "$10$2"
+  },
+  "twitch.tv": {
+    "img": "^(static-cdn\\.jtvnw\\.net\\/)(?:((?:ttv-boxart|(j)tv_user_pictures|(p)reviews-ttv)\\/[^?\\/]+)[-_]\\d+x\\d+(\\.[^?]+).*|((emoticons|badges)\\/[^.]+\\/)\\d+)",
+    "to": ":\nreturn $[1]+($[2] ? $[2]+($[3]?'-600x600':($[4]?'-0x0':''))+$[5] : $[6]+($[7][0]=='b'?3:5))"
   },
   "last.fm": {
     "img": "^((?:img\\d-ak\\.lst\\.fm|lastfm-img\\d\\.akamaized\\.net)/i/u/)[^/]+/",
@@ -266,6 +310,10 @@
   "SoundCloud": {
     "img": "^(i\\d\\.sndcdn\\.com/a(?:rtwork|vatar)s-[^.]+-).*",
     "to": "$1original.#jpg png gif#"
+  },
+  "instructables": {
+    "img": "^(cdn\\.instructables\\.com/)((?:[A-Z\\d]+/){3}[A-Z\\d]+)\\.[^.]+.*",
+    "to": "$1ORIG/$2.#jpg gif png#"
   },
   "desmond-imageshack": {
     "useimg": 1,
@@ -349,6 +397,11 @@
     "link": "^clips\\.(twitch\\.tv/)\\w+",
     "res": ":\nvar m={},o=$._.slice($._.lastIndexOf('var clipInfo = {')).match(/(vod_id|vod_offset|game|channel_title|broadcaster_login|quality_options)\\s*:\\s*\"?[^\\r\\n]+/g)\nif(o)o.some(function(i){var n=i.match(/^\\w+/)[0],v=i.replace(/[\",]*$/,'').slice(i.indexOf(':')+1);\nm[n] = n[0]=='q'?JSON.parse(v):v.replace(/^\\s*\"?/,'')})\nreturn o ? [[['#'+m.quality_options[0].source, m.quality_options.pop().source], '[' + m.game + '] ' + m.channel_title + ' | ' + (m.vod_id?'https://www.'+$[1]+m.broadcaster_login+'/'+m.vod_id[0]+'/'+m.vod_id.slice(1)+'?t='+m.vod_offset:'')]] : null"
   },
+  "clippituser.tv": {
+    "link": "^(clippit)user\\.tv/c(/\\w{6}).*",
+    "img": "^clips.(clippit).tv(/\\w{6})/thumbnail.*",
+    "to": "#clips.$1.tv$2/720.mp4\nclips.$1.tv$2/360.mp4"
+  },
   "plays.tv": {
     "link": "^(plays\\.tv/)(s|stream|video|embeds)(/[\\w-]+).*",
     "loop": 1,
@@ -356,6 +409,15 @@
     "res": "=\"twitter:player:stream\" content=\"([^\"]+)\n<title>([^<]+)",
     "img": "^(d\\dplayscdntv-a\\.akamaihd\\.net/video/[\\w-]+/processed/).+",
     "to": "#//$1720.mp4\n//$1360.mp4"
+  },
+  "tv.naver.com": {
+    "link": "^tv\\.(naver\\.com/)v/(?:(\\d+)(?:$|[/?#])|([\\dA-F]+)/(\\w+)).*",
+    "url": ": $[3] ? 'http://global.apis.'+$[1]+'rmcnmv/rmcnmv/vod_play_videoInfo.json?key='+$[4]+'&videoId='+$[3] : $[0]",
+    "res": ":\nif($[2]) {\n var x=typeof $._=='string'&&$._.match(/RMCVideoPlayer\\(\"([\\dA-F]+)\",\\s*\"(\\w+)\"/)\n return x&&{loop:'http://tv.'+$[1]+'v/'+x[1]+'/'+x[2]}\n}\n$._=JSON.parse($._)\nreturn [$._.videos.list.pop().source, $._.meta.subject+' by '+ $._.meta.user.id]"
+  },
+  "LiveStreamFails": {
+    "link": "^livestreamfails\\.com/post/\\d+",
+    "res": "<source src=\"([^\"]+)\nname=\"description\" content=\"([^\"]+)"
   },
   "gfycat": {
     "link": "^gfy(?:cats?\\.com(?!/(?:privacy|contact|upload|sign|leader|random|support|partners|gifbrewery|cajax/))|gur\\.com/view/\\d+)/(?:(?:cajax/checkUrl|fetch)/(http.+)|(?!useraccount/|ifr/|detail/)([\\w.-]+)/([\\w-]+).*|(?:ifr/|detail/)?([a-zA-Z]{6,})([^#/]*#\\?direction=reverse)?.*)",
@@ -413,6 +475,11 @@
     "img": "^(media\\.licdn\\.com/mpr/mpr/)shrink[^/]+/",
     "to": "$1"
   },
+  "v.redd.it": {
+    "link": "^(v\\.redd\\.it/[\\da-z]+).*",
+    "url": "$1/DASHPlaylist.mpd",
+    "res": ":\nvar v=0,u,m=$._.match(/width=\"\\d+\">\\s*<BaseURL>([^<]+)/g)\nif(!m)return m\nm.forEach(function(m){\n m=m.match(/\"([^\"]+)\">[^>]+>(.+)/)\n if(m[1] > v) { v = m[1]; u = m[2] }\n})\nreturn '//'+$[1]+'/'+u+'#mp4'"
+  },
   "reddit-media": {
     "link": "^(?:[a-z]{2}(?:-[a-z]{2})?\\.|beta\\.)?reddit\\.com/r/[^/]+/comments/[\\da-z]+/[^/]+/(?:\\?utm_content=(?:title|thumbnail).*)?$",
     "img": "^(g\\.redditmedia\\.com/[\\w-]+\\.gif\\?(?:[^&]+&)*?fm=mp4[^#]*)(.*)",
@@ -459,6 +526,10 @@
   "gawker": {
     "img": "^(?:(img\\.gawkerassets\\.com/img/[^/]+/)(?!original|[^.]+\\.gif)[^.]+|(i\\.kinja-img\\.com/gawker-media/image/upload/)(?:[^/]+/)+|((?:fast)?cache\\.(?:gawkerassets|gizmodo|lifehacker|deadspin|kotaku|jezebel|io9|jalopnik)\\.com/assets/images/\\d+/\\d{4}/\\d{2}/)(?:\\d+x\\d*|medium(_\\d+)?|micro|x?small|x?large)_)",
     "to": ":\nreturn $[1] ? $[1]+'original' : $[2] || $[3];"
+  },
+  "vogue": {
+    "img": "^((?:media|assets)\\.vogue\\.com/(photos/[\\da-z]+/[^/]+|r)/)[^/]+",
+    "to": "$1pass"
   },
   "bild.de": {
     "img": "^(bilder\\.bild\\.de/fotos)-skaliert(/[^/]+/)(\\d+),(?!h=2000)[^.]+",
@@ -816,6 +887,10 @@
     "img": "^(o?[si]\\d+\\.tinypic\\.com/[\\da-z]+)_th",
     "to": "$1"
   },
+  "ImgTC": {
+    "link": "^imgtc.com/(w/)?\\w{7}",
+    "res": "(?:\" value|=\"og:video:secure_url\" content)=\"([^\"]+)"
+  },
   "imagus.co": {
     "link": "^(imagus\\.(?:org|co|net)/)img/\\w+",
     "res": "=\"og:image\" content=\"([^\"]+)\n=\"og:title\" content=\"([^\"]+)"
@@ -897,6 +972,11 @@
   "questionablecontent": {
     "link": "^questionablecontent\\.net\\.?/view\\.php\\?comic=(\\d+).*",
     "to": "questionablecontent.net/comics/$1.#png jpg gif#"
+  },
+  "gettyimages": {
+    "link": "^gettyimages\\.com(?:\\.au)?/detail/[^/]+/[^/]+/(\\d+).*",
+    "img": "^(?:media\\.gettyimages\\.com/[^/]+|cache\\d+\\.asset-cache\\.net/xr)/(?:[^?]+?-id)?([\\d+-]+).*",
+    "to": "//media.gettyimages.com/photos/-id$1"
   },
   "panoramio": {
     "link": "^(?:google\\.[^/]+/[^?]+\\?(?:[^&]+&)*?photoid=po-|panoramio\\.com/photo/)(\\d+).*",
@@ -1067,12 +1147,9 @@
     "img": "^(fanart\\.tv/)thumb\\.php\\?src=(?:https?://\\1|/)?([^&]+).*",
     "to": "$1$2"
   },
-  "ffffound": {
-    "link": "^(ffffound\\.com/)image/([\\da-z]{40}).*",
-    "url": "$1image/$2",
-    "res": "<a id=\"asset[^-]+-link-img\" href=\"([^\"]+)",
-    "img": "^img(?:-thumb)?\\.(ffffound\\.com/)static-data/assets/\\d+/([\\da-z]{40})_(?:m|x?s).*",
-    "note": "// -link-img\" href=\"([^\"]+)\" target=\"_blank\""
+  "nexusmods": {
+    "img": "^(staticdelivery\\.nexusmods\\.com/(?:mods|images)/(?:[^/]+/)+?)thumbnails/",
+    "to": "$1"
   },
   "weheartit": {
     "useimg": 1,
@@ -1212,10 +1289,13 @@
     "res": "<meta property=\"og:image\" content=\"([^\"]+)\n<title>([^-]+)",
     "img": "^(?:cdn\\d*\\.)?thumbs\\.motherlessmedia\\.com/thumbs/([\\dA-F]+)(?:-zoom)?\\..*"
   },
-  "eroshare": {
-    "link": "^(?:igowild|eroshare)\\.com/(?:embed/|(i/))?([\\da-z]{8}).*",
-    "url": ": '//eroshare.com/' + ($[1] ? $[1] + $[2] : 'api/v1/albums/'+$[2]+'.json')",
-    "res": ":\nif($[1]) {$=$._.match(RegExp('src=\"((?:https?:)?//[vi]\\.eroshare\\.com\\/'+$[2]+'[^\"]+)')); return $&&$[1]}\n$=JSON.parse($._)\nif(!$)return !1;\nvar t=$.title\nreturn $.items.map(function(x, i){\n var d=x.description||''\n return [x.urls ? x.urls.mp4 || x.urls.full : x.url_mp4 || x.url_full, (!i&&t ? (d ? '['+t+'] ' : t) : '') + d]\n})"
+  "eroprofile": {
+    "link": "^eroprofile\\.com/m/(?:photo|video)s/view/.+",
+    "res": "<(?:a href|source src)=\"((?:https?:)?//(?:pictures|cdn\\.videos)[^\"]+)"
+  },
+  "erome.com": {
+    "link": "^erome\\.com/a/\\w+",
+    "res": ":\nvar x=$._.match(/(?:=\"img-back\"|<source) src=\"\\/\\/s\\d\\.erome\\.com\\/\\d+\\/[^\"]+/g);\nreturn x ? x.map(function(s,i){i=!i&&$._.match(/<title>([^<]+)/); return [s.slice(s.indexOf('/')),i&&i[1]]}) : null"
   },
   "pornbot": {
     "link": "^(?:v\\.)?(pornbot\\.net)/([\\da-z]{8,}).*",
@@ -1239,6 +1319,10 @@
   "4chan": {
     "img": "^(i\\.4cdn\\.org/[\\da-z]{1,3}/\\d+)s\\..*",
     "to": "$1.#jpg png webm gif#"
+  },
+  "archived.moe": {
+    "link": "^archived\\.moe/\\w{1,5}/redirect/",
+    "res": "; url=([^\"]+)"
   },
   "tistory": {
     "img": "^(cf(?:ile|s)\\d*\\.uf\\.tistory\\.com/)(?:original|image)(/[\\dA-F]+)",
@@ -1362,6 +1446,10 @@
     "img": "^(i\\d+\\.pixiv\\.net/img\\d+/)(img|profile|works/\\d+x\\d+)(/[^/]+/)(?:mobile/)?(\\d+)(?:_[^_]+(_p\\d+)|[^.]*)(\\.[^?]+).*",
     "to": ":\nreturn $[1] + ($[2]==='profile'?$[2]:'img') + $[3] + $[4] + ($[5] || '') + ($[6]==='.jpg' ? '.#jpg gif png#' : $[6]);"
   },
+  "myanimelist": {
+    "img": "^(myanimelist\\.cdn-dena\\.com/)(?:r/[^/]+/)?(?:(s/[^.]+)|(images/[^.]+\\d+(?:_thumb)?)\\D*)\\.([^?]+).*",
+    "to": ":\nreturn $[1]+($[2] || ($[3].indexOf('/userimages')>0 ? $[3].replace(/_?thumbs?\\/?/g,'') : $[3] + '#l #'))+'.'+$[4]"
+  },
   "zerochan.net": {
     "useimg": 1,
     "link": "^(zerochan\\.net)(/)(?:full/)?(\\d{4,}).*",
@@ -1377,6 +1465,19 @@
     "link": "^(renders-graphi(?:ques\\.fr|cs\\.com)/)gal(?:lery|erie)/[^/]+/[^.]+-(\\d+)\\.htm$",
     "img": "^((?:img\\d\\.)?renders-graphi(?:ques\\.fr|cs\\.com)/(?:image/upload/)?)mini/",
     "to": ":\nreturn $[2] ? $[1]+'gestion/telechargement.php?id_image='+$[2] : $[1]+'normal/';"
+  },
+  "XFileSharing-get": {
+    "link": "^((?:imagetwist|imageshimage)\\.com)/([\\da-z]{12})(/[\\w.-]+\\.(?:[Jj][Pp][Ee]?[Gg]|png|PNG|gif|GIF|bmp|BMP)(?:\\.html)?)$",
+    "url": "$1/$2$3",
+    "res": "src=\"(https?://[^\"]+)\" (\\w+=\"[^\"]+\"\\s+)*?(?:class=\"pic|id=\"[^\"]+\"\\s*>)",
+    "img": "^(?:i\\D{0,3}\\d*\\.)?((?:imagetwist|imageshimage)\\.com)/(?:i/\\d{5}/([\\da-z]{12})_[^.]+|th/\\d{5}/([\\da-z]{12}))\\.jpg$",
+    "note": "http://sibsoft.net/xfilesharing_free.html"
+  },
+  "XFileSharing-post": {
+    "link": "^([^/]+/)([\\da-z]{12})(/[\\w.-]+\\.(?:[Jj][Pp][Ee]?[Gg]|png|PNG|gif|GIF|bmp|BMP)(?:\\.html)?)$",
+    "url": "$1$2$3 :op=view&id=$2&pre=1",
+    "res": "src=\"(https?://[^\"]+)\" (\\w+=\"[^\"]+\"\\s+)*?(?:class=\"pic|id=\"[^\"]+\"\\s*>)",
+    "img": "^(?:i\\D{0,3}\\d*\\.|main\\.)?([^/]+/)(?:i/\\d{5}/([\\da-z]{12})_[^.]+|th/\\d{5}/([\\da-z]{12}))\\.jpg$"
   },
   "tumblr": {
     "useimg": 1,
@@ -1431,14 +1532,6 @@
     "img": "^([^/]+/[^/]+/)small(/\\d{4}/\\d{2}/\\d{2}/[\\da-f]{13}\\..+)",
     "to": "$1big$2",
     "note": "http://codecanyon.net/item/imgshot-image-hosting-script/2558257"
-  },
-  "XFileSharing": {
-    "useimg": 1,
-    "link": "^([^/]+)(/)([\\da-z]{12}/[\\w.-]+\\.(?:[Jj][Pp][Ee]?[Gg]|png|PNG|gif|GIF|bmp|BMP)(?:\\.html)?)$",
-    "url": "$1$2$3",
-    "res": "src=\"(https?://[^\"]+)\" (?:class=\"pic|id=\"[^\"]+\"\\s*>)",
-    "img": "^(?:i\\D{0,3}\\d*\\.)?([^/]+/)(?:i/\\d{5}/([\\da-z]{12})_[^.]+|th/\\d{5}/([\\da-z]{12}))\\.jpg$",
-    "note": "http://sibsoft.net/xfilesharing_free.html"
   },
   "CF-Image-Host": {
     "img": "^([^/]+/)(?:(?:[pd][mtl](-\\d+)|((?:[^/]+/)*?)[pd][mtl](/[\\dA-Z]{3,6}/.+))\\.(?:jpe?g|png|gif|bmp|html)$|(?:i(?:ndex|mage)\\.php)?\\?[pd][mtl]=([\\dA-Z]{3,6}))",
