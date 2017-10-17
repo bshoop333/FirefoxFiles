@@ -1,6 +1,6 @@
 {
     "createdBy": "Redirector v3.1.0",
-    "createdAt": "2017-10-13T10:01:43.515Z",
+    "createdAt": "2017-10-17T16:20:12.776Z",
     "redirects": [
         {
             "description": "Dota2录像直接下载",
@@ -346,13 +346,28 @@
             ]
         },
         {
-            "description": "去淘宝商品链接多余参数",
+            "description": "去淘宝商品链接多余参数-1",
             "exampleUrl": "https://world.taobao.com/item/38511133980.htm?fromSite=main&spm=a312a.7700846.0.0.y86A2H&_u=e1i52ae3e7ea",
             "exampleResult": "https://world.taobao.com/item/38511133980.htm",
             "error": null,
             "includePattern": "https://(world|detail)\\.taobao\\.com/item/(\\d+\\.htm)\\?.+",
             "excludePattern": "",
             "redirectUrl": "https://$1.taobao.com/item/$2",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "去淘宝商品链接多余参数-2",
+            "exampleUrl": "https://item.taobao.com/item.htm?spm=a230r.1.14.23.13e1baaflTu6N0&id=541144334083&ns=1&abbucket=9&wwlight=cntaobao%E9%87%8D%E5%90%AF%E4%B9%8B%E5%90%8E-%7B541144334083%7D#detail",
+            "exampleResult": "https://item.taobao.com/item.htm?id=541144334083",
+            "error": null,
+            "includePattern": "https://item\\.taobao\\.com/item\\.htm\\?.+&(id=\\d+).+",
+            "excludePattern": "",
+            "redirectUrl": "https://item.taobao.com/item.htm?$1",
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": false,
