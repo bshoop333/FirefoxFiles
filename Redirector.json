@@ -1,6 +1,6 @@
 {
     "createdBy": "Redirector v3.1.0",
-    "createdAt": "2017-10-17T16:20:12.776Z",
+    "createdAt": "2017-10-22T05:25:15.927Z",
     "redirects": [
         {
             "description": "Dota2录像直接下载",
@@ -22,9 +22,9 @@
             "exampleUrl": "http://i.imgur.com/Gn0Uw1Ob.jpg",
             "exampleResult": "https://i.imgur.com/Gn0Uw1Ob.jpg",
             "error": null,
-            "includePattern": "http://i.imgur.com/*",
+            "includePattern": "http://*.imgur.com/*",
             "excludePattern": "",
-            "redirectUrl": "https://i.imgur.com/$1",
+            "redirectUrl": "https://$1.imgur.com/$2",
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
