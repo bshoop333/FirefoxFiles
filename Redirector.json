@@ -1,7 +1,22 @@
 {
     "createdBy": "Redirector v3.1.0",
-    "createdAt": "2017-10-22T05:25:15.927Z",
+    "createdAt": "2017-11-12T04:27:23.766Z",
     "redirects": [
+        {
+            "description": "去YouTube跳转",
+            "exampleUrl": "https://www.youtube.com/redirect?redir_token=SrXe0qwzgURKt2MZg8_S4qQoMpZ8MTUxMDU0NzExMUAxNTEwNDYwNzEx&event=video_description&v=0-dSxbQtWTA&q=https%3A%2F%2Fwww.dotabuff.com%2Fmatches%2F3554951901",
+            "exampleResult": "https://www.dotabuff.com/matches/3554951901",
+            "error": null,
+            "includePattern": "https://www.youtube.com/redirect?*&q=*",
+            "excludePattern": "",
+            "redirectUrl": "$2",
+            "patternType": "W",
+            "processMatches": "urlDecode",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
         {
             "description": "Dota2录像直接下载",
             "exampleUrl": "http://replay224.valve.net/570/3480164726_1583810678.meta.bz2",
