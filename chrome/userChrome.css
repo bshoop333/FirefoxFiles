@@ -188,7 +188,7 @@ menuseparator {
 }
 
 
-@-moz-document regexp("data:text\/html;charset=utf8,.+<link%20rel='stylesheet'%20href='chrome:\/\/devtools\/content\/sourceeditor\/codemirror\/lib\/codemirror\.css'><link%20rel='stylesheet'%20href='chrome:\/\/devtools\/content\/sourceeditor\/codemirror\/addon\/dialog\/dialog\.css'><link%20rel='stylesheet'%20href='chrome:\/\/devtools\/content\/sourceeditor\/codemirror\/mozilla\.css.+") {
+@-moz-document url("chrome://devtools/content/sourceeditor/codemirror/cmiframe.html") {
     .CodeMirror-sizer * {
         font-family: Consolas;
         font-size: 16px;
