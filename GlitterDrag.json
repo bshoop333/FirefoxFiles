@@ -149,7 +149,7 @@
         "search_onsite": false,
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
-        "download_saveas": true
+        "download_saveas": false
       },
       "DIR_L": {
         "act_name": "ACT_COPY",
@@ -374,13 +374,13 @@
     "imageAction": "ALLOW_NORMAL",
     "linkAction": "ALLOW_NORMAL"
   },
+  "disableAdjustTabSequence": true,
   "enableStyle": false,
   "enableTimeoutCancel": false,
   "enableAutoSelectPreviousTab": true,
   "enableCtrlKey": false,
   "enableShiftKey": false,
   "timeoutCancel": 2000,
-  "disableAdjustTabSequence": true,
   "switchToParentTab": false,
   "tipsContent": {
     "ACT_NONE": "%a",
