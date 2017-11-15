@@ -87,8 +87,8 @@
         "scrollLeft": [
           [
             {
-              "code": "KeyL",
-              "key": "l",
+              "code": "KeyH",
+              "key": "h",
               "shiftKey": false,
               "ctrlKey": false,
               "altKey": false,
@@ -99,8 +99,8 @@
         "scrollRight": [
           [
             {
-              "code": "KeyH",
-              "key": "h",
+              "code": "KeyL",
+              "key": "l",
               "shiftKey": false,
               "ctrlKey": false,
               "altKey": false,
