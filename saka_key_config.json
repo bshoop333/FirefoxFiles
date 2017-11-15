@@ -241,7 +241,18 @@
             }
           ]
         ],
-        "duplicateTab": [],
+        "duplicateTab": [
+          [
+            {
+              "code": "KeyD",
+              "key": "D",
+              "shiftKey": true,
+              "ctrlKey": false,
+              "altKey": false,
+              "metaKey": false
+            }
+          ]
+        ],
         "newWindow": [],
         "newIncognitoWindow": [],
         "switchWindow": [
@@ -352,9 +363,31 @@
             }
           ]
         ],
-        "clipboardCurrentTab": [],
+        "clipboardCurrentTab": [
+          [
+            {
+              "code": "KeyP",
+              "key": "p",
+              "shiftKey": false,
+              "ctrlKey": false,
+              "altKey": false,
+              "metaKey": false
+            }
+          ]
+        ],
         "clipboardBackgroundTab": [],
-        "clipboardForegroundTab": [],
+        "clipboardForegroundTab": [
+          [
+            {
+              "code": "KeyP",
+              "key": "P",
+              "shiftKey": true,
+              "ctrlKey": false,
+              "altKey": false,
+              "metaKey": false
+            }
+          ]
+        ],
         "clipboardNewWindow": [],
         "clipboardIncognitoWindow": []
       }
