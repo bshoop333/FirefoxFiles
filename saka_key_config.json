@@ -13,7 +13,7 @@
         "autoActivateHint": true,
         "hintDetectByCursorStyle": true,
         "smoothScroll": true,
-        "scrollStep": 5
+        "scrollStep": 7.5
       }
     },
     "Keybindings": {
