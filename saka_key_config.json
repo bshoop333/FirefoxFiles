@@ -20,7 +20,26 @@
             }
           ]
         ],
-        "openLinkInBackgroundTab": [],
+        "openLinkInBackgroundTab": [
+          [
+            {
+              "code": "Semicolon",
+              "key": ";",
+              "shiftKey": false,
+              "ctrlKey": false,
+              "altKey": false,
+              "metaKey": false
+            },
+            {
+              "code": "KeyB",
+              "key": "b",
+              "shiftKey": false,
+              "ctrlKey": false,
+              "altKey": false,
+              "metaKey": false
+            }
+          ]
+        ],
         "openLinkInForegroundTab": [
           [
             {
