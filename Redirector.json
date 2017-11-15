@@ -1,7 +1,29 @@
 {
     "createdBy": "Redirector v3.1.0",
-    "createdAt": "2017-11-12T04:27:23.766Z",
+    "createdAt": "2017-11-13T14:52:41.330Z",
     "redirects": [
+        {
+            "description": "禁用Dota2CDN (因为总是连接被重置)",
+            "exampleUrl": "http://cdn.dota2.com/steamcommunity/public/images/avatars/https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+            "exampleResult": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb_medium.jpg",
+            "error": null,
+            "includePattern": "http://cdn.dota2.com/steamcommunity/public/images/avatars/*",
+            "excludePattern": "",
+            "redirectUrl": "$1",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame",
+                "sub_frame",
+                "stylesheet",
+                "script",
+                "image",
+                "object",
+                "xmlhttprequest",
+                "other"
+            ]
+        },
         {
             "description": "去YouTube跳转",
             "exampleUrl": "https://www.youtube.com/redirect?redir_token=SrXe0qwzgURKt2MZg8_S4qQoMpZ8MTUxMDU0NzExMUAxNTEwNDYwNzEx&event=video_description&v=0-dSxbQtWTA&q=https%3A%2F%2Fwww.dotabuff.com%2Fmatches%2F3554951901",
