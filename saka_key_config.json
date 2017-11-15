@@ -2,7 +2,7 @@
   "activeProfiles": {
     "General": "power",
     "Keybindings": "power_copy_1510710859694",
-    "Appearance": "vimium"
+    "Appearance": "vimium_copy_1510714765107"
   },
   "profiles": {
     "General": {},
@@ -363,35 +363,37 @@
             }
           ]
         ],
-        "clipboardCurrentTab": [
-          [
-            {
-              "code": "KeyP",
-              "key": "p",
-              "shiftKey": false,
-              "ctrlKey": false,
-              "altKey": false,
-              "metaKey": false
-            }
-          ]
-        ],
+        "clipboardCurrentTab": [],
         "clipboardBackgroundTab": [],
-        "clipboardForegroundTab": [
-          [
-            {
-              "code": "KeyP",
-              "key": "P",
-              "shiftKey": true,
-              "ctrlKey": false,
-              "altKey": false,
-              "metaKey": false
-            }
-          ]
-        ],
+        "clipboardForegroundTab": [],
         "clipboardNewWindow": [],
         "clipboardIncognitoWindow": []
       }
     },
-    "Appearance": {}
+    "Appearance": {
+      "vimium_copy_1510714765107": {
+        "hintUseTargetSize": false,
+        "hintHorizontalPlacement": "left",
+        "hintVerticalPlacement": "top",
+        "hintHorizontalTranslation": 0,
+        "hintVerticalTranslation": 0,
+        "hintUseCustomCSS": true,
+        "hintTextColor": "#ff4081",
+        "hintBackgroundColor": "#ffffff",
+        "hintBorderColor": "#ff4081",
+        "hintOpacity": "1",
+        "hintFontFamily": "Roboto, sans-serif",
+        "hintFontSize": 12,
+        "hintFontWeight": "500",
+        "hintHorizontalPadding": 0.25,
+        "hintVerticalPadding": 0.15,
+        "hintBorderWidth": 1,
+        "hintBorderRadius": 4,
+        "hintShadow": true,
+        "hintCSS": "font-family: Helvetica, Arial, sans-serif;\nfont-weight: 100;\nfont-size: 12px;\npadding: 0px 2px;\nbackground: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF785), color-stop(100%,#FFC542));\nborder: 1px solid #E3BE23;\nborder-radius: 4px;\ncolor: black;\nfont-weight: bold;\ntext-align: center;\ntext-decoration: none;\ntext-transform: uppercase;\nvertical-align: middle;\ntext-shadow: rgba(255, 255, 255, 0.6) 0px 1px 0px;\nfont-weight: bold;",
+        "hintNormalCharCSS": "",
+        "hintActiveCharCSS": "opacity: 0.5;"
+      }
+    }
   }
 }
