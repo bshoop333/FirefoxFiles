@@ -1,11 +1,21 @@
 {
   "activeProfiles": {
-    "General": "power",
+    "General": "power_copy_1510716941793",
     "Keybindings": "power_copy_1510710859694",
     "Appearance": "vimium_copy_1510714765107"
   },
   "profiles": {
-    "General": {},
+    "General": {
+      "power_copy_1510716941793": {
+        "enabled": true,
+        "preventStealFocus": true,
+        "disablePageShortcuts": false,
+        "autoActivateHint": true,
+        "hintDetectByCursorStyle": true,
+        "smoothScroll": true,
+        "scrollStep": 5
+      }
+    },
     "Keybindings": {
       "power_copy_1510710859694": {
         "physicalKeys": true,
