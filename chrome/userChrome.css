@@ -1,30 +1,3 @@
-/************************************* VimFx! ********************************************/
-/* hint mode style */
-#VimFxMarkersContainer .marker {
-    padding: 1px 2px 0 2px !important;
-    background-color: #FFD76E !important;
-    border: solid 1px #AD810C !important;
-    border-radius: 2px !important;
-    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.3) !important;
-    font-size: 14px !important;
-    color: #302505 !important;
-    font-family: "Helvetica Neue", "Helvetica", "Arial", "Sans" !important;
-    font-weight: bold !important;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) !important;
-}
-#VimFxMarkersContainer .marker--matched,
-#VimFxMarkersContainer .marker-char--matched {
-    color: #FFA22A !important;
-}
-#VimFxMarkersContainer .marker--highlighted {
-    background-color: #FFD76E !important;
-}
-/* blur the url bar red when entering caret mode */
-#main-window[vimfx-mode="ignore"] #urlbar {
-    background: red !important;
-}
-
-
 /******************************** Firefox Tabs Counter **************************************/
 #main-window {
     counter-reset: tabs;
@@ -35,7 +8,7 @@
 }
 #alltabs-button {
     visibility: visible!important;
-    margin-right: -22px !important;
+    margin-right: -35px !important;
 }
 #alltabs-button:after {
     content: counter(tabs);
@@ -55,19 +28,16 @@
   filter:grayscale(1) saturate(1) contrast(0.65) brightness(1.4);
 }
 */
-
-/* Hide PanelUI Button */
-#PanelUI-button {
+/* Hide close buttons of inactive tabs */
+tab:not([selected]) .close-icon {
     display: none;
 }
-
-/* Widen Tabs Bar */
-#TabsToolbar {
-    padding-inline-start: 0 !important;
+/* Hide Page Action Button */
+#pageActionButton {
+    display: none;
 }
-
-/* Hide Zoom Percentage*/
-#urlbar-zoom-button {
+/* Hide PanelUI Button */
+#PanelUI-button {
     display: none;
 }
 
@@ -102,10 +72,6 @@ toolbarbutton dropmarker {
     margin-bottom: -1px;
 }
 
-/* adjustment for AutoComplete items */
-.autocomplete-richlistitem>.ac-type-icon {
-    margin-left: 0px !important;
-}
 
 /*===================菜单调整=====================*/
 /* Hide Horizontal Menu */
