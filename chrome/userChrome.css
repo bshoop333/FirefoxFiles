@@ -20,6 +20,10 @@
 
 
 /******************************** Interface Adjustment **************************************/
+/* Show close buttons when hovering on inactive tabs */
+tab:hover .close-icon {
+    display: block !important;
+}
 /* 标签页载入动画图标 */
 /* .tab-throbber {visibility: hidden;} */
 /* 图标黑白化处理 */
@@ -124,13 +128,9 @@ menuitem[disabled="true"] {
 /* tab menu */
 #mafMenuSaveTabsInArchive_tabsContextMenu,
 #context_openTabInWindow，#context_reloadTab,
-#context_pinTab,
-#context_unpinTab,
 #context_reloadTab,
 #context_undoCloseTab,
-#printPages2Pdf-men_printThisTab,
-#context_openTabInWindow,
-#xnotifier-tabMenu {
+#context_openTabInWindow {
     display: none;
 }
 
