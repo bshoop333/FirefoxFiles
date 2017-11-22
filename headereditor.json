@@ -1,1 +1,793 @@
-{"request":[],"sendHeader":[{"name":"ipip.net","ruleType":"modifySendHeader","pattern":"http://www.ipip.net","action":{"name":"Referer","value":"http://www.ipip.net"},"matchType":"prefix","isFunction":0,"enable":1,"id":58},{"name":"Pixiv","ruleType":"modifySendHeader","pattern":"pixiv\\.net|pximg\\.net","action":{"name":"Referer","value":"https://www.pixiv.net/"},"matchType":"regexp","isFunction":0,"enable":1,"id":59,"_reg":{}},{"name":"豆瓣","ruleType":"modifySendHeader","pattern":"douban\\.com","action":{"name":"Referer","value":"https://www.douban.com"},"matchType":"regexp","isFunction":0,"enable":1,"id":60,"_reg":{}},{"name":"百度-1","ruleType":"modifySendHeader","pattern":"hiphotos\\.bdimg\\.com","action":{"name":"Referer","value":""},"matchType":"regexp","isFunction":0,"enable":1,"exclude":"","id":61,"_reg":{}},{"name":"百度-2","ruleType":"modifySendHeader","pattern":"imgt\\d+\\.bdstatic\\.com","action":{"name":"Referer","value":"https://tieba.baidu.com"},"matchType":"regexp","isFunction":0,"enable":1,"exclude":"","id":62,"_reg":{}},{"name":"百度-3","ruleType":"modifySendHeader","pattern":"(i\\d+|imgsa)\\.baidu\\.com","action":{"name":"Referer","value":"http://imgsa.baidu.com"},"matchType":"regexp","isFunction":0,"enable":1,"id":63,"_reg":{}},{"name":"百度-4","ruleType":"modifySendHeader","pattern":"(imgsrc|hiphotos)\\.baidu\\.com","action":{"name":"Referer","value":"https://tieba.baidu.com"},"matchType":"regexp","isFunction":0,"enable":1,"id":64,"_reg":{}},{"name":"百度-5","ruleType":"modifySendHeader","pattern":"http://jump.bdimg.com/safecheck/","exclude":"","action":{"name":"Referer","value":"https://tieba.baidu.com"},"matchType":"prefix","isFunction":0,"enable":1,"id":65},{"name":"isnowfy","ruleType":"modifySendHeader","pattern":"www\\.isnowfy\\.com","action":{"name":"Referer","value":"http://www.isnowfy.com/"},"matchType":"regexp","isFunction":0,"enable":1,"id":66,"_reg":{}},{"name":"汽车之家","ruleType":"modifySendHeader","pattern":"club\\d+\\.autoimg\\.cn","action":{"name":"Referer","value":"http://www.autohome.com.cn/"},"matchType":"regexp","isFunction":0,"enable":1,"id":67,"_reg":{}},{"name":"天涯-1","ruleType":"modifySendHeader","pattern":"tianya\\.cn","action":{"name":"Referer","value":"https://www.tianya.cn"},"matchType":"regexp","isFunction":0,"enable":1,"id":68,"_reg":{}},{"name":"天涯-2","ruleType":"modifySendHeader","pattern":"img\\d+\\.laibafile\\.cn","action":{"name":"Referer","value":"http://bbs.tianya.cn/"},"matchType":"regexp","isFunction":0,"enable":1,"id":69,"_reg":{}},{"name":"文学城","ruleType":"modifySendHeader","pattern":"wenxuecity\\.com","action":{"name":"Referer","value":"http://www.wenxuecity.com"},"matchType":"regexp","isFunction":0,"enable":1,"id":70,"_reg":{}},{"name":"Disqus CDN","ruleType":"modifySendHeader","pattern":"disquscdn\\.com","action":{"name":"Referer","value":""},"matchType":"regexp","isFunction":0,"enable":1,"id":71,"_reg":{}},{"name":"多说","ruleType":"modifySendHeader","pattern":"duoshuo\\.com","action":{"name":"Referer","value":""},"matchType":"regexp","isFunction":0,"enable":1,"id":72,"_reg":{}},{"name":"Gravatar","ruleType":"modifySendHeader","pattern":"gravatar\\.com","action":{"name":"Referer","value":""},"matchType":"regexp","isFunction":0,"enable":1,"id":73,"_reg":{}},{"name":"wp.com","ruleType":"modifySendHeader","pattern":"wp\\.com","action":{"name":"Referer","value":""},"matchType":"regexp","isFunction":0,"enable":1,"id":74,"_reg":{}},{"name":"QQ空间图片-1","ruleType":"modifySendHeader","pattern":"qlogo\\.cn","action":{"name":"Referer","value":""},"matchType":"regexp","isFunction":0,"enable":1,"id":75,"exclude":"","_reg":{}},{"name":"QQ空间图片-2","ruleType":"modifySendHeader","pattern":"qpic\\.cn","action":{"name":"Referer","value":"https://qzone.qq.com"},"exclude":"","matchType":"regexp","isFunction":0,"enable":1,"id":76,"_reg":{}},{"name":"搜狗问问","ruleType":"modifySendHeader","pattern":"pic\\.wenwen\\.soso\\.com","action":{"name":"Referer","value":""},"matchType":"regexp","isFunction":0,"enable":1,"id":77,"exclude":"","_reg":{}},{"name":"昵图网","ruleType":"modifySendHeader","pattern":"nipic\\.com","action":{"name":"Referer","value":""},"matchType":"regexp","isFunction":0,"enable":1,"id":78,"_reg":{}},{"name":"pcpc.me","ruleType":"modifySendHeader","pattern":"pcpc\\.me","action":{"name":"Referer","value":""},"matchType":"regexp","isFunction":0,"enable":1,"id":79,"_reg":{}},{"name":"CNKI","ruleType":"modifySendHeader","pattern":"cnki\\.net","action":{"name":"Referer","value":"http://www.cnki.net"},"matchType":"regexp","isFunction":0,"enable":1,"id":80,"_reg":{}},{"name":"中关村在线-1","ruleType":"modifySendHeader","pattern":"zol-img\\.com\\.cn","action":{"name":"Referer","value":"http://www.zol-img.com.cn"},"matchType":"regexp","isFunction":0,"enable":1,"id":81,"_reg":{}},{"name":"中关村在线-2","ruleType":"modifySendHeader","pattern":"zol\\.com\\.cn","action":{"name":"Referer","value":"http://www.zol.com.cn"},"matchType":"regexp","isFunction":0,"enable":1,"id":82,"_reg":{}},{"name":"新浪-1","ruleType":"modifySendHeader","pattern":"sinaimg\\.cn","action":{"name":"Referer","value":"https://blog.sina.com.cn/"},"exclude":"","matchType":"regexp","isFunction":0,"enable":1,"id":83,"_reg":{}},{"name":"新浪-2","ruleType":"modifySendHeader","pattern":"(photo|album)\\.sina\\.com\\.cn","action":{"name":"Referer","value":"blog.sina.com.cn"},"matchType":"regexp","isFunction":0,"enable":1,"id":84,"_reg":{}},{"name":"360doc","ruleType":"modifySendHeader","pattern":"360doc\\.com","action":{"name":"Referer","value":"http://www.360doc.com"},"matchType":"regexp","isFunction":0,"enable":1,"id":85,"_reg":{}},{"name":"tripod.com","ruleType":"modifySendHeader","pattern":"tripod\\.com","action":{"name":"Referer","value":"http://www.tripod.com"},"matchType":"regexp","isFunction":0,"enable":1,"id":86,"_reg":{}},{"name":"大河网","ruleType":"modifySendHeader","pattern":"dahe\\.cn","action":{"name":"Referer","value":"http://www.dahe.cn"},"matchType":"regexp","isFunction":0,"enable":1,"id":87,"_reg":{}},{"name":"西祠胡同","ruleType":"modifySendHeader","pattern":"xici\\.com","action":{"name":"Referer","value":"http://www.xici.com"},"matchType":"regexp","isFunction":0,"enable":1,"id":88,"_reg":{}},{"name":"艺龙","ruleType":"modifySendHeader","pattern":"elong\\.com","action":{"name":"Referer","value":"http://www.elong.com"},"matchType":"regexp","isFunction":0,"enable":1,"id":89,"_reg":{}},{"name":"天堂图片网","ruleType":"modifySendHeader","pattern":"ivsky\\.com","action":{"name":"Referer","value":"http://www.ivsky.com"},"matchType":"regexp","isFunction":0,"enable":1,"id":90,"_reg":{}},{"name":"动漫铃声吧","ruleType":"modifySendHeader","pattern":"acglingsheng8\\.com","action":{"name":"Referer","value":"http://www.acglingsheng8.com"},"matchType":"regexp","isFunction":0,"enable":1,"id":91,"exclude":"","_reg":{}},{"name":"kidspast.com","ruleType":"modifySendHeader","pattern":"kidspast\\.com","action":{"name":"Referer","value":"http://www.kidspast.com"},"matchType":"regexp","isFunction":0,"enable":1,"id":92,"_reg":{}},{"name":"看漫画","ruleType":"modifySendHeader","pattern":"hamreus\\.com","action":{"name":"Referer","value":"ikanman.com"},"matchType":"regexp","isFunction":0,"enable":1,"id":93,"exclude":"","_reg":{}},{"name":"百度网盘","ruleType":"modifySendHeader","pattern":"pan\\.baidu\\.com","action":{"name":"Referer","value":"https://pan.baidu.com"},"matchType":"regexp","isFunction":0,"enable":1,"id":94,"_reg":{}},{"name":"163-1","ruleType":"modifySendHeader","pattern":"img\\d{0,9}\\.(bimg\\.126\\.net|(?:photo|blog)\\.163\\.com)","action":{"name":"Referer","value":"blog.163.com"},"matchType":"regexp","isFunction":0,"enable":1,"id":95,"_reg":{}},{"name":"163-2","ruleType":"modifySendHeader","pattern":"img.*(126\\.net|163\\.com)","action":{"name":"Referer","value":""},"exclude":"","matchType":"regexp","isFunction":0,"enable":1,"id":96,"_reg":{}},{"name":"56网","ruleType":"modifySendHeader","pattern":"photo\\.56\\.com","action":{"name":"Referer","value":"http://photo.56.com"},"matchType":"regexp","isFunction":0,"enable":1,"id":97,"_reg":{}},{"name":"QQ","ruleType":"modifySendHeader","pattern":"qq\\.com","action":{"name":"Referer","value":"http://b45.photo.store.qq.com/"},"matchType":"regexp","isFunction":0,"enable":1,"id":98,"_reg":{}},{"name":"Flickr","ruleType":"modifySendHeader","pattern":"flickr\\.com","action":{"name":"Referer","value":"http://www.flickr.com"},"matchType":"regexp","isFunction":0,"enable":1,"id":99,"_reg":{}},{"name":"太平洋电脑网","ruleType":"modifySendHeader","pattern":"img\\d?\\.pconline\\.com\\.cn","action":{"name":"Referer","value":""},"exclude":"","matchType":"regexp","isFunction":0,"enable":1,"id":100,"_reg":{}},{"name":"搜狐","ruleType":"modifySendHeader","pattern":"pp\\.sohu\\.com(\\.cn)?","action":{"name":"Referer","value":"http://pp.sohu.com.cn"},"matchType":"regexp","isFunction":0,"enable":1,"id":101,"_reg":{}},{"name":"动漫之家 & 动漫屋","ruleType":"modifySendHeader","pattern":"dmzj|dm5\\.com","action":{"name":"User-Agent","value":"Mozilla/5.0 (Linux; Android 7.1.1; ONEPLUS A3000 Build/NMF26F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.132 Mobile Safari/537.36"},"exclude":"","matchType":"regexp","isFunction":0,"enable":1,"id":102,"_reg":{}},{"name":"CCTV & CNTV","ruleType":"modifySendHeader","pattern":"tv\\.(cctv|cntv)\\.(com|cn)","action":{"name":"User-Agent","value":"Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_1_1 like Mac OS X; en) AppleWebKit/534.46.0 (KHTML, like Gecko) CriOS/19.0.1084.60 Mobile/9B206 Safari/7534.48.3"},"matchType":"regexp","isFunction":0,"enable":1,"id":103,"_reg":{}},{"name":"有道云笔记","ruleType":"modifySendHeader","pattern":"note\\.youdao\\.com","action":{"name":"User-Agent","value":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.81 Safari/537.36"},"matchType":"regexp","isFunction":0,"enable":1,"id":104,"_reg":{}},{"name":"海贼小站","ruleType":"modifySendHeader","pattern":"onepiece\\.cc|one-piece\\.cn","exclude":"","action":{"name":"User-Agent","value":"Mozilla/5.0 (Linux; Android 7.1.1; ONEPLUS A3000 Build/NMF26F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.132 Mobile Safari/537.36"},"matchType":"regexp","isFunction":0,"enable":1,"id":105,"_reg":{}},{"enable":1,"name":"Chiphell","ruleType":"modifySendHeader","matchType":"regexp","pattern":"chiphell\\.com","exclude":"","isFunction":0,"action":{"name":"Referer","value":""},"id":106,"_reg":{}},{"enable":1,"name":"煎蛋","ruleType":"modifySendHeader","matchType":"regexp","pattern":"jdstatic\\.tankr\\.net","exclude":"","isFunction":0,"action":{"name":"Referer","value":"jandan.net"},"id":107,"_reg":{}},{"enable":1,"name":"178","ruleType":"modifySendHeader","matchType":"regexp","pattern":"img\\d+\\.178\\.com","exclude":"","isFunction":0,"action":{"name":"Referer","value":""},"id":109,"_reg":{}},{"enable":1,"name":"爱稀奇","ruleType":"modifySendHeader","matchType":"regexp","pattern":"images\\.ixiqi\\.com","exclude":"","isFunction":0,"action":{"name":"Referer","value":""},"id":110,"_reg":{}},{"enable":1,"name":"吐槽弹幕网","ruleType":"modifySendHeader","matchType":"domain","pattern":"img.tucao.tv","exclude":"","isFunction":0,"action":{"name":"Referer","value":""},"id":114},{"enable":1,"name":"修复工信部申诉提交页面","ruleType":"modifySendHeader","matchType":"domain","pattern":"www.chinatcc.gov.cn","exclude":"","isFunction":0,"action":{"name":"User-Agent","value":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36"},"id":115}],"receiveHeader":[{"name":"CROS for m3u8 and ts","ruleType":"modifyReceiveHeader","pattern":"\\.m3u8|\\.ts|/ts","action":{"name":"Access-Control-Allow-Origin","value":"*"},"matchType":"regexp","isFunction":0,"enable":1,"id":6,"exclude":"","_reg":{}}]}
+{
+  "request": [],
+  "sendHeader": [
+    {
+      "name": "ipip.net",
+      "ruleType": "modifySendHeader",
+      "pattern": "http://www.ipip.net",
+      "action": {
+        "name": "Referer",
+        "value": "http://www.ipip.net"
+      },
+      "matchType": "prefix",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 58
+    },
+    {
+      "name": "Pixiv",
+      "ruleType": "modifySendHeader",
+      "pattern": "pixiv\\.net|pximg\\.net",
+      "action": {
+        "name": "Referer",
+        "value": "https://www.pixiv.net/"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 59,
+      "_reg": {}
+    },
+    {
+      "name": "豆瓣",
+      "ruleType": "modifySendHeader",
+      "pattern": "douban\\.com",
+      "action": {
+        "name": "Referer",
+        "value": "https://www.douban.com"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 60,
+      "_reg": {}
+    },
+    {
+      "name": "百度-1",
+      "ruleType": "modifySendHeader",
+      "pattern": "hiphotos\\.bdimg\\.com",
+      "action": {
+        "name": "Referer",
+        "value": ""
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "exclude": "",
+      "id": 61,
+      "_reg": {}
+    },
+    {
+      "name": "百度-2",
+      "ruleType": "modifySendHeader",
+      "pattern": "imgt\\d+\\.bdstatic\\.com",
+      "action": {
+        "name": "Referer",
+        "value": "https://tieba.baidu.com"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "exclude": "",
+      "id": 62,
+      "_reg": {}
+    },
+    {
+      "name": "百度-3",
+      "ruleType": "modifySendHeader",
+      "pattern": "(i\\d+|imgsa)\\.baidu\\.com",
+      "action": {
+        "name": "Referer",
+        "value": "http://imgsa.baidu.com"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 63,
+      "_reg": {}
+    },
+    {
+      "name": "百度-4",
+      "ruleType": "modifySendHeader",
+      "pattern": "(imgsrc|hiphotos)\\.baidu\\.com",
+      "action": {
+        "name": "Referer",
+        "value": "https://tieba.baidu.com"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 64,
+      "_reg": {}
+    },
+    {
+      "name": "百度-5",
+      "ruleType": "modifySendHeader",
+      "pattern": "http://jump.bdimg.com/safecheck/",
+      "exclude": "",
+      "action": {
+        "name": "Referer",
+        "value": "https://tieba.baidu.com"
+      },
+      "matchType": "prefix",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 65
+    },
+    {
+      "name": "isnowfy",
+      "ruleType": "modifySendHeader",
+      "pattern": "www\\.isnowfy\\.com",
+      "action": {
+        "name": "Referer",
+        "value": "http://www.isnowfy.com/"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 66,
+      "_reg": {}
+    },
+    {
+      "name": "汽车之家",
+      "ruleType": "modifySendHeader",
+      "pattern": "club\\d+\\.autoimg\\.cn",
+      "action": {
+        "name": "Referer",
+        "value": "http://www.autohome.com.cn/"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 67,
+      "_reg": {}
+    },
+    {
+      "name": "天涯-1",
+      "ruleType": "modifySendHeader",
+      "pattern": "tianya\\.cn",
+      "action": {
+        "name": "Referer",
+        "value": "https://www.tianya.cn"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 68,
+      "_reg": {}
+    },
+    {
+      "name": "天涯-2",
+      "ruleType": "modifySendHeader",
+      "pattern": "img\\d+\\.laibafile\\.cn",
+      "action": {
+        "name": "Referer",
+        "value": "http://bbs.tianya.cn/"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 69,
+      "_reg": {}
+    },
+    {
+      "name": "文学城",
+      "ruleType": "modifySendHeader",
+      "pattern": "wenxuecity\\.com",
+      "action": {
+        "name": "Referer",
+        "value": "http://www.wenxuecity.com"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 70,
+      "_reg": {}
+    },
+    {
+      "name": "Disqus CDN",
+      "ruleType": "modifySendHeader",
+      "pattern": "disquscdn\\.com",
+      "action": {
+        "name": "Referer",
+        "value": ""
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 71,
+      "_reg": {}
+    },
+    {
+      "name": "多说",
+      "ruleType": "modifySendHeader",
+      "pattern": "duoshuo\\.com",
+      "action": {
+        "name": "Referer",
+        "value": ""
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 72,
+      "_reg": {}
+    },
+    {
+      "name": "Gravatar",
+      "ruleType": "modifySendHeader",
+      "pattern": "gravatar\\.com",
+      "action": {
+        "name": "Referer",
+        "value": ""
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 73,
+      "_reg": {}
+    },
+    {
+      "name": "wp.com",
+      "ruleType": "modifySendHeader",
+      "pattern": "wp\\.com",
+      "action": {
+        "name": "Referer",
+        "value": ""
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 74,
+      "_reg": {}
+    },
+    {
+      "name": "QQ空间图片-1",
+      "ruleType": "modifySendHeader",
+      "pattern": "qlogo\\.cn",
+      "action": {
+        "name": "Referer",
+        "value": ""
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 75,
+      "exclude": "",
+      "_reg": {}
+    },
+    {
+      "name": "QQ空间图片-2",
+      "ruleType": "modifySendHeader",
+      "pattern": "qpic\\.cn",
+      "action": {
+        "name": "Referer",
+        "value": "https://qzone.qq.com"
+      },
+      "exclude": "",
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 76,
+      "_reg": {}
+    },
+    {
+      "name": "搜狗问问",
+      "ruleType": "modifySendHeader",
+      "pattern": "pic\\.wenwen\\.soso\\.com",
+      "action": {
+        "name": "Referer",
+        "value": ""
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 77,
+      "exclude": "",
+      "_reg": {}
+    },
+    {
+      "name": "昵图网",
+      "ruleType": "modifySendHeader",
+      "pattern": "nipic\\.com",
+      "action": {
+        "name": "Referer",
+        "value": ""
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 78,
+      "_reg": {}
+    },
+    {
+      "name": "pcpc.me",
+      "ruleType": "modifySendHeader",
+      "pattern": "pcpc\\.me",
+      "action": {
+        "name": "Referer",
+        "value": ""
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 79,
+      "_reg": {}
+    },
+    {
+      "name": "CNKI",
+      "ruleType": "modifySendHeader",
+      "pattern": "cnki\\.net",
+      "action": {
+        "name": "Referer",
+        "value": "http://www.cnki.net"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 80,
+      "_reg": {}
+    },
+    {
+      "name": "中关村在线-1",
+      "ruleType": "modifySendHeader",
+      "pattern": "zol-img\\.com\\.cn",
+      "action": {
+        "name": "Referer",
+        "value": "http://www.zol-img.com.cn"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 81,
+      "_reg": {}
+    },
+    {
+      "name": "中关村在线-2",
+      "ruleType": "modifySendHeader",
+      "pattern": "zol\\.com\\.cn",
+      "action": {
+        "name": "Referer",
+        "value": "http://www.zol.com.cn"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 82,
+      "_reg": {}
+    },
+    {
+      "name": "新浪-1",
+      "ruleType": "modifySendHeader",
+      "pattern": "sinaimg\\.cn",
+      "action": {
+        "name": "Referer",
+        "value": "https://blog.sina.com.cn/"
+      },
+      "exclude": "",
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 83,
+      "_reg": {}
+    },
+    {
+      "name": "新浪-2",
+      "ruleType": "modifySendHeader",
+      "pattern": "(photo|album)\\.sina\\.com\\.cn",
+      "action": {
+        "name": "Referer",
+        "value": "blog.sina.com.cn"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 84,
+      "_reg": {}
+    },
+    {
+      "name": "360doc",
+      "ruleType": "modifySendHeader",
+      "pattern": "360doc\\.com",
+      "action": {
+        "name": "Referer",
+        "value": "http://www.360doc.com"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 85,
+      "_reg": {}
+    },
+    {
+      "name": "tripod.com",
+      "ruleType": "modifySendHeader",
+      "pattern": "tripod\\.com",
+      "action": {
+        "name": "Referer",
+        "value": "http://www.tripod.com"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 86,
+      "_reg": {}
+    },
+    {
+      "name": "大河网",
+      "ruleType": "modifySendHeader",
+      "pattern": "dahe\\.cn",
+      "action": {
+        "name": "Referer",
+        "value": "http://www.dahe.cn"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 87,
+      "_reg": {}
+    },
+    {
+      "name": "西祠胡同",
+      "ruleType": "modifySendHeader",
+      "pattern": "xici\\.com",
+      "action": {
+        "name": "Referer",
+        "value": "http://www.xici.com"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 88,
+      "_reg": {}
+    },
+    {
+      "name": "艺龙",
+      "ruleType": "modifySendHeader",
+      "pattern": "elong\\.com",
+      "action": {
+        "name": "Referer",
+        "value": "http://www.elong.com"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 89,
+      "_reg": {}
+    },
+    {
+      "name": "天堂图片网",
+      "ruleType": "modifySendHeader",
+      "pattern": "ivsky\\.com",
+      "action": {
+        "name": "Referer",
+        "value": "http://www.ivsky.com"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 90,
+      "_reg": {}
+    },
+    {
+      "name": "动漫铃声吧",
+      "ruleType": "modifySendHeader",
+      "pattern": "acglingsheng8\\.com",
+      "action": {
+        "name": "Referer",
+        "value": "http://www.acglingsheng8.com"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 91,
+      "exclude": "",
+      "_reg": {}
+    },
+    {
+      "name": "kidspast.com",
+      "ruleType": "modifySendHeader",
+      "pattern": "kidspast\\.com",
+      "action": {
+        "name": "Referer",
+        "value": "http://www.kidspast.com"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 92,
+      "_reg": {}
+    },
+    {
+      "name": "看漫画",
+      "ruleType": "modifySendHeader",
+      "pattern": "hamreus\\.com",
+      "action": {
+        "name": "Referer",
+        "value": "ikanman.com"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 93,
+      "exclude": "",
+      "_reg": {}
+    },
+    {
+      "name": "百度网盘",
+      "ruleType": "modifySendHeader",
+      "pattern": "pan\\.baidu\\.com",
+      "action": {
+        "name": "Referer",
+        "value": "https://pan.baidu.com"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 94,
+      "_reg": {}
+    },
+    {
+      "name": "163-1",
+      "ruleType": "modifySendHeader",
+      "pattern": "img\\d{0,9}\\.(bimg\\.126\\.net|(?:photo|blog)\\.163\\.com)",
+      "action": {
+        "name": "Referer",
+        "value": "blog.163.com"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 95,
+      "_reg": {}
+    },
+    {
+      "name": "163-2",
+      "ruleType": "modifySendHeader",
+      "pattern": "img.*(126\\.net|163\\.com)",
+      "action": {
+        "name": "Referer",
+        "value": ""
+      },
+      "exclude": "",
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 96,
+      "_reg": {}
+    },
+    {
+      "name": "56网",
+      "ruleType": "modifySendHeader",
+      "pattern": "photo\\.56\\.com",
+      "action": {
+        "name": "Referer",
+        "value": "http://photo.56.com"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 97,
+      "_reg": {}
+    },
+    {
+      "name": "QQ",
+      "ruleType": "modifySendHeader",
+      "pattern": "qq\\.com",
+      "action": {
+        "name": "Referer",
+        "value": "http://b45.photo.store.qq.com/"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 98,
+      "_reg": {}
+    },
+    {
+      "name": "Flickr",
+      "ruleType": "modifySendHeader",
+      "pattern": "flickr\\.com",
+      "action": {
+        "name": "Referer",
+        "value": "http://www.flickr.com"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 99,
+      "_reg": {}
+    },
+    {
+      "name": "太平洋电脑网",
+      "ruleType": "modifySendHeader",
+      "pattern": "img\\d?\\.pconline\\.com\\.cn",
+      "action": {
+        "name": "Referer",
+        "value": ""
+      },
+      "exclude": "",
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 100,
+      "_reg": {}
+    },
+    {
+      "name": "搜狐",
+      "ruleType": "modifySendHeader",
+      "pattern": "pp\\.sohu\\.com(\\.cn)?",
+      "action": {
+        "name": "Referer",
+        "value": "http://pp.sohu.com.cn"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 101,
+      "_reg": {}
+    },
+    {
+      "name": "动漫之家 & 动漫屋",
+      "ruleType": "modifySendHeader",
+      "pattern": "dmzj|dm5\\.com",
+      "action": {
+        "name": "User-Agent",
+        "value": "Mozilla/5.0 (Linux; Android 7.1.1; ONEPLUS A3000 Build/NMF26F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.132 Mobile Safari/537.36"
+      },
+      "exclude": "",
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 102,
+      "_reg": {}
+    },
+    {
+      "name": "CCTV & CNTV",
+      "ruleType": "modifySendHeader",
+      "pattern": "tv\\.(cctv|cntv)\\.(com|cn)",
+      "action": {
+        "name": "User-Agent",
+        "value": "Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_1_1 like Mac OS X; en) AppleWebKit/534.46.0 (KHTML, like Gecko) CriOS/19.0.1084.60 Mobile/9B206 Safari/7534.48.3"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 103,
+      "_reg": {}
+    },
+    {
+      "name": "有道云笔记",
+      "ruleType": "modifySendHeader",
+      "pattern": "note\\.youdao\\.com",
+      "action": {
+        "name": "User-Agent",
+        "value": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.81 Safari/537.36"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 104,
+      "_reg": {}
+    },
+    {
+      "name": "海贼小站",
+      "ruleType": "modifySendHeader",
+      "pattern": "onepiece\\.cc|one-piece\\.cn",
+      "exclude": "",
+      "action": {
+        "name": "User-Agent",
+        "value": "Mozilla/5.0 (Linux; Android 7.1.1; ONEPLUS A3000 Build/NMF26F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.132 Mobile Safari/537.36"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 105,
+      "_reg": {}
+    },
+    {
+      "enable": 1,
+      "name": "Chiphell",
+      "ruleType": "modifySendHeader",
+      "matchType": "regexp",
+      "pattern": "chiphell\\.com",
+      "exclude": "",
+      "isFunction": 0,
+      "action": {
+        "name": "Referer",
+        "value": ""
+      },
+      "id": 106,
+      "_reg": {}
+    },
+    {
+      "enable": 1,
+      "name": "煎蛋",
+      "ruleType": "modifySendHeader",
+      "matchType": "regexp",
+      "pattern": "jdstatic\\.tankr\\.net",
+      "exclude": "",
+      "isFunction": 0,
+      "action": {
+        "name": "Referer",
+        "value": "jandan.net"
+      },
+      "id": 107,
+      "_reg": {}
+    },
+    {
+      "enable": 1,
+      "name": "178",
+      "ruleType": "modifySendHeader",
+      "matchType": "regexp",
+      "pattern": "img\\d+\\.178\\.com",
+      "exclude": "",
+      "isFunction": 0,
+      "action": {
+        "name": "Referer",
+        "value": ""
+      },
+      "id": 109,
+      "_reg": {}
+    },
+    {
+      "enable": 1,
+      "name": "爱稀奇",
+      "ruleType": "modifySendHeader",
+      "matchType": "regexp",
+      "pattern": "images\\.ixiqi\\.com",
+      "exclude": "",
+      "isFunction": 0,
+      "action": {
+        "name": "Referer",
+        "value": ""
+      },
+      "id": 110,
+      "_reg": {}
+    },
+    {
+      "enable": 1,
+      "name": "吐槽弹幕网",
+      "ruleType": "modifySendHeader",
+      "matchType": "domain",
+      "pattern": "img.tucao.tv",
+      "exclude": "",
+      "isFunction": 0,
+      "action": {
+        "name": "Referer",
+        "value": ""
+      },
+      "id": 114
+    },
+    {
+      "enable": 1,
+      "name": "修复工信部申诉提交页面",
+      "ruleType": "modifySendHeader",
+      "matchType": "domain",
+      "pattern": "www.chinatcc.gov.cn",
+      "exclude": "",
+      "isFunction": 0,
+      "action": {
+        "name": "User-Agent",
+        "value": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36"
+      },
+      "id": 115
+    }
+  ],
+  "receiveHeader": [
+    {
+      "name": "CROS for m3u8 and ts",
+      "ruleType": "modifyReceiveHeader",
+      "pattern": "\\.m3u8|\\.ts|/ts",
+      "action": {
+        "name": "Access-Control-Allow-Origin",
+        "value": "*"
+      },
+      "matchType": "regexp",
+      "isFunction": 0,
+      "enable": 1,
+      "id": 6,
+      "exclude": "",
+      "_reg": {}
+    }
+  ]
+}
