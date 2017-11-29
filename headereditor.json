@@ -11,8 +11,7 @@
       },
       "matchType": "prefix",
       "isFunction": 0,
-      "enable": 1,
-      "id": 58
+      "enable": 1
     },
     {
       "name": "Pixiv",
@@ -25,7 +24,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 59,
       "_reg": {}
     },
     {
@@ -39,7 +37,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 60,
       "_reg": {}
     },
     {
@@ -54,7 +51,6 @@
       "isFunction": 0,
       "enable": 1,
       "exclude": "",
-      "id": 61,
       "_reg": {}
     },
     {
@@ -69,7 +65,6 @@
       "isFunction": 0,
       "enable": 1,
       "exclude": "",
-      "id": 62,
       "_reg": {}
     },
     {
@@ -83,7 +78,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 63,
       "_reg": {}
     },
     {
@@ -97,7 +91,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 64,
       "_reg": {}
     },
     {
@@ -111,8 +104,7 @@
       },
       "matchType": "prefix",
       "isFunction": 0,
-      "enable": 1,
-      "id": 65
+      "enable": 1
     },
     {
       "name": "isnowfy",
@@ -125,7 +117,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 66,
       "_reg": {}
     },
     {
@@ -139,7 +130,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 67,
       "_reg": {}
     },
     {
@@ -153,7 +143,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 68,
       "_reg": {}
     },
     {
@@ -167,7 +156,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 69,
       "_reg": {}
     },
     {
@@ -181,7 +169,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 70,
       "_reg": {}
     },
     {
@@ -195,7 +182,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 71,
       "_reg": {}
     },
     {
@@ -209,7 +195,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 72,
       "_reg": {}
     },
     {
@@ -223,7 +208,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 73,
       "_reg": {}
     },
     {
@@ -237,7 +221,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 74,
       "_reg": {}
     },
     {
@@ -251,7 +234,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 75,
       "exclude": "",
       "_reg": {}
     },
@@ -267,7 +249,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 76,
       "_reg": {}
     },
     {
@@ -281,7 +262,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 77,
       "exclude": "",
       "_reg": {}
     },
@@ -296,7 +276,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 78,
       "_reg": {}
     },
     {
@@ -310,7 +289,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 79,
       "_reg": {}
     },
     {
@@ -324,7 +302,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 80,
       "_reg": {}
     },
     {
@@ -338,7 +315,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 81,
       "_reg": {}
     },
     {
@@ -352,7 +328,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 82,
       "_reg": {}
     },
     {
@@ -367,7 +342,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 83,
       "_reg": {}
     },
     {
@@ -381,7 +355,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 84,
       "_reg": {}
     },
     {
@@ -395,7 +368,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 85,
       "_reg": {}
     },
     {
@@ -409,7 +381,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 86,
       "_reg": {}
     },
     {
@@ -423,7 +394,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 87,
       "_reg": {}
     },
     {
@@ -437,7 +407,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 88,
       "_reg": {}
     },
     {
@@ -451,7 +420,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 89,
       "_reg": {}
     },
     {
@@ -465,7 +433,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 90,
       "_reg": {}
     },
     {
@@ -479,7 +446,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 91,
       "exclude": "",
       "_reg": {}
     },
@@ -494,7 +460,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 92,
       "_reg": {}
     },
     {
@@ -508,7 +473,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 93,
       "exclude": "",
       "_reg": {}
     },
@@ -523,7 +487,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 94,
       "_reg": {}
     },
     {
@@ -537,7 +500,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 95,
       "_reg": {}
     },
     {
@@ -552,7 +514,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 96,
       "_reg": {}
     },
     {
@@ -566,7 +527,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 97,
       "_reg": {}
     },
     {
@@ -580,7 +540,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 98,
       "_reg": {}
     },
     {
@@ -594,7 +553,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 99,
       "_reg": {}
     },
     {
@@ -609,7 +567,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 100,
       "_reg": {}
     },
     {
@@ -623,7 +580,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 101,
       "_reg": {}
     },
     {
@@ -638,7 +594,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 102,
       "_reg": {}
     },
     {
@@ -652,7 +607,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 103,
       "_reg": {}
     },
     {
@@ -666,7 +620,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 104,
       "_reg": {}
     },
     {
@@ -681,7 +634,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 105,
       "_reg": {}
     },
     {
@@ -696,7 +648,6 @@
         "name": "Referer",
         "value": ""
       },
-      "id": 106,
       "_reg": {}
     },
     {
@@ -711,7 +662,6 @@
         "name": "Referer",
         "value": "jandan.net"
       },
-      "id": 107,
       "_reg": {}
     },
     {
@@ -726,7 +676,6 @@
         "name": "Referer",
         "value": ""
       },
-      "id": 109,
       "_reg": {}
     },
     {
@@ -741,7 +690,6 @@
         "name": "Referer",
         "value": ""
       },
-      "id": 110,
       "_reg": {}
     },
     {
@@ -756,7 +704,6 @@
         "name": "Referer",
         "value": ""
       },
-      "id": 114
     },
     {
       "enable": 1,
@@ -770,7 +717,32 @@
         "name": "User-Agent",
         "value": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36"
       },
-      "id": 115
+    },
+    {
+      "enable": 0,
+      "name": "应对Google搜索恶意打压手机版Firefox",
+      "ruleType": "modifySendHeader",
+      "matchType": "domain",
+      "pattern": "www.google.com",
+      "exclude": "",
+      "isFunction": 0,
+      "action": {
+        "name": "User-Agent",
+        "value": "Mozilla/5.0 (Linux; Android 7.1.2; ONEPLUS A3000 Build/NJH47F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 YaBrowser/17.6.0.279.00 (beta) Mobile Safari/537.36"
+      },
+    },
+    {
+      "enable": 0,
+      "name": "修复百度知道恶意打击手机版Firefox",
+      "ruleType": "modifySendHeader",
+      "matchType": "domain",
+      "pattern": "zhidao.baidu.com",
+      "exclude": "",
+      "isFunction": 0,
+      "action": {
+        "name": "User-Agent",
+        "value": "Mozilla/5.0 (Linux; Android 7.1.2; ONEPLUS A3000 Build/NJH47F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 YaBrowser/17.6.0.279.00 (beta) Mobile Safari/537.36"
+      },
     }
   ],
   "receiveHeader": [
@@ -785,7 +757,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "id": 6,
       "exclude": "",
       "_reg": {}
     }
