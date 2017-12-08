@@ -7,8 +7,8 @@
     counter-increment: tabs;
 }
 #alltabs-button {
-    visibility: visible!important;
-    margin-right: -35px !important;
+    visibility: visible !important;
+    margin-right: -25px !important;
 }
 #alltabs-button:after {
     content: counter(tabs);
@@ -20,6 +20,15 @@
 
 
 /******************************** Interface Adjustment **************************************/
+/* 双行滚动书签栏 */
+/*#PlacesToolbarItems{
+    margin-top: 7px !important;
+    height: 50px !important;
+}
+#PlacesToolbarItems>.box-inherit.scrollbox-innerbox{
+    overflow: auto !important;
+    float: left !important;
+}*/
 /* Show close buttons when hovering on inactive tabs */
 tab:hover .close-icon {
     display: block !important;
@@ -56,11 +65,6 @@ tab:not([selected]) .close-icon {
     padding-inline-end: 0 !important;
 }
 
-/* Hide Violentmoneky Counters */
-#_aecec67f-0d10-4fa7-b7c7-609a2db280cf_-browser-action>stack>label {
-    display: none;
-}
-
 /* Hide History AutoDelete Counters */
 #_7e79d10d-9667-4d38-838d-471281c568c3_-browser-action>stack>label {
     display: none;
@@ -71,11 +75,6 @@ tab:not([selected]) .close-icon {
 toolbarbutton dropmarker {
     display: none;
 }
-#nav-bar-customization-target {
-    margin-top: -1px;
-    margin-bottom: -1px;
-}
-
 
 /*===================菜单调整=====================*/
 /* Hide Horizontal Menu */
