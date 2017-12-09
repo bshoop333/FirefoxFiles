@@ -773,7 +773,7 @@
       "id": 54
     },
     {
-      "enable": 1,
+      "enable": 0,
       "name": "Fix Google on Android Firefox",
       "ruleType": "modifySendHeader",
       "matchType": "domain",
@@ -787,7 +787,7 @@
       "id": 55
     },
     {
-      "enable": 1,
+      "enable": 0,
       "name": "修复百度知道在手机Firefox上的显示问题",
       "ruleType": "modifySendHeader",
       "matchType": "domain",
@@ -816,6 +816,21 @@
       "exclude": "",
       "_reg": {},
       "id": 1
+    },
+    {
+      "enable": 1,
+      "name": "Cloud Front Audio",
+      "ruleType": "modifyReceiveHeader",
+      "matchType": "regexp",
+      "pattern": "https://[^/]+\\.cloudfront\\.net/.+\\.mp3",
+      "exclude": "",
+      "isFunction": 0,
+      "action": {
+        "name": "Content-type",
+        "value": "audio/mpeg"
+      },
+      "id": 2,
+      "_reg": {}
     }
   ]
 }
