@@ -1,8 +1,8 @@
 {
-  "timestamp": "2017-11-21T13:31:30.273Z",
-  "fileName": "foxyGestures.2017-11-21.json",
+  "timestamp": "2017-12-12T02:24:09.769Z",
+  "fileName": "foxyGestures.2017-12-12.json",
   "addonId": "{e839c3f9-298e-4cd0-99e0-464431cb7c34}",
-  "version": "1.0.13",
+  "version": "1.0.15",
   "settings": {
     "gestureTimeout": 2000,
     "statusTimeout": 2000,
@@ -62,11 +62,6 @@
       },
       {
         "command": "userScript",
-        "gesture": "RDR",
-        "userScript": "userScript:1510929113378"
-      },
-      {
-        "command": "userScript",
         "gesture": "LUD",
         "userScript": "userScript:1510964165122"
       },
@@ -74,6 +69,11 @@
         "command": "userScript",
         "gesture": "RUD",
         "userScript": "userScript:1511271040977"
+      },
+      {
+        "command": "userScript",
+        "gesture": "RD",
+        "userScript": "userScript:1513044895327"
       }
     ],
     "disableOnAlt": true,
@@ -115,11 +115,6 @@
         "script": "window.location.href = \"http://webcache.googleusercontent.com/search?q=cache:\" + window.content.location.href;"
       },
       {
-        "id": "userScript:1510929113378",
-        "label": "Open Addons Manager",
-        "script": "window.open('about:addons');"
-      },
-      {
         "id": "userScript:1510964165122",
         "label": "Copy the URL of curret page",
         "script": "let src = document.location.href;\nif (src) {\n    // Create a text area with the value we want to copy.\n    let textarea = document.createElement(\"textarea\");\n    textarea.value = src;\n    \n    // Style textarea to make it fairly invisible.\n    // Copy doesn't work when display: none.\n    textarea.style.maxHeight = '2em';\n    textarea.style.maxWidth = '2em';\n    textarea.style.position = 'fixed';\n    textarea.style.top = 0;\n    textarea.style.left = 0;\n    textarea.style.padding = 0;\n    textarea.style.border = 'none';\n    textarea.style.outline = 'none';\n    textarea.style.boxShadow = 'none';\n    textarea.style.background = 'transparent';\n    \n    // Append the textarea, copy its value, then remove it.\n    document.body.appendChild(textarea);\n    textarea.select();\n    document.execCommand(\"copy\");\n    textarea.remove();\n    \n    // Update status text for gesture.\n    setStatus('Copied: ' + src);\n}"
@@ -128,6 +123,11 @@
         "id": "userScript:1511271040977",
         "label": "Copy the URL and title of curret page",
         "script": "let src = document.title;\nsrc = src + '\\n' + document.location.href;\nif (src) {\n    // Create a text area with the value we want to copy.\n    let textarea = document.createElement(\"textarea\");\n    textarea.value = src;\n    \n    // Style textarea to make it fairly invisible.\n    // Copy doesn't work when display: none.\n    textarea.style.maxHeight = '2em';\n    textarea.style.maxWidth = '2em';\n    textarea.style.position = 'fixed';\n    textarea.style.top = 0;\n    textarea.style.left = 0;\n    textarea.style.padding = 0;\n    textarea.style.border = 'none';\n    textarea.style.outline = 'none';\n    textarea.style.boxShadow = 'none';\n    textarea.style.background = 'transparent';\n    \n    // Append the textarea, copy its value, then remove it.\n    document.body.appendChild(textarea);\n    textarea.select();\n    document.execCommand(\"copy\");\n    textarea.remove();\n    \n    // Update status text for gesture.\n    setStatus('Copied: ' + src);\n}"
+      },
+      {
+        "id": "userScript:1513044895327",
+        "label": "Translate Selected Text",
+        "script": "postMessage('tgtooltip auto|zh-CN','*')"
       }
     ],
     "sawXSSWarning": true,
