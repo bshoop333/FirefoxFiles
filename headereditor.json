@@ -521,10 +521,11 @@
         "value": "https://pan.baidu.com"
       },
       "matchType": "regexp",
-      "isFunction": 0,
+      "isFunction": false,
       "enable": 1,
       "_reg": {},
-      "id": 37
+      "id": 37,
+      "exclude": ""
     },
     {
       "name": "163-1",
@@ -658,16 +659,17 @@
     {
       "name": "有道云笔记",
       "ruleType": "modifySendHeader",
-      "pattern": "note\\.youdao\\.com",
+      "pattern": "note.youdao.com",
       "action": {
         "name": "User-Agent",
         "value": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.81 Safari/537.36"
       },
-      "matchType": "regexp",
-      "isFunction": 0,
+      "matchType": "domain",
+      "isFunction": false,
       "enable": 1,
       "_reg": {},
-      "id": 47
+      "id": 47,
+      "exclude": ""
     },
     {
       "name": "海贼小站",
@@ -743,20 +745,6 @@
       },
       "_reg": {},
       "id": 52
-    },
-    {
-      "enable": 1,
-      "name": "吐槽弹幕网",
-      "ruleType": "modifySendHeader",
-      "matchType": "domain",
-      "pattern": "img.tucao.tv",
-      "exclude": "",
-      "isFunction": 0,
-      "action": {
-        "name": "Referer",
-        "value": ""
-      },
-      "id": 53
     },
     {
       "enable": 1,
