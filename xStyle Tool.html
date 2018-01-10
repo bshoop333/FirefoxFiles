@@ -13,10 +13,10 @@
         <div id="result"></div>
         <script>
             function generate(){
-                var name = document.querySelector('#styleName').value;
+                var name = encodeURI(document.querySelector('#styleName').value);
                 // var url = document.querySelector('#styleURL').value;
                 // var finalURL = 'https://ext.firefoxcn.net/xstyle/install/open.html?name=' + name + '&code=' + url;
-                var finalURL = 'https://ext.firefoxcn.net/xstyle/install/open.html?name=' + name + '&code=' + 'https://raw.githubusercontent.com/YandLiu/CSS/master/' + encodeURI(name) + '.css';
+                var finalURL = 'https://ext.firefoxcn.net/xstyle/install/open.html?name=' + name + '&code=' + 'https://raw.githubusercontent.com/YandLiu/CSS/master/' + name + '.css';
                 document.querySelector('#result').innerHTML = finalURL;
             }
         </script>
