@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>xStyle Tool</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        Style Name:
+        <input type="text" id="styleName">
+        <br>
+        <!-- Style URL: -->
+        <!-- <input type="text" id="styleURL"> -->
+        <button onclick='generate()'>Generate Final URL</button>
+        <div id="result"></div>
+        <script>
+            function generate(){
+                var name = document.querySelector('#styleName').value;
+                // var url = document.querySelector('#styleURL').value;
+                // var finalURL = 'https://ext.firefoxcn.net/xstyle/install/open.html?name=' + name + '&code=' + url;
+                var finalURL = 'https://ext.firefoxcn.net/xstyle/install/open.html?name=' + name + '&code=' + 'https://raw.githubusercontent.com/YandLiu/CSS/master/' + encodeURI(name) + '.css';
+                document.querySelector('#result').innerHTML = finalURL;
+            }
+        </script>
+    </body>
+</html>
