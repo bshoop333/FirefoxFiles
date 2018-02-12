@@ -318,7 +318,7 @@
     "weibo.tool.disable_desktop_notification": true,
     "weibo.tool.disable_live_photo": true,
     "weibo.tool.custom_font_family.wf": "Times New Roman",
-    "weibo.tool.custom_font_family.cf": "等线",
+    "weibo.tool.custom_font_family.cf": "微软雅黑",
     "weibo.tool.custom_font_family": false,
     "weibo.tool.weibo_large_font.ratio": "120",
     "weibo.tool.weibo_large_font": true,
