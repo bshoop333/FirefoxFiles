@@ -1,8 +1,8 @@
 {
-  "ua": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0",
+  "ua": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0",
   "yawf": "Yet Another Weibo Filter",
-  "ver": "3.7.451",
-  "gm": "Violentmonkey2.6.3",
+  "ver": "3.7.473",
+  "gm": "Violentmonkey2.8.28",
   "conf": {
     "weibo.tool.load_weibo_by_search": true,
     "weibo.tool.use_fast_creator": true,
@@ -318,7 +318,7 @@
     "weibo.tool.disable_desktop_notification": true,
     "weibo.tool.disable_live_photo": true,
     "weibo.tool.custom_font_family.wf": "Times New Roman",
-    "weibo.tool.custom_font_family.cf": "微软雅黑",
+    "weibo.tool.custom_font_family.cf": "等线",
     "weibo.tool.custom_font_family": false,
     "weibo.tool.weibo_large_font.ratio": "120",
     "weibo.tool.weibo_large_font": true,
@@ -338,7 +338,7 @@
     "weibo.tool.set_skin": false,
     "weibo.tool.unwrapText": false,
     "weibo.tool.unwrapContent.text": "⏎",
-    "weibo.tool.unwrapContent": true,
+    "weibo.tool.unwrapContent": false,
     "weibo.tool.image_size.repost": true,
     "weibo.tool.image_size": true,
     "weibo.tool.no_weibo_space": true,
@@ -433,6 +433,16 @@
     "weibo.layoutHideIconEuro2016": true,
     "weibo.layoutHideIconOlympic": true,
     "weibo.layoutHideRightOlympic": false,
-    "weibo.layoutHideLeftOlympic": true
+    "weibo.layoutHideLeftOlympic": true,
+    "weibo.layoutHideIconSupervisor": true,
+    "weibo.tool.load_weibo_by_group.group": {},
+    "weibo.tool.load_weibo_by_group": false,
+    "weibo.tool.load_weibo_by_multi_group.count": 50,
+    "weibo.tool.load_weibo_by_multi_group.enabled": false,
+    "weibo.tool.load_weibo_by_multi_group.clear": "keep",
+    "weibo.tool.load_weibo_by_multi_group": [],
+    "weibo.layoutHideIconPanda": true,
+    "weibo.other.paid": false,
+    "weibo.layoutHideLeftVPlus": false
   }
 }
