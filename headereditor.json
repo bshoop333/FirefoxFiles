@@ -37,21 +37,22 @@
         "value": "https://www.douban.com"
       },
       "matchType": "regexp",
-      "isFunction": 0,
+      "isFunction": false,
       "enable": 1,
       "_reg": {},
-      "id": 3
+      "id": 3,
+      "exclude": ""
     },
     {
       "name": "百度-1",
       "ruleType": "modifySendHeader",
-      "pattern": "hiphotos\\.bdimg\\.com",
+      "pattern": "hiphotos.bdimg.com",
       "action": {
         "name": "Referer",
         "value": ""
       },
-      "matchType": "regexp",
-      "isFunction": 0,
+      "matchType": "domain",
+      "isFunction": false,
       "enable": 1,
       "exclude": "",
       "_reg": {},
@@ -66,7 +67,7 @@
         "value": "https://tieba.baidu.com"
       },
       "matchType": "regexp",
-      "isFunction": 0,
+      "isFunction": false,
       "enable": 1,
       "exclude": "",
       "_reg": {},
@@ -117,16 +118,17 @@
     {
       "name": "isnowfy",
       "ruleType": "modifySendHeader",
-      "pattern": "www\\.isnowfy\\.com",
+      "pattern": "www.isnowfy.com",
       "action": {
         "name": "Referer",
         "value": "http://www.isnowfy.com/"
       },
-      "matchType": "regexp",
-      "isFunction": 0,
+      "matchType": "domain",
+      "isFunction": false,
       "enable": 1,
       "_reg": {},
-      "id": 9
+      "id": 9,
+      "exclude": ""
     },
     {
       "name": "汽车之家",
@@ -628,16 +630,16 @@
       "id": 44
     },
     {
-      "name": "动漫之家 & 动漫屋",
+      "name": "动漫之家",
       "ruleType": "modifySendHeader",
-      "pattern": "dmzj|dm5\\.com",
+      "pattern": "manhua.dmzj.com",
       "action": {
         "name": "User-Agent",
         "value": "Mozilla/5.0 (Linux; Android 7.1.1; ONEPLUS A3000 Build/NMF26F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.132 Mobile Safari/537.36"
       },
       "exclude": "",
-      "matchType": "regexp",
-      "isFunction": 0,
+      "matchType": "domain",
+      "isFunction": false,
       "enable": 1,
       "_reg": {},
       "id": 45
@@ -787,6 +789,36 @@
         "value": "Mozilla/5.0 (Linux; Android 7.1.2; ONEPLUS A3000 Build/NJH47F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 YaBrowser/17.6.0.279.00 (beta) Mobile Safari/537.36"
       },
       "id": 56
+    },
+    {
+      "enable": 1,
+      "name": "看漫画",
+      "ruleType": "modifySendHeader",
+      "matchType": "regexp",
+      "pattern": "hamreus\\.com",
+      "exclude": "",
+      "isFunction": false,
+      "action": {
+        "name": "Referer",
+        "value": "http://www.ikanman.com"
+      },
+      "id": 60,
+      "_reg": {}
+    },
+    {
+      "enable": 1,
+      "name": "动漫屋",
+      "ruleType": "modifySendHeader",
+      "matchType": "regexp",
+      "pattern": "www\\.dm5\\.com/m\\d+",
+      "exclude": "",
+      "isFunction": false,
+      "action": {
+        "name": "User-Agent",
+        "value": "Mozilla/5.0 (Linux; Android 7.1.1; ONEPLUS A3000 Build/NMF26F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.132 Mobile Safari/537.36"
+      },
+      "id": 62,
+      "_reg": {}
     }
   ],
   "receiveHeader": [
