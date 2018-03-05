@@ -610,7 +610,7 @@
       },
       "exclude": "",
       "matchType": "regexp",
-      "isFunction": 0,
+      "isFunction": false,
       "enable": 1,
       "_reg": {},
       "id": 43
@@ -818,6 +818,50 @@
         "value": "Mozilla/5.0 (Linux; Android 7.1.1; ONEPLUS A3000 Build/NMF26F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.132 Mobile Safari/537.36"
       },
       "id": 62,
+      "_reg": {}
+    },
+    {
+      "enable": 1,
+      "name": "美图录",
+      "ruleType": "modifySendHeader",
+      "matchType": "regexp",
+      "pattern": "ttsqgs\\.com",
+      "exclude": "",
+      "isFunction": false,
+      "action": {
+        "name": "Referer",
+        "value": "https://www.meitulu.com/"
+      },
+      "id": 63,
+      "_reg": {}
+    },
+    {
+      "enable": 1,
+      "name": "CNBeta",
+      "ruleType": "modifySendHeader",
+      "matchType": "prefix",
+      "pattern": "cnbetacdn\\.com",
+      "exclude": "",
+      "isFunction": false,
+      "action": {
+        "name": "Referer",
+        "value": ""
+      },
+      "id": 64
+    },
+    {
+      "enable": 1,
+      "name": "Lofter",
+      "ruleType": "modifySendHeader",
+      "matchType": "regexp",
+      "pattern": "nosdn\\.127\\.net",
+      "exclude": "",
+      "isFunction": false,
+      "action": {
+        "name": "Referer",
+        "value": ""
+      },
+      "id": 65,
       "_reg": {}
     }
   ],
