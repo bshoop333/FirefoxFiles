@@ -769,7 +769,7 @@
       "matchType": "domain",
       "pattern": "www.google.com",
       "exclude": "",
-      "isFunction": 0,
+      "isFunction": false,
       "action": {
         "name": "User-Agent",
         "value": "Mozilla/5.0 (Linux; Android 7.1.2; ONEPLUS A3000 Build/NJH47F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 YaBrowser/17.6.0.279.00 (beta) Mobile Safari/537.36"
@@ -863,6 +863,20 @@
       },
       "id": 65,
       "_reg": {}
+    },
+    {
+      "enable": 0,
+      "name": "风车动漫手机版免加载广告",
+      "ruleType": "modifySendHeader",
+      "matchType": "domain",
+      "pattern": "m.dm530.net",
+      "exclude": "",
+      "isFunction": false,
+      "action": {
+        "name": "User-Agent",
+        "value": ""
+      },
+      "id": 67
     }
   ],
   "receiveHeader": [
