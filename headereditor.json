@@ -40,8 +40,8 @@
       "isFunction": false,
       "enable": 1,
       "_reg": {},
-      "id": 3,
-      "exclude": ""
+      "exclude": "",
+      "id": 3
     },
     {
       "name": "百度-1",
@@ -127,8 +127,8 @@
       "isFunction": false,
       "enable": 1,
       "_reg": {},
-      "id": 9,
-      "exclude": ""
+      "exclude": "",
+      "id": 9
     },
     {
       "name": "汽车之家",
@@ -526,8 +526,8 @@
       "isFunction": false,
       "enable": 1,
       "_reg": {},
-      "id": 37,
-      "exclude": ""
+      "exclude": "",
+      "id": 37
     },
     {
       "name": "163-1",
@@ -670,8 +670,8 @@
       "isFunction": false,
       "enable": 1,
       "_reg": {},
-      "id": 47,
-      "exclude": ""
+      "exclude": "",
+      "id": 47
     },
     {
       "name": "海贼小站",
@@ -760,7 +760,7 @@
         "name": "User-Agent",
         "value": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36"
       },
-      "id": 54
+      "id": 53
     },
     {
       "enable": 0,
@@ -774,7 +774,7 @@
         "name": "User-Agent",
         "value": "Mozilla/5.0 (Linux; Android 7.1.2; ONEPLUS A3000 Build/NJH47F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 YaBrowser/17.6.0.279.00 (beta) Mobile Safari/537.36"
       },
-      "id": 55
+      "id": 54
     },
     {
       "enable": 0,
@@ -788,7 +788,7 @@
         "name": "User-Agent",
         "value": "Mozilla/5.0 (Linux; Android 7.1.2; ONEPLUS A3000 Build/NJH47F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 YaBrowser/17.6.0.279.00 (beta) Mobile Safari/537.36"
       },
-      "id": 56
+      "id": 55
     },
     {
       "enable": 1,
@@ -802,8 +802,8 @@
         "name": "Referer",
         "value": "http://www.ikanman.com"
       },
-      "id": 60,
-      "_reg": {}
+      "_reg": {},
+      "id": 56
     },
     {
       "enable": 1,
@@ -817,8 +817,8 @@
         "name": "User-Agent",
         "value": "Mozilla/5.0 (Linux; Android 7.1.1; ONEPLUS A3000 Build/NMF26F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.132 Mobile Safari/537.36"
       },
-      "id": 62,
-      "_reg": {}
+      "_reg": {},
+      "id": 57
     },
     {
       "enable": 1,
@@ -832,8 +832,8 @@
         "name": "Referer",
         "value": "https://www.meitulu.com/"
       },
-      "id": 63,
-      "_reg": {}
+      "_reg": {},
+      "id": 58
     },
     {
       "enable": 1,
@@ -847,7 +847,7 @@
         "name": "Referer",
         "value": ""
       },
-      "id": 64
+      "id": 59
     },
     {
       "enable": 1,
@@ -861,8 +861,8 @@
         "name": "Referer",
         "value": ""
       },
-      "id": 65,
-      "_reg": {}
+      "_reg": {},
+      "id": 60
     },
     {
       "enable": 0,
@@ -876,7 +876,22 @@
         "name": "User-Agent",
         "value": ""
       },
-      "id": 67
+      "id": 61
+    },
+    {
+      "enable": 1,
+      "name": "halihali.cc",
+      "ruleType": "modifySendHeader",
+      "matchType": "regexp",
+      "pattern": "halihali\\.duapp\\.com",
+      "exclude": "",
+      "isFunction": false,
+      "action": {
+        "name": "User-Agent",
+        "value": "Mozilla/5.0 (Linux; Android 8.1.0; ONEPLUS A3000 Build/OPM2.171026.006.C1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Mobile Safari/537.36"
+      },
+      "id": 62,
+      "_reg": {}
     }
   ],
   "receiveHeader": [
@@ -889,8 +904,8 @@
         "value": "*"
       },
       "matchType": "regexp",
-      "isFunction": 0,
-      "enable": 1,
+      "isFunction": false,
+      "enable": 0,
       "exclude": "",
       "_reg": {},
       "id": 1
@@ -907,8 +922,8 @@
         "name": "Content-type",
         "value": "audio/mpeg"
       },
-      "id": 2,
-      "_reg": {}
+      "_reg": {},
+      "id": 2
     }
   ]
 }
