@@ -1,12 +1,13 @@
 {
-  "timestamp": "2017-12-12T02:24:09.769Z",
-  "fileName": "foxyGestures.2017-12-12.json",
+  "timestamp": "2018-06-19T10:22:34.611Z",
+  "fileName": "foxyGestures.2018-06-19.json",
   "addonId": "{e839c3f9-298e-4cd0-99e0-464431cb7c34}",
-  "version": "1.0.15",
+  "version": "1.1.1",
   "settings": {
     "gestureTimeout": 2000,
     "statusTimeout": 2000,
     "showStatusText": true,
+    "blacklistUrlPatterns": [],
     "gestureButton": 2,
     "gestureFidelity": 10,
     "drawTrails": true,
@@ -15,20 +16,8 @@
     "trailColor": "#02AAA0",
     "mouseMappings": [
       {
-        "command": "historyBack",
-        "gesture": "DL"
-      },
-      {
-        "command": "historyForward",
-        "gesture": "DR"
-      },
-      {
         "command": "newTab",
         "gesture": "DRU"
-      },
-      {
-        "command": "previousTab",
-        "gesture": "UL"
       },
       {
         "command": "reload",
@@ -74,6 +63,32 @@
         "command": "userScript",
         "gesture": "RD",
         "userScript": "userScript:1513044895327"
+      },
+      {
+        "command": "openOptions",
+        "gesture": "LDRUL"
+      },
+      {
+        "command": "stop",
+        "gesture": "LR"
+      },
+      {
+        "command": "historyForward",
+        "gesture": "UR"
+      },
+      {
+        "command": "historyBack",
+        "gesture": "UL"
+      },
+      {
+        "command": "userScript",
+        "gesture": "DR",
+        "userScript": "userScript:1528426526111"
+      },
+      {
+        "command": "userScript",
+        "gesture": "DL",
+        "userScript": "userScript:1528426558672"
       }
     ],
     "disableOnAlt": true,
@@ -107,7 +122,7 @@
       {
         "id": "userScript:1510715985291",
         "label": "繁化简",
-        "script": "    var ele = document.createElement('script');\n    ele.src = 'https://rawgit.com/YandLiu/Userscripts/master/t2s%20Chinese%20by%20XinTongwentang.user.js';\n    document.body.appendChild(ele);"
+        "script": "var ele = document.createElement('script');\nele.src = 'https://rawgit.com/YandLiu/Userscripts/master/t2s%20Chinese%20by%20XinTongwentang.user.js';\ndocument.body.appendChild(ele);"
       },
       {
         "id": "userScript:1510852552007",
@@ -127,7 +142,17 @@
       {
         "id": "userScript:1513044895327",
         "label": "Translate Selected Text",
-        "script": "postMessage('tgtooltip auto|zh-CN','*')"
+        "script": "// Translate.google tooltip user script\npostMessage('tgtooltip auto|zh-CN','*')"
+      },
+      {
+        "id": "userScript:1528426526111",
+        "label": "下一页",
+        "script": "// 以前的代码参考了https://greasyfork.org/en/scripts/368169-%E6%8C%89-%E9%94%AE%E8%87%AA%E5%8A%A8%E7%BF%BB%E9%A1%B5/code，现在的是自己的\nvar next_page_pattern = new RegExp('((下|后|後)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集|季)|next|newer|more|continue)(›|▶|→|>|»)*|(›|▶|→|>|»)+|点击进入');\nvar elements = document.getElementsByTagName('a');\nfor (var i=0; i<elements.length; i++){\n    if(next_page_pattern.test(elements[i].innerText.toLowerCase())){\n        elements[i].click();\n        break;\n    }\n}"
+      },
+      {
+        "id": "userScript:1528426558672",
+        "label": "上一页",
+        "script": "var prev_page_pattern = new RegExp('(‹|◀|←|<|«)*((上|前)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集|季)|pre(v)?(ious)?|elder|older|before|back)|(‹|◀|←|<|«)+');\nvar elements = document.getElementsByTagName('a');\nfor (var i=0; i<elements.length; i++){\n    if(prev_page_pattern.test(elements[i].innerText.toLowerCase())){\n        elements[i].click();\n    }\n}"
       }
     ],
     "sawXSSWarning": true,
@@ -140,6 +165,7 @@
     "useRelPrevNext": true,
     "insertRelatedTab": true,
     "zoomStep": 0.1,
+    "activeTabAfterClose": "default",
     "statusTemplate": "<div style=\"all: initial; display: block; position: fixed; bottom: 0; right: 0; z-index: 2147483647\">\r\n  <div style=\"all: initial; background: #fff; border: 1px solid #ccc; color: #333; font-family: sans-serif; font-size: 12px; padding: 2px\" data-mg-status></div>\r\n</div>"
   }
 }
