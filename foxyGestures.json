@@ -1,6 +1,6 @@
 {
-  "timestamp": "2018-06-19T10:22:34.611Z",
-  "fileName": "foxyGestures.2018-06-19.json",
+  "timestamp": "2018-06-20T04:56:19.408Z",
+  "fileName": "foxyGestures.2018-06-20.json",
   "addonId": "{e839c3f9-298e-4cd0-99e0-464431cb7c34}",
   "version": "1.1.1",
   "settings": {
@@ -147,12 +147,12 @@
       {
         "id": "userScript:1528426526111",
         "label": "下一页",
-        "script": "// 以前的代码参考了https://greasyfork.org/en/scripts/368169-%E6%8C%89-%E9%94%AE%E8%87%AA%E5%8A%A8%E7%BF%BB%E9%A1%B5/code，现在的是自己的\nvar next_page_pattern = new RegExp('((下|后|後)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集|季)|next|newer|more|continue)(›|▶|→|>|»)*|(›|▶|→|>|»)+|点击进入');\nvar elements = document.getElementsByTagName('a');\nfor (var i=0; i<elements.length; i++){\n    if(next_page_pattern.test(elements[i].innerText.toLowerCase())){\n        elements[i].click();\n        break;\n    }\n}"
+        "script": "// 以前的代码参考了https://greasyfork.org/en/scripts/368169-%E6%8C%89-%E9%94%AE%E8%87%AA%E5%8A%A8%E7%BF%BB%E9%A1%B5/code，现在的是自己的\n// var next_page_pattern = new RegExp('((下|后|後)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集|季)|next|newer|more|continue)(›|▶|→|>|»)*|(›|▶|→|>|»)+|点击进入');\nvar next_page_pattern = new RegExp('(下|后|後)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集|季)|next|newer|more|continue|点击进入');\nvar elements = document.getElementsByTagName('a');\nfor (var i=0; i<elements.length; i++){\n    if(next_page_pattern.test(elements[i].innerText.toLowerCase())){\n        elements[i].click();\n        break;\n    }\n}"
       },
       {
         "id": "userScript:1528426558672",
         "label": "上一页",
-        "script": "var prev_page_pattern = new RegExp('(‹|◀|←|<|«)*((上|前)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集|季)|pre(v)?(ious)?|elder|older|before|back)|(‹|◀|←|<|«)+');\nvar elements = document.getElementsByTagName('a');\nfor (var i=0; i<elements.length; i++){\n    if(prev_page_pattern.test(elements[i].innerText.toLowerCase())){\n        elements[i].click();\n    }\n}"
+        "script": "// var prev_page_pattern = new RegExp('(‹|◀|←|<|«)*((上|前)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集|季)|pre(v)?(ious)?|elder|older|before|back)|(‹|◀|←|<|«)+');\nvar prev_page_pattern = new RegExp('(上|前)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集|季)|pre(v)?(ious)?|elder|older|before|back');\nvar elements = document.getElementsByTagName('a');\nfor (var i=0; i<elements.length; i++){\n    if(prev_page_pattern.test(elements[i].innerText.toLowerCase())){\n        elements[i].click();\n    }\n}"
       }
     ],
     "sawXSSWarning": true,
