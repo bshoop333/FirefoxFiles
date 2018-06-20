@@ -4,7 +4,7 @@
     "to": "$1r.jpg"
   },
   "知乎-2": {
-    "img": "^pic（\\d+\\.zhimg\\.com/)\\d+/(\\w+_)hd.jpg",
+    "img": "^pic(\\d+\\.zhimg\\.com/)\\d+/(\\w+_)hd.jpg",
     "to": "$1$2r.jpg"
   },
   "new userstyles.org": {
