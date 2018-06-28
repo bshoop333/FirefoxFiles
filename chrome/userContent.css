@@ -23,7 +23,7 @@ url("chrome://mozapps/content/extensions/extensions.xul") {
     #updates-view #addon-list:after {
         content: "("counter(enabled)"项启用, "counter(disabled)"项禁用)";
         position: fixed;
-        top: 15px;
+        top: 10px;
         left: 500px;
         color: #3366FF;
     }

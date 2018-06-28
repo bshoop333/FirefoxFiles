@@ -1,3 +1,24 @@
+/* 显示标签栏与导航栏间的横线 */
+/*.tabbrowser-tab[visuallyselected="true"] {
+    position: unset;
+}*/
+
+/* 隐藏标签栏上那条蓝线 */
+/*.tab-line {
+    display: none !important;
+}*/
+
+/* 全屏时隐藏tooltip信息 */
+#main-window[sizemode="fullscreen"] statuspanel{
+    display: none !important;
+}
+
+/* 隐藏Pocket图标 */
+/*#pocket-button-box {
+    display: none;
+}
+*/
+
 /******************************** Firefox Tabs Counter **************************************/
 #main-window {
     counter-reset: tabs;
@@ -7,8 +28,10 @@
     counter-increment: tabs;
 }
 #alltabs-button {
-    visibility: visible !important;
-    margin-right: -25px !important;
+    margin-right: -30px !important;
+}
+.toolbarbutton-badge-stack {
+    display: none;
 }
 #alltabs-button:after {
     content: counter(tabs);
@@ -29,18 +52,47 @@
     overflow: auto !important;
     float: left !important;
 }*/
+
 /* Show close buttons when hovering on inactive tabs */
 tab:hover .close-icon {
     display: block !important;
 }
 /* 标签页载入动画图标 */
 /* .tab-throbber {visibility: hidden;} */
-/* 图标黑白化处理 */
-/*
-#nav-bar-customization-target toolbarbutton {
-  filter:grayscale(1) saturate(1) contrast(0.65) brightness(1.4);
+/*黑白化去重复标签页数量角标*/
+/* #jid0-rvyt2rgwfm8q5ywxixahyaeo5qg_jetpack-browser-action {
+    --webextension-menupanel-image: url("https://raw.githubusercontent.com/YandLiu/CSS/master/img/DuplicateTabsCloser.png") !important;
+    --webextension-menupanel-image-light: url("https://raw.githubusercontent.com/YandLiu/CSS/master/img/DuplicateTabsCloserDark.png") !important;
+    --webextension-menupanel-image-dark: url(""https://raw.githubusercontent.com/YandLiu/CSS/master/img/DuplicateTabsCloser.png) !important;
+
+
+    --webextension-menupanel-image-2x: url("https://raw.githubusercontent.com/YandLiu/CSS/master/img/DuplicateTabsCloser.png") !important;
+    --webextension-menupanel-image-2x-light: url("https://raw.githubusercontent.com/YandLiu/CSS/master/img/DuplicateTabsCloserDark.png") !important;
+    --webextension-menupanel-image-2x-dark: url("https://raw.githubusercontent.com/YandLiu/CSS/master/img/DuplicateTabsCloser.png") !important;
+
+
+    --webextension-toolbar-image: url("https://raw.githubusercontent.com/YandLiu/CSS/master/img/DuplicateTabsCloser.png") !important;
+    --webextension-toolbar-image-light: url("https://raw.githubusercontent.com/YandLiu/CSS/master/img/DuplicateTabsCloserDark.png") !important;
+    --webextension-toolbar-image-dark: url("https://raw.githubusercontent.com/YandLiu/CSS/master/img/DuplicateTabsCloser.png") !important;
+
+
+    --webextension-toolbar-image-2x: url("https://raw.githubusercontent.com/YandLiu/CSS/master/img/DuplicateTabsCloser.png") !important;
+    --webextension-toolbar-image-2x-light: url("https://raw.githubusercontent.com/YandLiu/CSS/master/img/DuplicateTabsCloserDark.png") !important;
+    --webextension-toolbar-image-2x-dark: url("https://raw.githubusercontent.com/YandLiu/CSS/master/img/DuplicateTabsCloser.png") !important;
 }
-*/
+
+#jid0-rvyt2rgwfm8q5ywxixahyaeo5qg_jetpack-browser-action .toolbarbutton-badge {
+    background-color: transparent !important;
+    color: #353535 !important;
+}*/
+/* 图标黑白化处理 */
+/*#nav-bar-customization-target toolbarbutton {
+  filter:grayscale(1) saturate(1) contrast(0.65) brightness(1.4);
+}*/
+/* 和谐化微博图床图标 */
+/*#weibopic_ac-browser-action image {
+    filter: contrast(0.5);
+}*/
 /* Hide close buttons of inactive tabs */
 tab:not([selected]) .close-icon {
     display: none;
@@ -116,11 +168,8 @@ menuitem[disabled="true"] {
 
 /* image menu */
 #context-saveimage,
-/*#context-copygif,*/
-#context-copyimage,
 /*#context-setDesktopBackground,*/
-#context-sendimage,
-#context-copyimage-contents {
+#context-sendimage {
     display: none;
 }
 
