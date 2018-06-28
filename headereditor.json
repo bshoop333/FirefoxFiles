@@ -810,7 +810,7 @@
       "name": "动漫屋",
       "ruleType": "modifySendHeader",
       "matchType": "regexp",
-      "pattern": "www\\.dm5\\.com/m\\d+",
+      "pattern": "dm5\\.com/m\\d+",
       "exclude": "",
       "isFunction": false,
       "action": {
@@ -891,6 +891,21 @@
         "value": "Mozilla/5.0 (Linux; Android 8.1.0; ONEPLUS A3000 Build/OPM2.171026.006.C1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Mobile Safari/537.36"
       },
       "id": 62,
+      "_reg": {}
+    },
+    {
+      "enable": 1,
+      "name": "动漫屋Referer",
+      "ruleType": "modifySendHeader",
+      "matchType": "regexp",
+      "pattern": "cdndm5\\.com",
+      "exclude": "",
+      "isFunction": false,
+      "action": {
+        "name": "Referer",
+        "value": "http://m.dm5.com/m628753/"
+      },
+      "id": 64,
       "_reg": {}
     }
   ],
