@@ -230,7 +230,7 @@
     "to": ":\nvar u=decodeURIComponent($[2].replace(/\\+/g,' ')),n\nthis.node.IMGS_fallback_zoom=u\nn=this.find({href: u, IMGS_TRG: this.node})\nreturn n&&typeof n!='number'||n===null? (Array.isArray(n) ? n.join('\\n') : n) : ($[1]?'':u)"
   },
   "GoogleImages": {
-    "link": "^(?:(?:images|encrypted)\\.)?google\\.[^/]+/(?:imgres\\?(?:[^&]+&)*?imgurl=([^&]+)|search\\?(?:[^&]+&)*?imgil=([^%;]+)).*",
+    "link": "^(?:(?:images|encrypted)\\.)?google\\.[^/]+/(?:imgres\\?(?:[^&]+&)*?imgurl=([^&]+)|search\\?(?:[^&]+&)*?(?:imgil|fir)=([^%;]+)).*",
     "url": ": $[1] ? '' : $[0]",
     "res": ":\nvar i=!$[1]&&$._.match(RegExp(':\"'+$[2]+':?\",\"(?:[^\"]+\":[^,]+,\")+?ou\":(\"[^\"]+\")')),d=decodeURIComponent\n$ = $[1] && d(d($[1])) || i && JSON.parse(i[1])\nreturn $ ? (!$.lastIndexOf('http',0) ? $ : 'http://' + $) : !1",
     "img": "^images-partners-tbn\\.google\\.com/images\\?q=tbn:[^:]+:(.+)"
@@ -248,7 +248,7 @@
     "to": ":\nreturn $[2] ? ($[1]||'http://') + $[2] : $[1].replace(/\\.cf\\.\\w{3,4}$/, '')"
   },
   "yandex": {
-    "link": "^(?:images\\.)?yandex\\.[^./]+/(?:images/|yand)?search\\?(?:[^&]+&)*?img_url=([^&]{5,}).*",
+    "link": "^(?:images\\.)?yandex\\.[^./]+/(?:images/|yand)?search\\?(?:[^&]*&)*?img_url=([^&]{5,}).*",
     "dc": 1,
     "loop": 1,
     "img": "^(img\\d*-fotki\\.yandex\\.(?:ru|net)/get/\\d+/\\w+\\.\\w+/\\d_)(?:STATIC)?([\\da-f]+_[\\da-f]+_)[^.]+",
@@ -257,17 +257,17 @@
   "Bing": {
     "useimg": 1,
     "link": "^(bing\\.com/images/search\\?)(?:q|view)=(?:[^&]*&)+id=([\\dA-F]{40}).*",
-    "url": "$1view=detailV2&id=$2",
-    "res": "class=\"mainImage\"[^>]+?src2=\"([^\"]+)",
-    "img": "^tse?\\d\\.[^.]+\\.bing\\.net/th\\?&?id=([^&]+).*",
-    "loop": 2,
-    "to": ":\nvar x,n = this.node; n = n.parentNode\nn = n&&(n.dataset.imgdetailContent||((n=n.parentNode)&&(x=n.getAttribute('m'))))||''\nx = n[0]=='{' ? /,\"(?:img|m)url\":\"([^\"]+)/.exec(n) : n\nreturn Array.isArray(x) ? x[1] : (x||'')"
+    "loop": 3,
+    "url": ": $[0].indexOf('mediaurl=h')>0 ? '' : $[1] + 'view=detailV2&id=' + $[2]",
+    "res": ":\nvar m = $[0].match(/mediaurl=(http[^&]+)/);\nif(m)return decodeURIComponent(m[1])\nm = $._.match(/class=\"mainImage\"[^>]+?src2=\"([^\"]+)/)\nif(m)return m[1]\nm = document.evaluate('./ancestor-or-self::a[contains(@m, \"imgurl\") or contains(@m, \"murl\")]/@m',this.node,null,2,null).stringValue\nreturn m && JSON.parse(m).imgurl || null",
+    "img": "^(tse[\\d-]+\\.mm\\.bing\\.net/th\\?id=[^&]+).*",
+    "to": ":\nvar m = document.evaluate('./ancestor-or-self::a[contains(@m, \"imgurl\") or contains(@m, \"murl\")]/@m', this.node ,null,2,null).stringValue\nm = m && JSON.parse(m);\nm = m && (m.imgurl||m.murl)\nreturn (m ? m + '\\n' : '') + $[1]"
   },
   "aol": {
-    "img": "^(o\\d?\\.aolcdn\\.com/(?:dims|hss|photo)[^/]*/.+)",
+    "img": "^([os]\\d?\\.aolcdn\\.com/(?:(?:images/)?dims|hss|photo)(?:[^/]*/|\\?(?:[^&]*&)*?image_uri=([^&]+)).*|r\\.search\\.aol\\.com/(?:[^/]+/)*?RU=(http[^/]+).*)",
     "dc": 2,
     "loop": 2,
-    "to": ":\nvar m=$[1].match(/(https?)(?::\\/\\/?|%3A(?:%2F){1,2})(?!.+https?:\\/)(.+)/)\nreturn m ? m[1]+'://'+m[2] : $[1]"
+    "to": ":\nif($[2]||$[3])return $[2]||$[3]\nvar m=$[1].match(/(https?)(?::\\/\\/?|%3A(?:%2F){1,2})(?!.+https?:\\/)(.+)/)\nreturn m ? m[1]+'://'+m[2] : $[1]"
   },
   "startpage": {
     "img": "^s\\d+-eu\\d+\\.ixquick\\.com/cgi-bin/serveimage\\?url=http.*",
@@ -290,16 +290,15 @@
     "dc": 1,
     "res": "<div class=\"(?:fullMedia|fullImageLink\" id=\"file)\"><(?:a href|img (?:border=\"0\" )?src)=\"([^\"]+)",
     "img": "^([^/]+/+([^/]+/+)*?)(?:thumb|(images|avatars))/((?:archive/)?\\w{1,2}/\\w{1,4}/([^/]+(?:\\.(jpe?g|gif|png|svgz?|tif)|(?=/revision/))))(?:/(lossy-page\\d+-)?\\d+px-(?:\\3|thumbnail).*|(/revision/)[^?]*)",
-    "to": ":\nif($[7])return $[1] + 'thumb/' + $[4] + '/' + $[7] + '2048px-' + $[5] + '.jpg';\nreturn '#' + $[1] + ($[3] ? $[3] + '/' : '') + $[4] + (!$[8] && !$[1].lastIndexOf('upload.wikimedia.org',0) ? '\\n'+ $[1] + 'thumb/' + $[4] + '/1024px-' + $[5] + (/svg/i.test($[6]) ? '.png' : '') : ($[8] ? $[8] + 'latest' : ''))"
+    "to": ":\nif($[7])return $[1] + 'thumb/' + $[4] + '/' + $[7] + '2048px-' + $[5] + '.jpg';\nreturn '#' + $[1] + ($[3] ? $[3] + '/' : '') + $[4] + (!$[8] && !$[1].lastIndexOf('upload.wikimedia.org',0) && !/^gif/i.test($[6]) ? '\\n'+ $[1] + 'thumb/' + $[4] + '/1024px-' + $[5] + (/^svg/i.test($[6]) ? '.png' : '') : ($[8] ? $[8] + 'latest' : ''))"
   },
   "facebook": {
-    "useimg": 1,
-    "link": "^(?:m(?:basic)?\\.)?facebook\\.com/(?:photo(?:/download/|\\.php|s/\\w+/)\\?(?:fb|photo_)id=|[^/]+/photos/(?:[a-z]+\\.[^/]+/)?)(\\d+).*",
-    "url": "https://mbasic.facebook.com/photo.php?fbid=$1",
-    "res": "href=\"(https://[^\"]+/\\d+_$1[^\"]+)",
+    "link": "^(?:(?:m(?:basic)?\\.)?facebook\\.com/(?:photo(?:/download/|\\.php|s/\\w+/)\\?(?:fb|photo_)id=|([^/]+/photos/)(?:[a-z]+\\.[^/]+/)?)|lookaside\\.fbsbx\\.com/lookaside/crawler/media/\\?media_id=)(\\d+).*",
+    "url": ": this.node.dataset && this.node.dataset.ploi ? '' : 'https://www.facebook.com/' + ($[1] ? $[1] + $[2] : 'photo.php?fbid=' + $[2])",
+    "res": ":\nif($._===void 0)return this.node.dataset.ploi\nu=$._.match(RegExp('='+($[2]||$[1])+'(?:[^\">]+\"\\\\s+)+?data-ploi=\"([^\"]+)')) || $._.match(/=\"og:image\" content=\"([^\"]+)/)\nreturn u && u[1]",
     "img": "^(?:fbcdn-s?photos[\\da-z-]+\\.akamaihd|s?(?:content|photos|origincache)[^/]+\\.fbcdn)\\.net/(?!h?vthumb-)[^_?]+/\\d+_(\\d+).*",
     "loop": 2,
-    "to": ":\nif($[0].indexOf('.mp4?')>0)return''\nif (window.location.hostname.slice(-13)=='.facebook.com' && (document.evaluate('./ancestor::div[contains(@class, \"stageWrapper\")]', this.node, null, 9, null).singleNodeValue || this.node.matches('.UFICommentContent>div[data-testid], a>abbr>span.timestampContent, #fbProfileCover>a:first-child'))) return '';\nreturn 'https://www.facebook.com/photo/download/?fbid=' + $[1]"
+    "to": ":\nif($[0].indexOf('.mp4?')>0)return''\nvar p=this.node\nif(window.location.hostname.slice(-13)=='.facebook.com' && (document.evaluate('./ancestor::div[contains(@class, \"stageWrapper\")]', p, null, 9, null).singleNodeValue || p.matches('.UFICommentContent>div[data-testid], a>abbr>span.timestampContent, #fbProfileCover>a:first-child')))return''\np=p.pathname||(p=p.parentNode)&&p.pathname||(p=p.parentNode)&&p.pathname\np=p&&p.match(/^\\/([\\w.-]+)\\/?$/)\nreturn 'https://facebook.com/' + (p?p[1]+'/photos/' : 'photo.php?fbid=') + $[1]"
   },
   "vk": {
     "useimg": 1,
@@ -322,7 +321,7 @@
   },
   "deviantArt": {
     "useimg": 1,
-    "link": "^(?:((?:[^.]+\\.)?deviantart\\.com/)(?:(art/[^#]+$)|#(/d\\w+))|(fav\\.me/d\\w+))",
+    "link": "^(?:((?:[^.]+\\.)?deviantart\\.com/)(?:((?:[^/]+/)?art/[^#]+$)|#(/d\\w+))|(fav\\.me/d\\w+))",
     "url": "//backend.deviantart.com/oembed?url=http://$1$2$4%23$3",
     "res": ":\nvar $ = JSON.parse($._); $.i = $.fullsize_url || $.url || $.thumbnail_url;\nreturn [this.find({src:$.i, IMGS_TRG: this.node}) || $.i, $.title + ' by ' + $.author_name + ', in ' + $.category];",
     "img": "^th?(\\d+)(\\.deviantart\\.net/)(?:(fs\\d+|images)/\\w+/|.+?\\)/(pre\\d+)/)(.+\\.(?:jpe?g|png|gif|bmp))",
@@ -330,8 +329,8 @@
     "to": ":\nreturn document.evaluate('./ancestor-or-self::*[@data-super-full-img]/@data-super-full-img',this.node,null,2,null).stringValue || ('//'+ ($[4] ? $[4]+$[2]+$[5] : 'fc'+$[1]+$[2]+$[3]+'/'+$[5] ))"
   },
   "imgur": {
-    "link": "^(?:[im]\\.())?(imgur\\.com|filmot\\.(?:com|org))/+(?!gallery|s(?:tats|ignin|earch)|tools|topic|random|logout|account|inbox|about|contact|privacy|memegen|collab)(?:g/[^/]+/)?([^\\W_]{5}(?:[^\\W_]{2})?)[sbtmlh]?(?![,&])(?:[?/].*)?$",
-    "img": "^(?:[im]\\.([^.]+\\.)?)?(imgur\\.com|filmot\\.(?:com|org))/+([^\\W_]{5}(?:[^\\W_]{2})?)[sbtmlh]?\\.(jpe?g|png|gif|mp4|webm).*",
+    "link": "^(?:[im]\\.())?(imgur\\.com|filmot\\.(?:com|org))/+(?!gallery|s(?:tats|ignin|earch)|tools|topic|random|logout|account|inbox|about|contact|privacy|memegen|collab)(?:g/[^/]+/)?([^\\W_]{5}(?:[^\\W_]{2})?)[sbtmlh]?(?![,&])(?:[?/#].*)?$",
+    "img": "^(?:[im]\\.([^.]+\\.)?)?(imgur\\.com|filmot\\.(?:com|org))/+([^\\W_]{5}(?:[^\\W_]{2})?)(?:[sbtmlh]|_[^.]+)?\\.(jpe?g|png|gif|mp4|webm).*",
     "to": ":\nif ($[4]=='mp4'||$[4]=='webm') $[4]='gif'\nvar l = ($[2][0]=='i' ? '//' : '')+'i.'+($[1]||'')+$[2]+'/'+$[3], x = '.'+($[4] || 'jpg')\nreturn $[4][0]=='g' ? l + '.#mp4 gif#' : ('#' + l + ($[4] ? x : '.jpg') + ($[2][0] === 'f' ? '' : '\\n' + l + 'h' + x))"
   },
   "imgur-set": {
@@ -348,8 +347,8 @@
     "to": "$1#full large#/"
   },
   "youtube": {
-    "img": "^(i(?:\\d|mg)?\\.ytimg\\.com/vi[^/]*/[\\w\\-]{11}/)(?!maxresdefault)[^.]+([^?]+).*",
-    "to": "$10$2"
+    "img": "^(i(?:\\d|mg)?\\.ytimg\\.com/)[^/]+(/[\\w\\-]{11}/)(?!maxresdefault).*",
+    "to": "$1vi$20.jpg"
   },
   "twitch.tv": {
     "img": "^(static-cdn\\.jtvnw\\.net\\/)(?:((?:ttv-boxart|(j)tv_user_pictures|(p)reviews-ttv)\\/[^?\\/]+)[-_]\\d+x\\d+(\\.[^?]+).*|((emoticons|badges)\\/[^.]+\\/)\\d+)",
@@ -368,9 +367,9 @@
   },
   "pinterest": {
     "useimg": 1,
-    "link": "^(?:[a-z]{2}\\.)?pinterest\\.com/pin/[\\w-]+/$",
-    "img": "^((?:s-)?media-c(?:dn|ache\\D*)\\d*\\.pin(?:terest|img)\\.com/)(?:(upload/\\d+_[^\\W_]{8})_[bft]|(?!550)\\d+x?\\d*/|(avatars/[^.]+[_-]\\d+)(?:_(?!600)[^.]+)?(?=\\.))",
-    "to": ":\nif($[1]) return $[1] + ($[2] ? $[2] : ($[3] ? $[3].replace(/(\\d+)_\\d+$/, '$1') + '_600' : '#originals 736x 564x#/'))\nvar n=this.node, p=document.evaluate('./ancestor::a[starts-with(@href,\"/pin/\")]//img[contains(@src,\"pinimg.com\")]',n,null,9,null).singleNodeValue\np=p?this.find({src: p.src, _$TRG: n}):''\nreturn (Array.isArray(p) ? p.join('\\n') : (p === null ? 'null' : p)) || ''"
+    "link": "^(?:[a-z]{2}\\.)?pinterest(?:\\.co(?:m|\\.uk)|es|fr)/pin/[\\w-]+/$",
+    "img": "^((?:i|(?:s-)?media-c(?:dn|ache\\D*)\\d*)\\.pin(?:terest|img)\\.com/)(?:(upload/\\d+_[^\\W_]{8})_[bft]|(?!550)\\d+x?\\d*(?:_[^/]+)?/|(avatars/[^.]+[_-]\\d+)(?:_(?!600)[^.]+)?(?=\\.))",
+    "to": ":\nif($[1]) return $[1] + ($[2] ? $[2] : ($[3] ? $[3].replace(/(\\d+)_\\d+$/, '$1') + '_600' : '#originals 736x 564x#/'))\nvar n=this.node, p=document.evaluate('./ancestor::a[starts-with(@href,\"/pin/\")]//img[contains(@src,\"pinimg.com\")]',n,null,9,null).singleNodeValue\np=p?this.find({src: p.src, IMGS_TRG: n}):''\nreturn (Array.isArray(p) ? p.join('\\n') : (p === null ? 'null' : p)) || ''"
   },
   "SoundCloud": {
     "img": "^(i\\d\\.sndcdn\\.com/a(?:rtwork|vatar)s-[^.]+-).*",
@@ -398,17 +397,17 @@
     "res": ":\nvar ret=[],x=(new window.DOMParser()).parseFromString($._,'text/xml').querySelectorAll('file>server,file>name,file>bucket');\nfor(var i=0,l=x.length;i<l;i+=3)\n  ret.push(['http://img'+x[i].textContent+'.imageshack.us/img'+x[i].textContent+'/'+x[i+2].textContent+'/'+x[i+1].textContent, null]);\nreturn ret"
   },
   "Listal": {
-    "link": "^listal\\.com/viewimage/(\\d+).*",
-    "img": "^(?:avatar|[pi](?:large|thumb|v?\\d+))\\.lis(?:tal|img)\\.com/(?:image/)?(\\d+)/\\d+.+",
-    "to": "#http://lb1.lisimg.com/$1/0full.jpg\nhttp://lb1.lisimg.com/$1/1024full.jpg"
+    "link": "^listal\\.com/viewimage/(\\d+)().*",
+    "img": "^(?:avatar|[lip](?:large|thumb|v?\\d+))\\.lis(?:tal|img)\\.com/(?:image/)?(\\d+)/\\d+[^.-]+([^.]*).+",
+    "to": "#http://iv1.lisimg.com/$1/5000full$2.jpg\nhttp://iv1.lisimg.com/$1/1024full$2.jpg"
   },
   "twitter": {
     "useimg": 1,
     "link": "^(?:pic\\.twitter\\.com/\\w+|(?:m(?:obile)?\\.)?twitter\\.com/[^/]+/status/(\\d+)/(photo|video)/.*)",
     "url": ": 'https://' + (!$[0].lastIndexOf('pic',0) ? $[0] : 'twitter.com/i/' + ($[2]=='photo' ? 'tweet/html?id=' : 'cards/tfw/v1/') + $[1])",
     "res": ":\nvar x\nif (x = $._.slice && $._.slice(40,200).match(/=\"0;URL=([^\"]+)/)) return{loop: x[1]};\ntry{$._ = JSON.parse($._)}catch(ex){}\nif (x = $._.tweet_html && $._.tweet_html.match(/data-image-url=\"([^\"]+)/g)) x=x.map(function(i){i=i.slice(16).replace(/:[^:\\/]+$/,''); return [['#'+i+':orig', i+':large']]});\nelse if (x=($._.tweet_html||$._).match(/(?:video|pbs)\\.twimg\\.com(\\\\)?\\/\\w+_video(?:_thumb)?(\\\\)?\\/[^&\"]+/)) x='https://'+x[0].replace(/\\\\/g, '').replace(/(_video)_thumb(\\/[^.]+).*/, '$1$2.mp4')\nif(x) {\n var t=($._.tweet_html||$._).match(/<p[^>]+>(.+?)<\\/p>/),n=($._.tweet_html||$._).match(/data-screen-name=\"([^\"]+)/);\n t = (n?('@'+n[1]):'')+(t?(n?' - ':'')+t[1]:'')\n if(x.pop)x[0] = [x[0], t]; else x=[x,t]\n}\nreturn x",
-    "img": "^(?:(p(?:bs)?\\.twimg\\.com/(?!profile_banners)(?:media/|tweet_video_thumb/)?[\\w-]{15}[^:?]+)(?::[a-z]+)?.*|((?:twimg\\d-a\\.akamaihd\\.net|(?:(?:m?a|si)\\d*|p(?:bs)?)\\.twimg\\.com)/profile_images/\\d+/.+)_(?:mini|normal|bigger|reasonably_small)(.*))",
-    "to": ":\nvar v = $[1]&&$[1].replace(/(video)_thumb(\\/[^.]+).+/, '$1$2.mp4')\nreturn $[1] ? (v.length!=$[1].length ? v : '#https://' + $[1] + ':orig\\n' + 'https://' + $[1] + ':large') : $[2] + $[3]"
+    "img": "^(?:(p(?:bs)?\\.twimg\\.com/(?!profile_banners)(?:media/|tweet_video_thumb/)?[\\w-]{15}[^:?]*).*|((?:twimg\\d-a\\.akamaihd\\.net|(?:(?:m?a|si)\\d*|p(?:bs)?)\\.twimg\\.com)/(profile_images|card_img)/\\d+/[^?]+)(?:_|\\?(?:[^&]+&)*name=)(?:mini|normal|bigger|reasonably_small|\\d+x\\d+)(.*))",
+    "to": ":\nvar v = $[1]&&$[1].replace(/(video)_thumb(\\/[^.]+).+/, '$1$2.mp4'), f = $[0].match(/(?:format=|\\.)([a-z]{3,4})(?:[:&?]|$)/), p = '?format='+(f&&f[1]||'jpg')+'&name='\nif($[1] && v.length!=$[1].length) return v\nreturn !$[3]||$[3]=='card_img' ? '#//' + ($[1] || $[2]) + p + 'orig\\n' + '//' + $[1] + p + 'large' : $[2] + $[4]"
   },
   "twitter-proxy": {
     "img": "^o\\.twimg\\.com/2/proxy\\.jpg\\?(?:[^&]+&)*?t=([^&]+).*",
@@ -425,11 +424,13 @@
     "res": "src=\"([^\"]+)\" alt=\"([^\"]*)"
   },
   "instagram": {
-    "link": "^((?:(?:i\\.)?instagr(\\.am|am\\.com)|websta(?:\\.me|gr(?:\\.am|am\\.com)))/p/([^/]+)).*",
-    "url": ": $[2] ? 'https://www.instagram.com/p/'+$[3]+'/?__a=1' : $[1]",
-    "res": ":\nvar i,c,re=/(?:\\/[psc][\\dh][^\\/]+|\\?.*)/g;\nif ($[2]&&$._[0]=='{'){\n $=JSON.parse($._).graphql.shortcode_media\n i=$.edge_sidecar_to_children\n i=i&&i.edges\n c=$.edge_media_to_caption.edges,c=c.length&&c[0].node.text,f=$.owner.full_name\n c=new Date($.taken_at_timestamp*1e3).toLocaleString()+' | '+(c?c+' | ':'')+(f?f+' ':'')+'(@'+$.owner.username+')';\n if(i&&i.length) $=i.map(function(el,i){return [el.node.video_url || el.node.display_url.replace(re,''), !i&&c]})\n else $=[$.video_url || $.display_url.replace(re,''), c]\n} else if((i=$._.match(/data-m4v=\"([^\"]+)/)) || (i=$._.match(/=\"og:image\" content=\"([^\"]+)/))) {\n i[0]=$._.match(/data-text=\"([^\"]+)/)\n $=[i[1].replace(re,''), i[0] && i[0][1]]\n} else $=null\nreturn $",
-    "img": "^((?:scontent[^.]*\\.cdninstagram\\.com|(?:instagram\\.|igcdn-photos)[^/]+\\.(?:akamaihd|fbcdn)\\.net)/[^?]+).*",
-    "to": ":\nreturn $[1].replace(/\\/[psc][\\dh][^\\/]+/g,'')"
+    "useimg": 1,
+    "link": "^(?:(?:i\\.)?instagr(?:\\.am|am\\.com))/(?:p/([^/?#]+).*|(\\w+)/#!ppic|api/v1/users/(\\d+)/info/)$",
+    "url": ": $[2] || $[3] ? $[0] :'https://www.instagram.com/p/' + $[1] + '/?__a=1'",
+    "res": ":\nvar i,c,u\nif($._[0]!='{') {\n i=$._.match(/\"id\":\"(\\d+)\",/)\n return i && {loop: 'https://i.instagram.com/api/v1/users/' + i[1] + '/info/'} || null\n}\n$._=JSON.parse($._)\nif($[3]) return [$._.user.hd_profile_pic_url_info.url, [$._.user.full_name, '('+'@' + $._.user.username+') | ', $._.user.biography].join(' ')]\n$=$._.graphql.shortcode_media\ni=$.edge_sidecar_to_children\ni=i&&i.edges\nc=$.edge_media_to_caption.edges,c=c.length&&c[0].node.text,f=$.owner.full_name\nc=new Date($.taken_at_timestamp*1e3).toLocaleString()+' | '+(c?c+' | ':'')+(f?f+' ':'')+'(@'+$.owner.username+')';\nif(i&&i.length) $=i.map(function(el,i){return [el.node.video_url || el.node.display_url, !i&&c]})\nelse $=[$.video_url || $.display_url, c]\nreturn $",
+    "img": "^instagram\\.(?:[\\da-z-]+\\.){2,3}fbcdn\\.net/vp/.*",
+    "loop": 2,
+    "to": ":\nvar m = this.node.closest('a[href]');\nif(!m)m=this.node.matches('header ._pg23k > ._rewi8')&&window.location\nm=m&&m.href.match(/\\/\\/www\\.instagr(?:\\.am|am\\.com)\\/([^\\/]+)\\/?[^\\/]*/)\nreturn m ? 'https://www.instagram.com/'+m[1]+'/#!ppic' : $[0]"
   },
   "vsco": {
     "img": "^(?:(im\\.vsco\\.co/[^?]+)|(image-aws[^.]+\\.vsco\\.co/\\w+/\\d+/\\w+/)\\d+x\\d+/([^?]+)).*",
@@ -441,16 +442,16 @@
     "res": ":\nif($._[0]!='{')return null\n$._=JSON.parse($._)\nreturn [$._.videoUrl, $._.description+' by '+$._.username]"
   },
   "streamable": {
-    "link": "^(streamable\\.com/)(?!about|documentation|privacy|terms|signup|login|tools|videos|albums|dashboard|search|clipper)(?:e/|a(lbum|jax/groups)/)?([\\da-z]+)[^/]*$",
-    "url": ": $[2] ? $[1]+'ajax/groups/'+$[3] : 'api.'+$[1]+'videos/'+$[3]",
-    "res": ":\ntry {$._=JSON.parse($._)}\ncatch(ex) {return $[2] ? null : {loop: 'https://'+$[1] + 'album/'+$[3]}}\nvar t;\nif($._.videos) {t=$._.name;$._=$._.videos} else {$._=[$._]}\nreturn $._.map(function(x,i) {\n var f=x.files, u=[];\n ['mp4', 'webm', 'mp4-mobile', 'webm-mobile'].forEach(function(t,ii){\n  f[t]&&u.push((ii<2?'#':'')+f[t].url)\n })\n return [u, (!i&&t ? '['+t+'] ':'') + ($._.title || '')]\n})",
+    "link": "^(streamable\\.com/)(?!about|documentation|privacy|terms|signup|login|tools|videos|albums|dashboard|search|clipper)(?:\\w/|album|ajax/groups/)?([\\da-z]+).*",
+    "url": "$1s/$2",
+    "res": ":\n$._ = $._.match(/var videoObject = (\\{[^\\n]+\\})/)\nif(!$._) return null\n$._=JSON.parse($._[1])\nvar t;\nif($._.group) {t=$._.name;$._=$._.group.videos} else {$._=[$._]}\nreturn $._.map(function(x,i) {\n var f=x.files, u=[];\n ['mp4', 'webm', 'mp4-mobile', 'webm-mobile'].forEach(function(t,ii){\n  f[t]&&u.push((ii<2?'#':'')+f[t].url)\n })\n return [u, (!i&&t ? '['+t+'] ':'') + ($._.title || '')]\n})",
     "img": "^cdn\\.(streamable\\.com/)video/[^/]+/([^.]+).*"
   },
   "vidble": {
     "useimg": 1,
-    "link": "^(vidble\\.com/)(?:show|explore[^/]*|album)/([\\da-zA-Z]{8,10}).*",
-    "res": ":\nvar x = $._.match(RegExp(\"src='/[\\\\da-zA-Z]{10}(_[^.]*)?\\\\.[^']+\", 'g')), t = $._.match(/<h2[^>]*>([^<]+)/), l = 'http://' + $[1];\nreturn x ? x.map(function(i, n) {return ['#' + l + i.replace(/_[^.]+/, ''), !n && t && t[1]]}) : x",
-    "img": "^(vidble\\.com/[\\dA-Za-z]{10})(?:_[^.]+)?\\.",
+    "link": "^(vidble\\.com/)(?:(?:show|explore[^/]*|album)/|watch\\?v=)([\\da-zA-Z]+).*",
+    "res": ":\nvar x = $._.match(RegExp(\"src='/[\\\\da-zA-Z]+(_[^.]*)?\\\\.[^']+\", 'g')), t = $._.match(/<h2[^>]*>([^<]+)/), l = 'http://' + $[1];\nreturn x ? x.map(function(i, n) {return ['#' + l + i.replace(/_[^.]+/, ''), !n && t && t[1]]}) : x",
+    "img": "^(vidble\\.com/[\\dA-Za-z]+)(?:_[^.]+)?\\.",
     "to": "#$1."
   },
   "oddshot.tv": {
@@ -459,13 +460,14 @@
     "res": "\"url\":\"([^\"]+)\",\"type\":\"source\""
   },
   "clips.twitch.tv": {
-    "link": "^clips\\.(twitch\\.tv/)\\w+",
-    "res": ":\nvar m={},o=$._.slice($._.lastIndexOf('var clipInfo = {')).match(/(vod_id|vod_offset|game|channel_title|broadcaster_login|quality_options)\\s*:\\s*\"?[^\\r\\n]+/g)\nif(o)o.some(function(i){var n=i.match(/^\\w+/)[0],v=i.replace(/[\",]*$/,'').slice(i.indexOf(':')+1);\nm[n] = n[0]=='q'?JSON.parse(v):v.replace(/^\\s*\"?/,'')})\nreturn o ? [[['#'+m.quality_options[0].source, m.quality_options.pop().source], '[' + m.game + '] ' + m.channel_title + ' | ' + (m.vod_id?'https://www.'+$[1]+m.broadcaster_login+'/'+m.vod_id[0]+'/'+m.vod_id.slice(1)+'?t='+m.vod_offset:'')]] : null"
+    "link": "^(clips\\.twitch\\.tv/)(?:embed\\?clip=)?(\\w+).*",
+    "url": "$1api/v2/clips/$2",
+    "res": ":\nvar m=JSON.parse($._),b=m.preview_image;b=b&&b.replace(/-preview\\.jpg.*/, ''), c=b&&b.replace(/\\.tv\\//,'$&AT-cm|')\nreturn b?[[['#'+b+'.mp4', c+'-480.mp4', c+'-360.mp4'], '['+m.game+'] ' + [m.title, m.broadcaster_display_name, (new Date(m.created_at)).toLocaleString(), m.vod_url].filter(Boolean).join(' | ')]]:null"
   },
   "clippituser.tv": {
     "link": "^(clippit)user\\.tv/c(/\\w{6}).*",
     "img": "^clips.(clippit).tv(/\\w{6})/thumbnail.*",
-    "to": "#clips.$1.tv$2/720.mp4\nclips.$1.tv$2/360.mp4"
+    "to": "#//clips.$1.tv$2/720.mp4\n//clips.$1.tv$2/360.mp4"
   },
   "plays.tv": {
     "link": "^(plays\\.tv/)(s|stream|video|embeds)(/[\\w-]+).*",
@@ -485,8 +487,9 @@
     "res": "<source src=\"([^\"]+)\nname=\"description\" content=\"([^\"]+)"
   },
   "neatclip.com": {
-    "link": "^neatclip\\.com/clip/\\w+",
-    "res": "=\"og:video\" content=\"([^\"]+)\n<h5 class=\"clip-info-title\">([^<]+)"
+    "link": "^(neatclip\\.com/)(?:clip|embed)(/\\w+)",
+    "url": "$1clip$2",
+    "res": "=\"nc:video\" content=\"([^\"]+)\n<title>([^<]+) -"
   },
   "v.redd.it": {
     "link": "^(v\\.redd\\.it/[\\da-z]+).*",
@@ -494,9 +497,10 @@
     "res": ":\nvar v=0,u,m=$._.match(/width=\"\\d+\">\\s*<BaseURL>([^<]+)/g)\nif(!m)return m\nm.forEach(function(m){\n m=m.match(/\"([^\"]+)\">[^>]+>(.+)/)\n if(m[1] > v) { v = m[1]; u = m[2] }\n})\nreturn '//'+$[1]+'/'+u+'#mp4'"
   },
   "reddit-media": {
-    "link": "^(?:[a-z]{2}(?:-[a-z]{2})?\\.|beta\\.)?reddit\\.com/r/[^/]+/comments/[\\da-z]+/[^/]+/(?:\\?utm_content=(?:title|thumbnail).*)?$",
+    "link": "^(?:[a-z]{2}(?:-[a-z]{2})?\\.|beta\\.|old\\.)?reddit\\.com/(?:r|user)/[^/]+/comments/([\\da-z]+)/[^/]+/(?:\\?utm_content=(?:title|thumbnail).*)?$",
+    "loop": 1,
     "img": "^(g\\.redditmedia\\.com/[\\w-]+\\.gif\\?(?:[^&]+&)*?fm=mp4[^#]*)(.*)",
-    "to": ":\nif ($[1]) return $[2]=='#mp4' ? $[0] : $[1]+'#mp4'\nvar u,p,n=window.location.hostname.slice(-10)=='reddit.com'&&this.node\nif(!n||!n.matches('div.link>a.thumbnail>img, div.link>div.entry>p.title>a.title, div.link>a.thumbnail.image'))return'';\np=n.parentNode; n.classList.contains('thumbnail')||(p=p.parentNode)\nu=p&&p.querySelector('div.expando[data-cachedhtml]')\nu=u&&u.getAttribute('data-cachedhtml').match(/(?:<a href|class=\"preview\" src)=\"([^\"]+)/g)\nif(u)return u.map(function(i){return i.slice(i.lastIndexOf('\"')+1).replace(/&amp;/g,'&')}).join('\\n')||'';\nu=p&&(n.localName=='a'?p.parentNode:p).dataset\nu=u.url||u.hrefUrl\nreturn u&&/^(https?:)?\\/\\/i\\.redd\\.?it/.test(u)?u:''"
+    "to": ":\nif($[2]!==0)return $[2]=='#mp4'?$[0]:$[1]+'#mp4'\nvar u,p,c,n=window.location.hostname.slice(-10)=='reddit.com'&&this.node\nif(!n)return''\nif(n.matches('div.link a.thumbnail,div.link a.thumbnail>img, div.link a.title, div.link a.thumbnail.image')) {\n p=n;while((p=p.parentNode)&&!p.matches('div.link'));\n u=p.dataset, u=u.url||u.hrefUrl\n if(u&&/v\\.redd\\.it\\//.test(u))return u\n c=p&&p.querySelector('div.expando[data-cachedhtml]')\n c=c&&c.getAttribute('data-cachedhtml')\n u=c&&c.match(/(?:<a href|(?:class=\"preview\"|<source) src)=\"([^\"]+)/g)\n if(u) {\n  u=u.map(function(i){\n   var u=i.slice(i.lastIndexOf('\"')+1).replace(/&amp;/g,'&');\n   return u+(i[1]=='s'?'#mp4':'')\n  });\n  u=c.indexOf('<source')!=-1?u.reverse():u\n  return u.length?u.join('\\n'):''\n }\n u=p.dataset, u=u.url||u.hrefUrl\n}else if(n.matches('a.Post__titleLink')) {\n u = n.closest('.Post__top').querySelector('a.PostThumbnail').href\n}else if(n.matches('a[data-click-id=body]>h2, a[data-click-id=body]>h2>span')){\n p=n.closest('.Post');\n if(p&&p.querySelector('p,i.icon-text'))return ''\n p=p.querySelector('a>.icon-outboundLink')\n p=p ? p.parentNode : {href: '//gateway.reddit.com/desktopapi/v1/postcomments/t3_'+$[1]+'?truncate=1'}\n p=this.find({href: p.href, IMGS_TRG: n})\n n.title = n.getAttribute('aria-label') || n.title\n return (Array.isArray(p) ? p.join('\\n') : (p === null ? 'null' : p)) || ''\n}\nreturn u&&/^(https?:)?\\/\\/i\\.redd\\.?it/.test(u)?u:''"
   },
   "reddit-post": {
     "link": "^gateway\\.reddit\\.com/desktopapi/v1/postcomments/(t3_[\\da-z]+)",
@@ -508,11 +512,11 @@
     "res": ":\nvar t, r=['<meta[^>]+?property=[\\'\"]?og:','[\\'\"]?\\\\s[^>]*?content=[\\'\"]([^\\'\">]+)'], m = $._.match(RegExp(r[0]+'image(?::url)?'+r[1]))\nreturn m ? [m[1], (t = $._.match(RegExp(r[0]+'title'+r[1])))&&t[1]] : !1",
     "img": "^(?:i\\.r(eddituploads\\.com|ddt\\.co)/[\\da-f]{32}\\?|[a-f]\\.thumbs\\.redditmedia\\.com/[\\w-]{16,43}\\.jpg$)",
     "loop": 2,
-    "to": ":\nvar n=!$[1]&&this.node\nreturn n&&n.matches('div.link>a.thumbnail>img')&&n.parentNode.href ? '//rt/?'+n.parentNode.href : $[0]"
+    "to": ":\nvar u,n=!$[1]&&this.node,x=n&&n.matches('.Post div>div[role=img]');\nn && (n.title = n.getAttribute('aria-label') || n.title);\nreturn x&&(x=n.closest('.Post')) && (x=x.querySelector('span>a+a:last-child[href]'))\n? x.href\n: n&&n.matches('div.link>a.thumbnail>img, .PostThumbnail>img, a>div[role=img]')&&n.parentNode.href ? '//rt/?'+n.parentNode.href : $[0]"
   },
   "gfycat": {
-    "link": "^gfy(?:cats?\\.com(?!/(?:privacy|contact|upload|sign|leader|random|support|partners|gifbrewery|cajax/))|gur\\.com/view/\\d+)/(?:(?:cajax/checkUrl|fetch)/(http.+)|(?!useraccount/|ifr/|detail/)([\\w.-]+)/([\\w-]+).*|(?:ifr/|detail/)?([a-zA-Z]{6,})([^#/]*#\\?direction=reverse)?.*)",
-    "url": ": '//gfycat.com/cajax/' + ($[1] ? 'checkUrl/' + $[1] : ($[4] ? 'get/' + $[4] + ($[5]?'#!r':'') : 'getPublicAlbumContents?username='+$[2]+'&albumUrl='+$[3]));",
+    "link": "^gfy(?:cat\\.com(?!/(?:privacy|contact|upload|sign|leader|random|support|partners|gifbrewery|cajax/))|gur\\.com/view/\\d+)/+(?:(?:cajax/checkUrl|fetch)/(http.+)|(?!useraccount/|ifr/|(?:(?:\\w\\w/)?gifs/)?detail/)@?([\\w.-]+)(?:/albums)?/([\\w-]+).*|(?:ifr/|(?:(?:\\w\\w/)?gifs/)?detail/)?([a-zA-Z]{6,})(#?\\?direction=reverse)?.*)",
+    "url": ": '//gfycat.com/cajax/' + ($[1] ? 'checkUrl/' + $[1] : ($[4] ? 'get/' + $[4].toUpperCase() + ($[5]?'#!r':'') : 'getPublicAlbumContents?username='+$[2]+'&albumUrl='+$[3]));",
     "res": ":\n$._=JSON.parse($._)\nif($[1]&&!$._.urlKnown===!1)$._=''\nvar r=[], rv=($[5]?'-reverse':'')+'$1', o=$._.publishedGfys||$._.gfyItem&&[$._.gfyItem]||$._&&[$._], t=$._.title;\no&&o.forEach(function(g,i){\n var u=['#'+g.webmUrl.replace(/(\\.webm)$/,rv), '#'+g.mp4Url.replace(/(\\.mp4)$/,rv)]\n if(!$[5])u.push(g.mobileUrl)\n g.webmUrl && r.push([\n  u.map(function(u){ return u.replace(/^https?:/,'')}),\n  (!i&&t?'['+t+'] ':'') + (g.title&&g.title!=='Untitled'?g.title:'')\n ])\n});\nreturn r.length ? r : ($[1] ? decodeURIComponent($[1]) : !1)",
     "img": "^(?:zippy|fat|giant|thumbs)\\.gfycat\\.com/()()()([a-zA-Z]+)(-reverse)?.+"
   },
@@ -534,7 +538,8 @@
   },
   "sendvid": {
     "link": "^(sendvid\\.com/)(?:embed/)?([\\da-z]{8})\\W*",
-    "to": "$1$2.mp4"
+    "url": "$1embed/$2",
+    "res": "=\"og:video:secure_url\" content=\"([^\"]+)\n=\"og:title\" content=\"([^\"]+)"
   },
   "webmshare": {
     "link": "^(webmshare\\.com/)(?!terms)(?:play/|done/)?(\\w{5})(?:[#?]|$)",
@@ -564,6 +569,10 @@
     "img": "^tcdn\\.couchsurfing\\.com/[\\w=-]+/(?:[^/]+/)*?(https://s\\d*\\.amazonaws\\.com/.+)",
     "to": "$1"
   },
+  "squarespace": {
+    "img": "^(static\\d\\.squarespace\\.com/static/[^?]+)(?:(\\?format=).*|(?:-\\d+w)?(?=\\.jpg))",
+    "to": ":\nreturn $[1].replace(/-\\d+w$/,'') + ($[2] || '-') + '2500w'"
+  },
   "foursquare": {
     "img": "^(i(?:gx|r?s\\d)\\.4sqi\\.net|playfoursquare\\.s3\\.amazonaws\\.com)(?:(/img/(?:general|user)/)(?!original/)[^/]+|(/userpix)_thumbs?/)",
     "to": ":\nreturn $[1] + ($[2] ? $[2] + 'original' : $[3] + '/');"
@@ -587,7 +596,7 @@
     "to": "$1"
   },
   "bugs.chromium.org": {
-    "img": "^(bugs\\.chromium\\.org/p/chromium/issues/attachment\\?aid=\\d+&inline=[^&]+).*",
+    "img": "^(bugs\\.chromium\\.org/p/chromium/issues/attachment\\?aid=\\d+(?:&[^&]+)*?&inline=[^&]+).*",
     "to": "$1"
   },
   "greasyfork": {
@@ -599,7 +608,7 @@
     "to": "$1$2$3$4"
   },
   "MSN": {
-    "img": "^(img(?:\\.s-msn\\.com|-s-msn-com\\.akamaized\\.net)/tenant/amp/entityid/[^.]+).*",
+    "img": "^((?:static-global|img)(?:\\.s-msn\\.com|-s-msn-com\\.akamaized\\.net)/(?:img-resizer/)?tenant/amp/entityid/[^.]+).*",
     "to": "$1"
   },
   "bbci.co.uk": {
@@ -685,7 +694,7 @@
   "artstation": {
     "link": "^(artstation\\.com/)artwork(/[^/]+).*",
     "url": "$1projects$2.json",
-    "res": ":\n$=JSON.parse($._)\nif (!$.user) return null;\n$.s = $.software_items.map(function(i) {return i.name}).join(', ')\n$.c = [$.title, $.description.replace(/^<p>(.*)<\\/p>$/, '$1')].filter(function(x) {return !!x.trim()}).join(' - ') + ' by ' + $.user.username;\nreturn $.assets.map(function(x, i){\n return [x.image_url, [(i ? '' : '[' + $.c + ($.s ? ' in ' + $.s : '') + ']') + (x.title||'')].join(' ')]\n})"
+    "res": ":\n$=JSON.parse($._)\nif (!$.user) return null;\n$.s = $.software_items.map(function(i) {return i.name}).join(', ')\n$.c = [$.title, $.description.replace(/^<p>(.*)<\\/p>$/, '$1')].filter(function(x) {return !!x.trim()}).join(' - ') + ' by ' + $.user.username;\nreturn $.assets.map(function(x, i){\n return [x.image_url, [(i ? '' : '[' + $.c + ($.s ? ' in ' + $.s : '') + ']'), (x.title||x.title_formatted||'')].join(' ')]\n})"
   },
   "steampowered": {
     "img": "^((?:(?:cloud[-\\d]*|images\\.akamai)\\.steam(?:powered|usercontent)\\.com|steamuserimages[^.]*\\.akamaihd\\.net)/ugc/\\d+/[\\dA-F]{40}).*",
@@ -696,7 +705,7 @@
     "to": "$1.jpg"
   },
   "amazon": {
-    "img": "^((?:(?:images\\.|(?:images-[a-z]{2}\\.ssl-|(?![gz]-)[^.]+\\.)images-)amazon|ia\\.media-imdb)\\.com/images/[^/]/[^.]+)(?:$|\\.(?!_(?:CB|V)\\d{4,}_\\.).*)",
+    "img": "^((?:(?:images\\.|(?:images-[a-z]{2}\\.ssl-|(?![gz]-)[^.]+\\.)images-)amazon|ia\\.media-imdb|m\\.media-amazon)\\.com/images/[^/]/[^.]+)(?:$|\\.(?!_(?:CB|V)\\d{4,}_\\.).*)",
     "to": "#$1.jpg\n$1._SY1024_SX1024_.jpg"
   },
   "newegg": {
@@ -706,8 +715,8 @@
   "ebay": {
     "link": "^(?:(?:(?:be\\w\\w|viewitem\\.eim|cgi)\\.)?ebay\\.(?:co(?:m(?:\\.(?:hk|sg|au|my))?|\\.uk)|[hr]u|[ap]t|[bd]e|n[ol]|p[hl]|i[ten]|c[ahz]|es|f[ir]|gr)/(?:itm/)?[^/?]*[?/](?:item=)?|chodientu\\.vn/ebay-item-)(\\d{8,19}).*",
     "url": "http://open.api.ebay.com/shopping?version=787&callname=GetSingleItem&responseencoding=JSON&ItemID=$1&IncludeSelector=Variations&appid=Home36b0d-52af-4d35-8686-05139e05b84",
-    "res": ":\nvar r=[],p,o,c,x,i,e;\ntry {\ni = JSON.parse($._).Item;\nif (!i || !i.PictureURL || (i.Variations && !i.Variations.Pictures)) throw 0;\n\n$._ = /(~~\\d*_|\\/\\$_)\\d+\\./;\nx = i.ConvertedCurrentPrice;\n$.cap = 'EBay: '+i.Title+' | Price: '+x.Value+' '+x.CurrencyID+' | Location: '+i.Location+', '+i.Country;\nif (p = i.PictureURL) {\n for (o=0;o<p.length;++o) {\n  r.push([p[o].replace($._,'$132.'), !o&&$.cap]);\n }\n}\n\nif ((i = i.Variations) && (i = i.Pictures)) {\n for (o=0;o<i.length;++o) {\n  p=i[o].VariationSpecificName;\n  c=i[o].VariationSpecificPictureSet;\n  for (e=0;e<c.length;++e) {\n   for (x=0;x<c[e].PictureURL.length;++x) {\n    r.push([c[e].PictureURL[x].replace($._,'$132.'), !o&&($.cap+' | '+p+': '+c[e].VariationSpecificValue)]);\n   }\n  }\n }\n}\n}catch(x){}\n\nreturn r.length ? r : null;",
-    "img": "^((?:ssl)?i\\.ebayimg\\.com/(?:t/[^/]+/)?\\d+/[^_]+(?:~~\\d*)?)_(?!32)\\d+\\.",
+    "res": ":\nvar r=[],p,o,c,x,i,e;\ntry {\ni = JSON.parse($._).Item;\nif (!i || !i.PictureURL || (i.Variations && !i.Variations.Pictures)) throw 0;\n\n$._ = /(~~\\d*_|\\/\\$_)\\d+\\./;\nx = i.ConvertedCurrentPrice;\n$.cap = 'EBay: '+i.Title+' | Price: '+x.Value+' '+x.CurrencyID+' | Location: '+i.Location+', '+i.Country;\nif (p = i.PictureURL) {\n for (o=0;o<p.length;++o) {\n  r.push([p[o].replace($._,'$132.').replace(/^http:/, ''), !o&&$.cap]);\n }\n}\n\nif ((i = i.Variations) && (i = i.Pictures)) {\n for (o=0;o<i.length;++o) {\n  p=i[o].VariationSpecificName;\n  c=i[o].VariationSpecificPictureSet;\n  for (e=0;e<c.length;++e) {\n   for (x=0;x<c[e].PictureURL.length;++x) {\n    r.push([c[e].PictureURL[x].replace($._,'$132.').replace(/^http:/, ''), !o&&($.cap+' | '+p+': '+c[e].VariationSpecificValue)]);\n   }\n  }\n }\n}\n}catch(x){}\n\nreturn r.length ? r : null;",
+    "img": "^((?:ssl)?i\\d*\\.ebayimg\\.com/(?:t/[^/]+/)?\\d+/[^_]+(?:~~\\d*)?)_(?!32)\\d+\\.",
     "to": "$1_32."
   },
   "Craigslist": {
@@ -740,7 +749,7 @@
     "to": "$1860x666/"
   },
   "etsy": {
-    "img": "^(img\\d+\\.etsystatic\\.com/(\\d{3}/\\d/\\d+/)?i(?:l|ag)_)\\d+x[\\dN]+",
+    "img": "^(img\\d*\\.etsystatic\\.com/(?:\\d{3}/\\d/\\d+/|il/[\\da-f]{6}/\\d+/)?i(?:l|ag)_)\\d+x[\\dN]+",
     "to": "$1fullxfull"
   },
   "FusionBeads": {
@@ -759,7 +768,7 @@
     "to": "#$1images/$2\n$1images/$2_lg"
   },
   "taobao": {
-    "img": "^((?:img[^.]*|g(?:[^.]*\\.?){1,2}?|asearch|\\w\\w\\d\\d)\\.(?:taobaocdn|tbcdn|alicdn)\\.c(?:om|n)/)(.+)_\\d+x\\d+.+",
+    "img": "^((?:img[^.]*|g(?:[^.]*\\.?){1,2}?|asearch|\\w\\w\\d\\d)\\.(?:taobao|tb|ali)cdn\\.c(?:om|n)/)(.+)_\\d+x\\d+.+",
     "to": "$1$2"
   },
   "jd.com": {
@@ -780,7 +789,7 @@
   },
   "bugzilla": {
     "link": "^bug(?:s|zilla).[^/]{5,20}/attachment\\.cgi\\?id=\\d+$",
-    "to": ":\nvar p = this.node.parentNode, p = p&&p.parentNode; p = p && p.querySelector('.bz_attach_extra_info,.attach-info');\nreturn p && ~p.textContent.indexOf('image/') || /\\.(jpe?g|png|gif|bmp|web[mp]|svg)$/.test(this.node.title) ? $[0] : ''"
+    "to": ":\nvar p = this.node.parentNode, p = p&&p.parentNode; p = p && p.querySelector('.bz_attach_extra_info,.attach-info');\nreturn p && ~p.textContent.indexOf('image/') || /\\.(jpe?g|png|gif|bmp|web[mp]|svg)$/i.test(this.node.title) ? $[0] : ''"
   },
   "natgeo": {
     "img": "^((?:images\\.)?nationalgeographic\\.com/)(?:(content/dam/.+\\.)adapt[\\d.]+|((?:dc/)?exposure/(?:[^/]+/)+?image/[^./]+_)\\d+x\\d+)",
@@ -788,7 +797,7 @@
   },
   "apod": {
     "link": "^apod\\.nasa\\.gov/apod/(?:a(?:stropix|p\\d{6})\\.html)?$",
-    "res": ":\nvar i = $._.match(/<br>\\s*<a href=\"(image\\/[^\"]+)\"[^<]+<img src=\"([^\"]+)/i);\nreturn i && [[[\"#\" + $.base + i[1], $.base + i[2]], $._.match(/Explanation:?\\s*<\\/[^>]+>:?\\s*([\\s\\S]+?)<p>/)[1].trim().replace(/<[^>]+>/g, '')]] || null;"
+    "res": ":\nvar i=$._.match(/<br>\\s*<a href=\"(image\\/[^\"]+)\"[^<]+<img src=\"([^\"]+)/i);\nreturn i && [[[\"#\" + $.base + i[1], $.base + i[2]], $._.match(/Explanation:?\\s*<\\/[^>]+>:?\\s*([\\s\\S]+?)<p>/)[1].trim().replace(/<[^>]+>/g, '')]] || null;"
   },
   "hubblesite": {
     "img": "^(imgsrc\\.hubblesite\\.org/hu/db/images/hs-\\d{4}-\\d{2}-[a-z]-)(?:(?:mini_|wallpaper_)?thumb|web(?:_print)?|(?:small|x?large)_web)",
@@ -812,8 +821,8 @@
   },
   "mobypicture": {
     "useimg": 1,
-    "link": "^moby(?:picture\\.com/user/[^/]+/view|\\.to)/\\d+$",
-    "url": "http://api.mobypicture.com/oEmbed?url=$&",
+    "link": "^(?:m\\.)?moby(?:picture\\.com/user/[^/]+/view|\\.to)/\\d+$",
+    "url": "//api.mobypicture.com/oEmbed?url=$&",
     "res": "(?:;file=|<url>)([^<&]+)\n<title>([^<]+)</title>",
     "img": "^([ab]\\d\\.img\\.mobypicture\\.com/[\\da-f]{32}_|moby\\.to/[\\da-z]+:)(?:full|square|view|medium|thumbnail|thumb)",
     "to": "#$1full\n$1large"
@@ -829,9 +838,11 @@
     "to": "$1"
   },
   "imgbox": {
-    "link": "^(imgbox\\.com/(?!privacy|register)[^/.]{6,10})$",
-    "img": "^(?:(?:hcd-\\d|t\\d*|(?:\\d\\.)?[is])\\.)(imgbox\\.com/[^/.]{6,10}).*",
-    "to": "i.$1"
+    "link": "^(imgbox\\.com/)(?!privacy|register)([^/.]{6,10})$",
+    "url": "$1$2",
+    "res": "href=\"([^\"?]+)\\?download",
+    "img": "^(?:(?:hcd-\\d|t\\d*|(?:\\d[.-])?[is]|thumb(s\\d*))\\.)(imgbox\\.com/[^._]+)[^.]*",
+    "to": ":\nreturn $[1]?'image'+$[1]+'.'+$[2]+'_o':'i.'+$[2]"
   },
   "yandisk": {
     "img": "^\\d\\.downloader\\.disk\\.yandex\\.(?:com|ru)/preview/[\\da-f]{64}/inf/[^?]+\\?(?:[^&]+&)*?(?:content_type=image).+",
@@ -901,14 +912,6 @@
     "img": "^(s\\d+\\.hostingkartinok\\.com/uploads)/thumbs/([^.]+\\.)png",
     "to": "$1/images/$2#jpg jpeg png gif bmp#"
   },
-  "pic[45]you.ru": {
-    "useimg": 1,
-    "link": "^(pic(?:area|[45]you)\\.ru/\\d+/\\d+).*",
-    "url": "$1/1/",
-    "res": "<img src=\"(http://(?:s\\d+\\.)?pic[45]you\\.ru/allimage/[^\"]+)",
-    "img": "^((?:s\\d+\\.)?pic[45]you\\.ru/allimage/[^.]+)-thumb",
-    "to": "$1"
-  },
   "4put.ru": {
     "useimg": 1,
     "link": "^(4put\\.ru/)(?:pics/(?:[^/]+/)+?(?:small|max)_|view-max-picture\\.php\\?id=)(\\d+).*",
@@ -916,6 +919,31 @@
     "res": "<IMG SRC=\"([^\"]+/$2\\.[^\"]+)",
     "img": "^(4put\\.ru/pictures/)(?!max)[^/]+(/\\d+/\\d+)",
     "to": "$1max$2"
+  },
+  "pic[45]you.ru": {
+    "useimg": 1,
+    "link": "^(pic(?:area|age|[45]you)\\.ru/(\\d+/\\d+)).*",
+    "loop": 1,
+    "url": "$1/",
+    "res": "<img src=\"(http://(?:s\\d+\\.)?pic[45]you\\.ru/(?:allimage/)?(?:y2\\d+/[\\d-]+|allimage)/$2[^\"]+)",
+    "img": "^((?:s\\d+\\.)?pic[45]you\\.ru/(?:allimage/)?y\\d+/[\\d-]+/[^-]+)-[^.]+",
+    "to": "$1"
+  },
+  "piccash.net": {
+    "useimg": 1,
+    "link": "^(piccash\\.net/\\d+/\\d+).*",
+    "url": "$1/1",
+    "res": "<a href=\"(/allimage/[^\"]+)",
+    "img": "^(piccash\\.net/allimage/\\d{4}/\\d+-\\d+/img_)thumb(/\\d+)-thumb",
+    "to": "$1full$2"
+  },
+  "pic-money": {
+    "useimg": 1,
+    "link": "^pic-money\\.ru/\\w+\\.html",
+    "loop": 1,
+    "res": "<img src=\"([^\"]+)\">",
+    "img": "^(pic-money\\.ru/img/\\d+/\\d+/\\d+/\\d+)t",
+    "to": "$1"
   },
   "pixs.ru": {
     "link": "^pix(?:venue\\.com|s\\.ru)/showimage/[^?]+\\.(jpe?g|png|gif|bmp)",
@@ -937,15 +965,19 @@
     "img": "^(jpegshare\\.net/)thumbs/([\\da-f/]{38}).*",
     "to": "$1images/$2.#jpg png gif#"
   },
-  "dropbox": {
-    "link": "^(dropbox\\.com/[su]h?/[^?]+\\.(?:jp(?:g|eg?)|a?png|gif|svgz?|bmp|web[pm]|og[gv]|j(?:if|fif?))).*",
-    "ci": 1,
-    "to": "https://dl.$1"
+  "turboimagehost": {
+    "link": "^turboimagehost.com/p/\\d+/.*",
+    "res": "=\"og:image\" content=\"([^\"]+)"
   },
   "ipfs.pics": {
     "link": "^(ipfs\\.pics/)(Q\\w{45}).*",
     "img": "^(ipfs\\.pics/)ipfs/(Q\\w{45}).*",
     "to": "$1ipfs/$2"
+  },
+  "dropbox": {
+    "link": "^(dropbox\\.com/[su]h?/[^?]+\\.(?:jp(?:g|eg?)|a?png|gif|svgz?|bmp|web[pm]|og[gv]|j(?:if|fif?))).*",
+    "ci": 1,
+    "to": "https://dl.$1"
   },
   "cl.ly": {
     "link": "^cl\\.ly/image/([^/]+).*",
@@ -954,7 +986,7 @@
     "to": "http://cl.ly/image/$1/$1.jpg"
   },
   "prntscr": {
-    "link": "^prnt(?:\\.sc|scr\\.com)/[\\da-z]{5,6}$",
+    "link": "^prnt(?:\\.sc|scr\\.com)/[\\da-z]{5,6}(\\..*)?$",
     "res": "=\"og:image\" content=\"([^\"]+)",
     "img": "^img\\.prntscr\\.com/img\\?url=([^&]+).*",
     "to": "$1"
@@ -978,7 +1010,7 @@
   "tinypic": {
     "useimg": 1,
     "link": "^(?:(?:e[ns]|fr|it|de|nl|p[tl]|sv)\\.)?tinypic\\.com/(view\\.php\\?pic=|r/)[\\da-z]+",
-    "res": " class=\"thickbox\"\\s*>\\s+<img src=\"(http://[^\"]+)",
+    "res": "class=\"thickbox\"\\s*>\\s+<img src=\"(http://[^\"]+)",
     "img": "^(o?[si]\\d+\\.tinypic\\.com/[\\da-z]+)_th",
     "to": "$1"
   },
@@ -1014,7 +1046,7 @@
   "postimage": {
     "link": "^(postima?ge?\\.org/)image(?:\\.php\\?v=|/)([\\w-]+)(?:/.*)?$",
     "url": "https://$1image/$2",
-    "res": "<a href=\"(h[^\"?]+\\?dl=1)\"",
+    "res": "<a href=\"(h[^?\"]+\\?dl=1)",
     "img": "^s\\d+\\.(postima?ge?\\.org/)([\\da-z]+)/[^/]+"
   },
   "upload.ee": {
@@ -1258,7 +1290,7 @@
   },
   "giphy": {
     "useimg": 1,
-    "link": "^(g(?:iphy\\.com/gifs|ph\\.is)/)(?:embed/)?([\\w-]+).*",
+    "link": "^(g(?:iphy\\.com/(?:gifs|embed)|ph\\.is)/)([\\w-]+).*",
     "url": "$1$2",
     "res": ":\n$=/gif:\\s*(\\{[^\\n]+\\})/.exec($._)\n$=$&&JSON.parse($[1])\nreturn $ && [[[$.images.original.mp4, $.images.original.url], $.alt_tag]]",
     "img": "^media\\d?\\.((giphy)\\.com/)media/(\\w+)/.*",
@@ -1282,8 +1314,8 @@
     "useimg": 1,
     "link": "^hizliresim\\.com/\\w{6}\\W*$",
     "res": "=\"og:image\" content=\"([^\"]+)\n=\"og:description\" content=\"([^\"]+)",
-    "img": "^([gt]\\.hizliresim\\.com/[^.]+)-(\\d+x\\d+|s)",
-    "to": "$1"
+    "img": "^([gt])(\\.hizliresim\\.com/[^.]+)-(?:\\d+x\\d+|s)",
+    "to": ":\nreturn ($[1]=='t'?'i':'g') + $[2]"
   },
   "demotivators.to": {
     "useimg": 1,
@@ -1293,6 +1325,9 @@
     "to": "$1media/$2_$3#jpg png#"
   },
   "knowyourmeme": {
+    "useimg": 1,
+    "link": "^knowyourmeme\\.com/photos/\\d+-\\w+",
+    "res": "content='([^']+)' itemprop='thumbnailUrl'\ncontent='([^']+)' itemprop='headline'",
     "img": "^(i\\d+\\.kym-cdn\\.com/(?:entries/icon|photos/image)s/)(?!original)[^/]+",
     "to": "$1original"
   },
@@ -1361,7 +1396,7 @@
   },
   "imagefap": {
     "img": "^(?:x\\d*\\.)?(fap\\.to/images/)(?:thumb|mini)/",
-    "to": "$1full/"
+    "to": "//x.$1full/"
   },
   "FetLife": {
     "link": "^fetlife\\.com/users/\\d+/pictures/\\d+",
@@ -1373,12 +1408,13 @@
     "img": "^(?:cdn\\d*\\.)?thumbs\\.motherlessmedia\\.com/thumbs/([\\dA-F]+)(?:-zoom)?\\..*"
   },
   "eroprofile": {
-    "link": "^eroprofile\\.com/m/(?:photo|video)s/view/.+",
+    "link": "^(?:m\\.)?(eroprofile\\.com/)[mp](/(?:photo|video)s/view/.+)",
+    "url": "//www.$1m$2",
     "res": "<(?:a href|source src)=\"((?:https?:)?//(?:pictures|cdn\\.videos)[^\"]+)"
   },
   "erome.com": {
-    "link": "^erome\\.com/a/\\w+",
-    "res": ":\nvar x=$._.match(/(?:=\"img-back\"|<source) src=\"\\/\\/s\\d\\.erome\\.com\\/\\d+\\/[^\"]+/g);\nreturn x ? x.map(function(s,i){i=!i&&$._.match(/<title>([^<]+)/); return [s.slice(s.indexOf('/')),i&&i[1]]}) : null"
+    "link": "^erome\\.com/[ai]/\\w+",
+    "res": ":\nvar x=$._.match(/(?:=\"img-back\"|<source) src=\"\\/\\/s\\d+\\.erome\\.com\\/\\d+\\/[^>]+/g),r={}\nx&&x.forEach(function(s,i){\n var v = s[0]=='<', b = s.indexOf('/'), e = s.indexOf('\"', b+5), u=s.slice(b, e), id=u.match(/[^/]\\/([^/_.]+)[._]/)[1];\n if(!r[id])r[id]=[u]\n else r[id][0] = [r[id][0], (/label='HD'/.test(s) ?'#':'')+u]\n i=!i&&$._.match(/<title>([^<]+)/)\n i&&id[1] && r[id].push(i[1])\n})\nr=Object.values(r)\nreturn r.length?r:null"
   },
   "pornbot": {
     "link": "^(?:v\\.)?(pornbot\\.net)/([\\da-z]{8,}).*",
@@ -1400,7 +1436,7 @@
     "img": "^(pzy\\.be/)[vt]/"
   },
   "4chan": {
-    "img": "^(i\\.4cdn\\.org/[\\da-z]{1,3}/\\d+)s\\..*",
+    "img": "^(i\\.4cdn\\.org/[\\da-z]+/\\d+)s\\..*",
     "to": "$1.#jpg png webm gif#"
   },
   "archived.moe": {
@@ -1434,10 +1470,10 @@
     "to": "#$1$2$3#webm jpg png gif#\n$1sample/$2$3#jpg png gif#"
   },
   "donmai.us": {
-    "link": "^(?:(?:safe|dan)booru\\.)?(donmai\\.us)/post(?:s|/show)/(\\d+).*",
+    "link": "^(?:(?:safe|dan)booru\\.|hijiribe\\.|sonohara\\.)?(donmai\\.us)/post(?:s|/show)/(\\d+).*",
     "url": "//danbooru.$1/posts/$2.json",
-    "res": ":\nvar x = JSON.parse($._);\nreturn x&&x.file_url ? ['//danbooru.' + $[1] + x.file_url, (x.tag_string_general + (x.tag_string_artist ? ' by ' + x.tag_string_artist : '')).replace(/_/g, \" \")] : null",
-    "img": "^((?:(?:safe|dan)booru\\.)?donmai\\.us/data/)[^/]+/(?:sample-)?([\\da-f]{32}\\.).+",
+    "res": ":\nvar x = JSON.parse($._);\nreturn x&&x.file_url ? [x.file_url, (x.tag_string_general + (x.tag_string_artist ? ' by ' + x.tag_string_artist : '')).replace(/_/g, \" \")] : null",
+    "img": "^((?:(?:safe|dan)booru\\.|hijiribe\\.|sonohara\\.)?donmai\\.us/data/)[^/]+/(?:sample-)?([\\da-f]{32}\\.).+",
     "to": "#$1$2#jpg png gif webm#\n$1sample/sample-$2#jpg png gif#"
   },
   "*.booru.org|mspabooru": {
@@ -1452,7 +1488,7 @@
     "link": "^rule34\\.xxx/index\\.php\\?page=post&s=view&id=\\d+",
     "res": "<li><a href=\"(//img\\.rule34\\.xxx/[^\"]+)",
     "img": "^((?:img\\.)?rule34\\.xxx)/+(thumbnail|sample)s/(\\d+)/\\2_([\\da-f]+\\.).*",
-    "to": "$1/images/$3/$4#jpg png jpeg gif#"
+    "to": "$1/images/$3/$4#webm jpg png jpeg gif#"
   },
   "gelbooru": {
     "useimg": 1,
@@ -1482,8 +1518,8 @@
   },
   "redditbooru": {
     "link": "^redditbooru\\.com/gallery/\\w+",
-    "res": ":\n$=$._.match(/=\"gallery-image\">\\s*<img src=\"[^\"]+\"\\s*\\/?>\\s*(<p>[^<]+<a href=\"[^\"]+)?/g)\nreturn $ ? $.map(function(i){\n var p=i.indexOf('\"', 17)+1;\n return [\n  i.slice(p, p=i.indexOf('\"',p+1)),\n  i.slice(p+4).replace(/<p>([^<]*)\\[\\s*[^\"]+\"(.+)/, '$1 :: $2')\n ]\n}) : $",
-    "img": "^redditbooru\\.com/cache/([\\w/+=]+).*",
+    "res": ":\n$=$._.match(/\\.startUp\\s=\\s*(\\{[^\\n\\r]+\\});/)\n$=JSON.parse($[1]).images;\nreturn $ ? $.map(function(i){return [i.cdnUrl, i.caption +' '+ i.sourceUrl]}) : $",
+    "img": "^(?:redditbooru\\.com/cache|thumb\\.awwni\\.me)/([\\da-zA-Z/=+]+).*",
     "to": ":\nreturn window.atob($[1])"
   },
   "IbSearch.xxx": {
@@ -1522,11 +1558,11 @@
     "img": "^t\\.facdn\\.net/(\\d+)@.+"
   },
   "pixiv": {
-    "link": "^(pixiv\\.net/member_illust\\.php)\\?mode=",
+    "link": "^pixiv\\.net/member_illust\\.php\\?mode=(?:[^&]+&)+?illust_id=(\\d+)",
     "loop": 1,
-    "res": ":\nvar x;\n\nif (/[?&]mode=manga/.test($.url)) {\n x=[];\n ($._.match(/(data-src=|\\.originalImages\\[\\d+\\]\\s*=\\s*)\"[^\"]+/g)||[]).forEach(function(i) {\n  x.push([i.slice(i.indexOf('\"') + 1).replace(/\\\\\\//g, '/')]);\n });\n $=$._.match(/<title>([^<]+)/)\n if($) x[0].push($[1])\n return x.length ? x : null\n}\n\nx = $._.match(/<(?:div class=\"(?:works_display|img-container)\">\\s*<a href=\"([^?]+\\?mode=manga[^\"]+))/);\n\nif (x)\n return (x[1].indexOf('://') > 3 ? '' : $.base) + x[1].replace(/&amp;/g, '&')\n\n$ = [\n $._.match(/data-src=\"([^\"]+)\" class=\"original-image\"/) || $._.match(/data-title=\"registerImage\"><img src=\"([^\"]+)/),\n $._.match(/=\"og:(?:title|description)\" content=\"[^\"]*/g)\n];\n\nif ($[0]) x = [$[0][1], $[1] && $[1].map(function(i){return i.slice(i.lastIndexOf('\"')+1)}).filter(Boolean).join(' - ')]\n\n\nreturn x",
-    "img": "^(i\\d+\\.pixiv\\.net/img\\d+/)(img|profile|works/\\d+x\\d+)(/[^/]+/)(?:mobile/)?(\\d+)(?:_[^_]+(_p\\d+)|[^.]*)(\\.[^?]+).*",
-    "to": ":\nreturn $[1] + ($[2]==='profile'?$[2]:'img') + $[3] + $[4] + ($[5] || '') + ($[6]==='.jpg' ? '.#jpg gif png#' : $[6]);"
+    "res": ":\nvar i,u,r=[], p=/\\/(?:c\\/[\\dx]+\\/)?img-master(\\/[^.]+_p\\d+)[^.]+\\.jpg.*/, t='/img-original$1.'\nif (/[?&]mode=manga/.test($.url[0])) {\n ($._.match(/\" data-src=\"[^\"]+/g)||[]).forEach(function(i) {\n  i=i.slice(12).replace(p,t)\n  r.push([[i+'png',i+'jpg',i+'gif']])\n });\n $=$._.match(/<title>([^<]+)/)\n if($) r[0][1]=$[1]\n} else {\n if (/[?&]mode=medium/.test($.url[0])&&/_work multiple/.test($._)) return {loop: $.url[0].replace('=medium', '=manga')}\n try{\n  p = JSON.parse($._.match(/\\}\\)\\((\\{[^\\n]+),\\}\\)/)[1].replace(/([,{])\\s*([a-zA-Z\\d]+)\\s*:/g, '$1\"$2\":').replace(/,\\s*(\\]|\\})/g, '$1') + '}')\n  i=p.preload.illust[$[1]]\n  u=p.preload.user[i.userId].name\n\n  for (p = 0; p < i.pageCount; ++p) r.push([i.urls.original.replace('_p0', '_p' + p)])\n\n  r[0][1] = '['+i.illustTitle+' by ' + u + '] ' + i.illustComment + ' | ' + new Date(i.uploadDate).toLocaleString()\n }catch(e){}\n}\n\nif(!r.length){\n i = $._.match(/<(?:div class=\"(?:works_display|img-container)\">\\s*<a href=\"([^?]+\\?mode=manga[^\"]+))/);\n if (i) return (i[1].indexOf('://') > 3 ? '' : $.base) + i[1].replace(/&amp;/g, '&')\n i = [\n  $._.match(RegExp('=\"(https?://i\\.pximg\\.net/[^.]+/' + $[1] + '_[^\\'\"]+)')),\n  $._.match(/=\"og:(?:title|description)\" content=\"[^\"]*/g)\n ];\n if (i[0]) {\n  u=i[0][1].replace(p,t);\n  r = [[[u+'png',u+'jpg',u+'gif'], i[1] && i[1].map(function(i) {\n   return i.slice(i.lastIndexOf('\"') + 1)\n  }).filter(Boolean).join(' - ')]]\n }\n}\n\nreturn r",
+    "img": "^i(?:\\d\\.pixiv|\\.pximg)\\.net/(?:c/\\d+x\\d+/)?(user-profile|img-master)(/img/\\d\\d(?:\\d\\d/){6}\\d+_[^_]+)_[^.]+(\\.\\w+).*",
+    "to": ":\nvar i=$[1][0]=='i'\nreturn '//i.pximg.net/' + (i ? 'img-original' : $[1]) + $[2] + (i && $[3]=='.jpg' ? '.#jpg png gif#' : $[3])"
   },
   "myanimelist": {
     "img": "^(myanimelist\\.cdn-dena\\.com/)(?:r/[^/]+/)?(?:(s/[^.]+)|(images/[^.]+\\d+(?:_thumb)?)\\D*)\\.([^?]+).*",
@@ -1539,8 +1575,7 @@
     "to": "http://static.$1$2.full.$3.jpg"
   },
   "minitokyo.net": {
-    "useimg": 1,
-    "img": "^static[123]?(\\.minitokyo\\.net/)(?:thumbs|view|downloads)(/\\d\\d/\\d\\d/\\d+)",
+    "img": "^static([123]?\\.minitokyo\\.net/)(?:thumbs|view|downloads)(/\\d\\d/\\d\\d/\\d+)",
     "to": "static$1downloads$2"
   },
   "renders-graphics": {
@@ -1569,24 +1604,24 @@
     "useimg": 1,
     "link": "^([^/]{5,70})/(?:image|post)/(\\d{8,14})(?:/[^.?]*$|\\?|#|$).*",
     "url": "https://api.tumblr.com/v2/blog/$1/posts?id=$2&filter=raw&api_key=4AjWu4k7xrMxAqiJjppAHatW1QLQGxZ2NKo2XdTlcov4i8qZuw",
-    "res": ":\n$._=JSON.parse($._)\nif($._.meta.status!=200) return null\n$=$._.response.posts[0];\nvar t = $.caption||'';\nswitch($.type) {\n case 'photo':\n  return $.photos.map(function(x,i){\n   var c=x.caption||'';\n   return [x.original_size.url, (!i&&t ? (c ? '['+t+'] ' : t) :'') + c]\n  });\n  break;\n case 'video': if ($.video_url)return [$.video_url, t];\n}\nreturn !1",
-    "img": "^((?:(?:[234]\\d\\.)?media|gs\\d+\\.wac\\.edgecastcdn\\.net/[^/]+/data)\\.tumblr\\.com/(?:[\\da-f]{32}/)?tumblr_\\w+)_\\d{2,3}\\.(?!gif)",
-    "to": "$1_#1280 500 400#."
+    "res": ":\n$._=JSON.parse($._)\nif($._.meta.status!=200) return null\n$=$._.response.posts[0];\nvar t = $.caption||'';\nswitch($.type) {\n case 'photo':\n  return $.photos.map(function(x,i){\n   var c=x.caption||'';\n   return [x.original_size.url, (!i&&t ? (c ? '['+t+'] ' : t) :'') + c]\n  });\n  break;\n case 'video':\n  if($.video_url)return [$.video_url, t]\n  else if($.permalink_url)return{loop: $.permalink_url}\n}\nreturn !1",
+    "img": "^(((?:\\d\\d\\.)?media)|data)(\\.tumblr\\.com/(?:[\\da-f]{32}/)?tumblr_\\w+_)((?:\\d{2,4}|raw)\\.(?!gif)|frame\\d*\\.jpg)",
+    "to": ":\nreturn $[5][0]=='f' ? 'vt'+$[3]+'.mp4' : '#http://data'+$[3]+'raw.\\n//'+($[2]||'78.media')+$[3]+'#1280 500 400#.'"
   },
   "wordpress": {
-    "img": "^([^/]{4,70}(?:/[^/]+){0,6})(?:(/)(?:(gallery/(?:[^/]+/)*?)thumbs/thumbs_|((?:upload|image(?:s_blog)?|file)s/)(?:(?:thumbnails_\\d+x\\d+/thumb_([^.]+?)(?:-\\d+x\\d+)?|([^?]+)-\\d+x\\d+)(\\.[a-z]{3,4})))|\\.(?:jpe?g|png|gif)\\?(?:w|resize)=\\d+(?:&.*|$))",
+    "img": "^([^/]{4,70}(?:/[^/]+){0,6})(?:(/)(?:(gallery/(?:[^/]+/)*?)thumbs/thumbs_|((?:upload|image(?:s_blog)?|file)s/)(?:(?:thumbnails_\\d+x\\d+/thumb_([^.]+?)(?:-\\d+x\\d+)?|([^?]+)-\\d+x\\d+)(\\.[a-z]{3,4})))|\\.(jpe?g|png|gif)\\?(?:(?:quality=\\d+|fit=[\\d%C]+)&)?(?:w|resize)=\\d+(?:(?:%2C|,)\\d+)?(?:&(?!(?:[^&]*&)*s=).*|$))",
     "ci": 2,
     "loop": 2,
-    "to": ":\nif(/[&?]s=[\\da-f]{32}/.test($[0]))return $[0]\nreturn $[1] + ($[2] || '') + ($[3] || '') + ($[4] || '') + ($[5] || '') + ($[6] ? $[6] + $[7] : '') + ($[3] || $[6] ? '' : '.' + (!$[8]||$[8][0]=='j' ? '#jpg jpeg png gif#' : $[8]))"
+    "to": ":\nreturn $[1] + ($[2] || '') + ($[3] || '') + ($[4] || '') + ($[5] || '') + ($[6] ? $[6] + $[7] : '') + ($[3] || $[6] ? '' : '.' + (!$[8]||$[8][0]=='j' ? '#jpg jpeg png gif#' : $[8]))"
   },
   "opendesktop.org": {
     "img": "^(cn\\.pling\\.com/)cache/[\\dx]+/",
     "to": "$1"
   },
   "vBulletin": {
-    "link": "^[^/]{5,70}/attachment\\.php\\?(?:[^&]+&)*?attachmentid=(\\d+).*",
-    "img": "^[^/]{5,70}(?:/forum)?/attachment\\.php\\?(?:[^&]+&)*?thumb=(1)(?:$|&.*)",
-    "to": ":\nreturn $[1]==1 || this.node.textContent.match(/\\.(jpe?g|gif|png|bmp|web[mp]|mp[34])$/i) || ~(this.node.src||'').indexOf($[1]) ? $[0].replace(/thumb=1&?/,'') : ''"
+    "link": "^[^/]{5,70}/(?:forums?/)?attachment\\.php\\?(?:[^&]+&)*?attachmentid=(\\d+).*",
+    "img": "^[^/]{5,70}(?:/forums?)?/attachment\\.php\\?(?:[^&]+&)*?thumb=(1)(?:$|&.*)",
+    "to": ":\nvar n=this.node, r=/\\.(jpe?g|gif|png|bmp|web[mp]|mp[34])\\b/i\nconsole.log(n.title)\nreturn $[1]==1 || r.test(n.textContent) || r.test(n.title) || ~(n.src||'').indexOf($[1]) || n.classList.contains('thumbnail') ? $[0].replace(/thumb=1&?/,'') : ''"
   },
   "typepad": {
     "img": "^([^/]{3,70}/\\.a/[\\da-f]{34})(?:-(?:\\d+wi|popup|pi))?$",
@@ -1636,9 +1671,10 @@
     "note": "http://www.mihalismscript.com/"
   },
   "image-host-script": {
-    "img": "/(?:share|thumb)(?:-|\\.php\\?id=)([\\dA-F]{4}_[\\dA-F]{8}).*",
-    "to": "/image-$1.jpg",
-    "note": "http://www.image-host-script.com/"
+    "link": "/share(?:-|\\.php\\?id=)([\\dA-F]{4}_[\\dA-F]{8}).*",
+    "url": "/share.php?id=$1",
+    "res": "\\[img\\]([^\\[]+/image\\.php\\?id=$1[^\\[]+)\n<h1>([^<]+)",
+    "img": "/(?:thumb|image)(?:-|\\.php\\?id=)([\\dA-F]{4}_[\\dA-F]{8}).*"
   },
   "php-photo-album": {
     "img": "^([^/]+/(?:[^/]+/)*?main\\.php\\?cmd=)(?:thmb|image(?:view|orig)?)&var1=([^&]+).*",

@@ -25,7 +25,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 2
     },
     {
@@ -39,7 +38,6 @@
       "matchType": "regexp",
       "isFunction": false,
       "enable": 1,
-      "_reg": {},
       "exclude": "",
       "id": 3
     },
@@ -55,7 +53,6 @@
       "isFunction": false,
       "enable": 1,
       "exclude": "",
-      "_reg": {},
       "id": 4
     },
     {
@@ -70,7 +67,6 @@
       "isFunction": false,
       "enable": 1,
       "exclude": "",
-      "_reg": {},
       "id": 5
     },
     {
@@ -84,7 +80,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 6
     },
     {
@@ -98,7 +93,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 7
     },
     {
@@ -126,7 +120,6 @@
       "matchType": "domain",
       "isFunction": false,
       "enable": 1,
-      "_reg": {},
       "exclude": "",
       "id": 9
     },
@@ -141,7 +134,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 10
     },
     {
@@ -155,7 +147,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 11
     },
     {
@@ -169,7 +160,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 12
     },
     {
@@ -183,7 +173,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 13
     },
     {
@@ -197,7 +186,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 14
     },
     {
@@ -211,7 +199,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 15
     },
     {
@@ -225,7 +212,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 16
     },
     {
@@ -239,7 +225,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 17
     },
     {
@@ -254,7 +239,6 @@
       "isFunction": 0,
       "enable": 1,
       "exclude": "",
-      "_reg": {},
       "id": 18
     },
     {
@@ -269,7 +253,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 19
     },
     {
@@ -284,7 +267,6 @@
       "isFunction": 0,
       "enable": 1,
       "exclude": "",
-      "_reg": {},
       "id": 20
     },
     {
@@ -298,7 +280,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 21
     },
     {
@@ -312,7 +293,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 22
     },
     {
@@ -326,7 +306,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 23
     },
     {
@@ -340,7 +319,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 24
     },
     {
@@ -354,7 +332,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 25
     },
     {
@@ -369,7 +346,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 26
     },
     {
@@ -383,7 +359,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 27
     },
     {
@@ -397,7 +372,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 28
     },
     {
@@ -411,7 +385,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 29
     },
     {
@@ -425,7 +398,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 30
     },
     {
@@ -439,7 +411,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 31
     },
     {
@@ -453,7 +424,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 32
     },
     {
@@ -467,7 +437,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 33
     },
     {
@@ -482,7 +451,6 @@
       "isFunction": 0,
       "enable": 1,
       "exclude": "",
-      "_reg": {},
       "id": 34
     },
     {
@@ -496,7 +464,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 35
     },
     {
@@ -511,7 +478,6 @@
       "isFunction": 0,
       "enable": 1,
       "exclude": "",
-      "_reg": {},
       "id": 36
     },
     {
@@ -525,7 +491,6 @@
       "matchType": "regexp",
       "isFunction": false,
       "enable": 1,
-      "_reg": {},
       "exclude": "",
       "id": 37
     },
@@ -540,7 +505,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 38
     },
     {
@@ -555,7 +519,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 39
     },
     {
@@ -569,22 +532,21 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 40
     },
     {
       "name": "QQ",
       "ruleType": "modifySendHeader",
-      "pattern": "qq\\.com",
+      "pattern": "photo\\.store\\.qq\\.com",
       "action": {
         "name": "Referer",
-        "value": "http://b45.photo.store.qq.com/"
+        "value": "https://www.qq.com"
       },
       "matchType": "regexp",
-      "isFunction": 0,
+      "isFunction": false,
       "enable": 1,
-      "_reg": {},
-      "id": 41
+      "id": 41,
+      "exclude": ""
     },
     {
       "name": "Flickr",
@@ -597,7 +559,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 42
     },
     {
@@ -612,7 +573,6 @@
       "matchType": "regexp",
       "isFunction": false,
       "enable": 1,
-      "_reg": {},
       "id": 43
     },
     {
@@ -626,7 +586,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 44
     },
     {
@@ -641,7 +600,6 @@
       "matchType": "domain",
       "isFunction": false,
       "enable": 1,
-      "_reg": {},
       "id": 45
     },
     {
@@ -655,7 +613,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 46
     },
     {
@@ -669,7 +626,6 @@
       "matchType": "domain",
       "isFunction": false,
       "enable": 1,
-      "_reg": {},
       "exclude": "",
       "id": 47
     },
@@ -685,7 +641,6 @@
       "matchType": "regexp",
       "isFunction": 0,
       "enable": 1,
-      "_reg": {},
       "id": 48
     },
     {
@@ -700,7 +655,6 @@
         "name": "Referer",
         "value": ""
       },
-      "_reg": {},
       "id": 49
     },
     {
@@ -715,7 +669,6 @@
         "name": "Referer",
         "value": "jandan.net"
       },
-      "_reg": {},
       "id": 50
     },
     {
@@ -730,7 +683,6 @@
         "name": "Referer",
         "value": ""
       },
-      "_reg": {},
       "id": 51
     },
     {
@@ -745,7 +697,6 @@
         "name": "Referer",
         "value": ""
       },
-      "_reg": {},
       "id": 52
     },
     {
@@ -802,12 +753,11 @@
         "name": "Referer",
         "value": "http://www.ikanman.com"
       },
-      "_reg": {},
       "id": 56
     },
     {
       "enable": 1,
-      "name": "动漫屋",
+      "name": "动漫屋UA",
       "ruleType": "modifySendHeader",
       "matchType": "regexp",
       "pattern": "dm5\\.com/m\\d+",
@@ -817,7 +767,6 @@
         "name": "User-Agent",
         "value": "Mozilla/5.0 (Linux; Android 7.1.1; ONEPLUS A3000 Build/NMF26F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.132 Mobile Safari/537.36"
       },
-      "_reg": {},
       "id": 57
     },
     {
@@ -832,7 +781,6 @@
         "name": "Referer",
         "value": "https://www.meitulu.com/"
       },
-      "_reg": {},
       "id": 58
     },
     {
@@ -861,7 +809,6 @@
         "name": "Referer",
         "value": ""
       },
-      "_reg": {},
       "id": 60
     },
     {
@@ -890,11 +837,10 @@
         "name": "User-Agent",
         "value": "Mozilla/5.0 (Linux; Android 8.1.0; ONEPLUS A3000 Build/OPM2.171026.006.C1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Mobile Safari/537.36"
       },
-      "id": 62,
-      "_reg": {}
+      "id": 62
     },
     {
-      "enable": 1,
+      "enable": 0,
       "name": "动漫屋Referer",
       "ruleType": "modifySendHeader",
       "matchType": "regexp",
@@ -905,8 +851,21 @@
         "name": "Referer",
         "value": "http://m.dm5.com/m628753/"
       },
-      "id": 64,
-      "_reg": {}
+      "id": 64
+    },
+    {
+      "enable": 0,
+      "name": "斗鱼视频",
+      "ruleType": "modifySendHeader",
+      "matchType": "regexp",
+      "pattern": "v(mobile)?\\.douyu\\.com",
+      "exclude": "",
+      "isFunction": false,
+      "action": {
+        "name": "User-Agent",
+        "value": "blackberry"
+      },
+      "id": 66
     }
   ],
   "receiveHeader": [
@@ -922,7 +881,6 @@
       "isFunction": false,
       "enable": 0,
       "exclude": "",
-      "_reg": {},
       "id": 1
     },
     {
@@ -937,7 +895,6 @@
         "name": "Content-type",
         "value": "audio/mpeg"
       },
-      "_reg": {},
       "id": 2
     }
   ]

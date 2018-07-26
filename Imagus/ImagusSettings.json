@@ -2,7 +2,7 @@
   "hz": {
     "deactivate": 1,
     "actTrigger": "ctrl",
-    "delay": 500,
+    "delay": 300,
     "delayOnIdle": true,
     "waitHide": false,
     "markOnHover": "dashed",
@@ -29,14 +29,13 @@
     "move": false,
     "follow": true,
     "minPopupDistance": 0,
-    "hideIdleCursor": -1,
+    "hideIdleCursor": 500,
     "thumbAsBG": false,
     "thumbAsBGColor": "#c3c3c3",
     "thumbAsBGOpacity": 0.3,
     "css": "/* margin: 3px 3px 20px; background: #f8f8ff padding-box; border: 3px solid hsla(0,0%,95%,.6); border-radius: 2px; box-shadow: 0 0 2px #666 */\nbackground-color: rgba(255,255,255,0.5);",
     "scOffInInput": true,
     "capFlashCount": 1,
-    "zoomFromFrame": false,
     "LDRsrc": "",
     "LDRcss": "",
     "LDRdelay": 300,
@@ -99,13 +98,16 @@
       ]
     ],
     "opzoom": true,
-    "sieveCacheRes": true,
     "sieveAutoUpdate": true
   },
   "grants": [
     {
       "op": "!",
       "url": "arabidopsis.org"
+    },
+    {
+      "op": "!",
+      "url": "dotabuff.com"
     }
   ]
 }

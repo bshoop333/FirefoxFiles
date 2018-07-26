@@ -1,8 +1,8 @@
 {
-  "ua": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:58.0) Gecko/20100101 Firefox/58.0",
+  "ua": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0",
   "yawf": "Yet Another Weibo Filter",
-  "ver": "3.7.473",
-  "gm": "Violentmonkey2.8.28",
+  "ver": "3.7.483",
+  "gm": "Violentmonkey2.9.5",
   "conf": {
     "weibo.tool.load_weibo_by_search": true,
     "weibo.tool.use_fast_creator": true,
@@ -318,7 +318,7 @@
     "weibo.tool.disable_desktop_notification": true,
     "weibo.tool.disable_live_photo": true,
     "weibo.tool.custom_font_family.wf": "Times New Roman",
-    "weibo.tool.custom_font_family.cf": "微软雅黑",
+    "weibo.tool.custom_font_family.cf": "等线",
     "weibo.tool.custom_font_family": false,
     "weibo.tool.weibo_large_font.ratio": "120",
     "weibo.tool.weibo_large_font": true,
@@ -443,6 +443,21 @@
     "weibo.tool.load_weibo_by_multi_group": [],
     "weibo.layoutHideIconPanda": true,
     "weibo.other.paid": false,
-    "weibo.layoutHideLeftVPlus": false
+    "weibo.layoutHideLeftVPlus": false,
+    "weibo.layoutHideOtherIMNews": true,
+    "weibo.layoutHideFollowSingle": false,
+    "weibo.layoutHideFollowAtMe": false,
+    "weibo.layoutHideFollowDiscover": true,
+    "weibo.layoutHideFollowVideo": false,
+    "weibo.tool.viewOriginal.method": "default",
+    "weibo.tool.viewOriginal.url": "default",
+    "weibo.tool.downloadImage.direct": false,
+    "weibo.tool.downloadImage": false,
+    "weibo.tool.load_weibo_by_multi_group.whisper": false,
+    "weibo.other.user_like": true,
+    "weibo.layoutHideIconWenda": false,
+    "weibo.layoutHideFollowWhisper": false,
+    "weibo.layoutHideFollowRecommend": false,
+    "weibo.layoutHideIconWorldCup": true
   }
 }
