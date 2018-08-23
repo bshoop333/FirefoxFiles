@@ -1,6 +1,6 @@
 {
-  "timestamp": "2018-07-30T11:11:19.292Z",
-  "fileName": "foxyGestures.2018-07-30.json",
+  "timestamp": "2018-08-06T10:28:03.443Z",
+  "fileName": "foxyGestures.2018-08-06.json",
   "addonId": "{e839c3f9-298e-4cd0-99e0-464431cb7c34}",
   "version": "1.2.1",
   "settings": {
@@ -131,7 +131,7 @@
       {
         "id": "userScript:1510852552007",
         "label": "Open Google Cache",
-        "script": "window.location.href = \"http://webcache.googleusercontent.com/search?q=cache:\" + window.content.location.href;"
+        "script": "window.location.href = \"http://webcache.googleusercontent.com/search?q=cache:\" + document.location.href;"
       },
       {
         "id": "userScript:1510964165122",

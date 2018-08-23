@@ -866,6 +866,20 @@
         "value": "blackberry"
       },
       "id": 66
+    },
+    {
+      "enable": 1,
+      "name": "huitu.com",
+      "ruleType": "modifySendHeader",
+      "matchType": "regexp",
+      "pattern": "huitu\\.com",
+      "exclude": "",
+      "isFunction": false,
+      "action": {
+        "name": "Referer",
+        "value": ""
+      },
+      "id": 68
     }
   ],
   "receiveHeader": [
