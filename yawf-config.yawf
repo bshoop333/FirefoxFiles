@@ -1,8 +1,8 @@
 {
-  "ua": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0",
+  "ua": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0",
   "yawf": "Yet Another Weibo Filter",
-  "ver": "3.7.483",
-  "gm": "Violentmonkey2.9.5",
+  "ver": "3.7.489",
+  "gm": "Violentmonkey2.9.7",
   "conf": {
     "weibo.tool.load_weibo_by_search": true,
     "weibo.tool.use_fast_creator": true,
@@ -255,8 +255,8 @@
     "weibo.tool.redirectWeibo": true,
     "weibo.tool.public_by_default": false,
     "weibo.tool.cardButton": true,
-    "weibo.tool.viewOriginal.open": "page",
-    "weibo.tool.viewOriginal.direct": false,
+    "weibo.tool.viewOriginal.open": "image",
+    "weibo.tool.viewOriginal.direct": true,
     "weibo.tool.viewOriginal": true,
     "weibo.tool.noTagDialog": false,
     "weibo.tool.pause_animated_image": false,
@@ -455,9 +455,16 @@
     "weibo.tool.downloadImage": false,
     "weibo.tool.load_weibo_by_multi_group.whisper": false,
     "weibo.other.user_like": true,
-    "weibo.layoutHideIconWenda": false,
+    "weibo.layoutHideIconWenda": true,
     "weibo.layoutHideFollowWhisper": false,
     "weibo.layoutHideFollowRecommend": false,
-    "weibo.layoutHideIconWorldCup": true
+    "weibo.layoutHideIconWorldCup": true,
+    "weibo.layoutHideOtherRelatedVideo": true,
+    "weibo.tool.disable_video_click_pop": true,
+    "weibo.tool.no_pop_but_full_screen": false,
+    "weibo.tool.video_no_auto_next": true,
+    "weibo.original.by_follower.enabled": false,
+    "weibo.original.by_follower.fans": 10,
+    "weibo.original.by_follower": []
   }
 }

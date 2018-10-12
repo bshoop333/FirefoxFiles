@@ -46,6 +46,14 @@ MY_SITEINFO = [
     "pageElement": "//img[@id=\"manga-page\"]",
     "insertBefore": "",
     "exampleUrl": "https://readms.net/r/yona/163/5334/1"
+  },
+  {
+    "name": "中国网生活频道",
+    "url": "^http://life\\.china\\.com\\.cn/.*",
+    "nextLink": "//div[@class=\"left2\"]//a[text()=\"下一页\"]",
+    "pageElement": "//div[@class=\"left2\"]",
+    "insertBefore": "//div[@class=\"epages\"]",
+    "exampleUrl": "http://life.china.com.cn/news/"
   }
 ];
 

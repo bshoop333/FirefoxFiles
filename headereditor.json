@@ -869,7 +869,7 @@
     },
     {
       "enable": 1,
-      "name": "huitu.com",
+      "name": "汇图网",
       "ruleType": "modifySendHeader",
       "matchType": "regexp",
       "pattern": "huitu\\.com",

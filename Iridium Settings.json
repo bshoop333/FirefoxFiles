@@ -1,13 +1,14 @@
 {
-    "broadcast_id": "138038ad-241b-4ef5-871b-5c4b8bff86ec",
+    "broadcast_id": "605036f9-a909-44a7-9ef7-085f592efc2e",
+    "welcome_closed": true,
     "default_logo_page": "subscriptions",
     "default_channel_tab": "videos",
     "square_avatars": false,
-    "improved_logo": true,
+    "improved_logo": false,
     "thumbnail_preview": false,
     "thumbnail_preview_mute": false,
-    "popup_player": true,
-    "enable_blacklist": "home",
+    "popup_player": false,
+    "enable_blacklist": false,
     "blacklist_settings": {},
     "channel_video_count": true,
     "channel_video_time": true,
@@ -23,16 +24,28 @@
     "player_hfr": true,
     "player_memorize_size": true,
     "player_memorize_volume": false,
-    "player_quick_controls": true,
     "player_max_res_thumbnail": true,
-    "comments_visibility": "1",
-    "shortcuts_always_active": false,
+    "player_quick_controls": true,
+    "comments_visibility": "0",
+    "shortcuts_always_active": true,
     "player_volume_wheel": false,
     "player_always_visible": true,
-    "player_always_playing": false,
+    "player_always_playing": true,
     "player_hide_end_screen": false,
     "iridium_dark_mode": false,
+    "iridium_custom_language": false,
     "miner": false,
     "miner_threads": 4,
-    "miner_throttle": 75
+    "miner_throttle": 75,
+    "miniPlayer": {
+        "position": {
+            "X": 556.1333312988281,
+            "Y": 422.6000061035156,
+            "snapRight": false,
+            "snapBottom": false
+        },
+        "size": 352
+    },
+    "theaterMode": false,
+    "fullBrowser": false
 }
