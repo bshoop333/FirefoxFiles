@@ -1,8 +1,8 @@
 {
-  "timestamp": "2018-08-06T10:28:03.443Z",
-  "fileName": "foxyGestures.2018-08-06.json",
+  "timestamp": "2018-10-13T10:07:25.993Z",
+  "fileName": "foxyGestures.2018-10-13.json",
   "addonId": "{e839c3f9-298e-4cd0-99e0-464431cb7c34}",
-  "version": "1.2.1",
+  "version": "1.2.3",
   "settings": {
     "gestureTimeout": 2000,
     "statusTimeout": 2000,
@@ -149,14 +149,14 @@
         "script": "// Translate.google tooltip user script\npostMessage('tgtooltip auto|zh-CN','*')"
       },
       {
-        "id": "userScript:1528426526111",
-        "label": "下一页",
-        "script": "// 以前的代码参考了https://greasyfork.org/en/scripts/368169-%E6%8C%89-%E9%94%AE%E8%87%AA%E5%8A%A8%E7%BF%BB%E9%A1%B5/code，现在的是自己的\n// var next_page_pattern = new RegExp('((下|后|後)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集|季)|next|newer|more|continue)(›|▶|→|>|»)*|(›|▶|→|>|»)+|点击进入');\nvar next_page_pattern = new RegExp('(下|后|後)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集|季)|next|newer|more|continue|点击进入');\nvar elements = document.getElementsByTagName('a');\nfor (var i=0; i<elements.length; i++){\n    if(next_page_pattern.test(elements[i].innerText.toLowerCase())){\n        elements[i].click();\n        break;\n    }\n}"
-      },
-      {
         "id": "userScript:1528426558672",
         "label": "上一页",
-        "script": "// var prev_page_pattern = new RegExp('(‹|◀|←|<|«)*((上|前)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集|季)|pre(v)?(ious)?|elder|older|before|back)|(‹|◀|←|<|«)+');\nvar prev_page_pattern = new RegExp('(上|前)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集|季)|pre(v)?(ious)?|elder|older|before|back');\nvar elements = document.getElementsByTagName('a');\nfor (var i=0; i<elements.length; i++){\n    if(prev_page_pattern.test(elements[i].innerText.toLowerCase())){\n        elements[i].click();\n    }\n}"
+        "script": "// 以前的代码参考了https://greasyfork.org/en/scripts/368169-%E6%8C%89-%E9%94%AE%E8%87%AA%E5%8A%A8%E7%BF%BB%E9%A1%B5/code，现在的是自己的\n// var prev_page_pattern = new RegExp('(‹|◀|←|<|«)*((上|前)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集|季)|pre(v)?(ious)?|elder|older|before|back)|(‹|◀|←|<|«)+');\nvar prev_page_pattern = new RegExp('(上|前)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集|季)|pre(v)?(ious)?|elder|older|before|back');\nvar elements1 = document.getElementsByTagName('a');\nvar elements2 = document.getElementsByTagName('button');\nfor (var i=0; i<elements1.length; i++){\n    if(prev_page_pattern.test(elements1[i].innerText.toLowerCase())){\n        elements1[i].click();\n    }\n}\nfor (var i=0; i<element2s.length; i++){\n    if(prev_page_pattern.test(elements2[i].innerText.toLowerCase())){\n        elements2[i].click();\n    }\n}"
+      },
+      {
+        "id": "userScript:1528426526111",
+        "label": "下一页",
+        "script": "// var next_page_pattern = new RegExp('((下|后|後)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集|季)|next|newer|more|continue)(›|▶|→|>|»)*|(›|▶|→|>|»)+|点击进入');\nvar next_page_pattern = new RegExp('(下|后|後)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集|季)|next|newer|more|continue|点击进入');\nvar elements1 = document.getElementsByTagName('a');\nvar elements2 = document.getElementsByTagName('button');\nfor (var i=0; i<elements1.length; i++){\n    if(next_page_pattern.test(elements1[i].innerText.toLowerCase())){\n        elements1[i].click();\n        break;\n    }\n}\nfor (var i=0; i<elements2.length; i++){\n    if(next_page_pattern.test(elements2[i].innerText.toLowerCase())){\n        elements2[i].click();\n        break;\n    }\n}"
       }
     ],
     "sawXSSWarning": true,
