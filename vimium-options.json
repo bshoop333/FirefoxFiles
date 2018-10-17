@@ -1,20 +1,24 @@
 {
-  "settingsVersion": "1.62",
+  "settingsVersion": "1.64",
   "exclusionRules": [
     {
       "pattern": "https?://mail.google.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https://www.shanbay.com/bdc/*",
       "passKeys": ""
     }
   ],
   "filterLinkHints": false,
   "waitForEnterForFilteredHints": true,
   "hideHud": false,
-  "keyMappings": "# Insert your preferred key mappings here.\nmap D duplicateTab\nmap ;b LinkHints.activateModeToOpenInNewTab\nmap d removeTab\nmap u restoreTab\nmap F LinkHints.activateModeToOpenInNewForegroundTab\nmap , goPrevious\nmap . goNext\nunmap <c-e>\nunmap <c-y>\nunmap zH\nunmap zL\nunmap i\nunmap v\nunmap V\nunmap <a-f>\nunmap [[\nunmap ]]\nunmap gf\nunmap gF\nunmap gt\nunmap gT\nunmap ^\nunmap g0\nunmap g$\nunmap <a-p>\nunmap <a-m>\nunmap x\nunmap X\nunmap W\nunmap <<\nunmap >>\nunmap gs\nunmap yt",
+  "keyMappings": "# Insert your preferred key mappings here.\nmap D duplicateTab\nmap ;b LinkHints.activateModeToOpenInNewTab\nmap d removeTab\nmap u restoreTab\nmap F LinkHints.activateModeToOpenInNewForegroundTab\nmap , goPrevious\nmap . goNext\nunmap /\nunmap <c-e>\nunmap <c-y>\nunmap zH\nunmap zL\nunmap i\nunmap v\nunmap V\nunmap <a-f>\nunmap [[\nunmap ]]\nunmap gf\nunmap gF\nunmap gt\nunmap gT\nunmap ^\nunmap g0\nunmap g$\nunmap <a-p>\nunmap <a-m>\nunmap x\nunmap X\nunmap W\nunmap <<\nunmap >>\nunmap gs\nunmap yt",
   "linkHintCharacters": "qwertyuiopasdfghjklzxcvbnm",
   "linkHintNumbers": "0123456789",
   "newTabUrl": "about:newtab",
-  "nextPatterns": "next,more,newer,>,›,→,»,≫,>>",
-  "previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
+  "nextPatterns": "next,more,newer,>,›,→,»,≫,>>,下一页,下一頁,下一张,下一话,下一章",
+  "previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<,上一页,上一頁,上一张,上一话,上一章",
   "regexFindMode": true,
   "ignoreKeyboardLayout": false,
   "scrollStepSize": 60,
@@ -22,5 +26,5 @@
   "grabBackFocus": true,
   "searchEngines": "w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\n\n# More examples.\n#\n# (Vimium supports search completion Wikipedia, as\n# above, and for these.)\n#\n# g: https://www.google.com/search?q=%s Google\n# l: https://www.google.com/search?q=%s&btnI I'm feeling lucky...\n# y: https://www.youtube.com/results?search_query=%s Youtube\n# gm: https://www.google.com/maps?q=%s Google maps\n# b: https://www.bing.com/search?q=%s Bing\n# d: https://duckduckgo.com/?q=%s DuckDuckGo\n# az: https://www.amazon.com/s/?field-keywords=%s Amazon\n# qw: https://www.qwant.com/?q=%s Qwant",
   "searchUrl": "https://www.google.com/search?q=",
-  "userDefinedLinkHintCss": "div > .vimiumHintMarker {\n/* linkhint boxes */\nbackground: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF785),\n  color-stop(100%,#FFC542));\nborder: 1px solid #E3BE23;\n}\n\ndiv > .vimiumHintMarker span {\n/* linkhint text */\ncolor: black;\nfont-weight: bold;\nfont-size: 12px;\n}\n\ndiv > .vimiumHintMarker > .matchingCharacter {\n}"
+  "userDefinedLinkHintCss": "div>.vimiumHintMarker {\n    /* linkhint boxes */\n    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FFF785),\n        color-stop(100%, #FFC542));\n    border: 1px solid #E3BE23;\n}\n\ndiv>.vimiumHintMarker span {\n    /* linkhint text */\n    color: black;\n    font-weight: bold;\n    font-size: 12px;\n}\n\ndiv>.vimiumHintMarker>.matchingCharacter {}"
 }
