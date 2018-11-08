@@ -1,7 +1,23 @@
 {
     "createdBy": "Redirector v3.1.1",
-    "createdAt": "2018-10-12T15:48:21.712Z",
+    "createdAt": "2018-11-07T16:27:34.528Z",
     "redirects": [
+        {
+            "description": "Bilibili动态大图",
+            "exampleUrl": "https://i0.hdslb.com/bfs/album/cda14e29a0bb08a377d2a0e1ae4e18400e7555d7.png@518w_1e_1c.png",
+            "exampleResult": "https://i0.hdslb.com/bfs/album/cda14e29a0bb08a377d2a0e1ae4e18400e7555d7.png",
+            "error": null,
+            "includePattern": "https://*.hdslb.com/*/album/*@*",
+            "excludePattern": "",
+            "redirectUrl": "https://$1.hdslb.com/$2/album/$3",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame",
+                "image"
+            ]
+        },
         {
             "description": "中国网生活频道手机版>>PC版",
             "exampleUrl": "http://life.china.com.cn/app/2018-08/28/content_106991.html",
@@ -542,7 +558,7 @@
             "redirectUrl": "https://$1.taobao.com/item/$2",
             "patternType": "R",
             "processMatches": "noProcessing",
-            "disabled": false,
+            "disabled": true,
             "appliesTo": [
                 "main_frame"
             ]
@@ -557,7 +573,7 @@
             "redirectUrl": "https://item.taobao.com/item.htm?$1",
             "patternType": "R",
             "processMatches": "noProcessing",
-            "disabled": false,
+            "disabled": true,
             "appliesTo": [
                 "main_frame"
             ]
@@ -597,7 +613,7 @@
             "exampleUrl": "http://partner.tieba.com/f?kw=%E7%94%B5%E6%B3%A2%E5%A5%B3%E4%B8%8E%E9%9D%92%E6%98%A5%E7%94%B7",
             "exampleResult": "https://tieba.baidu.com/f?kw=%E7%94%B5%E6%B3%A2%E5%A5%B3%E4%B8%8E%E9%9D%92%E6%98%A5%E7%94%B7",
             "error": null,
-            "includePattern": "https?://(.+\\.tieba\\.com|jump\\d+\\.bdimg\\.com)/(.*)",
+            "includePattern": "https?://(.+\\.tieba\\.com|jump\\d+\\.bdimg\\.com|.+\\.tieba\\.baidu\\.com)/(.*)",
             "excludePattern": "",
             "redirectUrl": "https://tieba.baidu.com/$2",
             "patternType": "R",
@@ -638,7 +654,7 @@
             ]
         },
         {
-            "description": "百度贴吧小图转大图",
+            "description": "百度贴吧大图",
             "exampleUrl": "http://imgsrc.baidu.com/forum/w%3D580/sign=621ea05d269759ee4a5060c382fa434e/aa11f4d3572c11dfc3087b73632762d0f503c2ca.jpg",
             "exampleResult": "http://imgsrc.baidu.com/forum/pic/item/aa11f4d3572c11dfc3087b73632762d0f503c2ca.jpg",
             "error": null,

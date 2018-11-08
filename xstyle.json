@@ -35,10 +35,10 @@
         "urlPrefixes": [],
         "domains": [],
         "regexps": [
-          "(?!tieba\\.baidu\\.com|moz-extension://|192\\.168\\.1\\.1).+"
+          "(?!moz-extension://|https://tieba\\.baidu\\.com|http://ariang\\.mayswind\\.net/latest/|file://).*"
         ],
-        "code": "a:visited, .fl:visited { color:#CC66CC !important; }",
-        "exclude": []
+        "exclude": [],
+        "code": ".fl:visited,a:visited{color:#c6c!important}"
       }
     ],
     "url": "https://userstyles.org/styles/17357/red-visited-mark-visited-links-red-dm",
@@ -53,9 +53,9 @@
       "item": {},
       "saved": {}
     },
-    "lastModified": 1508805376275,
+    "lastModified": 1540900087464,
     "type": "less",
-    "code": "@-moz-document regexp(\"(?!tieba\\\\.baidu\\\\.com|moz-extension://|192\\\\.168\\\\.1\\\\.1).+\") {\na:visited, .fl:visited { color:#CC66CC !important; }\n}"
+    "code": "@-moz-document regexp(\"(?!moz-extension://|https://tieba\\\\.baidu\\\\.com|http://ariang\\\\.mayswind\\\\.net/latest/|file://).*\") {\n    a:visited, .fl:visited { color:#CC66CC !important; }\n}"
   },
   {
     "sections": [
@@ -226,7 +226,7 @@
       "item": {},
       "saved": {}
     },
-    "lastModified": 1533388262450,
+    "lastModified": 1541484986955,
     "type": "less",
     "code": "/*\nunicode-range: U+4E00-9FCB;        汉字字符集\nunicode-range: U+26;               single codepoint\nunicode-range: U+00-7F;            ASC II\nunicode-range: U+0-7F;             Latin, Latin1 Sup., Ext-A, Ext-B\nunicode-range: U+0025-00FF;        codepoint range\nunicode-range: U+4??;              wildcard range\nunicode-range: U+0025-00FF, U+4??; multiple values\nunicode-range: U+3100-312F         注音符号(台湾?)\nunicode-range: U+3040-30FF;        日文假名\n*/\n\n@namespace url(http://www.w3.org/1999/xhtml);\n\n/*@-moz-document regexp(\"(?!^https:\\/\\/scholar\\.google\\.com).+\") {*/\n  \n  font[face=\"新細明體\"], font[face=\"細明體\"], *[style*=\"font-family: 新細明體\"], *[style*=\"font-family: 細明體\"], *[style*=\"font-family:新細明體\"], *[style*=\"font-family:細明體\"] {\n    font-family: \"Sans-Serif\" !important;\n  }\n \n\n  /* serif */\n  font[face*='宋'], font[face*='sun'] {\n    font-family: 'Serif';\n  }\n  @font-face {\n    font-family: '等线';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: '宋体';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: 'SimSun';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: 'NSimSun';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: '新宋体';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: '仿宋';\n    src: local(\"Serif\");\n  }\n  @font-face {\n    font-family: '华文仿宋';\n    src: local(\"Serif\");\n  }\n  @font-face {\n    font-family: 'ming';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: 'MingLiU';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: 'MingLiU_HKSCS';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: 'PMingLiu';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: '細明體';\n    src: local('Serif');\n  }\n  @font-face {\n    font-family: '新細明體';\n    src: local('Serif');\n  }\n\n  /* sans-serif */\n  @font-face {\n    font-family: 'Microsoft YaHei';\n    src: local('Sans-Serif');\n  }\n  @font-face {\n    font-family: 'Microsoft YaHei UI';\n    src: local('Sans-Serif');\n  }\n  @font-face {\n    font-family: '微软雅黑';\n    src: local('Sans-Serif');\n  }\n  @font-face {\n    font-family: 'Arial';\n    src: local('Sans-Serif');\n  }\n  @font-face {\n    font-family: 'Calibri';\n    src: local('Sans-Serif');\n  }\n  @font-face {\n    font-family: 'SF Pro SC';\n    src: local(\"Sans-Serif\");\n  }\n  @font-face {\n    font-family: 'Microsoft JhengHei';\n    src: local(\"Sans-Serif\");\n  }\n  @font-face {\n    font-family: 'Microsoft JhengHei UI';\n    src: local(\"Sans-Serif\");\n  }\n  @font-face {\n    font-family: '微軟正黑體';\n    src: local(\"Sans-Serif\");\n  }\n  @font-face {\n    font-family: 'MS PGothic';\n    src: local('Sans-Serif');\n  }\n/*}*/\n"
   },
@@ -307,7 +307,7 @@
     "md5Url": "https://update.userstyles.org/97023.md5",
     "originalMd5": "ce3ec8983c9b2cf48d936ed1cbc22036",
     "name": "论坛悬浮回复框2",
-    "enabled": true,
+    "enabled": false,
     "id": 21,
     "autoUpdate": true,
     "advanced": {
@@ -350,11 +350,11 @@
   },
   {
     "type": "css",
-    "lastModified": 1538916780347,
+    "lastModified": 1541608101830,
     "name": "miscellaneous",
     "enabled": true,
     "updateUrl": "https://userstyles.org/styles/108332.css",
-    "code": "@-moz-document domain('zdfans.com') {\n    .wrapper > .content-wrap > .column2.content > div:nth-of-type(1) {\n        display: block !important;\n    }\n}\n@-moz-document domain('pinterest.com') {\n    div[data-test-giftwrap=\"true\"],\n    div[style=\"background-color: rgba(0, 0, 0, 0.6); opacity: 1; position: fixed; top: 0px; bottom: 0px; left: 0px; right: 0px; z-index: 1000;\"] {\n        display: none;\n    }\n}\n@-moz-document domain('blog.sina.com.cn') {\n    [id$='_panel'] {\n        display: none !important;\n    }\n}\n@-moz-document domain('cnprint.org') {\n    #m3d3 {\n        display: none;\n    }\n}\n\n@-moz-document domain('moegirl.org') {\n    .heimu,\n    .heimu a,\n    .heimu .new,\n    a .heimu {\n        background: none !important;\n    }\n}\n\n@-moz-document domain('firefox.net.cn') {\n    .floor_page {\n        display: none;\n    }\n}\n\n@-moz-document domain('greasyfork.org') {\n    #main-header {\n        background-image: none;\n        background-color: black;\n    }\n}\n\n@-moz-document domain('thegradcafe.com') {\n    .ipsWidget_inner {\n        display: none;\n    }\n}\n\n/*阻止太傻留学内容不让选中*/\n@-moz-document domain('taisha.org') {\n    body {\n        -moz-user-select: unset;\n    }\n}\n\n/*动漫之家*/\n@-moz-document domain('dmzj.com') {\n    #show_tip_bg,\n    .login_tip.out,\n    #m_r_panelbox,\n    .timeAD/*时间广告*/\n    {\n        display: none !important;\n    }\n}\n\n/*UC扩展中心*/\n@-moz-document domain('extensions.uc.cn') {\n    #J_mask,\n    #J_maskTip {\n        display: none !important;\n    }\n}\n\n/*新通留学弹窗*/\n@-moz-document domain('www.igo.cn') {\n    .adBG {\n        display: none !important;\n    }\n}\n\n/*推广*/\n@-moz-document domain('baike.baidu.com') {\n    #side-share,\n    /*右侧分享*/\n    #announcement,\n    /*公告*/\n    .wgt-footer-main/*底部*/\n    {\n        display: none;\n    }\n}\n\n@-moz-document domain('lofter.com') {\n    .w-pagelayer.w-pagelayer-reglogin.w-pagelayer-reglogin2 {\n        display: none;\n    }\n}\n\n@-moz-document domain('zdfans.com') {\n    ins {\n        display: none !important;\n    }\n    .meta .meta-info {\n        color: black;\n    }\n    #comment-author-info input {\n        color: black;\n    }\n}\n\n@-moz-document domain('pan.baidu.com'),\ndomain('yun.baidu.com') {\n    .context-menu>.list>li:last-child,\n    /*增值服务*/\n    .context-menu>.list>li:nth-last-child(2),\n    /*增值服务上方横线*/\n    .module-mboxDialog,\n    /*'百度云新功能'框*/\n    .banner-active,\n    /*个人网盘右上角*/\n    .dialog-extra/*删除文件时的提示升级VIP横条*/\n    {\n        display: none;\n    }\n    .find-light-icon,\n    /*“更多”右上角的红点*/\n    .user-level.level-0,\n    /*超级会员*/\n    #show-buyvip-pack,\n    .module-canvas,\n    /*灰色背景*/\n    .tips.has-error,\n    /*上传文件时的警告信息*/\n    .feed-issue-guide,\n    .feed-issue-guide-close,\n    /*提示*/\n    .prev-dom {\n        display: none !important;\n    }\n    /*下载大文件时提示升级VIP*/\n    #feedIssue {\n        border-style: none;\n    }\n}\n\n@-moz-document url-prefix('https://pan.baidu.com/disk/home') {\n    #passport-accRealName-pop,\n    #TANGRAM__PSP_3__/* 验证手机 */\n    {\n        display: none;\n    }\n}\n\n@-moz-document domain('zhidao.baidu.com') {\n    .lucky-try {\n        display: none !important;\n    }\n}\n\n@-moz-document domain('plus.google.com') {\n    div[aria-hidden='true'] {\n        display: none;\n    }\n}\n\n@-moz-document domain('bitbucket.org') {\n    #account-warning {\n        display: none !important;\n    }\n}\n\n@-moz-document domain('mail.126.com'),\ndomain('mail.163.com') {\n    li[id$='dvClub'],\n    li[id$='dvHealth'],\n    li[id$='dvLofter'],\n    li[title='一元夺宝'],\n    li[title='网易海购'],\n    li[title='网易秀品'],\n    .gWel-bottom,\n    .gWel-weather-promote,\n    #dvNavTree>[id^='_mail_tree_']>li:last-child,\n    [id^='_mail_popup'] {\n        display: none;\n    }\n}\n\n@-moz-document domain('mangabee.co') {\n    .manga-page {\n        display: inline!important\n    }\n    div>p>strong {\n        display: none!important;\n    }\n}\n\n@-moz-document url-prefix('https://translate.google.com') {\n    #gt-bbar {\n        display: none;\n    }\n}\n\n@-moz-document domain('bbs.kafan.cn') {\n    .bm_c.cl.pbn,\n    img[src='hiphotos.baidu.com/%CB%D5%C7%40/pic/item/54d0b6d2b31c8701afe7c85b277f9e2f0608ff67.jpg'],\n    img[src='i2.tietuku.com/bc6ef48ab2b8b3b5.jpg'],\n    img[src='b.ikafan.com/000/73/86/26_avatar_middle.jpg'] {\n        display: none;\n    }\n}\n\n@-moz-document domain('youku.com') {\n    #sideTool {\n        display: none!important;\n    }\n}\n\n@-moz-document domain('qzs.qq.com') {\n    #openVipButton,\n    img[alt='qboss_ad_image'],\n    #pop_apps_sponsors,\n    .split_line.bor2,\n    .word_spread.side_panel,\n    .icon-red-dot {\n        display: none !important;\n    }\n}\n\n@-moz-document domain('qzone.qq.com') {\n    .top-fix-inner {\n        margin-top: 0px !important;\n    }\n    .col-main-sidebar/*右侧栏*/\n    {\n        display: none !important;\n    }\n    li[type='app'],\n    .f-single.f-s-s.f-single-biz,\n    #leftMenu>.mod-side-nav-recently-used.mod-side-nav,\n    .f-aside>.qz-f-vip-l-1.qz-f-vip-l.qz-ichotclick[href^='http://vip.qzone.com/year.html'],\n    #gdtLcModCnt,\n    #top_tips_seat,\n    #top_tips_container,\n    .ui-icon.icon-diamond,\n    #feed-playing,\n    #qz_notification,\n    #pop_apps_sponsors,\n    #qbossLogo_tip,\n    .layout-copyright,\n    li[id^='fct_20050606'],\n    li.feed-hot,\n    DIV[class='item bor3 bg4 item-funny'],\n    DIV[class='fn-checkin-btn deep'],\n    #today_lastyear_v2,\n    #tab_switch,\n    #tab_menu_yanchu,\n    #tab_hide_list,\n    .top-fix-extend,\n    .user-home,\n    .search-box,\n    #tb_friend_li,\n    #tb_dress_li,\n    #tb_app_li,\n    #tb_vip_li,\n    DIV[class='fn_accessLog_tips bg2 bor2'],\n    .fix-layout,\n    #like_button_pannel,\n    .user-vip-info,\n    .head-detail-name,\n    #tab_menu_dianping,\n    #tab_menu_weibo,\n    .col-main-sidebar,\n    /*li a[link='nameCard_20050606'],*/\n    *[id*='_ad_'],\n    *[class*='_ad_'],\n    #tab_menu_me_cnt,\n    #QZ_Toolbar_Container>.top-fix-wrap>.user-info>.user-home[href='http://user.qzone.qq.com/1149235164/main']>.textoverflow.user-name,\n    #fct_0_6600_1_1443890230_0_1,\n    .user-medal,\n    /*特权之类*/\n    .trigger {\n        display: none;\n    }\n    .col-main-feed,\n    .feed-v9 .f-single {\n        width: 100% !important;\n    }\n}\n\n@-moz-document url-prefix('http://t.qq.com') {\n    #erweima,\n    .aboutInfo.c_tx5,\n    #app_video,\n    .SC_bd,\n    #widgetFloat,\n    #newsTips2_guess,\n    #talkListTab,\n    *[href='http://zhaoren.t.qq.com/people?from=top&pgv_ref=web.wide.nav.people'],\n    *[href='http://c.t.qq.com/k/default?pgv_ref=web.wide.page.nav.text'],\n    .sToolbar.single,\n    #app_guestMedal,\n    #app_guestRelation,\n    [tv='101'] {\n        display: none;\n    }\n    [boss='btnExposeNavHomeBar'] {\n        display: none !important;\n    }\n    .AL {\n        width: 150%;\n    }\n    li[ispopula='1'],\n    li[tv='1'] {\n        display: none;\n    }\n    #main {\n        width: 100%\n    }\n    #userAppTab {\n        width: 149%;\n    }\n    .text_pn {\n        width: 82% !important;\n    }\n    .orginCnt.e_orginCnt_b.clear.talkListLi.cur {\n        width: 90%;\n    }\n}\n\n@-moz-document domain('renren.com') {\n    div[data-source-id][data-id],\n    #mergeModule,\n    #huatiBox,\n    .a-feed>.appendix,\n    #toolBackTo,\n    #recommendArea,\n    .vip-skinBtn,\n    .hd-account-action.hd-account-action-vip,\n    .app-nav-cont.recent-app-cont {\n        display: none!important;\n    }\n    li[data-tip='应用中心'],\n    li[data-tip='我的应用'],\n    li[data-tip='人人分期'],\n    li[data-tip='热门'],\n    li[data-tip='社团人'] {\n        display: none;\n    }\n}\n\n@-moz-document domain('zuoye.baidu.com') {\n    .EC_ads_listborder,\n    .aside,\n    #aside {\n        display: none;\n    }\n}\n\n@-moz-document domain('tieba.baidu.com'), domain('v.tieba.com'), domain('www.tieba.com') {\n    .threadlist_bright .threadlist_author .sign_highlight,\n    .threadlist_bright .threadlist_author .sign_highlight:hover {\n\t\tcolor: unset;\n    }\n    .u_wallet,\n    .split,\n    .u_app,\n    .u_tbmall,\n    .u_tshow,\n    .tbui_aside_float_bar {\n        display: none;\n    }\n    /* 悦图 */\n    .see-image-btn,\n    .see-image-btn:hover {\n        background-image: none;\n        padding-left: 14px;\n    }\n    /*吧头像*/\n    .card_head {\n        padding: 0 !important;\n        margin: 0 !important;\n        margin-bottom: 4px!important;\n        height: 81px!important;\n        width: 81px!important;\n    }\n    .card_head img {\n        width: 100% !important;\n        height: 100% !important;\n    }\n    [id='pagelet_encourage-celebrity/pagelet/celebrity'],\n    [id='pagelet_frs-aside/pagelet/search_back'],\n    [id='pagelet_frs-aside/pagelet/hottopic'],\n    [class*='app_download'],\n    .u_member,\n    .icon_wrap,\n    .user_score,\n    .right_section.right_bright {\n        display: none !important;\n    }\n    .core_title_wrap_bright,\n    .left_section {\n        width: 980px;\n    }\n    .l_post {\n        width: 980px;\n    }\n    .d_post_content_main {\n        width: 829px;\n        border-right: solid 0.633333px rgb(229, 229, 229) ;\n    }\n\n    .j_lzl_container{\n        width: 99.2% !important;\n    }\n    .edui-container,\n    #j_editor_for_container {\n        width: 100% !important;\n    }\n    .lzl_panel_wrapper {\n        float: right;\n    }\n}\n\n@-moz-document url-prefix('http://tieba.baidu.com/f'), url-prefix('https://tieba.baidu.com/f') {\n    .icon_tbworld, .icon-vip3-16 {\n        background-image: url('https://tb2.bdstatic.com/tb/img/thread_list_z_eca48fe.png');\n        background-position: -30px -60px;\n    }\n    .member_thread_title_frs a {\n\t\tcolor: rgb(45, 100, 179) !important;\n    }\n    .vip_red, .vip_red:hover {\n\t\tcolor: unset !important;\n    }\n    /* 以下一小部分是为了吧头像旁的空白作修正 */\n    .card_head {\n        height: 89px !important;\n        width: 89px !important;\n    }\n    .card_top>*:not([class='card_head']):not([class='card_info']) {\n        margin-left: -100px;\n    }\n}\n\n@-moz-document url-prefix('http://tieba.baidu.com/p'), url-prefix('https://tieba.baidu.com/p') {\n    .icon-vip3-16,\n    .icon_tbworld {\n\t\tdisplay: none;\n    }\n    .vip_red, .vip_red:hover {\n\t\tcolor: rgb(45, 100, 179) !important;\n    }\n}\n\n@-moz-document domain('linux.cn') {\n    #LEccCisOsS {\n        display: none !important;\n    }\n}\n\n/* Google Image Search Original Source */\n@-moz-document regexp('^https://www.google.com/.*&tbm=isch.*') {\n    .x_source_link {\n        color: white !important;\n    }\n    .rg_ilm {\n        display: inline;\n    }\n}\n\n/* Google搜索关键词高亮 */\n@-moz-document regexp(\"^https://www\\\\.google\\\\.com/search\\\\?.+\") {\n    em {\n        color: #dd4b39 !important;\n    }\n}\n",
+    "code": "@-moz-document domain('pinterest.com') {\n     *[data-test-id='giftWrap'],\n    div[data-test-giftwrap=\"true\"],\n    div[style=\"background-color: rgba(0, 0, 0, 0.6); opacity: 1; position: fixed; top: 0px; bottom: 0px; left: 0px; right: 0px; z-index: 1000;\"] {\n        display: none;\n    }\n}\n@-moz-document domain('blog.sina.com.cn') {\n    [id$='_panel'] {\n        display: none !important;\n    }\n}\n@-moz-document domain('cnprint.org') {\n    #m3d3 {\n        display: none;\n    }\n}\n\n@-moz-document domain('moegirl.org') {\n    .heimu,\n    .heimu a,\n    .heimu .new,\n    a .heimu {\n        background: none !important;\n    }\n}\n\n@-moz-document domain('firefox.net.cn') {\n    .floor_page {\n        display: none;\n    }\n}\n\n@-moz-document domain('greasyfork.org') {\n    #main-header {\n        background-image: none;\n        background-color: black;\n    }\n}\n\n@-moz-document domain('thegradcafe.com') {\n    .ipsWidget_inner {\n        display: none;\n    }\n}\n\n/*阻止太傻留学内容不让选中*/\n@-moz-document domain('taisha.org') {\n    body {\n        -moz-user-select: unset;\n    }\n}\n\n/*动漫之家*/\n@-moz-document domain('dmzj.com') {\n    #show_tip_bg,\n    .login_tip.out,\n    #m_r_panelbox,\n    .timeAD/*时间广告*/\n    {\n        display: none !important;\n    }\n}\n\n/*UC扩展中心*/\n@-moz-document domain('extensions.uc.cn') {\n    #J_mask,\n    #J_maskTip {\n        display: none !important;\n    }\n}\n\n/*新通留学弹窗*/\n@-moz-document domain('www.igo.cn') {\n    .adBG {\n        display: none !important;\n    }\n}\n\n/*推广*/\n@-moz-document domain('baike.baidu.com') {\n    #side-share,\n    /*右侧分享*/\n    #announcement,\n    /*公告*/\n    .wgt-footer-main/*底部*/\n    {\n        display: none;\n    }\n}\n\n@-moz-document domain('lofter.com') {\n    .w-pagelayer.w-pagelayer-reglogin.w-pagelayer-reglogin2 {\n        display: none;\n    }\n}\n\n@-moz-document domain('zdfans.com') {\n    ins {\n        display: none !important;\n    }\n    .meta .meta-info {\n        color: black;\n    }\n    #comment-author-info input {\n        color: black;\n    }\n}\n\n@-moz-document domain('pan.baidu.com'),\ndomain('yun.baidu.com') {\n    .context-menu>.list>li:last-child,\n    /*增值服务*/\n    .context-menu>.list>li:nth-last-child(2),\n    /*增值服务上方横线*/\n    .module-mboxDialog,\n    /*'百度云新功能'框*/\n    .banner-active,\n    /*个人网盘右上角*/\n    .dialog-extra/*删除文件时的提示升级VIP横条*/\n    {\n        display: none;\n    }\n    .find-light-icon,\n    /*“更多”右上角的红点*/\n    .user-level.level-0,\n    /*超级会员*/\n    #show-buyvip-pack,\n    .module-canvas,\n    /*灰色背景*/\n    .tips.has-error,\n    /*上传文件时的警告信息*/\n    .feed-issue-guide,\n    .feed-issue-guide-close,\n    /*提示*/\n    .prev-dom {\n        display: none !important;\n    }\n    /*下载大文件时提示升级VIP*/\n    #feedIssue {\n        border-style: none;\n    }\n}\n\n@-moz-document url-prefix('https://pan.baidu.com/disk/home') {\n    #passport-accRealName-pop,\n    #TANGRAM__PSP_3__/* 验证手机 */\n    {\n        display: none;\n    }\n}\n\n@-moz-document domain('zhidao.baidu.com') {\n    .lucky-try {\n        display: none !important;\n    }\n}\n\n@-moz-document domain('plus.google.com') {\n    div[aria-hidden='true'] {\n        display: none;\n    }\n}\n\n@-moz-document domain('bitbucket.org') {\n    #account-warning {\n        display: none !important;\n    }\n}\n\n@-moz-document domain('mail.126.com'),\ndomain('mail.163.com') {\n    li[id$='dvClub'],\n    li[id$='dvHealth'],\n    li[id$='dvLofter'],\n    li[title='一元夺宝'],\n    li[title='网易海购'],\n    li[title='网易秀品'],\n    .gWel-bottom,\n    .gWel-weather-promote,\n    [id^='_mail_popup'] {\n        display: none;\n    }\n}\n\n@-moz-document domain('mangabee.co') {\n    .manga-page {\n        display: inline!important\n    }\n    div>p>strong {\n        display: none!important;\n    }\n}\n\n@-moz-document url-prefix('https://translate.google.com') {\n    #gt-bbar {\n        display: none;\n    }\n}\n\n@-moz-document domain('bbs.kafan.cn') {\n    .bm_c.cl.pbn,\n    img[src='hiphotos.baidu.com/%CB%D5%C7%40/pic/item/54d0b6d2b31c8701afe7c85b277f9e2f0608ff67.jpg'],\n    img[src='i2.tietuku.com/bc6ef48ab2b8b3b5.jpg'],\n    img[src='b.ikafan.com/000/73/86/26_avatar_middle.jpg'] {\n        display: none;\n    }\n}\n\n@-moz-document domain('youku.com') {\n    #sideTool {\n        display: none!important;\n    }\n}\n\n@-moz-document domain('qzs.qq.com') {\n    #openVipButton,\n    img[alt='qboss_ad_image'],\n    #pop_apps_sponsors,\n    .split_line.bor2,\n    .word_spread.side_panel,\n    .icon-red-dot {\n        display: none !important;\n    }\n}\n\n@-moz-document domain('qzone.qq.com') {\n    .top-fix-inner {\n        margin-top: 0px !important;\n    }\n    .col-main-sidebar/*右侧栏*/\n    {\n        display: none !important;\n    }\n    li[type='app'],\n    .f-single.f-s-s.f-single-biz,\n    #leftMenu>.mod-side-nav-recently-used.mod-side-nav,\n    .f-aside>.qz-f-vip-l-1.qz-f-vip-l.qz-ichotclick[href^='http://vip.qzone.com/year.html'],\n    #gdtLcModCnt,\n    #top_tips_seat,\n    #top_tips_container,\n    .ui-icon.icon-diamond,\n    #feed-playing,\n    #qz_notification,\n    #pop_apps_sponsors,\n    #qbossLogo_tip,\n    .layout-copyright,\n    li[id^='fct_20050606'],\n    li.feed-hot,\n    DIV[class='item bor3 bg4 item-funny'],\n    DIV[class='fn-checkin-btn deep'],\n    #today_lastyear_v2,\n    #tab_switch,\n    #tab_menu_yanchu,\n    #tab_hide_list,\n    .top-fix-extend,\n    .user-home,\n    .search-box,\n    #tb_friend_li,\n    #tb_dress_li,\n    #tb_app_li,\n    #tb_vip_li,\n    DIV[class='fn_accessLog_tips bg2 bor2'],\n    .fix-layout,\n    #like_button_pannel,\n    .user-vip-info,\n    .head-detail-name,\n    #tab_menu_dianping,\n    #tab_menu_weibo,\n    .col-main-sidebar,\n    /*li a[link='nameCard_20050606'],*/\n    *[id*='_ad_'],\n    *[class*='_ad_'],\n    #tab_menu_me_cnt,\n    #QZ_Toolbar_Container>.top-fix-wrap>.user-info>.user-home[href='http://user.qzone.qq.com/1149235164/main']>.textoverflow.user-name,\n    #fct_0_6600_1_1443890230_0_1,\n    .user-medal,\n    /*特权之类*/\n    .trigger {\n        display: none;\n    }\n    .col-main-feed,\n    .feed-v9 .f-single {\n        width: 100% !important;\n    }\n}\n\n@-moz-document url-prefix('http://t.qq.com') {\n    #erweima,\n    .aboutInfo.c_tx5,\n    #app_video,\n    .SC_bd,\n    #widgetFloat,\n    #newsTips2_guess,\n    #talkListTab,\n    *[href='http://zhaoren.t.qq.com/people?from=top&pgv_ref=web.wide.nav.people'],\n    *[href='http://c.t.qq.com/k/default?pgv_ref=web.wide.page.nav.text'],\n    .sToolbar.single,\n    #app_guestMedal,\n    #app_guestRelation,\n    [tv='101'] {\n        display: none;\n    }\n    [boss='btnExposeNavHomeBar'] {\n        display: none !important;\n    }\n    .AL {\n        width: 150%;\n    }\n    li[ispopula='1'],\n    li[tv='1'] {\n        display: none;\n    }\n    #main {\n        width: 100%\n    }\n    #userAppTab {\n        width: 149%;\n    }\n    .text_pn {\n        width: 82% !important;\n    }\n    .orginCnt.e_orginCnt_b.clear.talkListLi.cur {\n        width: 90%;\n    }\n}\n\n@-moz-document domain('renren.com') {\n    div[data-source-id][data-id],\n    #mergeModule,\n    #huatiBox,\n    .a-feed>.appendix,\n    #toolBackTo,\n    #recommendArea,\n    .vip-skinBtn,\n    .hd-account-action.hd-account-action-vip,\n    .app-nav-cont.recent-app-cont {\n        display: none!important;\n    }\n    li[data-tip='应用中心'],\n    li[data-tip='我的应用'],\n    li[data-tip='人人分期'],\n    li[data-tip='热门'],\n    li[data-tip='社团人'] {\n        display: none;\n    }\n}\n\n@-moz-document domain('zuoye.baidu.com') {\n    .EC_ads_listborder,\n    .aside,\n    #aside {\n        display: none;\n    }\n}\n\n@-moz-document domain('tieba.baidu.com'), domain('v.tieba.com'), domain('www.tieba.com') {\n    .threadlist_bright .threadlist_author .sign_highlight,\n    .threadlist_bright .threadlist_author .sign_highlight:hover {\n\t\tcolor: unset;\n    }\n    .showlist_wap,\n    .post-foot-send-gift-container,\n    .u_wallet,\n    .split,\n    .u_app,\n    .u_tbmall,\n    .u_tshow,\n    .tbui_aside_float_bar {\n        display: none;\n    }\n    /* 悦图 */\n    .see-image-btn,\n    .see-image-btn:hover {\n        background-image: none;\n        padding-left: 14px;\n    }\n    /*吧头像*/\n    .card_head {\n        padding: 0 !important;\n        margin: 0 !important;\n        margin-bottom: 4px!important;\n        height: 89px!important;\n        width: 89px!important;\n    }\n    .card_head img {\n        width: 100% !important;\n        height: 100% !important;\n    }\n    [id='pagelet_encourage-celebrity/pagelet/celebrity'],\n    [id='pagelet_frs-aside/pagelet/search_back'],\n    [id='pagelet_frs-aside/pagelet/hottopic'],\n    [class*='app_download'],\n    .u_member,\n    .icon_wrap,\n    .user_score,\n    .right_section.right_bright {\n        display: none !important;\n    }\n    .core_title_wrap_bright,\n    .left_section {\n        width: 980px;\n    }\n    .l_post {\n        width: 980px;\n    }\n    .d_post_content_main {\n        width: 829px;\n        border-right: solid 0.633333px rgb(229, 229, 229) ;\n    }\n\n    .j_lzl_container{\n        width: 99.2% !important;\n    }\n    .edui-container,\n    #j_editor_for_container {\n        width: 100% !important;\n    }\n    .lzl_panel_wrapper {\n        float: right;\n    }\n}\n\n@-moz-document url-prefix('http://tieba.baidu.com/f'), url-prefix('https://tieba.baidu.com/f') {\n    .icon_tbworld, .icon-vip3-16 {\n        background-image: url('https://tb2.bdstatic.com/tb/img/thread_list_z_eca48fe.png');\n        background-position: -30px -60px;\n    }\n    .member_thread_title_frs a {\n\t\tcolor: rgb(45, 100, 179) !important;\n    }\n    .vip_red, .vip_red:hover {\n\t\tcolor: unset !important;\n    }\n    /* 以下一小部分是为了吧头像旁的空白作修正 */\n    .card_head {\n        height: 89px !important;\n        width: 89px !important;\n    }\n    .card_top>*:not([class='card_head']):not([class='card_info']) {\n        margin-left: -100px;\n    }\n}\n\n@-moz-document url-prefix('http://tieba.baidu.com/p'), url-prefix('https://tieba.baidu.com/p') {\n    .icon-vip3-16,\n    .icon_tbworld {\n\t\tdisplay: none;\n    }\n    .vip_red, .vip_red:hover {\n\t\tcolor: rgb(45, 100, 179) !important;\n    }\n}\n\n@-moz-document domain('linux.cn') {\n    #LEccCisOsS {\n        display: none !important;\n    }\n}\n\n/* Google Image Search Original Source */\n@-moz-document regexp('^https://www.google.com/.*&tbm=isch.*') {\n    .x_source_link {\n        color: white !important;\n    }\n    .rg_ilm {\n        display: inline;\n    }\n}\n\n/* Google搜索关键词高亮 */\n@-moz-document regexp(\"^https://www\\\\.google\\\\.com/search\\\\?.+\") {\n    em {\n        color: #dd4b39 !important;\n    }\n}\n",
     "sections": [
       {
         "urls": [],
@@ -364,7 +364,7 @@
         ],
         "regexps": [],
         "exclude": [],
-        "code": "div[data-test-giftwrap=true],div[style=\"background-color: rgba(0, 0, 0, 0.6); opacity: 1; position: fixed; top: 0px; bottom: 0px; left: 0px; right: 0px; z-index: 1000;\"]{display:none}"
+        "code": "[data-test-id=giftWrap],div[data-test-giftwrap=true],div[style=\"background-color: rgba(0, 0, 0, 0.6); opacity: 1; position: fixed; top: 0px; bottom: 0px; left: 0px; right: 0px; z-index: 1000;\"]{display:none}"
       },
       {
         "urls": [],
@@ -494,7 +494,7 @@
         ],
         "regexps": [],
         "exclude": [],
-        "code": ".wrapper>.content-wrap>.column2.content>div:nth-of-type(1){display:block!important}ins{display:none!important}#comment-author-info input,.meta .meta-info{color:#000}"
+        "code": "ins{display:none!important}#comment-author-info input,.meta .meta-info{color:#000}"
       },
       {
         "urls": [],
@@ -556,7 +556,7 @@
         ],
         "regexps": [],
         "exclude": [],
-        "code": "#dvNavTree>[id^='_mail_tree_']>li:last-child,.gWel-bottom,.gWel-weather-promote,[id^='_mail_popup'],li[id$=dvClub],li[id$=dvHealth],li[id$=dvLofter],li[title='一元夺宝'],li[title='网易海购'],li[title='网易秀品']{display:none}"
+        "code": ".gWel-bottom,.gWel-weather-promote,[id^='_mail_popup'],li[id$=dvClub],li[id$=dvHealth],li[id$=dvLofter],li[title='一元夺宝'],li[title='网易海购'],li[title='网易秀品']{display:none}"
       },
       {
         "urls": [],
@@ -658,7 +658,7 @@
         ],
         "regexps": [],
         "exclude": [],
-        "code": ".threadlist_bright .threadlist_author .sign_highlight,.threadlist_bright .threadlist_author .sign_highlight:hover{color:unset}.split,.tbui_aside_float_bar,.u_app,.u_tbmall,.u_tshow,.u_wallet{display:none}.see-image-btn,.see-image-btn:hover{background-image:none;padding-left:14px}.card_head{padding:0!important;margin:0 0 4px!important;height:81px!important;width:81px!important}.card_head img{width:100%!important;height:100%!important}.icon_wrap,.right_section.right_bright,.u_member,.user_score,[class*=app_download],[id='pagelet_encourage-celebrity/pagelet/celebrity'],[id='pagelet_frs-aside/pagelet/hottopic'],[id='pagelet_frs-aside/pagelet/search_back']{display:none!important}.core_title_wrap_bright,.l_post,.left_section{width:980px}.d_post_content_main{width:829px;border-right:.633333px solid #e5e5e5}.j_lzl_container{width:99.2%!important}#j_editor_for_container,.edui-container{width:100%!important}.lzl_panel_wrapper{float:right}"
+        "code": ".threadlist_bright .threadlist_author .sign_highlight,.threadlist_bright .threadlist_author .sign_highlight:hover{color:unset}.post-foot-send-gift-container,.showlist_wap,.split,.tbui_aside_float_bar,.u_app,.u_tbmall,.u_tshow,.u_wallet{display:none}.see-image-btn,.see-image-btn:hover{background-image:none;padding-left:14px}.card_head{padding:0!important;margin:0 0 4px!important;height:89px!important;width:89px!important}.card_head img{width:100%!important;height:100%!important}.icon_wrap,.right_section.right_bright,.u_member,.user_score,[class*=app_download],[id='pagelet_encourage-celebrity/pagelet/celebrity'],[id='pagelet_frs-aside/pagelet/hottopic'],[id='pagelet_frs-aside/pagelet/search_back']{display:none!important}.core_title_wrap_bright,.l_post,.left_section{width:980px}.d_post_content_main{width:829px;border-right:.633333px solid #e5e5e5}.j_lzl_container{width:99.2%!important}#j_editor_for_container,.edui-container{width:100%!important}.lzl_panel_wrapper{float:right}"
       },
       {
         "urls": [],
@@ -782,11 +782,11 @@
   },
   {
     "type": "less",
-    "lastModified": 1537275354251,
+    "lastModified": 1541638097936,
     "name": "Clean Douyu",
     "enabled": true,
     "updateUrl": "",
-    "code": "@-moz-document domain(\"douyu.com\") {\n    #js-stats-and-actions,\n    #js-fans-rank,\n    .recommand-ad,\n    .column.rec {\n        display: none !important;\n    }\n    [class*='danmu'] {\n\t\tdisplay: none !important;\n    }\n    /*\n    #js-live-room-normal-right {\n\t\tdisplay: none !important;\n    }\n    */\n    p[class^='txt-'] {\n        display: none !important;\n    }\n}",
+    "code": "@-moz-document domain(\"douyu.com\") {\n    .footer,\n    .see-super-definition-videos,\n    .gift-bg,\n    .get-gift-box,\n    .summer_gift_detail,\n    #js-room-activity,\n    .summer_gift_detail,\n    .pop-zoom-wrap,\n    .layout-Player-effect,\n    .ZoomTip, .pop-zoom-container,\n    .recommendApp-0e23eb,\n    .FansMedal,\n    .UserLevel,\n    .Motor,\n    .Barrage-icon,\n    .Barrage-noble,\n    .Download-iconAdd,\n    *[class^='Header-menu-icon'],\n    .Title-roomOtherBottom,\n    #js-player-toolbar,\n    #guess-main-panel,\n    .FansMedalPanel-container,\n    .headerdown-corner,\n    .WeekRank,\n    .layout-Player-rank,\n    .layout-Player-rankAll,\n    .Title-AnchorLevel,\n    #js-stats-and-actions,\n    #js-fans-rank,\n    .recommand-ad,\n    .column.rec,\n    [class*='danmu'],\n    p[class^='txt-'] {\n        display: none !important;\n    }\n    /*\n    #js-live-room-normal-right {\n\t\tdisplay: none !important;\n    }\n    */\n    .layout-Player-asideMainTop {\n\t\tmargin-top: -220px !important;\n    }\n}",
     "sections": [
       {
         "urls": [],
@@ -796,7 +796,7 @@
         ],
         "regexps": [],
         "exclude": [],
-        "code": "#js-fans-rank,#js-stats-and-actions,.column.rec,.recommand-ad,[class*=danmu],p[class^=txt-]{display:none!important}"
+        "code": "#guess-main-panel,#js-fans-rank,#js-player-toolbar,#js-room-activity,#js-stats-and-actions,.Barrage-icon,.Barrage-noble,.Download-iconAdd,.FansMedal,.FansMedalPanel-container,.Motor,.Title-AnchorLevel,.Title-roomOtherBottom,.UserLevel,.WeekRank,.ZoomTip,.column.rec,.footer,.get-gift-box,.gift-bg,.headerdown-corner,.layout-Player-effect,.layout-Player-rank,.layout-Player-rankAll,.pop-zoom-container,.pop-zoom-wrap,.recommand-ad,.recommendApp-0e23eb,.see-super-definition-videos,.summer_gift_detail,[class*=danmu],[class^=Header-menu-icon],p[class^=txt-]{display:none!important}.layout-Player-asideMainTop{margin-top:-220px!important}"
       }
     ],
     "advanced": {
@@ -807,403 +807,6 @@
     "url": null,
     "originalMd5": null,
     "id": 44
-  },
-  {
-    "type": "css",
-    "lastModified": 1535164526135,
-    "name": "Douyu  斗鱼页面优化 加强版",
-    "enabled": true,
-    "updateUrl": "https://userstyles.org/styles/159276.css",
-    "code": "@-moz-document url-prefix(\"https://www.douyu.com\"), url-prefix(\"http://www.douyu.com\") {\r\n/* 基础优化 */\r\n.myFollow-promot, \r\n.athena-booth-panel-list, \r\n.get-yw, .info.padding-left0, \r\n.rank-video, \r\n.left-footer, \r\n.r-tit, \r\n.o-download, \r\n.o-broadcastt,\r\n.video-entry-icon,\r\n.fl.o-broadcast\r\n{\r\n\tdisplay: none !important;\r\n}\r\n\r\n[id^=\"live-new-show-content-box\"] {\r\n\tdisplay: none !important;\r\n}\r\n\r\n.expand-right {\r\n\ttop:-20px;\r\n}\r\n\r\n/* 去直播间标签和分区 */\r\n.anchor-impress {\r\n\tdisplay: none !important;\r\n}\r\n\r\n.tag-fs-con {\r\n\tdisplay: none !important;\r\n}\r\n\r\n/* 去左侧页游 */\r\n.left-menu .channel-cate li:nth-of-type(3) > a[href=\"http://wan.douyu.com/\"] {\r\n\tdisplay: none !important;\r\n}\r\n\r\n.channel-cate > ul > li:nth-of-type(3) {\r\n\theight: 0px;\r\n\tline-height: 0px;\r\n\tborder-bottom: 1px solid #272727;\r\n\twidth: 240px;\r\n\tposition: relative;\r\n}\r\n\r\n.listcustomize-column-wrap {\r\n\tdisplay: none !important;\r\n}\r\n\r\n/* 去左侧正能量 */\r\n.left-menu dt:nth-of-type(7) > a[href=\"/directory/columnRoom/znl\"] {\r\n\tdisplay: none !important;\r\n}\r\n\r\n.left-menu dd:nth-of-type(7) {\r\n\tdisplay: none !important;\r\n}\r\n\r\n/* 左侧导航优化 */\r\n.left-menu .leftnav-cate {\r\n    padding-top: 0px;\r\n    color: #c6c6c6;\r\n}\r\n\r\n/* 专题直播间优化 */\r\n.live-room {\r\n\tpadding-top: 0px !important;\r\n\tpadding-bottom: 10px !important;\r\n\tmargin-top: 0px!important;\r\n}\r\n\r\n.diy-live-room-top, .diy-live-room-bottom {\r\n\tdisplay: none !important;\r\n}\r\n\r\nhtml, body, .tse-content, .cs-textarea, #mainbody, .content, .u_mainbody, .earn_tab_tit dd .earn_tab_year, .login-inside, .head .search, .aui_inner {\r\n\tbackground: #EEEEEE!important;\r\n}\r\n\r\n#container {\r\n\tbackground: #EEEEEE!important;\r\n}\r\n\r\n.head-nav .head-nav li.funny, .head-nav .head-nav li.wxr-menu, .header_nav li.video-entry, .header_nav li.funny_menu, .header_nav > li:nth-child(6), .header_nav > li:nth-child(7), .annualfestival-count, #header.annualfestival-header2::after, #header.annualfestival-header2::after, #header.annualfestival-header2::after, #header.annualfestival-header2::after, #header.annualfestival-header2::after, #header.annualfestival-header2::after, #header.annualfestival-header2::before {\r\n\tdisplay: none!important;\r\n}\r\n\r\n/* 直播间活动 */\r\n div[data-component-id=\"switchRoom\"], div[data-component-id=\"textItem\"], div[data-component-id=\"squareLottery\"], div[data-component-id=\"lotteryChanceBtn\"], div[data-component-id=\"iframe\"], div[data-component-id=\"footer\"], div[data-component-id=\"imageItem\"], div[data-component-id=\"carousel\"], .wm-schedule-comp, .carousel-nav, .wm_newsWrap, .multipleText-wrap {\r\n\tdisplay: none!important;\r\n}\r\n\r\n#container > div[data-component-key=\"2\"] {\r\n\tdisplay: block!important;\r\n\theight: 60px!important;\r\n}\r\n\r\n#container > div[data-component-id=\"header\"] {\r\n\tdisplay: block!important;\r\n}\r\n\r\n.ActivityPendant-act20180601 {\r\n\tdisplay: none!important;\r\n}\r\n\r\n/* 礼物区活动 */\r\n div.action-item[data-id=\"67\"], div.action-item[data-id=\"101\"], a.action-item[data-id=\"73\"], a.action-item[data-id=\"93\"], a.action-item[data-id=\"91\"], a.action-item[data-id=\"88\"], div.action-item[data-id=\"89\"], a.action-item[data-id=\"94\"], a.action-item[data-id=\"95\"], a.action-item[data-id=\"96\"], a.action-item[data-id=\"97\"], div.action-item[data-id=\"98\"], a.action-item[data-id=\"99\"], a.action-item[data-id=\"100\"], a.action-item[data-id=\"101\"], a.action-item[data-id=\"102\"], a.action-item[data-id=\"103\"], a.action-item[data-id=\"104\"], a.action-item[data-id=\"105\"], div[data-flag=\"AnchorHourBuffTipWrap\"], div[data-flag=\"family\"], div[data-flag=\"giftweek201806\"], .more-action-btn-wrap, .WorldCupFans-noraml-tips, .ActGuess2018-tip-type1, .ActGuess2018-tip-type, .guess-main-panel, .guess-user-reminding-out-special {\r\n\tdisplay: none!important;\r\n}\r\n\r\n/* 屏蔽指定等级用户弹幕 */\r\n li.jschartli[data-level=\"0\"], li.jschartli[data-level=\"1\"], li.jschartli[data-level=\"2\"], li.jschartli[data-level=\"3\"] {\r\n\tdisplay: none!important;\r\n}\r\n\r\n/* 告白 */\r\n.js-love180520-wrap, .love180520-giftTip {\r\n\tdisplay: none!important;\r\n}\r\n\r\n/* 欢迎XX进入直播间 */\r\n li.jschartli > p > span.name, li.jschartli > p > span.chat-msg-item.text-cont {\r\n\tdisplay: inline-block !important;\r\n}\r\n\r\n/* 视频内广告屏蔽 */\r\n.QRcode, .lianmai-tips {\r\n\tdisplay: none!important;\r\n}\r\n\r\n div[class*=\"yanzhi-dd40b4\"], div[class*=\"bg-3aecb2\"], div[class*=\"bg-1a1f33\"], div[class*=\"closeBg-8c5e18\"], div[class*=\"watermark-4231db\"], div[class*=\"PkView-\"], div[class*=\"gotoView-\"], div[class*=\"recommendApp-\"], div[class*=\"maiMaitView-\"], div[class*=\"luckDraw_bg-\"], div[class*=\"penpenIcon-\"], div[class*=\"aprilFoolBox-\"] {\r\n\tdisplay: none!important;\r\n}\r\n\r\n.feedback-e6fc2b {\r\n\tdisplay: none!important;\r\n}\r\n\r\n/* 聊天区 */\r\n.f-phone {\r\n\tdisplay: none;\r\n}\r\n\r\n.nick {\r\n\tdisplay: inline !important;\r\n}\r\n\r\n.enter-level1 {\r\n\tdisplay: none;\r\n}\r\n\r\n.chat-cont .c-list li {\r\n\tmargin: 0;\r\n\tline-height: 16px;\r\n}\r\n\r\n[id^=\"js-noble-speaker-btn\"] {\r\n\tdisplay: none !important;\r\n}\r\n\r\n[id^=\"js-link-barrage\"] {\r\n\tdisplay: none !important;\r\n}\r\n\r\n/* 高亮自己的弹幕 */\r\n li.jschartli p.my-cont span.m {\r\n\tcolor: #ff5d23!important;\r\n\tdisplay: inline-block !important;\r\n}\r\n\r\nli.jschartli p.my-cont {\r\n\tpadding: 7px!important;\r\n\tborder-radius: 6px!important;\r\n\tborder: 1px dashed #ff5d23!important;\r\n\tbackground: #f8f8f8 !important;\r\n}\r\n\r\n/* 欢迎进入消息 */\r\n.text-cont .c-wel, .text-cont .hy-name, .text-cont .hy-name+span {\r\n\tdisplay: none;\r\n}\r\n\r\n/* 屏蔽新功能提醒 */\r\n.normallevel-lead, .high-notice, .yw-user-guide {\r\n\tdisplay: none;\r\n}\r\n\r\n/* 主播榜单鼠标滑过显示 */\r\n #js-fans-rank\r\n  {\r\n    opacity: 1;\r\n    height: 28px;\r\n  }\r\n\r\n #js-fans-rank:hover\r\n  {\r\n    opacity: 1;\r\n    height: 217px;\r\n  }\r\n\r\n #js-chat-cont\r\n  {\r\n    top: 28px;\r\n  }\r\n\r\n/* 专题活动广告 */\r\n.summer_acitivity.fl,\r\n.RichMan,\r\n.rM-sendGift-tips\r\n\r\n{\r\n\tdisplay: none !important;\r\n}\r\n}\r\n@-moz-document url(\"https://www.douyu.com/directory/all\") {\r\n/*全部直播*/\r\n.expand-right    {\r\n\t top:-40px;\r\n  }\r\n}",
-    "sections": [
-      {
-        "urls": [],
-        "urlPrefixes": [
-          "https://www.douyu.com",
-          "http://www.douyu.com"
-        ],
-        "domains": [],
-        "regexps": [],
-        "exclude": [],
-        "code": ".athena-booth-panel-list,.fl.o-broadcast,.get-yw,.info.padding-left0,.left-footer,.myFollow-promot,.o-broadcastt,.o-download,.r-tit,.rank-video,.video-entry-icon,[id^=live-new-show-content-box]{display:none!important}.expand-right{top:-20px}.anchor-impress,.left-menu .channel-cate li:nth-of-type(3)>a[href=\"http://wan.douyu.com/\"],.tag-fs-con{display:none!important}.channel-cate>ul>li:nth-of-type(3){height:0;line-height:0;border-bottom:1px solid #272727;width:240px;position:relative}.left-menu dd:nth-of-type(7),.left-menu dt:nth-of-type(7)>a[href=\"/directory/columnRoom/znl\"],.listcustomize-column-wrap{display:none!important}.left-menu .leftnav-cate{padding-top:0;color:#c6c6c6}.live-room{padding-top:0!important;padding-bottom:10px!important;margin-top:0!important}.diy-live-room-bottom,.diy-live-room-top{display:none!important}#container,#mainbody,.aui_inner,.content,.cs-textarea,.earn_tab_tit dd .earn_tab_year,.head .search,.login-inside,.tse-content,.u_mainbody,body,html{background:#eee!important}#header.annualfestival-header2::after,#header.annualfestival-header2::before,.annualfestival-count,.carousel-nav,.head-nav .head-nav li.funny,.head-nav .head-nav li.wxr-menu,.header_nav li.funny_menu,.header_nav li.video-entry,.header_nav>li:nth-child(6),.header_nav>li:nth-child(7),.multipleText-wrap,.wm-schedule-comp,.wm_newsWrap,div[data-component-id=carousel],div[data-component-id=footer],div[data-component-id=iframe],div[data-component-id=imageItem],div[data-component-id=lotteryChanceBtn],div[data-component-id=squareLottery],div[data-component-id=switchRoom],div[data-component-id=textItem]{display:none!important}#container>div[data-component-key=\"2\"]{display:block!important;height:60px!important}#container>div[data-component-id=header]{display:block!important}.ActGuess2018-tip-type,.ActGuess2018-tip-type1,.ActivityPendant-act20180601,.WorldCupFans-noraml-tips,.guess-main-panel,.guess-user-reminding-out-special,.js-love180520-wrap,.love180520-giftTip,.more-action-btn-wrap,a.action-item[data-id=\"100\"],a.action-item[data-id=\"101\"],a.action-item[data-id=\"102\"],a.action-item[data-id=\"103\"],a.action-item[data-id=\"104\"],a.action-item[data-id=\"105\"],a.action-item[data-id=\"73\"],a.action-item[data-id=\"88\"],a.action-item[data-id=\"91\"],a.action-item[data-id=\"93\"],a.action-item[data-id=\"94\"],a.action-item[data-id=\"95\"],a.action-item[data-id=\"96\"],a.action-item[data-id=\"97\"],a.action-item[data-id=\"99\"],div.action-item[data-id=\"101\"],div.action-item[data-id=\"67\"],div.action-item[data-id=\"89\"],div.action-item[data-id=\"98\"],div[data-flag=AnchorHourBuffTipWrap],div[data-flag=family],div[data-flag=giftweek201806],li.jschartli[data-level=\"0\"],li.jschartli[data-level=\"1\"],li.jschartli[data-level=\"2\"],li.jschartli[data-level=\"3\"]{display:none!important}li.jschartli>p>span.chat-msg-item.text-cont,li.jschartli>p>span.name{display:inline-block!important}.QRcode,.feedback-e6fc2b,.lianmai-tips,div[class*=PkView-],div[class*=aprilFoolBox-],div[class*=bg-1a1f33],div[class*=bg-3aecb2],div[class*=closeBg-8c5e18],div[class*=gotoView-],div[class*=luckDraw_bg-],div[class*=maiMaitView-],div[class*=penpenIcon-],div[class*=recommendApp-],div[class*=watermark-4231db],div[class*=yanzhi-dd40b4]{display:none!important}.f-phone{display:none}.nick{display:inline!important}.enter-level1{display:none}.chat-cont .c-list li{margin:0;line-height:16px}[id^=js-link-barrage],[id^=js-noble-speaker-btn]{display:none!important}li.jschartli p.my-cont span.m{color:#ff5d23!important;display:inline-block!important}li.jschartli p.my-cont{padding:7px!important;border-radius:6px!important;border:1px dashed #ff5d23!important;background:#f8f8f8!important}.high-notice,.normallevel-lead,.text-cont .c-wel,.text-cont .hy-name,.text-cont .hy-name+span,.yw-user-guide{display:none}#js-fans-rank{opacity:1;height:28px}#js-fans-rank:hover{opacity:1;height:217px}#js-chat-cont{top:28px}.RichMan,.rM-sendGift-tips,.summer_acitivity.fl{display:none!important}"
-      },
-      {
-        "urls": [
-          "https://www.douyu.com/directory/all"
-        ],
-        "urlPrefixes": [],
-        "domains": [],
-        "regexps": [],
-        "exclude": [],
-        "code": ".expand-right{top:-40px}"
-      }
-    ],
-    "md5Url": "https://update.userstyles.org/159276.md5",
-    "url": "http://userstyles.org/styles/159276",
-    "author": "leapfrog",
-    "originalMd5": "16e79fe3f175304a9ab4d0cbbec34c8f",
-    "advanced": {
-      "saved": {},
-      "item": {}
-    },
-    "autoUpdate": true,
-    "id": 45
-  },
-  {
-    "type": "css",
-    "lastModified": 1527161877475,
-    "name": "Douyu Cleaner 清爽斗鱼",
-    "enabled": true,
-    "updateUrl": "https://userstyles.org/styles/132037.css",
-    "code": "@-moz-document domain(\"douyu.com\") {\r\n    /*====================================================\r\n                Douyu Cleaner 清爽斗鱼\r\n                by Another_Dreams\r\n                Blog: weijohn.me\r\n\r\n                v4.1.0\r\n                Last updated: 2018/04/01\r\n        ======================================================*/\r\n    /*====================================================\r\n            基于 Chrome 50+ 进行编写,配合ABP或uBlock\r\n              主要针对登陆后的斗鱼,不登陆时有些细节未调整!!! \r\n        =====================================================*/\r\n    /*临时活动屏蔽区*/\r\n    .annualfestival-main-tips {\r\n        display: none !important;\r\n    }\r\n    /*[[.fans-rank]]*/\r\n    /*[[.action-list]]*/\r\n    .fans201803-tips,\r\n    /*HTML5播放器广告*/\r\n    .QRcode,\r\n    /*去分类广告*/\r\n    #header .head-nav .assort-ad,\r\n    /*去历史和关注的广告条*/\r\n    .f-sign-cont,\r\n    .his-sign-cont,\r\n    /*去个人中心我的任务、贵族、头像圆点*/\r\n    .o-login .l-menu .task,\r\n    /*[[privilege]]*/\r\n    .umes-icon,\r\n    /*房间头部广告*/\r\n    .room-ad-top,\r\n    /*去广告*/\r\n    .search-suggest-ad,\r\n    .chat-top-ad,\r\n    .chat_top_pic,\r\n    .rank-video-ad,\r\n    /*去视频下方主播发帖 直播公告 视频推荐*/\r\n    .PlayerSub,\r\n    /*去弹幕公告*/\r\n    #js-chat-notice,\r\n    /*去视频下方任务*/\r\n    .fl.task-btn,\r\n    /*去聊天区广告*/\r\n    .chat-ad,\r\n    /*去聊天区火箭*/\r\n    .giftbatter-box,\r\n    /*去领鱼丸提示*/\r\n    .pay-task,\r\n    /*去分享扫一扫*/\r\n    .room-mes .btn-group .sq-wrap,\r\n    /*去领鱼丸主播推荐*/\r\n    #js-yw-rmd-rooms,\r\n    .vcode9-sign,\r\n    .myvip--guide--oncar,\r\n    /*去超管推荐*/\r\n    .js-live-room-recommend,\r\n    /*去缩放提示*/\r\n    .pop-zoom-container,\r\n    /*去顶部游戏选项*/\r\n    #header .head-nav>li.funny,\r\n    #header .head-nav .wxr-menu,\r\n    /*[[yuba]]*/\r\n    /*主播土豪排行榜*/\r\n    .feedback-report-button,\r\n    /*去举报按钮*/\r\n    .focus-lead,\r\n    /*关注提醒*/\r\n    /*[[anchor-task]]*/\r\n    /*等级上线提醒*/\r\n    .normallevel-lead,\r\n    /*主播商品推荐*/\r\n    .fishop-anchor-push-box.expanded,\r\n    .fishop-anchor-recommands-box.expanded,\r\n    .day-pay-wrap,\r\n    /*输入框首充徽章*/\r\n    .firstpay-award-icon,\r\n    .firstpay-entrance,\r\n    .firstpay-modal,\r\n    .firstpay-warp {\r\n        display: none !important;\r\n    }\r\n    /*[[fans-entrance]]*/\r\n    /*修复抢飞机宝箱验证码偏移出屏幕的问题*/\r\n    .geetest_fullpage_click.geetest_float.geetest_wind.geetest_slide3 {\r\n        left: 79%!important;\r\n    }\r\n    /*未登录调整*/\r\n    .no-login {\r\n\t    display: none !important;\r\n\t    height: 0px !important;\r\n\t    margin-bottom: 0px !important;\r\n    }\r\n    .PlayerCaseSub-Main.is-unlogin {\r\n\t    top: 0px !important;\r\n    }\r\n    /*房间头部广告*/\r\n    .room-ad-top {\r\n        width: 0px;\r\n        left: 0px;\r\n    }\r\n    /*主播房间信息调整*/\r\n    .btn-group .focus-box {\r\n        top: auto!important;\r\n        bottom: 5px;\r\n        -moz-transform: scale(0.7);\r\n        zoom: 0.7;\r\n    }\r\n    .relate-text .headline {\r\n        width: calc(42% + 105px) !important;\r\n    }\r\n    .relate-text .acinfo-fs-con {\r\n        min-width: calc(42% + 105px) !important;\r\n    }\r\n    .relate-text .headline ,\r\n    .relate-text .acinfo-fs-con ,\r\n    .relate-text .tag-fs-con {\r\n        float: left;\r\n    }\r\n    .relate-text .anchor-impress {\r\n        margin: 3px 0 0!important;\r\n    }\r\n    .relate-text .impress-list {\r\n        max-width: 250px !important;\r\n    }\r\n    /*[[emperor-recommend]]*/\r\n    /*主播头像*/\r\n    .relate-text {\r\n        margin-left: 62px !important;\r\n    }\r\n    .room-mes {\r\n        height: auto !important;\r\n    }\r\n    .room-mes .anchor-pic {\r\n        margin: 2px 0px 0px 2px;\r\n        width: 55px !important;\r\n        height: 55px !important;\r\n    }\r\n    .room-mes .anchor-pic img {\r\n        border-radius: 50%!important;\r\n        box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);\r\n    }\r\n    .anchor-pic .anchor-cover-wrap .cover {\r\n        background: none;\r\n    }\r\n    @media screen and (max-width: 1900px) {\r\n        .relate-text .acinfo-fs-con {\r\n            width: 100% !important;\r\n        }\r\n        .relate-text .anchor-impress {\r\n            margin: 0!important;\r\n            zoom: 0.9;\r\n            -moz-transform: scale(0.9);\r\n        }\r\n        /*主播头像*/\r\n        .relate-text {\r\n            margin-left: 85px !important;\r\n        }\r\n        .room-mes {\r\n            height: 82px !important;\r\n        }\r\n        /*主播头像*/\r\n        .room-mes .anchor-pic {\r\n            margin: 4px 0px 0px 3px;\r\n            width: 75px !important;\r\n            height: 75px !important;\r\n        }\r\n    }\r\n    /*[[catagory]]*/\r\n    @media screen and (max-width: 1500px) {\r\n        .relate-text .headline {\r\n            width: 350px !important;\r\n            max-width: 350px!important;\r\n        }\r\n        /*礼物*/\r\n        .give-gift {\r\n            margin-left: 10px;\r\n        }\r\n    }\r\n    /* 视频录像按钮 */\r\n    .video-recording {\r\n        /*[[video-recording]]*/\r\n    }\r\n    /* 直播间 */\r\n    .body-flash-fullpage .room-video {\r\n        border-left-width: 0px;\r\n        border-right-width: 0px;\r\n    }\r\n    .room-video {\r\n        border: 1px solid rgba(255, 255, 255, 0.3);\r\n        border-radius: 5px;\r\n        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);\r\n    }\r\n    /*使用HTML5播放器时*/\r\n    .room-video,\r\n    .danmu-container {\r\n        border: 0;\r\n    }\r\n    .danmu-ctrl {\r\n        background: #23272b!important;\r\n        border: 0!important;\r\n        color: #9a9a9a!important;\r\n    }\r\n    /*礼物*/\r\n    .get-yw .yw-collect-box.ywrmd {\r\n        min-height: 140px !important;\r\n    }\r\n    .yw-collect-box {\r\n        top: -180px !important;\r\n        margin-left: -50px !important;\r\n    }\r\n    #js-stats-and-actions {\r\n        margin-top: 5px;\r\n        padding: 2px 22px 2px 19px;\r\n        height: 40px;\r\n        border: 1px solid #e5e4e4;\r\n        border-radius: 5px;\r\n        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);\r\n    }\r\n    .body-flash-fullpage .m-wealth {\r\n        padding-top: 0px!important;\r\n        margin-top: 0px!important;\r\n    }\r\n    /*  鱼翅和充值图标 */\r\n    span.y2.fl,\r\n    a.r-com-btn.getYc.fl {\r\n        display: none!important;\r\n    }\r\n    /*鱼丸可领取时间*/\r\n    .task-Getyw .tip {\r\n        -moz-transform: scale(0.8);\r\n        zoom: 0.8;\r\n    }\r\n    .uinfo-ywyc {\r\n        clear: none !important;\r\n        height: 0px!important;\r\n        margin-top: 10px!important;\r\n    }\r\n    .uinfo-ywyc .m-wealth {\r\n        display: flex !important;\r\n        height: 0px;\r\n    }\r\n    /*去鱼丸领取时的APP下载提示 */\r\n    p.yw-app-des,\r\n    .ft-sign-cont,\r\n    /*微博分享提示*/\r\n    .room-wbshare\r\n    /*未登陆聊天区一个区域*/\r\n    .no-login {\r\n        display: none !important;\r\n    }\r\n    /*去聊天区的特效礼物*/\r\n    .giftbatter-box {\r\n        display: none !important;\r\n        height: 0px;\r\n    }\r\n    /*粉丝聊天条*/\r\n    .chat-cont li.fans-chart,\r\n    .chat-cont li.noble-chart {\r\n        padding: 0px!important;\r\n        margin-left: 0px!important;\r\n        background: none!important;\r\n    }\r\n     /*小姐姐欢迎背景*/\r\n    .girl-cont {\r\n    \tline-height: 22px !important;\r\n    \tpadding: 0px !important;\r\n    }\r\n    .chart-li-girl {\r\n    \tbackground: none !important;\r\n    \theight: auto !important;\r\n    }\r\n    /*精简聊天区图标*/\r\n    .chat-task-madel,\r\n    .user-level-wel,\r\n    .motorcade-icon,\r\n    .task-wel,\r\n    .f-phone,\r\n    .pc-client-icon,\r\n    .user-noble-lv,\r\n    .enter-welcome1,\r\n    .status-low-enter,\r\n    /*[[lw-imgs]]*/\r\n    .chat-icon-pad/*[[user-level]]*//*[[fans]]*/\r\n    {\r\n        display: none !important;\r\n    }\r\n    /*[[#left]]*/\r\n    .small-nav>ul>li:nth-of-type(9),\r\n    /*抽屉菜单的游戏*/\r\n    .channel-cate>ul>li:nth-of-type(5)/*抽屉菜单的页游中心*/\r\n    {\r\n        display: none !important;\r\n    }\r\n    /*[[firefox]]*/\r\n    /*背景*/\r\n    html {\r\n        background: /*[[bg-color]]*/\r\n        ;\r\n        /*[[background-img]]*/\r\n    }\r\n}\r\n\r\n@-moz-document url-prefix(\"https://www.douyu.com/directory\"),\r\nurl-prefix(\"https://www.douyu.com/room/my_follow\") {\r\n    /* 背景 */\r\n    #mainbody {\r\n        background: #EEEEEE;\r\n    }\r\n    /*左抽屉菜单*/\r\n    #left {\r\n        display: block !important;\r\n    }\r\n    /* <!-- web直播页广告位 --> */\r\n    .lol-ad {\r\n        display: none !important;\r\n    }\r\n    /* http://www.douyu.com/directory/下的列表 */\r\n    .item-data .unit {\r\n        border: 1px solid #eee;\r\n        background: #eee;\r\n    }\r\n    .left-menu {\r\n        background: #2c2c2c;\r\n    }\r\n}\r\n\r\n@-moz-document domain(\"douyu.com\") {\r\n    /*====斗鱼首页====*/\r\n    /*<!--第五行：官方活动-->*/\r\n    /*[[official]]*/\r\n    /*<!--第一行：广告、新闻、推广-->*/\r\n    .row-1,\r\n    .row-3,\r\n    .row-4 {\r\n        display: none !important;\r\n    }\r\n}\r\n\r\n@-moz-document url-prefix(\"https://www.douyu.com/cms/zt/\") {\r\n    /****** 特别直播间的一些调整 ******/\r\n    /*去分享按钮*/\r\n    .r_share,\r\n    .room_qrcode {\r\n        display: none !important;\r\n    }\r\n    /*关注按钮*/\r\n    .room_mes .btn-group .focus-box {\r\n        top: 0px;\r\n    }\r\n    /***** 活动直播间 *****/\r\n    /*去网页头的游戏*/\r\n    .head .header_nav>li:nth-of-type(4) {\r\n        display: none !important;\r\n    }\r\n    /* 去个人任务 */\r\n    #header .head .header_r .head_user .task {\r\n        display: none !important;\r\n    }\r\n    /**** 礼物区 ****/\r\n    .stats_and_actions {\r\n        height: auto !important;\r\n    }\r\n    /* 任务 */\r\n    .task-Getyw .task {\r\n        display: none !important;\r\n    }\r\n    /* 鱼丸 */\r\n    .uinfo-ywyc {\r\n        position: static;\r\n    }\r\n    .c_cont.clearfix.chat_cont.c_gift_cont_height {\r\n        padding: 5px 2px;\r\n    }\r\n    div#cq_fans {\r\n        margin: 0 -2px;\r\n    }\r\n    .mb15 {\r\n        margin-bottom: 1px;\r\n    }\r\n    .column01 {\r\n        margin-top: 10px;\r\n        margin-bottom: 10px;\r\n    }\r\n    #get_rem {\r\n        top: -180px !important;\r\n    }\r\n}\r\n\r\n/*[[scrollbar]]*/",
-    "sections": [
-      {
-        "urls": [],
-        "urlPrefixes": [],
-        "domains": [
-          "douyu.com"
-        ],
-        "regexps": [],
-        "exclude": [],
-        "code": "#header .head-nav .assort-ad,#header .head-nav .wxr-menu,#header .head-nav>li.funny,#header .head-nav>li.yuba,#js-chat-notice,#js-yw-rmd-rooms,.PlayerSub,.QRcode,.anchor-task-icon,.anchor-task-progress,.annualfestival-main-tips,.chat-ad,.chat-top-ad,.chat_top_pic,.day-pay-wrap,.f-sign-cont,.fans-entrance,.fans201803-tips,.feedback-report-button,.firstpay-award-icon,.firstpay-entrance,.firstpay-modal,.firstpay-warp,.fishop-anchor-push-box.expanded,.fishop-anchor-recommands-box.expanded,.fl.task-btn,.focus-lead,.giftbatter-box,.his-sign-cont,.js-live-room-recommend,.myvip--guide--oncar,.nobility-privilege,.normallevel-lead,.o-login .l-menu .task,.pay-task,.pop-zoom-container,.rank-video-ad,.room-ad-top,.room-mes .btn-group .sq-wrap,.search-suggest-ad,.umes-icon,.vcode9-sign{display:none!important}.chat-feat textarea.cs-textarea{padding-left:13px!important;width:250px!important}.geetest_fullpage_click.geetest_float.geetest_wind.geetest_slide3{left:79%!important}.no-login{display:none!important;height:0!important;margin-bottom:0!important}.PlayerCaseSub-Main.is-unlogin{top:0!important}.room-ad-top{width:0;left:0}.btn-group .focus-box{top:auto!important;bottom:5px;-moz-transform:scale(.7);zoom:.7}.relate-text .headline{width:calc(42% + 105px)!important}.relate-text .acinfo-fs-con{min-width:calc(42% + 105px)!important}.relate-text .acinfo-fs-con,.relate-text .headline,.relate-text .tag-fs-con{float:left}.relate-text .anchor-impress{margin:3px 0 0!important}.relate-text .impress-list{max-width:250px!important}.room-emperor-recommend{display:none!important}.room-mes.roommes-bg-big,.room-mes.roommes-bg-small{background:#fff}.relate-text{margin-left:62px!important}.room-mes{height:auto!important}.room-mes .anchor-pic{margin:2px 0 0 2px;width:55px!important;height:55px!important}.room-mes .anchor-pic img{border-radius:50%!important;box-shadow:0 0 2px rgba(0,0,0,.5)}.anchor-pic .anchor-cover-wrap .cover{background:0 0}@media screen and (max-width:1900px){.relate-text .acinfo-fs-con{width:100%!important}.relate-text .anchor-impress{margin:0!important;zoom:.9;-moz-transform:scale(.9)}.relate-text{margin-left:85px!important}.room-mes{height:82px!important}.room-mes .anchor-pic{margin:4px 0 0 3px;width:75px!important;height:75px!important}}.catagory-order-container{display:none!important}@media screen and (max-width:1500px){.relate-text .headline{width:350px!important;max-width:350px!important}.give-gift{margin-left:10px}}.video-recording{display:none!important}.body-flash-fullpage .room-video{border-left-width:0;border-right-width:0}.room-video{border-radius:5px;box-shadow:0 0 3px rgba(0,0,0,.2)}.danmu-container,.room-video{border:0}.danmu-ctrl{background:#23272b!important;border:0!important;color:#9a9a9a!important}.get-yw .yw-collect-box.ywrmd{min-height:140px!important}.yw-collect-box{top:-180px!important;margin-left:-50px!important}#js-stats-and-actions{margin-top:5px;padding:2px 22px 2px 19px;height:40px;border:1px solid #e5e4e4;border-radius:5px;box-shadow:0 0 3px rgba(0,0,0,.2)}.body-flash-fullpage .m-wealth{padding-top:0!important;margin-top:0!important}a.r-com-btn.getYc.fl,span.y2.fl{display:none!important}.task-Getyw .tip{-moz-transform:scale(.8);zoom:.8}.uinfo-ywyc{clear:none!important;height:0!important;margin-top:10px!important}.uinfo-ywyc .m-wealth{display:flex!important;height:0}.ft-sign-cont,.room-wbshare .no-login,p.yw-app-des{display:none!important}.giftbatter-box{display:none!important;height:0}.chat-cont li.fans-chart,.chat-cont li.noble-chart{padding:0!important;margin-left:0!important;background:0 0!important}.girl-cont{line-height:22px!important;padding:0!important}.chart-li-girl{background:0 0!important;height:auto!important}.channel-cate>ul>li:nth-of-type(5),.chat-icon-pad,.chat-task-madel,.enter-welcome1,.f-phone,.motorcade-icon,.pc-client-icon,.small-nav>ul>li:nth-of-type(9),.status-low-enter,.task-wel,.user-level-wel,.user-noble-lv,img.lw-imgs{display:none!important}html{background:#eee}.row-1,.row-3,.row-4,.row-5{display:none!important}"
-      },
-      {
-        "urls": [],
-        "urlPrefixes": [
-          "https://www.douyu.com/directory",
-          "https://www.douyu.com/room/my_follow"
-        ],
-        "domains": [],
-        "regexps": [],
-        "exclude": [],
-        "code": "#mainbody{background:#eee}#left{display:block!important}.lol-ad{display:none!important}.item-data .unit{border:1px solid #eee;background:#eee}.left-menu{background:#2c2c2c}"
-      },
-      {
-        "urls": [],
-        "urlPrefixes": [
-          "https://www.douyu.com/cms/zt/"
-        ],
-        "domains": [],
-        "regexps": [],
-        "exclude": [],
-        "code": ".r_share,.room_qrcode{display:none!important}.room_mes .btn-group .focus-box{top:0}#header .head .header_r .head_user .task,.head .header_nav>li:nth-of-type(4){display:none!important}.stats_and_actions{height:auto!important}.task-Getyw .task{display:none!important}.uinfo-ywyc{position:static}.c_cont.clearfix.chat_cont.c_gift_cont_height{padding:5px 2px}div#cq_fans{margin:0 -2px}.mb15{margin-bottom:1px}.column01{margin-top:10px;margin-bottom:10px}#get_rem{top:-180px!important}"
-      },
-      {
-        "urls": [],
-        "urlPrefixes": [],
-        "domains": [
-          "douyu.com"
-        ],
-        "regexps": [],
-        "exclude": [],
-        "code": "::-webkit-scrollbar{width:8px;height:8px}::-webkit-scrollbar-track{background-color:#f5f5f5}::-webkit-scrollbar-thumb{border-radius:4px;background-color:#f90;background-image:-webkit-linear-gradient(45deg,rgba(255,255,255,.2) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.2) 50%,rgba(255,255,255,.2) 75%,transparent 75%,transparent)}"
-      }
-    ],
-    "md5Url": "https://update.userstyles.org/132037.md5",
-    "url": "http://userstyles.org/styles/132037",
-    "author": "Another_Dreams",
-    "originalMd5": "a8cf0a286b8a0310459a19f44dcfaf4b",
-    "advanced": {
-      "item": {
-        "_left": {
-          "type": "dropdown",
-          "title": "直播间左侧菜单",
-          "option": {
-            "true": {
-              "title": "屏蔽",
-              "value": " /*当导航栏在其他页面展开时,宽高会自动调整,不介意左侧抽屉,可以注释掉*/\r\n    #left,/*去左边抽屉菜单*/"
-            },
-            "false": {
-              "title": "不屏蔽",
-              "value": ""
-            }
-          }
-        },
-        "_fans-rank": {
-          "type": "dropdown",
-          "title": "粉丝殷勤榜",
-          "option": {
-            "true": {
-              "title": "屏蔽",
-              "value": "/*去酬勤榜*/\r\n    .fans-rank {\r\n        display: none!important;\r\n        height: 0px!important;\r\n    }\r\n    /*聊天弹幕*/\r\n    .PlayerCaseSub-Main .chat-cont {\r\n        top: 0px !important;\r\n        border-radius: 4px 4px 0px 0px;\r\n    }"
-            },
-            "false": {
-              "title": "不屏蔽",
-              "value": ""
-            }
-          }
-        },
-        "fans-entrance": {
-          "type": "dropdown",
-          "title": "聊天框粉丝徽章",
-          "option": {
-            "true": {
-              "title": "屏蔽",
-              "value": "/*去聊天框粉丝徽章*/\r\n    .fans-entrance {\r\n        display: none !important;\r\n    }\r\n    /*修复屏蔽粉丝徽章导致聊天框的问题*/\r\n    .chat-feat textarea.cs-textarea {\r\n        padding-left: 13px !important;\r\n        width: 250px !important;\r\n    }"
-            },
-            "false": {
-              "title": "不屏蔽",
-              "value": ""
-            }
-          }
-        },
-        "_action-list": {
-          "type": "dropdown",
-          "title": "斗鱼活动按钮",
-          "option": {
-            "true": {
-              "title": "屏蔽",
-              "value": "/* 斗鱼活动按钮 去除视频下方竞猜、活动等 */\r\n\t.action-item/*[[anchor_quiz]]*/,\r\n\t.more-action-btn-wrap,"
-            },
-            "false": {
-              "title": "不屏蔽",
-              "value": ""
-            }
-          }
-        },
-        "anchor_quiz": {
-          "type": "dropdown",
-          "title": "斗鱼主播竞猜",
-          "option": {
-            "true": {
-              "title": "屏蔽",
-              "value": ""
-            },
-            "false": {
-              "title": "不屏蔽",
-              "value": ":not([data-flag=anchor_quiz])"
-            }
-          }
-        },
-        "anchor-task": {
-          "type": "dropdown",
-          "title": "主播任务",
-          "option": {
-            "true": {
-              "title": "屏蔽",
-              "value": ".anchor-task-icon,.anchor-task-progress,"
-            },
-            "false": {
-              "title": "不屏蔽",
-              "value": ""
-            }
-          }
-        },
-        "yuba": {
-          "type": "dropdown",
-          "title": "顶部菜单鱼吧",
-          "option": {
-            "true": {
-              "title": "屏蔽",
-              "value": "/*去顶部鱼吧选项*/\r\n    #header .head-nav>li.yuba,"
-            },
-            "false": {
-              "title": "不屏蔽",
-              "value": ""
-            }
-          }
-        },
-        "privilege": {
-          "type": "dropdown",
-          "title": "个人中心贵族",
-          "option": {
-            "true": {
-              "title": "屏蔽",
-              "value": "/*去个人中心的贵族*/\r\n    .nobility-privilege,"
-            },
-            "false": {
-              "title": "不屏蔽",
-              "value": ""
-            }
-          }
-        },
-        "video-recording": {
-          "type": "dropdown",
-          "title": "直播录像按钮",
-          "option": {
-            "true": {
-              "title": "屏蔽",
-              "value": "display: none!important;"
-            },
-            "false": {
-              "title": "不屏蔽",
-              "value": ""
-            }
-          }
-        },
-        "emperor-recommend": {
-          "type": "dropdown",
-          "title": "皇帝推荐",
-          "option": {
-            "true": {
-              "title": "屏蔽",
-              "value": "    /*去皇帝推荐*/\r\n    .room-emperor-recommend {\r\n        display: none !important;\r\n    }\r\n    .room-mes.roommes-bg-small,\r\n    .room-mes.roommes-bg-big {\r\n        background: #fff;\r\n    }"
-            },
-            "false": {
-              "title": "不屏蔽",
-              "value": ""
-            }
-          }
-        },
-        "catagory": {
-          "type": "dropdown",
-          "title": "主播房间分区排行榜",
-          "option": {
-            "true": {
-              "title": "屏蔽",
-              "value": "\t.catagory-order-container {\r\n\t\tdisplay: none !important;\r\n\t}"
-            },
-            "false": {
-              "title": "1080P以上不屏蔽",
-              "value": "@media screen and (max-width: 1900px) {\r\n\t/*主播房间分区排行榜*/\r\n\t.catagory-order-container {\r\n\t\tdisplay: none !important;\r\n\t}\r\n}"
-            }
-          }
-        },
-        "user-level": {
-          "type": "dropdown",
-          "title": "聊天区等级图标",
-          "option": {
-            "true": {
-              "title": "屏蔽",
-              "value": ""
-            },
-            "false": {
-              "title": "不屏蔽",
-              "value": ":not(.user-level)"
-            }
-          }
-        },
-        "fans": {
-          "type": "dropdown",
-          "title": "聊天区粉丝图标",
-          "option": {
-            "true": {
-              "title": "屏蔽",
-              "value": ""
-            },
-            "false": {
-              "title": "不屏蔽",
-              "value": ":not([data-msg=fans])"
-            }
-          }
-        },
-        "lw-imgs": {
-          "type": "dropdown",
-          "title": "聊天区礼物图标",
-          "option": {
-            "true": {
-              "title": "屏蔽",
-              "value": "img.lw-imgs,"
-            },
-            "false": {
-              "title": "不屏蔽",
-              "value": ""
-            }
-          }
-        },
-        "official": {
-          "type": "dropdown",
-          "title": "首页底部官方活动",
-          "option": {
-            "true": {
-              "title": "屏蔽",
-              "value": ".row-5,"
-            },
-            "false": {
-              "title": "不屏蔽",
-              "value": ""
-            }
-          }
-        },
-        "scrollbar": {
-          "type": "dropdown",
-          "title": "滚动条美化",
-          "option": {
-            "true": {
-              "title": "开启",
-              "value": "@-moz-document domain(\"douyu.com\") {\r\n    /* 滚动条美化 */\r\n    /* Let's get this party started */\r\n     ::-webkit-scrollbar {\r\n        width: 8px;\r\n        height: 8px;\r\n    }\r\n    /* Track */\r\n     ::-webkit-scrollbar-track {\r\n        /* -webkit-box-shadow: inset 0 0 5px rgba(255, 153, 0, 0.6);*/\r\n        background-color: #F5F5F5;\r\n    }\r\n    /* Handle */\r\n     ::-webkit-scrollbar-thumb {\r\n\tborder-radius:4px;\r\n        background-color: /*[[scrollbar-color]]*/;\r\n        background-image: -webkit-linear-gradient(45deg, \r\n                                    rgba(255, 255, 255, .2) 25%, \r\n                                    transparent 25%, \r\n                                    transparent 50%, \r\n                                    rgba(255, 255, 255, .2) 50%, \r\n                                    rgba(255, 255, 255, .2) 75%, \r\n                                    transparent 75%, \r\n                                    transparent);\r\n    }\r\n}"
-            },
-            "false": {
-              "title": "不开启",
-              "value": ""
-            }
-          }
-        },
-        "scrollbar-color": {
-          "type": "color",
-          "title": "滚动条颜色",
-          "default": "#FF9900"
-        },
-        "bg-color": {
-          "type": "color",
-          "title": "背景颜色(Def:#EEE):测试",
-          "default": "#EEEEEE"
-        },
-        "firefox": {
-          "type": "dropdown",
-          "title": "火狐浏览器兼容",
-          "option": {
-            "false": {
-              "title": "Chrome",
-              "value": ""
-            },
-            "true": {
-              "title": "FireFox",
-              "value": ""
-            }
-          }
-        },
-        "background-img": {
-          "type": "dropdown",
-          "title": "直播间背景图",
-          "option": {
-            "false": {
-              "title": "不添加",
-              "value": ""
-            },
-            "true": {
-              "title": "添加",
-              "value": "background:url(/*[[background-url]]*/)  no-repeat;\r\nbackground-size:100%;"
-            }
-          }
-        },
-        "background-url": {
-          "type": "image",
-          "title": "自定义背景图",
-          "option": {
-            "default": {
-              "title": "默认",
-              "value": "http://i.imgur.com/jxd7hCK.png"
-            }
-          }
-        }
-      },
-      "saved": {
-        "_left": "true",
-        "_fans-rank": "true",
-        "fans-entrance": "true",
-        "_action-list": "true",
-        "anchor_quiz": "true",
-        "anchor-task": "true",
-        "yuba": "true",
-        "privilege": "true",
-        "video-recording": "true",
-        "emperor-recommend": "true",
-        "catagory": "true",
-        "user-level": "true",
-        "fans": "true",
-        "lw-imgs": "true",
-        "official": "true",
-        "scrollbar": "true",
-        "firefox": "true",
-        "background-img": "false",
-        "background-url": "default",
-        "scrollbar-color": "#FF9900",
-        "bg-color": "#EEEEEE"
-      }
-    },
-    "autoUpdate": true,
-    "id": 46
   },
   {
     "type": "css",
@@ -1239,7 +842,7 @@
     "type": "less",
     "lastModified": 1539176035428,
     "name": "Beautify Pagerizer",
-    "enabled": true,
+    "enabled": false,
     "updateUrl": "",
     "code": ".autopagerize_page_separator {\n    display: none;\n}\n.autopagerize_page_info {\n    line-height: 1.6!important;\n    position: relative!important;\n    float: none!important;\n    top: 0!important;\n    left: 0!important;\n    min-width: 366px;\n    width: auto;\n    text-align: center!important;\n    font-size: 14px!important;\n    display: block!important;\n    padding: 3px 0!important;\n    margin: 5px 10px 8px;\n    clear: both!important;\n    border-top: 1px solid #ccc!important;\n    border-bottom: 1px solid #ccc!important;\n    -moz-border-radius: 30px!important;\n    border-radius: 30px!important;\n    background-color: #F5F5F5!important;\n    -moz-box-shadow: inset 0 16px 20px #fff, 0 2px 3px rgba(0, 0, 0, 0.1);\n    -webkit-box-shadow: inset 0 16px 20px #fff, 0 2px 3px rgba(0, 0, 0, 0.1);\n    box-shadow: inset 0 16px 20px #fff, 0 2px 3px rgba(0, 0, 0, 0.1);\n}",
     "sections": [
@@ -1291,19 +894,21 @@
   },
   {
     "type": "less",
-    "lastModified": 1538058353643,
+    "lastModified": 1540461786229,
     "name": "Google Hestia",
     "enabled": false,
     "updateUrl": "",
-    "code": "@namespace url(http://www.w3.org/1999/xhtml);\n#hplogo {\n    box-sizing: border-box;\n    background: url(\"https://raw.githubusercontent.com/YandLiu/FirefoxFiles/master/chrome/local/images/Hestia.png\") center no-repeat;\n    /*same background as the 2nd one */\n    width: 321px;\n    /* width of your image */\n    height: 298px;\n    /* height of your image */\n    padding-left: 321px;\n    /* equal to the width of the image */\n    margin: 7px auto;\n}\n\n#logo img {\n    box-sizing: border-box;\n    background: url(\"https://raw.githubusercontent.com/YandLiu/FirefoxFiles/master/chrome/local/images/Hestia.png\") center no-repeat;\n    background-size: 120px 100px;\n    width: 120px;\n    /* width of your image */\n    height: 100px;\n    padding-left: 120px;\n}\n\n.sbibod,\n.jhp input[type=\"submit\"] {\n    opacity: .7;\n}\n",
+    "code": "@-moz-document domain('google.com') {\n    #hplogo {\n        box-sizing: border-box;\n        background: url(\"https://raw.githubusercontent.com/YandLiu/FirefoxFiles/master/chrome/local/images/Hestia.png\") center no-repeat;\n        /*same background as the 2nd one */\n        width: 321px;\n        /* width of your image */\n        height: 298px;\n        /* height of your image */\n        padding-left: 321px;\n        /* equal to the width of the image */\n        margin: 7px auto;\n    }\n\n    #logo img, #logocont img {\n        box-sizing: border-box;\n        background: url(\"https://raw.githubusercontent.com/YandLiu/FirefoxFiles/master/chrome/local/images/Hestia.png\") center no-repeat;\n        background-size: 120px 100px;\n        width: 120px;\n        /* width of your image */\n        height: 100px;\n        padding-left: 120px;\n    }\n\n    .sbibod,\n    .jhp input[type=\"submit\"] {\n        opacity: .7;\n    }\n}",
     "sections": [
       {
         "urls": [],
         "urlPrefixes": [],
-        "domains": [],
+        "domains": [
+          "google.com"
+        ],
         "regexps": [],
         "exclude": [],
-        "code": "#hplogo{box-sizing:border-box;background:url(https://raw.githubusercontent.com/YandLiu/FirefoxFiles/master/chrome/local/images/Hestia.png) center no-repeat;width:321px;height:298px;padding-left:321px;margin:7px auto}#logo img{box-sizing:border-box;background:url(https://raw.githubusercontent.com/YandLiu/FirefoxFiles/master/chrome/local/images/Hestia.png) center/120px 100px no-repeat;width:120px;height:100px;padding-left:120px}.jhp input[type=submit],.sbibod{opacity:.7}"
+        "code": "#hplogo{box-sizing:border-box;background:url(https://raw.githubusercontent.com/YandLiu/FirefoxFiles/master/chrome/local/images/Hestia.png) center no-repeat;width:321px;height:298px;padding-left:321px;margin:7px auto}#logo img,#logocont img{box-sizing:border-box;background:url(https://raw.githubusercontent.com/YandLiu/FirefoxFiles/master/chrome/local/images/Hestia.png) center/120px 100px no-repeat;width:120px;height:100px;padding-left:120px}.jhp input[type=submit],.sbibod{opacity:.7}"
       }
     ],
     "advanced": {
@@ -1347,7 +952,7 @@
     "type": "less",
     "lastModified": 1539159508897,
     "name": "for_scripts_and_extensions",
-    "enabled": true,
+    "enabled": false,
     "updateUrl": "",
     "code": "#btnshowkwhi {\n    right: unset;\n\tleft: 2px;\n}\n/*\n#uAutoPagerize-icon {\n    display: none;\n}\n*/",
     "sections": [
