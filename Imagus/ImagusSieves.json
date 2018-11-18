@@ -1,4 +1,9 @@
 {
+  "NGA": {
+    "img": "(img.nga.178.com/attachments/.*)\\.medium\\.jpg",
+    "to": "$1",
+    "note": "https://img.nga.178.com/attachments/mon_201811/11/-7Q5-geppZsT3cSk0-m0.jpg.medium.jpg"
+  },
   "应用宝": {
     "img": "^(pp\\.myapp\\.com/ma_pic.*)/180$",
     "to": "$1/0",
