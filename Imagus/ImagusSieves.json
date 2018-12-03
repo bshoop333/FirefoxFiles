@@ -10,12 +10,12 @@
     "note": "eg.\nhttp://pp.myapp.com/ma_pic2/0/shot_9724_107221_2_1386677687/180"
   },
   "知乎-1": {
-    "img": "^(pic\\d+\\.zhimg\\.com/\\w+_)b.jpg",
-    "to": "$1r.jpg"
+    "img": "^(pic\\d+\\.zhimg\\.com/\\w+_)b(\\..+)",
+    "to": "$1r$2"
   },
   "知乎-2": {
-    "img": "^pic(\\d+\\.zhimg\\.com/)\\d+/(\\w+_)hd.jpg",
-    "to": "$1$2r.jpg"
+    "img": "^pic(\\d+\\.zhimg\\.com/)\\d+/(\\w+_)hd(\\..+)",
+    "to": "$1$2r$3"
   },
   "new userstyles.org": {
     "img": "^(https://userstyles\\.org/style_screenshot)_thumbnails(/.+)",
