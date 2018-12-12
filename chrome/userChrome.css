@@ -23,24 +23,24 @@
 #main-window {
     counter-reset: tabs;
 }
-/*.tabbrowser-tab:not(:-moz-any([pinned], [concealed])) {*/
 .tabbrowser-tab:not(:-moz-any([concealed])) {
     counter-increment: tabs;
 }
 #alltabs-button {
+    visibility: visible !important;
     margin-right: -30px !important;
 }
-.toolbarbutton-badge-stack {
+/*#alltabs-button .toolbarbutton-badge-stack {
     display: none;
-}
+}*/
 #alltabs-button:after {
     content: counter(tabs);
     display: -moz-box;
 }
-#alltabs-button> :-moz-any(label, image) {
+/*#alltabs-button> :-moz-any(label, image) {
     display: none;
 }
-
+*/
 
 /******************************** Interface Adjustment **************************************/
 /* 双行滚动书签栏 */
@@ -59,6 +59,7 @@ tab:hover .close-icon {
 }
 /* 标签页载入动画图标 */
 /* .tab-throbber {visibility: hidden;} */
+
 /*黑白化去重复标签页数量角标*/
 /* #jid0-rvyt2rgwfm8q5ywxixahyaeo5qg_jetpack-browser-action {
     --webextension-menupanel-image: url("https://raw.githubusercontent.com/YandLiu/CSS/master/img/DuplicateTabsCloser.png") !important;
@@ -85,36 +86,30 @@ tab:hover .close-icon {
     background-color: transparent !important;
     color: #353535 !important;
 }*/
+
 /* 图标黑白化处理 */
 /*#nav-bar-customization-target toolbarbutton {
   filter:grayscale(1) saturate(1) contrast(0.65) brightness(1.4);
 }*/
+
 /* 和谐化微博图床图标 */
 /*#weibopic_ac-browser-action image {
     filter: contrast(0.5);
 }*/
+
 /* Hide close buttons of inactive tabs */
 tab:not([selected]) .close-icon {
     display: none;
 }
+
 /* Hide Page Action Button */
 #pageActionButton {
     display: none;
 }
+
 /* Hide PanelUI Button */
 #PanelUI-button {
     display: none;
-}
-
-/* Hide New Tongwentang icon */
-#tongwen_softcup-browser-action,
-#tongwen_softcup-page-action {
-    display: none;
-}
-
-/* adjustment for Stylish */
-#nav-bar #stylish-toolbar-button>.toolbarbutton-icon {
-    padding-inline-end: 0 !important;
 }
 
 /* Hide History AutoDelete Counters */
@@ -201,73 +196,3 @@ menuseparator {
     display: none;
 }
 
-
-@-moz-document url("chrome://devtools/content/sourceeditor/codemirror/cmiframe.html") {
-    .CodeMirror-sizer * {
-        font-family: Consolas;
-        font-size: 16px;
-    }
-    /* tint CodeMirror background color */
-    .CodeMirror {
-        background-color: #272822 !important;
-    }
-    /* tint line numbers background color */
-    .CodeMirror-gutters {
-        background-color: #272822 !important;
-    }
-    /* tint current line */
-    .CodeMirror-activeline-gutter,
-    .CodeMirror-linebackground {
-        background-color: #3D4243 !important;
-    }
-    /* tint normal text */
-    .CodeMirror-line {
-        color: #F8F8F2 !important;
-    }
-    /* tint selected text */
-    .CodeMirror-selected {
-        background: #49483E !important;
-    }
-    .cm-def {
-        color: #66D9EF !important;
-    }
-    .cm-property {
-        color: #66D9EF !important;
-        font-style: italic;
-    }
-    .cm-string {
-        color: #E6DB74 !important;
-    }
-    .cm-builtin {
-        color: #A6E22E !important;
-    }
-    .cm-qualifier {
-        color: #A6E22E !important;
-    }
-    .cm-number {
-        color: #AE81FF !important;
-    }
-    .cm-atom {
-        color: #AE81FF !important;
-    }
-    .cm-keyword {
-        color: #F92672 !important;
-    }
-    .cm-tag {
-        color: #F8F8F2 !important;
-    }
-    .cm-variable {
-        color: #33FF33 !important;
-    }
-    .cm-variable-3 {
-        color: #FF9966 !important;
-        font-style: italic;
-    }
-    .cm-searching {
-        background-color: #FFE792;
-        color: black !important;
-    }
-    ul.devtools-autocomplete-listbox>li.autocomplete {
-        font-size: 150% !important;
-    }
-}
