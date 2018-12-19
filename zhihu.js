@@ -9709,29 +9709,6 @@ function (e, t, n) {
                   }
                 },
                 {
-                  key: 'renderReshipment',
-                  value: function (e, t) {
-                    var n = this;
-                    return 'need_payment' === t ? ve.a.createElement(je.b, {
-                      onClick: function () {
-                        Ee.default.trackEvent(n, {
-                          action: 'Authorize',
-                          element: 'Button',
-                          is_intent: !0
-                        })
-                      },
-                      tag: 'a',
-                      href: '/copyright/apply?answer=' + e,
-                      target: '_blank'
-                    },
-                    '申请授权') : 'disallowed' === t ? ve.a.createElement(je.b, {
-                      tag: 'a',
-                      target: '_blank',
-                      href: '/terms#sec-licence-6'
-                    }, '禁止转载')  : null
-                  }
-                },
-                {
                   key: 'renderOptions',
                   value: function () {
                     var e = this;
