@@ -9003,11 +9003,6 @@ function (e, t, n) {
             pn = function (e) {
               return 'special-plain' === e
             },
-            mn = {
-              allowed: '允许规范转载',
-              need_payment: '允许付费转载',
-              disallowed: '禁止转载'
-            },
             hn = function (e) {
               var t = e.thumbnail,
               n = e.voteupCount,
@@ -12711,11 +12706,6 @@ function (e, t, n) {
                   '草稿保存于',
                   ''
                 ]),
-                be = {
-                  allowed: '允许规范转载',
-                  need_payment: '允许付费转载',
-                  disallowed: '禁止转载'
-                },
                 ge = (_ = Object(E.connect) (function (e, t) {
                   var n = e.entities,
                   r = n.questions,
