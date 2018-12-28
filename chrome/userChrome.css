@@ -9,7 +9,7 @@
 }*/
 
 /* 全屏时隐藏tooltip信息 */
-#main-window[sizemode="fullscreen"] statuspanel{
+#main-window[sizemode="fullscreen"] #statuspanel{
     display: none !important;
 }
 
