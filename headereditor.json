@@ -880,6 +880,20 @@
         "value": ""
       },
       "id": 68
+    },
+    {
+      "enable": 1,
+      "name": "天天快报",
+      "ruleType": "modifySendHeader",
+      "matchType": "domain",
+      "pattern": "inews.gtimg.com",
+      "exclude": "",
+      "isFunction": false,
+      "action": {
+        "name": "Referer",
+        "value": ""
+      },
+      "id": 69
     }
   ],
   "receiveHeader": [
@@ -893,9 +907,10 @@
       },
       "matchType": "regexp",
       "isFunction": false,
-      "enable": 0,
-      "exclude": "",
-      "id": 1
+      "enable": 1,
+      "exclude": "twitchcdn\\.net|ttvnw\\.net|twitch\\.tv",
+      "id": 1,
+      "_exclude": {}
     },
     {
       "enable": 1,
