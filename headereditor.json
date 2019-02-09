@@ -228,32 +228,18 @@
       "id": 17
     },
     {
-      "name": "QQ空间图片-1",
+      "name": "QQ空间图片",
       "ruleType": "modifySendHeader",
-      "pattern": "qlogo\\.cn",
+      "pattern": "(qlogo|qpic)\\.cn",
       "action": {
         "name": "Referer",
         "value": ""
       },
       "matchType": "regexp",
-      "isFunction": 0,
+      "isFunction": false,
       "enable": 1,
       "exclude": "",
       "id": 18
-    },
-    {
-      "name": "QQ空间图片-2",
-      "ruleType": "modifySendHeader",
-      "pattern": "qpic\\.cn",
-      "action": {
-        "name": "Referer",
-        "value": "https://qzone.qq.com"
-      },
-      "exclude": "",
-      "matchType": "regexp",
-      "isFunction": 0,
-      "enable": 1,
-      "id": 19
     },
     {
       "name": "搜狗问问",
@@ -296,70 +282,32 @@
       "id": 22
     },
     {
-      "name": "CNKI",
+      "name": "中关村在线",
       "ruleType": "modifySendHeader",
-      "pattern": "cnki\\.net",
+      "pattern": "zol(-img)?\\.com\\.cn",
       "action": {
         "name": "Referer",
-        "value": "http://www.cnki.net"
+        "value": ""
       },
       "matchType": "regexp",
-      "isFunction": 0,
+      "isFunction": false,
       "enable": 1,
-      "id": 23
+      "id": 24,
+      "exclude": ""
     },
     {
-      "name": "中关村在线-1",
+      "name": "新浪",
       "ruleType": "modifySendHeader",
-      "pattern": "zol-img\\.com\\.cn",
-      "action": {
-        "name": "Referer",
-        "value": "http://www.zol-img.com.cn"
-      },
-      "matchType": "regexp",
-      "isFunction": 0,
-      "enable": 1,
-      "id": 24
-    },
-    {
-      "name": "中关村在线-2",
-      "ruleType": "modifySendHeader",
-      "pattern": "zol\\.com\\.cn",
-      "action": {
-        "name": "Referer",
-        "value": "http://www.zol.com.cn"
-      },
-      "matchType": "regexp",
-      "isFunction": 0,
-      "enable": 1,
-      "id": 25
-    },
-    {
-      "name": "新浪-1",
-      "ruleType": "modifySendHeader",
-      "pattern": "sinaimg\\.cn",
+      "pattern": "(sinaimg|(photo|album)\\.sina\\.com)\\.cn",
       "action": {
         "name": "Referer",
         "value": "https://blog.sina.com.cn/"
       },
       "exclude": "",
       "matchType": "regexp",
-      "isFunction": 0,
+      "isFunction": false,
       "enable": 1,
       "id": 26
-    },
-    {
-      "name": "新浪-2",
-      "ruleType": "modifySendHeader",
-      "pattern": "(photo|album)\\.sina\\.com\\.cn",
-      "action": {
-        "name": "Referer",
-        "value": "blog.sina.com.cn"
-      },
-      "matchType": "regexp",
-      "isFunction": 0,
-      "enable": 1,
-      "id": 27
     },
     {
       "name": "360doc",
@@ -495,29 +443,16 @@
       "id": 37
     },
     {
-      "name": "163-1",
-      "ruleType": "modifySendHeader",
-      "pattern": "img\\d{0,9}\\.(bimg\\.126\\.net|(?:photo|blog)\\.163\\.com)",
-      "action": {
-        "name": "Referer",
-        "value": "blog.163.com"
-      },
-      "matchType": "regexp",
-      "isFunction": 0,
-      "enable": 1,
-      "id": 38
-    },
-    {
-      "name": "163-2",
+      "name": "网易",
       "ruleType": "modifySendHeader",
       "pattern": "img.*(126\\.net|163\\.com)",
       "action": {
         "name": "Referer",
-        "value": ""
+        "value": "blog.163.com"
       },
       "exclude": "",
       "matchType": "regexp",
-      "isFunction": 0,
+      "isFunction": false,
       "enable": 1,
       "id": 39
     },
@@ -628,20 +563,6 @@
       "enable": 1,
       "exclude": "",
       "id": 47
-    },
-    {
-      "name": "海贼小站",
-      "ruleType": "modifySendHeader",
-      "pattern": "onepiece\\.cc|one-piece\\.cn",
-      "exclude": "",
-      "action": {
-        "name": "User-Agent",
-        "value": "Mozilla/5.0 (Linux; Android 7.1.1; ONEPLUS A3000 Build/NMF26F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.132 Mobile Safari/537.36"
-      },
-      "matchType": "regexp",
-      "isFunction": 0,
-      "enable": 1,
-      "id": 48
     },
     {
       "enable": 1,
@@ -757,7 +678,7 @@
     },
     {
       "enable": 1,
-      "name": "动漫屋UA",
+      "name": "动漫屋",
       "ruleType": "modifySendHeader",
       "matchType": "regexp",
       "pattern": "dm5\\.com/m\\d+",
@@ -782,20 +703,6 @@
         "value": "https://www.meitulu.com/"
       },
       "id": 58
-    },
-    {
-      "enable": 1,
-      "name": "CNBeta",
-      "ruleType": "modifySendHeader",
-      "matchType": "prefix",
-      "pattern": "cnbetacdn\\.com",
-      "exclude": "",
-      "isFunction": false,
-      "action": {
-        "name": "Referer",
-        "value": ""
-      },
-      "id": 59
     },
     {
       "enable": 1,
@@ -840,8 +747,8 @@
       "id": 62
     },
     {
-      "enable": 0,
-      "name": "动漫屋Referer",
+      "enable": 1,
+      "name": "动漫屋",
       "ruleType": "modifySendHeader",
       "matchType": "regexp",
       "pattern": "cdndm5\\.com",
@@ -894,6 +801,20 @@
         "value": ""
       },
       "id": 69
+    },
+    {
+      "enable": 1,
+      "name": "cnBeta",
+      "ruleType": "modifySendHeader",
+      "matchType": "regexp",
+      "pattern": "cnbetacdn\\.com",
+      "exclude": "",
+      "isFunction": false,
+      "action": {
+        "name": "Referer",
+        "value": ""
+      },
+      "id": 70
     }
   ],
   "receiveHeader": [
