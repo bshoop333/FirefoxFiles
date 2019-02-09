@@ -747,20 +747,6 @@
       "id": 62
     },
     {
-      "enable": 1,
-      "name": "动漫屋",
-      "ruleType": "modifySendHeader",
-      "matchType": "regexp",
-      "pattern": "cdndm5\\.com",
-      "exclude": "",
-      "isFunction": false,
-      "action": {
-        "name": "Referer",
-        "value": "http://m.dm5.com/m628753/"
-      },
-      "id": 64
-    },
-    {
       "enable": 0,
       "name": "斗鱼视频",
       "ruleType": "modifySendHeader",
