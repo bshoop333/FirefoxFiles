@@ -1,3 +1,5 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
 /* 显示标签栏与导航栏间的横线 */
 /*.tabbrowser-tab[visuallyselected="true"] {
     position: unset;
@@ -57,6 +59,13 @@
 tab:hover .close-icon {
     display: block !important;
 }
+
+/* hide the badge if the count on Duplicate Tabs Closer extension icon is 0 */
+#jid0-rvyt2rgwfm8q5ywxixahyaeo5qg_jetpack-browser-action .toolbarbutton-badge-stack .toolbarbutton-badge[value="0"] {
+    display: none !important;
+}
+
+
 /* 标签页载入动画图标 */
 /* .tab-throbber {visibility: hidden;} */
 
@@ -135,7 +144,7 @@ toolbarbutton dropmarker {
 }
 
 /* Hide Invalid Menu Items */
-menuitem[disabled="true"] {
+xul menuitem[disabled="true"] {
     display: none !important;
 }
 
