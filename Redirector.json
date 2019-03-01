@@ -1,7 +1,23 @@
 {
     "createdBy": "Redirector v3.1.1",
-    "createdAt": "2018-12-14T13:40:58.473Z",
+    "createdAt": "2019-03-01T12:56:53.754Z",
     "redirects": [
+        {
+            "description": "Unimelb Courses Single Page View",
+            "exampleUrl": "https://handbook.unimelb.edu.au/2019/subjects/gene90020/eligibility-and-requirements",
+            "exampleResult": "https://handbook.unimelb.edu.au/2019/subjects/gene90020/print",
+            "error": null,
+            "includePattern": "https://handbook.unimelb.edu.au/(\\d+/)?subjects/(.+?\\d+).*",
+            "excludePattern": "",
+            "redirectUrl": "https://handbook.unimelb.edu.au/$1subjects/$2/print",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame",
+                "sub_frame"
+            ]
+        },
         {
             "description": "码云直接下载",
             "exampleUrl": "https://gitee.com/leftshine/multi_start/attach_files/download?i=192386&u=http%3A%2F%2Ffiles.git.oschina.net%2Fgroup1%2FM00%2F05%2FEB%2FPaAvDFwTb7SAQepRAA1mAGndSPY766.exe%3Ftoken%3D133557196e302b6358e1c1f9a4050d1c%26ts%3D1544794701%26attname%3D%25E5%25A4%259A%25E5%25BC%2580%25E7%25A5%259E%25E5%2599%25A8v1.3.0.1.exe",
@@ -262,7 +278,7 @@
             "redirectUrl": "https://connect.rom.miui.com/generate_204",
             "patternType": "W",
             "processMatches": "noProcessing",
-            "disabled": false,
+            "disabled": true,
             "appliesTo": [
                 "main_frame",
                 "script",
