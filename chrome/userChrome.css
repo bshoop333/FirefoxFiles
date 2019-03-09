@@ -21,6 +21,11 @@
 }
 */
 
+/* Color User Agent Switcher Icon */
+#user-agent-switcher_ninetailed_ninja-browser-action[label="User-Agent Switcher – Disabled"] {
+    list-style-image: url('moz-extension://7af92ec5-f97b-457e-8325-aa7da955e7c9/assets/icon.svg') !important;
+}
+
 /******************************** Firefox Tabs Counter **************************************/
 #main-window {
     counter-reset: tabs;
@@ -60,7 +65,7 @@ tab:hover .close-icon {
     display: block !important;
 }
 
-/* hide the badge if the count on Duplicate Tabs Closer extension icon is 0 */
+/* hide the badge if there is no duplicate tab */
 #jid0-rvyt2rgwfm8q5ywxixahyaeo5qg_jetpack-browser-action .toolbarbutton-badge-stack .toolbarbutton-badge[value="0"] {
     display: none !important;
 }
@@ -68,33 +73,6 @@ tab:hover .close-icon {
 
 /* 标签页载入动画图标 */
 /* .tab-throbber {visibility: hidden;} */
-
-/*黑白化去重复标签页数量角标*/
-/* #jid0-rvyt2rgwfm8q5ywxixahyaeo5qg_jetpack-browser-action {
-    --webextension-menupanel-image: url("https://raw.githubusercontent.com/YandLiu/CSS/master/img/DuplicateTabsCloser.png") !important;
-    --webextension-menupanel-image-light: url("https://raw.githubusercontent.com/YandLiu/CSS/master/img/DuplicateTabsCloserDark.png") !important;
-    --webextension-menupanel-image-dark: url(""https://raw.githubusercontent.com/YandLiu/CSS/master/img/DuplicateTabsCloser.png) !important;
-
-
-    --webextension-menupanel-image-2x: url("https://raw.githubusercontent.com/YandLiu/CSS/master/img/DuplicateTabsCloser.png") !important;
-    --webextension-menupanel-image-2x-light: url("https://raw.githubusercontent.com/YandLiu/CSS/master/img/DuplicateTabsCloserDark.png") !important;
-    --webextension-menupanel-image-2x-dark: url("https://raw.githubusercontent.com/YandLiu/CSS/master/img/DuplicateTabsCloser.png") !important;
-
-
-    --webextension-toolbar-image: url("https://raw.githubusercontent.com/YandLiu/CSS/master/img/DuplicateTabsCloser.png") !important;
-    --webextension-toolbar-image-light: url("https://raw.githubusercontent.com/YandLiu/CSS/master/img/DuplicateTabsCloserDark.png") !important;
-    --webextension-toolbar-image-dark: url("https://raw.githubusercontent.com/YandLiu/CSS/master/img/DuplicateTabsCloser.png") !important;
-
-
-    --webextension-toolbar-image-2x: url("https://raw.githubusercontent.com/YandLiu/CSS/master/img/DuplicateTabsCloser.png") !important;
-    --webextension-toolbar-image-2x-light: url("https://raw.githubusercontent.com/YandLiu/CSS/master/img/DuplicateTabsCloserDark.png") !important;
-    --webextension-toolbar-image-2x-dark: url("https://raw.githubusercontent.com/YandLiu/CSS/master/img/DuplicateTabsCloser.png") !important;
-}
-
-#jid0-rvyt2rgwfm8q5ywxixahyaeo5qg_jetpack-browser-action .toolbarbutton-badge {
-    background-color: transparent !important;
-    color: #353535 !important;
-}*/
 
 /* 图标黑白化处理 */
 /*#nav-bar-customization-target toolbarbutton {
@@ -144,7 +122,7 @@ toolbarbutton dropmarker {
 }
 
 /* Hide Invalid Menu Items */
-xul menuitem[disabled="true"] {
+#contentAreaContextMenu menuitem[disabled="true"] {
     display: none !important;
 }
 
