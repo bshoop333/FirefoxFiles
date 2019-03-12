@@ -65,12 +65,6 @@ tab:hover .close-icon {
     display: block !important;
 }
 
-/* hide the badge if there is no duplicate tab */
-#jid0-rvyt2rgwfm8q5ywxixahyaeo5qg_jetpack-browser-action .toolbarbutton-badge-stack .toolbarbutton-badge[value="0"] {
-    display: none !important;
-}
-
-
 /* 标签页载入动画图标 */
 /* .tab-throbber {visibility: hidden;} */
 
