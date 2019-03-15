@@ -4,6 +4,6 @@
 <os:InputEncoding>gbk</os:InputEncoding>
 <os:Image width="16" height="16">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAqUlEQVQ4jaWTsRGAIAxFs4Gj0DgGtTtQOIY7sAO1EzCOOxgLiCQRUfTf/TtE/zPBCAAAGAPiMvU5BgQRJjkj1zfe7JAguEw5tKfQPBYAX5NWn/YzpADmsQRWLyHcdP8C0IGa+H4TUGtFgy8AZ2Tp3RVwgH7b6wpaLfw6g8cWuGpnwStErHxG/aA2Vw4XQAxpLBtj2xxl+h82OwgQXd/5DGudpX0VOtMVPgBRELV9pv7F+wAAAABJRU5ErkJggg==</os:Image>
 <SearchForm>https://2.taobao.com/</SearchForm>
-<os:Url type="text/html" method="GET" template="http://s.2.taobao.com/list.html?q={searchTerms}" resultDomain="2.taobao.com">
+<os:Url type="text/html" method="GET" template="https://s.2.taobao.com/list.html?q={searchTerms}" resultDomain="2.taobao.com">
 </os:Url>
 </SearchPlugin>

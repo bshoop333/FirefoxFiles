@@ -4,7 +4,7 @@
 <os:InputEncoding>UTF-8</os:InputEncoding>
 <os:Image width="16" height="16">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJUSURBVDhPhVJNbxJRFH0DQmAoSAea2lgSU6MxJm6KyyYkJvoPXLhQUjPDvOGrgIkxupjExI1R16VEI1IGZirQFvEjtlSBdqfRuuiKpKludMHCJhqL8pw7TDC1Sk/yFu/ec07ue/cgRAjlDSRN3mTSJIrEgPYBcIALGvVKIReXTtN4vkkHF5oWTnkzGsxc6FL3wiNkzlk4+S1waVxqMmw6hWhcaKPEKkHxhnrqxMwXW15xkdY1PfjEFYuVU7ZQrK5zV4kNF34gWii1tUti6RuKrhAUfknGopJf1/VwJJL1UcFnHSpaJfYry9uaRiju6AYNcihefm/i51soViN2Xq6qGqor7YLBeQlNvSZW9bnD8coGaHYZuEJKbZDPPwKSCS+2J249HdK16GRcZsy49BVFqoThZ++6I8X1PQZMUK55QtJZdUwCxBGcvabr0WgoO4nCS8SIn/w8kcgdd4cL/zbwicqAmVVa8Jk2PPcOxKIoGhx4rgFPs3LyB1jjfw1A4AxI02jqFTEIFTJ+VT41fqN41IjLv1BkmbgDmevA6WvgCWYnKKHSAZNBnLs3JEg3YTtGfuH7sfjDw/sanBcVsxqWL1Cjo88/22MvNmF8G5drQB/Q1wDg5KTbMAHUtaNmYwRnWL29v8FYSDpN8eUOSqwRSOkBrritptOtt/8ywMU2jMgI+Z4B/DzNyVuwDciFg5PKekuDK/x4HSKtRnkHDfjvr9Fc/qPz0vQdva/h4MUZzsrmNq2XZ5vD7IMzelkDMzmTotn8J4c/VddLZFds/0Cr9+kh9BtQwWdHMTliegAAAABJRU5ErkJggg==</os:Image>
 <SearchForm>https://forum.mobilism.org/index.php</SearchForm>
-<os:Url type="text/html" method="GET" template="https://forum.mobilism.org/search.php" resultDomain="bilibili.com">
+<os:Url type="text/html" method="GET" template="https://forum.mobilism.org/search.php" resultDomain="mobilism.org">
   <os:Param name="keywords" value="{searchTerms}"/>
   <os:Param name="sr" value="topics"/>
   <os:Param name="sf" value="titleonly"/>
