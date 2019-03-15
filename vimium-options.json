@@ -1,19 +1,19 @@
 {
-  "settingsVersion": "1.64",
+  "settingsVersion": "1.64.3",
   "exclusionRules": [
     {
-      "pattern": "https?://mail.google.com/*",
+      "pattern": "https://www.shanbay.com/bdc/*",
       "passKeys": ""
     },
     {
-      "pattern": "https://www.shanbay.com/bdc/*",
+      "pattern": "https://*.slack.com/*",
       "passKeys": ""
     }
   ],
   "filterLinkHints": false,
   "waitForEnterForFilteredHints": true,
   "hideHud": false,
-  "keyMappings": "# Insert your preferred key mappings here.\nmap D duplicateTab\nmap ;b LinkHints.activateModeToOpenInNewTab\nmap d removeTab\nmap u restoreTab\nmap F LinkHints.activateModeToOpenInNewForegroundTab\nmap , goPrevious\nmap . goNext\nunmap /\nunmap <c-e>\nunmap <c-y>\nunmap zH\nunmap zL\nunmap i\nunmap v\nunmap V\nunmap <a-f>\nunmap [[\nunmap ]]\nunmap gf\nunmap gF\nunmap gt\nunmap gT\nunmap ^\nunmap g0\nunmap g$\nunmap <a-p>\nunmap <a-m>\nunmap x\nunmap X\nunmap W\nunmap <<\nunmap >>\nunmap gs\nunmap yt",
+  "keyMappings": "# Insert your preferred key mappings here.\nmap D duplicateTab\nmap ;b LinkHints.activateModeToOpenInNewTab\nmap d removeTab\nmap u restoreTab\nmap F LinkHints.activateModeToOpenInNewForegroundTab\nmap , goPrevious\nmap . goNext\nunmap <c-e>\nunmap <c-y>\nunmap zH\nunmap zL\nunmap i\nunmap v\nunmap V\nunmap <a-f>\nunmap [[\nunmap ]]\nunmap gf\nunmap gF\nunmap gt\nunmap gT\nunmap ^\nunmap g0\nunmap g$\nunmap <a-p>\nunmap <a-m>\nunmap x\nunmap X\nunmap W\nunmap <<\nunmap >>\nunmap gs\nunmap yt",
   "linkHintCharacters": "qwertyuiopasdfghjklzxcvbnm",
   "linkHintNumbers": "0123456789",
   "newTabUrl": "about:newtab",
@@ -24,7 +24,7 @@
   "scrollStepSize": 60,
   "smoothScroll": true,
   "grabBackFocus": true,
-  "searchEngines": "w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\n\n# More examples.\n#\n# (Vimium supports search completion Wikipedia, as\n# above, and for these.)\n#\n# g: https://www.google.com/search?q=%s Google\n# l: https://www.google.com/search?q=%s&btnI I'm feeling lucky...\n# y: https://www.youtube.com/results?search_query=%s Youtube\n# gm: https://www.google.com/maps?q=%s Google maps\n# b: https://www.bing.com/search?q=%s Bing\n# d: https://duckduckgo.com/?q=%s DuckDuckGo\n# az: https://www.amazon.com/s/?field-keywords=%s Amazon\n# qw: https://www.qwant.com/?q=%s Qwant",
+  "searchEngines": "# More examples.\n#\n# (Vimium supports search completion Wikipedia, as\n# above, and for these.)\n#\ng: https://www.google.com/search?q=%s Google\nl: https://www.google.com/search?q=%s&btnI I'm feeling lucky...\nytb: https://www.youtube.com/results?search_query=%s Youtube\nb: https://www.bing.com/search?q=%s Bing\nddg: https://duckduckgo.com/?q=%s DuckDuckGo\nwi: https://en.wikipedia.org/wiki/Special:Search?search=%s Wikipedia\nzwi: https://zh.wikipedia.org/w/index.php?search=%s&title=Special%3A%E6%90%9C%E7%B4%A2&go=%E5%89%8D%E5%BE%80 维基百科\nsc: https://scholar.google.com/scholar?q=%s Google Scholar\ndd: https://sci-hub.tw/%s Sci-hub\nbk: https://baike.baidu.com/search/word?word=%s 百度百科\ngt: https://translate.google.com/#auto/zh-CN/%s Google Translate\ncb: http://www.iciba.com/%s 爱词霸\ngi: https://www.google.com/search?q=%s&tbm=isch Google Image\ngp: https://play.google.com/store/search?q=%s Google Play\nbi: https://search.bilibili.com/all?keyword=%s Bilibili\nei: https://www.easyicon.net/iconsearch/%s/ Easyicon\nadd: https://addons.mozilla.org/en-US/firefox/search/?q=%s AMO\nz: https://www.423down.com/?s=%s zd423\nmd: https://developer.mozilla.org/en-US/search?q=%s MDN\nww: https://www.google.com/search?q=%s+site:w3schools.com W3Schools\nzl: http://www.soopat.com/Home/Result?SearchWord=%s&FMZL=Y&SYXX=Y&WGZL=Y&FMSQ=Y SooPat专利搜索\ncip: https://ip.cn/index.php?ip=%s IP.CN\ngf: https://greasyfork.org/en/scripts?q=%s Greasy Fork\nst: https://userstyles.org/styles/browse?search_terms=%s Userstyles.org\nbd: https://www.baidu.com/s?wd=%s 百度搜索\nwp: https://www.panc.cc/s/%s/td 胖次网盘搜索\nmb: https://forum.mobilism.org/search.php?keywords=%s&sr=topics&sf=titleonly Mobilism\ne: https://hrtsea.com/?s=%s 心海e站\nss: http://www.flvcd.com/parse.php?kw=%s%26format=super 硕鼠解析\ntao: https://s.taobao.com/search?q=%s 淘宝\ntm: https://list.tmall.com/search_product.htm?q=%s 天猫\n# az: https://www.amazon.com/s/?field-keywords=%s Amazon\n# qw: https://www.qwant.com/?q=%s Qwant",
   "searchUrl": "https://www.google.com/search?q=",
   "userDefinedLinkHintCss": "div>.vimiumHintMarker {\n    /* linkhint boxes */\n    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FFF785),\n        color-stop(100%, #FFC542));\n    border: 1px solid #E3BE23;\n}\n\ndiv>.vimiumHintMarker span {\n    /* linkhint text */\n    color: black;\n    font-weight: bold;\n    font-size: 12px;\n}\n\ndiv>.vimiumHintMarker>.matchingCharacter {}"
 }
