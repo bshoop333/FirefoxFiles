@@ -1,6 +1,6 @@
 {
     "createdBy": "Redirector v3.2.1",
-    "createdAt": "2019-03-17T03:55:26.866Z",
+    "createdAt": "2019-03-17T05:10:24.201Z",
     "redirects": [
         {
             "description": "去Google域名跳转",
@@ -444,7 +444,7 @@
             "exampleUrl": "http://g.mozest.com/archiver/tid-40788.html",
             "exampleResult": "http://g.mozest.com/viewthread.php?tid=40788",
             "error": null,
-            "includePattern": "(.+)/archiver/tid-(\\d+).html",
+            "includePattern": "(.+)/archiver/\\??tid-(\\d+).html",
             "excludePattern": "",
             "patternDesc": "",
             "redirectUrl": "$1/viewthread.php?tid=$2",
