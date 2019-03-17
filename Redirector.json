@@ -1,6 +1,6 @@
 {
     "createdBy": "Redirector v3.2.1",
-    "createdAt": "2019-03-17T05:10:24.201Z",
+    "createdAt": "2019-03-17T05:12:34.196Z",
     "redirects": [
         {
             "description": "去Google域名跳转",
@@ -440,7 +440,7 @@
             ]
         },
         {
-            "description": "通用论坛简版>>完整版1",
+            "description": "通用论坛简版>>完整版1 (有的完整版强制登录才能查看内容，故默认禁用)",
             "exampleUrl": "http://g.mozest.com/archiver/tid-40788.html",
             "exampleResult": "http://g.mozest.com/viewthread.php?tid=40788",
             "error": null,
@@ -450,10 +450,9 @@
             "redirectUrl": "$1/viewthread.php?tid=$2",
             "patternType": "R",
             "processMatches": "noProcessing",
-            "disabled": false,
+            "disabled": true,
             "appliesTo": [
-                "main_frame",
-                "sub_frame"
+                "main_frame"
             ]
         },
         {
