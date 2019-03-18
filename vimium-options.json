@@ -13,7 +13,7 @@
   "filterLinkHints": false,
   "waitForEnterForFilteredHints": true,
   "hideHud": false,
-  "keyMappings": "# Insert your preferred key mappings here.\nmap m Marks.activateCreateMode swap\nmap M Marks.activateGotoMode\nmap D duplicateTab\nmap ;b LinkHints.activateModeToOpenInNewTab\nmap d removeTab\nmap u restoreTab\nmap F LinkHints.activateModeToOpenInNewForegroundTab\nmap , goPrevious\nmap . goNext\nunmap <c-e>\nunmap <c-y>\nunmap zH\nunmap zL\nunmap i\nunmap v\nunmap V\nunmap <a-f>\nunmap [[\nunmap ]]\nunmap gf\nunmap gF\nunmap gt\nunmap gT\nunmap ^\nunmap g0\nunmap g$\nunmap <a-p>\nunmap <a-m>\nunmap x\nunmap X\nunmap W\nunmap <<\nunmap >>\nunmap gs\nunmap yt\nunmap Y\nunmap `",
+  "keyMappings": "# Insert your preferred key mappings here.\nmap R reload hard\nmap m Marks.activateCreateMode swap\nmap M Marks.activateGotoMode\nmap D duplicateTab\nmap ;b LinkHints.activateModeToOpenInNewTab\nmap d removeTab\nmap u restoreTab\nmap F LinkHints.activateModeToOpenInNewForegroundTab\nmap , goPrevious\nmap . goNext\nunmap <c-e>\nunmap <c-y>\nunmap zH\nunmap zL\nunmap i\nunmap v\nunmap V\nunmap <a-f>\nunmap [[\nunmap ]]\nunmap gf\nunmap gF\nunmap gt\nunmap gT\nunmap ^\nunmap g0\nunmap g$\nunmap <a-p>\nunmap <a-m>\nunmap x\nunmap X\nunmap W\nunmap <<\nunmap >>\nunmap gs\nunmap yt\nunmap Y\nunmap `",
   "linkHintCharacters": "qwertyuiopasdfghjklzxcvbnm",
   "linkHintNumbers": "0123456789",
   "newTabUrl": "about:newtab",

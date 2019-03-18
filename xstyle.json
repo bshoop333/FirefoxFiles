@@ -35,7 +35,7 @@
         "urlPrefixes": [],
         "domains": [],
         "regexps": [
-          "(?!moz-extension://|https://tieba\\.baidu\\.com|http://ariang\\.mayswind\\.net/latest/|file://).*"
+          "(?!moz-extension://|http://ariang\\.mayswind\\.net/latest/|file://).*"
         ],
         "exclude": [],
         "code": ".fl:visited,a:visited{color:#c6c!important}"
@@ -53,9 +53,9 @@
       "item": {},
       "saved": {}
     },
-    "lastModified": 1540900087464,
+    "lastModified": 1552135416249,
     "type": "less",
-    "code": "@-moz-document regexp(\"(?!moz-extension://|https://tieba\\\\.baidu\\\\.com|http://ariang\\\\.mayswind\\\\.net/latest/|file://).*\") {\n    a:visited, .fl:visited { color:#CC66CC !important; }\n}"
+    "code": "// @-moz-document regexp(\"(?!moz-extension://|https://tieba\\\\.baidu\\\\.com|http://ariang\\\\.mayswind\\\\.net/latest/|file://).*\") {\n@-moz-document regexp(\"(?!moz-extension://|http://ariang\\\\.mayswind\\\\.net/latest/|file://).*\") {\n    a:visited, .fl:visited { color:#CC66CC !important; }\n}"
   },
   {
     "sections": [
@@ -319,43 +319,23 @@
     "code": "@namespace url(http://www.w3.org/1999/xhtml);\n\n/*=============论坛悬浮回复框，延时收缩版 by defpt at 2014.01.11=======================================*/\n\n@-moz-document regexp(\".*forum.*\"), regexp(\".*thread.*\"), regexp(\".*tid=.*\"), regexp(\".*read.*tid-.*\"), regexp(\".*bbs.*\") {\n/*底部触发*/\n#anchor,#quickpost, #f_post, #f_pst, #fast_post_c {\n        position:fixed !important;\n        border:1px solid #51AFF7 !important;\n        left: auto !important;\n        width: 80% !important;\n        bottom: 0 !important;\n        max-height: 3px !important;\n        padding:0 !important;\n        margin:0 !important;     \n        background:#F9F9F9 !important;\n        z-index:99 !important;\n        transition-duration:0.5s !important;/*收缩时间，单位为秒*/\n        transition-delay:1.5s !important;/*收缩延时，单位为秒*/\n    }\n    #anchor:hover,#quickpost:hover, #f_pst:hover, #f_post:hover, #fast_post_c:hover{\n        max-height: 800px !important; \n        height:auto !important;\n        transition-duration: 0.1s !important;/*弹出时间，单位为秒*/\n        transition-delay: 0.5s !important;/*弹出延时，防止误触发，单位为秒*/\n    }\n    #f_pst .p_pop, #f_pst .p_opt{\n        position: absolute !important;\n        bottom: 0 !important;\n        top: auto !important;\n    }\n}\n\n@-moz-document domain(\"g.mozest.com\") {\n#fastpostforecolor_menu.popupmenu_popup{\n        position: absolute !important;\n        top: 3.5em !important;/*效果不好的，自己用px单位调整固定一下距离*/\n        left: auto !important;\n    }\n}"
   },
   {
-    "type": "less",
-    "lastModified": 1513050537472,
-    "name": "AMO bring back favorites and collections",
+    "type": "css",
+    "lastModified": 1552778139625,
+    "name": "miscellaneous",
     "enabled": true,
-    "updateUrl": "https://userstyles.org/styles/127380.css",
-    "code": "@namespace url(http://www.w3.org/1999/xhtml);\r\n\r\n@-moz-document domain(\"addons.mozilla.org\") {\r\n  .addon-details .widgets {\r\n    display: initial !important; \r\n  } \r\n\r\n}",
+    "updateUrl": "https://userstyles.org/styles/108332.css",
+    "code": "@-moz-document domain('manhuaren.com') {\n\t.toolBar {\n\t\tbottom: 0 !important;\n\t\topacity: 0.2 !important;\n    }\n}\n\n@-moz-document domain('yande.re') {\n\ta.directlink > span.directlink-res {\n\t\tdisplay: unset;\n    }\n}\n@-moz-document domain('feedly.com') {\n     .promo > .is-fading.is-inline.modal-overlay {\n        display: none;\n    }\n}\n@-moz-document domain('pinterest.com') {\n     *[data-test-id='giftWrap'],\n    div[data-test-giftwrap=\"true\"],\n    div[style=\"background-color: rgba(0, 0, 0, 0.6); opacity: 1; position: fixed; top: 0px; bottom: 0px; left: 0px; right: 0px; z-index: 1000;\"] {\n        display: none;\n    }\n}\n@-moz-document domain('blog.sina.com.cn') {\n    [id$='_panel'] {\n        display: none !important;\n    }\n}\n@-moz-document domain('cnprint.org') {\n    #m3d3 {\n        display: none;\n    }\n}\n\n@-moz-document domain('moegirl.org') {\n    .heimu,\n    .heimu a,\n    .heimu .new,\n    a .heimu {\n        background: none !important;\n    }\n}\n\n@-moz-document domain('firefox.net.cn') {\n    .floor_page {\n        display: none;\n    }\n}\n\n@-moz-document domain('greasyfork.org') {\n    #main-header {\n        background-image: none;\n        background-color: black;\n    }\n}\n\n@-moz-document domain('thegradcafe.com') {\n    .ipsWidget_inner {\n        display: none;\n    }\n}\n\n/*阻止太傻留学内容不让选中*/\n@-moz-document domain('taisha.org') {\n    body {\n        -moz-user-select: unset;\n    }\n}\n\n/*动漫之家*/\n@-moz-document domain('dmzj.com') {\n    #show_tip_bg,\n    .login_tip.out,\n    #m_r_panelbox,\n    .timeAD/*时间广告*/\n    {\n        display: none !important;\n    }\n}\n\n/*UC扩展中心*/\n@-moz-document domain('extensions.uc.cn') {\n    #J_mask,\n    #J_maskTip {\n        display: none !important;\n    }\n}\n\n/*新通留学弹窗*/\n@-moz-document domain('www.igo.cn') {\n    .adBG {\n        display: none !important;\n    }\n}\n\n/*推广*/\n@-moz-document domain('baike.baidu.com') {\n    #side-share,\n    /*右侧分享*/\n    #announcement,\n    /*公告*/\n    .wgt-footer-main/*底部*/\n    {\n        display: none;\n    }\n}\n\n@-moz-document domain('lofter.com') {\n    .w-pagelayer.w-pagelayer-reglogin.w-pagelayer-reglogin2 {\n        display: none;\n    }\n}\n\n@-moz-document domain('zdfans.com') {\n    ins {\n        display: none !important;\n    }\n    .meta .meta-info {\n        color: black;\n    }\n    #comment-author-info input {\n        color: black;\n    }\n}\n\n@-moz-document domain('pan.baidu.com'),\ndomain('yun.baidu.com') {\n    .context-menu>.list>li:last-child,\n    /*增值服务*/\n    .context-menu>.list>li:nth-last-child(2),\n    /*增值服务上方横线*/\n    .module-mboxDialog,\n    /*'百度云新功能'框*/\n    .banner-active,\n    /*个人网盘右上角*/\n    .dialog-extra/*删除文件时的提示升级VIP横条*/\n    {\n        display: none;\n    }\n    .find-light-icon,\n    /*“更多”右上角的红点*/\n    .user-level.level-0,\n    /*超级会员*/\n    #show-buyvip-pack,\n    .module-canvas,\n    /*灰色背景*/\n    .tips.has-error,\n    /*上传文件时的警告信息*/\n    .feed-issue-guide,\n    .feed-issue-guide-close,\n    /*提示*/\n    .prev-dom {\n        display: none !important;\n    }\n    /*下载大文件时提示升级VIP*/\n    #feedIssue {\n        border-style: none;\n    }\n}\n\n@-moz-document url-prefix('https://pan.baidu.com/disk/home') {\n    #passport-accRealName-pop,\n    #TANGRAM__PSP_3__/* 验证手机 */\n    {\n        display: none;\n    }\n}\n\n@-moz-document domain('zhidao.baidu.com') {\n    .lucky-try {\n        display: none !important;\n    }\n}\n\n@-moz-document domain('plus.google.com') {\n    div[aria-hidden='true'] {\n        display: none;\n    }\n}\n\n@-moz-document domain('bitbucket.org') {\n    #account-warning {\n        display: none !important;\n    }\n}\n\n@-moz-document domain('mail.126.com'),\ndomain('mail.163.com') {\n    li[id$='dvClub'],\n    li[id$='dvHealth'],\n    li[id$='dvLofter'],\n    li[title='一元夺宝'],\n    li[title='网易海购'],\n    li[title='网易秀品'],\n    .gWel-bottom,\n    .gWel-weather-promote,\n    [id^='_mail_popup'] {\n        display: none;\n    }\n}\n\n@-moz-document domain('mangabee.co') {\n    .manga-page {\n        display: inline!important\n    }\n    div>p>strong {\n        display: none!important;\n    }\n}\n\n@-moz-document url-prefix('https://translate.google.com') {\n    #gt-bbar {\n        display: none;\n    }\n}\n\n@-moz-document domain('bbs.kafan.cn') {\n    .bm_c.cl.pbn,\n    img[src='hiphotos.baidu.com/%CB%D5%C7%40/pic/item/54d0b6d2b31c8701afe7c85b277f9e2f0608ff67.jpg'],\n    img[src='i2.tietuku.com/bc6ef48ab2b8b3b5.jpg'],\n    img[src='b.ikafan.com/000/73/86/26_avatar_middle.jpg'] {\n        display: none;\n    }\n}\n\n@-moz-document domain('youku.com') {\n    #sideTool {\n        display: none!important;\n    }\n}\n\n@-moz-document domain('qzs.qq.com') {\n    #openVipButton,\n    #openVipButton *,\n    img[alt='qboss_ad_image'],\n    #pop_apps_sponsors,\n    .split_line.bor2,\n    .word_spread.side_panel,\n    .icon-red-dot {\n        display: none !important;\n    }\n}\n\n@-moz-document domain('qzone.qq.com') {\n    .top-fix-inner {\n        margin-top: 0px !important;\n    }\n    #QM_Container_31,\n    #QM_Container_100002,\n    #openVipButton,\n    #openVipButton *,\n    li[type='app'],\n    .f-single.f-s-s.f-single-biz,\n    #leftMenu>.mod-side-nav-recently-used.mod-side-nav,\n    .f-aside>.qz-f-vip-l-1.qz-f-vip-l.qz-ichotclick[href^='http://vip.qzone.com/year.html'],\n    #gdtLcModCnt,\n    #top_tips_seat,\n    #top_tips_container,\n    .ui-icon.icon-diamond,\n    #feed-playing,\n    #qz_notification,\n    #pop_apps_sponsors,\n    #qbossLogo_tip,\n    .layout-copyright,\n    li[id^='fct_20050606'],\n    li.feed-hot,\n    DIV[class='item bor3 bg4 item-funny'],\n    DIV[class='fn-checkin-btn deep'],\n    #today_lastyear_v2,\n    #tab_switch,\n    #tab_menu_yanchu,\n    #tab_hide_list,\n    .top-fix-extend,\n    .user-home,\n    .search-box,\n    #tb_friend_li,\n    #tb_dress_li,\n    #tb_app_li,\n    #tb_vip_li,\n    DIV[class='fn_accessLog_tips bg2 bor2'],\n    .fix-layout,\n    #like_button_pannel,\n    .user-vip-info,\n    .head-detail-name,\n    #tab_menu_dianping,\n    #tab_menu_weibo,\n    /*li a[link='nameCard_20050606'],*/\n    *[id*='_ad_'],\n    *[class*='_ad_'],\n    #tab_menu_me_cnt,\n    #QZ_Toolbar_Container>.top-fix-wrap>.user-info>.user-home[href='http://user.qzone.qq.com/1149235164/main']>.textoverflow.user-name,\n    #fct_0_6600_1_1443890230_0_1,\n    .user-medal,\n    /*特权之类*/\n    .trigger {\n        display: none;\n    }\n}\n\n@-moz-document url-prefix('http://t.qq.com') {\n    #erweima,\n    .aboutInfo.c_tx5,\n    #app_video,\n    .SC_bd,\n    #widgetFloat,\n    #newsTips2_guess,\n    #talkListTab,\n    *[href='http://zhaoren.t.qq.com/people?from=top&pgv_ref=web.wide.nav.people'],\n    *[href='http://c.t.qq.com/k/default?pgv_ref=web.wide.page.nav.text'],\n    .sToolbar.single,\n    #app_guestMedal,\n    #app_guestRelation,\n    [tv='101'],\n    li[ispopula='1'],\n    li[tv='1'] {\n        display: none;\n    }\n    [boss='btnExposeNavHomeBar'] {\n        display: none !important;\n    }\n}\n\n@-moz-document domain('renren.com') {\n    div[data-source-id][data-id],\n    #mergeModule,\n    #huatiBox,\n    .a-feed>.appendix,\n    #toolBackTo,\n    #recommendArea,\n    .vip-skinBtn,\n    .hd-account-action.hd-account-action-vip,\n    .app-nav-cont.recent-app-cont {\n        display: none!important;\n    }\n    li[data-tip='应用中心'],\n    li[data-tip='我的应用'],\n    li[data-tip='人人分期'],\n    li[data-tip='热门'],\n    li[data-tip='社团人'] {\n        display: none;\n    }\n}\n\n@-moz-document domain('zuoye.baidu.com') {\n    .EC_ads_listborder,\n    .aside,\n    #aside {\n        display: none;\n    }\n}\n\n@-moz-document domain('tieba.baidu.com'), domain('v.tieba.com'), domain('www.tieba.com') {\n    .p_author_face.j_frame_guide {\n\t\tbackground: none !important;\n    }\n    .p_forbidden_tip + div {\n        display: inline !important;\n    }\n    .p_forbidden_tip {\n        display: none;\n    }\n    .threadlist_bright .threadlist_author .sign_highlight,\n    .threadlist_bright .threadlist_author .sign_highlight:hover {\n\t\tcolor: unset;\n    }\n    .d_icons,\n    .sign_tip_container,\n    #userinfo_wrap .userinfo_right,\n    .share_btn_wrapper,\n    .post_bubble_top,\n    .post_bubble_bottom,\n    .d_nameplate,\n    .showlist_wap,\n    .post-foot-send-gift-container,\n    .u_wallet,\n    .split,\n    .u_app,\n    .u_tbmall,\n    .u_tshow,\n    .tbui_aside_float_bar {\n        display: none;\n    }\n    /* 悦图 */\n    .see-image-btn,\n    .see-image-btn:hover {\n        background-image: none;\n        padding-left: 14px;\n    }\n    /*吧头像*/\n    .card_head {\n        padding: 0 !important;\n        margin: 0 !important;\n        margin-bottom: 4px!important;\n        height: 89px!important;\n        width: 89px!important;\n    }\n    .card_head img {\n        width: 100% !important;\n        height: 100% !important;\n    }\n    .icon-member-top,\n    [id='pagelet_encourage-celebrity/pagelet/celebrity'],\n    [id='pagelet_frs-aside/pagelet/search_back'],\n    [id='pagelet_frs-aside/pagelet/hottopic'],\n    [class*='app_download'],\n    .u_member,\n    .icon_wrap,\n    .user_score,\n    .right_section.right_bright {\n        display: none !important;\n    }\n    .core_title_wrap_bright,\n    .left_section {\n        width: 980px;\n    }\n    .l_post {\n        width: 980px;\n    }\n    .d_post_content_main {\n        width: 829px;\n        border-right: solid 0.633333px rgb(229, 229, 229) ;\n    }\n\n    .j_lzl_container {\n        width: 99.9% !important;\n    }\n    .edui-container,\n    #j_editor_for_container {\n        width: 100% !important;\n    }\n    .lzl_panel_wrapper {\n        float: right;\n    }\n}\n\n@-moz-document url-prefix('http://tieba.baidu.com/f'), url-prefix('https://tieba.baidu.com/f') {\n    .icon_tbworld, .icon-vip3-16 {\n        background-image: url('https://tb2.bdstatic.com/tb/img/thread_list_z_eca48fe.png');\n        background-position: -30px -60px;\n    }\n    .member_thread_title_frs a {\n\t\tcolor: rgb(45, 100, 179) !important;\n    }\n    .vip_red, .vip_red:hover {\n\t\tcolor: unset !important;\n    }\n    /* 以下一小部分是为了吧头像旁的空白作修正 */\n    .card_head {\n        height: 89px !important;\n        width: 89px !important;\n    }\n    .card_top>*:not([class='card_head']):not([class='card_info']) {\n        margin-left: -100px;\n    }\n}\n\n@-moz-document url-prefix('http://tieba.baidu.com/p'), url-prefix('https://tieba.baidu.com/p') {\n    .icon-vip3-16,\n    .icon_tbworld {\n\t\tdisplay: none;\n    }\n    .vip_red, .vip_red:hover {\n\t\tcolor: rgb(45, 100, 179) !important;\n    }\n}\n\n@-moz-document domain('linux.cn') {\n    #LEccCisOsS {\n        display: none !important;\n    }\n}\n\n/* Google Image Search Original Source */\n@-moz-document regexp('^https://www.google.com/.*&tbm=isch.*') {\n    .x_source_link {\n        color: white !important;\n    }\n    .rg_ilm {\n        display: inline;\n    }\n}\n\n/* Google搜索关键词高亮 */\n@-moz-document regexp(\"^https://www\\\\.google\\\\.com/search\\\\?.+\") {\n    em {\n        color: #dd4b39 !important;\n    }\n}\n",
     "sections": [
       {
         "urls": [],
         "urlPrefixes": [],
         "domains": [
-          "addons.mozilla.org"
+          "manhuaren.com"
         ],
         "regexps": [],
         "exclude": [],
-        "code": ".addon-details .widgets{display:initial!important}"
-      }
-    ],
-    "advanced": {
-      "item": {},
-      "saved": {}
-    },
-    "md5Url": "https://update.userstyles.org/127380.md5",
-    "url": "http://userstyles.org/styles/127380",
-    "author": "Brawl",
-    "originalMd5": "a4f6a472040f323c6cbab3fc217afa57",
-    "autoUpdate": true,
-    "id": 29
-  },
-  {
-    "type": "css",
-    "lastModified": 1548063106355,
-    "name": "miscellaneous",
-    "enabled": true,
-    "updateUrl": "https://userstyles.org/styles/108332.css",
-    "code": "@-moz-document domain('yande.re') {\n\ta.directlink > span.directlink-res {\n\t\tdisplay: unset;\n    }\n}\n@-moz-document domain('feedly.com') {\n     .promo > .is-fading.is-inline.modal-overlay {\n        display: none;\n    }\n}\n@-moz-document domain('pinterest.com') {\n     *[data-test-id='giftWrap'],\n    div[data-test-giftwrap=\"true\"],\n    div[style=\"background-color: rgba(0, 0, 0, 0.6); opacity: 1; position: fixed; top: 0px; bottom: 0px; left: 0px; right: 0px; z-index: 1000;\"] {\n        display: none;\n    }\n}\n@-moz-document domain('blog.sina.com.cn') {\n    [id$='_panel'] {\n        display: none !important;\n    }\n}\n@-moz-document domain('cnprint.org') {\n    #m3d3 {\n        display: none;\n    }\n}\n\n@-moz-document domain('moegirl.org') {\n    .heimu,\n    .heimu a,\n    .heimu .new,\n    a .heimu {\n        background: none !important;\n    }\n}\n\n@-moz-document domain('firefox.net.cn') {\n    .floor_page {\n        display: none;\n    }\n}\n\n@-moz-document domain('greasyfork.org') {\n    #main-header {\n        background-image: none;\n        background-color: black;\n    }\n}\n\n@-moz-document domain('thegradcafe.com') {\n    .ipsWidget_inner {\n        display: none;\n    }\n}\n\n/*阻止太傻留学内容不让选中*/\n@-moz-document domain('taisha.org') {\n    body {\n        -moz-user-select: unset;\n    }\n}\n\n/*动漫之家*/\n@-moz-document domain('dmzj.com') {\n    #show_tip_bg,\n    .login_tip.out,\n    #m_r_panelbox,\n    .timeAD/*时间广告*/\n    {\n        display: none !important;\n    }\n}\n\n/*UC扩展中心*/\n@-moz-document domain('extensions.uc.cn') {\n    #J_mask,\n    #J_maskTip {\n        display: none !important;\n    }\n}\n\n/*新通留学弹窗*/\n@-moz-document domain('www.igo.cn') {\n    .adBG {\n        display: none !important;\n    }\n}\n\n/*推广*/\n@-moz-document domain('baike.baidu.com') {\n    #side-share,\n    /*右侧分享*/\n    #announcement,\n    /*公告*/\n    .wgt-footer-main/*底部*/\n    {\n        display: none;\n    }\n}\n\n@-moz-document domain('lofter.com') {\n    .w-pagelayer.w-pagelayer-reglogin.w-pagelayer-reglogin2 {\n        display: none;\n    }\n}\n\n@-moz-document domain('zdfans.com') {\n    ins {\n        display: none !important;\n    }\n    .meta .meta-info {\n        color: black;\n    }\n    #comment-author-info input {\n        color: black;\n    }\n}\n\n@-moz-document domain('pan.baidu.com'),\ndomain('yun.baidu.com') {\n    .context-menu>.list>li:last-child,\n    /*增值服务*/\n    .context-menu>.list>li:nth-last-child(2),\n    /*增值服务上方横线*/\n    .module-mboxDialog,\n    /*'百度云新功能'框*/\n    .banner-active,\n    /*个人网盘右上角*/\n    .dialog-extra/*删除文件时的提示升级VIP横条*/\n    {\n        display: none;\n    }\n    .find-light-icon,\n    /*“更多”右上角的红点*/\n    .user-level.level-0,\n    /*超级会员*/\n    #show-buyvip-pack,\n    .module-canvas,\n    /*灰色背景*/\n    .tips.has-error,\n    /*上传文件时的警告信息*/\n    .feed-issue-guide,\n    .feed-issue-guide-close,\n    /*提示*/\n    .prev-dom {\n        display: none !important;\n    }\n    /*下载大文件时提示升级VIP*/\n    #feedIssue {\n        border-style: none;\n    }\n}\n\n@-moz-document url-prefix('https://pan.baidu.com/disk/home') {\n    #passport-accRealName-pop,\n    #TANGRAM__PSP_3__/* 验证手机 */\n    {\n        display: none;\n    }\n}\n\n@-moz-document domain('zhidao.baidu.com') {\n    .lucky-try {\n        display: none !important;\n    }\n}\n\n@-moz-document domain('plus.google.com') {\n    div[aria-hidden='true'] {\n        display: none;\n    }\n}\n\n@-moz-document domain('bitbucket.org') {\n    #account-warning {\n        display: none !important;\n    }\n}\n\n@-moz-document domain('mail.126.com'),\ndomain('mail.163.com') {\n    li[id$='dvClub'],\n    li[id$='dvHealth'],\n    li[id$='dvLofter'],\n    li[title='一元夺宝'],\n    li[title='网易海购'],\n    li[title='网易秀品'],\n    .gWel-bottom,\n    .gWel-weather-promote,\n    [id^='_mail_popup'] {\n        display: none;\n    }\n}\n\n@-moz-document domain('mangabee.co') {\n    .manga-page {\n        display: inline!important\n    }\n    div>p>strong {\n        display: none!important;\n    }\n}\n\n@-moz-document url-prefix('https://translate.google.com') {\n    #gt-bbar {\n        display: none;\n    }\n}\n\n@-moz-document domain('bbs.kafan.cn') {\n    .bm_c.cl.pbn,\n    img[src='hiphotos.baidu.com/%CB%D5%C7%40/pic/item/54d0b6d2b31c8701afe7c85b277f9e2f0608ff67.jpg'],\n    img[src='i2.tietuku.com/bc6ef48ab2b8b3b5.jpg'],\n    img[src='b.ikafan.com/000/73/86/26_avatar_middle.jpg'] {\n        display: none;\n    }\n}\n\n@-moz-document domain('youku.com') {\n    #sideTool {\n        display: none!important;\n    }\n}\n\n@-moz-document domain('qzs.qq.com') {\n    #openVipButton,\n    img[alt='qboss_ad_image'],\n    #pop_apps_sponsors,\n    .split_line.bor2,\n    .word_spread.side_panel,\n    .icon-red-dot {\n        display: none !important;\n    }\n}\n\n@-moz-document domain('qzone.qq.com') {\n    .top-fix-inner {\n        margin-top: 0px !important;\n    }\n    .col-main-sidebar/*右侧栏*/\n    {\n        display: none !important;\n    }\n    li[type='app'],\n    .f-single.f-s-s.f-single-biz,\n    #leftMenu>.mod-side-nav-recently-used.mod-side-nav,\n    .f-aside>.qz-f-vip-l-1.qz-f-vip-l.qz-ichotclick[href^='http://vip.qzone.com/year.html'],\n    #gdtLcModCnt,\n    #top_tips_seat,\n    #top_tips_container,\n    .ui-icon.icon-diamond,\n    #feed-playing,\n    #qz_notification,\n    #pop_apps_sponsors,\n    #qbossLogo_tip,\n    .layout-copyright,\n    li[id^='fct_20050606'],\n    li.feed-hot,\n    DIV[class='item bor3 bg4 item-funny'],\n    DIV[class='fn-checkin-btn deep'],\n    #today_lastyear_v2,\n    #tab_switch,\n    #tab_menu_yanchu,\n    #tab_hide_list,\n    .top-fix-extend,\n    .user-home,\n    .search-box,\n    #tb_friend_li,\n    #tb_dress_li,\n    #tb_app_li,\n    #tb_vip_li,\n    DIV[class='fn_accessLog_tips bg2 bor2'],\n    .fix-layout,\n    #like_button_pannel,\n    .user-vip-info,\n    .head-detail-name,\n    #tab_menu_dianping,\n    #tab_menu_weibo,\n    .col-main-sidebar,\n    /*li a[link='nameCard_20050606'],*/\n    *[id*='_ad_'],\n    *[class*='_ad_'],\n    #tab_menu_me_cnt,\n    #QZ_Toolbar_Container>.top-fix-wrap>.user-info>.user-home[href='http://user.qzone.qq.com/1149235164/main']>.textoverflow.user-name,\n    #fct_0_6600_1_1443890230_0_1,\n    .user-medal,\n    /*特权之类*/\n    .trigger {\n        display: none;\n    }\n    .col-main-feed,\n    .feed-v9 .f-single {\n        width: 100% !important;\n    }\n}\n\n@-moz-document url-prefix('http://t.qq.com') {\n    #erweima,\n    .aboutInfo.c_tx5,\n    #app_video,\n    .SC_bd,\n    #widgetFloat,\n    #newsTips2_guess,\n    #talkListTab,\n    *[href='http://zhaoren.t.qq.com/people?from=top&pgv_ref=web.wide.nav.people'],\n    *[href='http://c.t.qq.com/k/default?pgv_ref=web.wide.page.nav.text'],\n    .sToolbar.single,\n    #app_guestMedal,\n    #app_guestRelation,\n    [tv='101'],\n    li[ispopula='1'],\n    li[tv='1'] {\n        display: none;\n    }\n    [boss='btnExposeNavHomeBar'] {\n        display: none !important;\n    }\n}\n\n@-moz-document domain('renren.com') {\n    div[data-source-id][data-id],\n    #mergeModule,\n    #huatiBox,\n    .a-feed>.appendix,\n    #toolBackTo,\n    #recommendArea,\n    .vip-skinBtn,\n    .hd-account-action.hd-account-action-vip,\n    .app-nav-cont.recent-app-cont {\n        display: none!important;\n    }\n    li[data-tip='应用中心'],\n    li[data-tip='我的应用'],\n    li[data-tip='人人分期'],\n    li[data-tip='热门'],\n    li[data-tip='社团人'] {\n        display: none;\n    }\n}\n\n@-moz-document domain('zuoye.baidu.com') {\n    .EC_ads_listborder,\n    .aside,\n    #aside {\n        display: none;\n    }\n}\n\n@-moz-document domain('tieba.baidu.com'), domain('v.tieba.com'), domain('www.tieba.com') {\n    .p_author_face.j_frame_guide {\n\t\tbackground: none !important;\n    }\n    .p_forbidden_tip + div {\n        display: inline !important;\n    }\n    .p_forbidden_tip {\n        display: none;\n    }\n    .threadlist_bright .threadlist_author .sign_highlight,\n    .threadlist_bright .threadlist_author .sign_highlight:hover {\n\t\tcolor: unset;\n    }\n    .share_btn_wrapper,\n    .post_bubble_top,\n    .post_bubble_bottom,\n    .d_nameplate,\n    .showlist_wap,\n    .post-foot-send-gift-container,\n    .u_wallet,\n    .split,\n    .u_app,\n    .u_tbmall,\n    .u_tshow,\n    .tbui_aside_float_bar {\n        display: none;\n    }\n    /* 悦图 */\n    .see-image-btn,\n    .see-image-btn:hover {\n        background-image: none;\n        padding-left: 14px;\n    }\n    /*吧头像*/\n    .card_head {\n        padding: 0 !important;\n        margin: 0 !important;\n        margin-bottom: 4px!important;\n        height: 89px!important;\n        width: 89px!important;\n    }\n    .card_head img {\n        width: 100% !important;\n        height: 100% !important;\n    }\n    .icon-member-top,\n    [id='pagelet_encourage-celebrity/pagelet/celebrity'],\n    [id='pagelet_frs-aside/pagelet/search_back'],\n    [id='pagelet_frs-aside/pagelet/hottopic'],\n    [class*='app_download'],\n    .u_member,\n    .icon_wrap,\n    .user_score,\n    .right_section.right_bright {\n        display: none !important;\n    }\n    .core_title_wrap_bright,\n    .left_section {\n        width: 980px;\n    }\n    .l_post {\n        width: 980px;\n    }\n    .d_post_content_main {\n        width: 829px;\n        border-right: solid 0.633333px rgb(229, 229, 229) ;\n    }\n\n    .j_lzl_container {\n        width: 99.9% !important;\n    }\n    .edui-container,\n    #j_editor_for_container {\n        width: 100% !important;\n    }\n    .lzl_panel_wrapper {\n        float: right;\n    }\n}\n\n@-moz-document url-prefix('http://tieba.baidu.com/f'), url-prefix('https://tieba.baidu.com/f') {\n    .icon_tbworld, .icon-vip3-16 {\n        background-image: url('https://tb2.bdstatic.com/tb/img/thread_list_z_eca48fe.png');\n        background-position: -30px -60px;\n    }\n    .member_thread_title_frs a {\n\t\tcolor: rgb(45, 100, 179) !important;\n    }\n    .vip_red, .vip_red:hover {\n\t\tcolor: unset !important;\n    }\n    /* 以下一小部分是为了吧头像旁的空白作修正 */\n    .card_head {\n        height: 89px !important;\n        width: 89px !important;\n    }\n    .card_top>*:not([class='card_head']):not([class='card_info']) {\n        margin-left: -100px;\n    }\n}\n\n@-moz-document url-prefix('http://tieba.baidu.com/p'), url-prefix('https://tieba.baidu.com/p') {\n    .icon-vip3-16,\n    .icon_tbworld {\n\t\tdisplay: none;\n    }\n    .vip_red, .vip_red:hover {\n\t\tcolor: rgb(45, 100, 179) !important;\n    }\n}\n\n@-moz-document domain('linux.cn') {\n    #LEccCisOsS {\n        display: none !important;\n    }\n}\n\n/* Google Image Search Original Source */\n@-moz-document regexp('^https://www.google.com/.*&tbm=isch.*') {\n    .x_source_link {\n        color: white !important;\n    }\n    .rg_ilm {\n        display: inline;\n    }\n}\n\n/* Google搜索关键词高亮 */\n@-moz-document regexp(\"^https://www\\\\.google\\\\.com/search\\\\?.+\") {\n    em {\n        color: #dd4b39 !important;\n    }\n}\n",
-    "sections": [
+        "code": ".toolBar{bottom:0!important;opacity:.2!important}"
+      },
       {
         "urls": [],
         "urlPrefixes": [],
@@ -626,7 +606,7 @@
         ],
         "regexps": [],
         "exclude": [],
-        "code": "#openVipButton,#pop_apps_sponsors,.icon-red-dot,.split_line.bor2,.word_spread.side_panel,img[alt=qboss_ad_image]{display:none!important}"
+        "code": "#openVipButton,#openVipButton *,#pop_apps_sponsors,.icon-red-dot,.split_line.bor2,.word_spread.side_panel,img[alt=qboss_ad_image]{display:none!important}"
       },
       {
         "urls": [],
@@ -636,7 +616,7 @@
         ],
         "regexps": [],
         "exclude": [],
-        "code": ".top-fix-inner{margin-top:0!important}.col-main-sidebar{display:none!important}#QZ_Toolbar_Container>.top-fix-wrap>.user-info>.user-home[href='http://user.qzone.qq.com/1149235164/main']>.textoverflow.user-name,#fct_0_6600_1_1443890230_0_1,#feed-playing,#gdtLcModCnt,#leftMenu>.mod-side-nav-recently-used.mod-side-nav,#like_button_pannel,#pop_apps_sponsors,#qbossLogo_tip,#qz_notification,#tab_hide_list,#tab_menu_dianping,#tab_menu_me_cnt,#tab_menu_weibo,#tab_menu_yanchu,#tab_switch,#tb_app_li,#tb_dress_li,#tb_friend_li,#tb_vip_li,#today_lastyear_v2,#top_tips_container,#top_tips_seat,.col-main-sidebar,.f-aside>.qz-f-vip-l-1.qz-f-vip-l.qz-ichotclick[href^='http://vip.qzone.com/year.html'],.f-single.f-s-s.f-single-biz,.fix-layout,.head-detail-name,.layout-copyright,.search-box,.top-fix-extend,.trigger,.ui-icon.icon-diamond,.user-home,.user-medal,.user-vip-info,DIV[class='fn-checkin-btn deep'],DIV[class='fn_accessLog_tips bg2 bor2'],DIV[class='item bor3 bg4 item-funny'],[class*='_ad_'],[id*='_ad_'],li.feed-hot,li[id^=fct_20050606],li[type=app]{display:none}.col-main-feed,.feed-v9 .f-single{width:100%!important}"
+        "code": ".top-fix-inner{margin-top:0!important}#QM_Container_100002,#QM_Container_31,#QZ_Toolbar_Container>.top-fix-wrap>.user-info>.user-home[href='http://user.qzone.qq.com/1149235164/main']>.textoverflow.user-name,#fct_0_6600_1_1443890230_0_1,#feed-playing,#gdtLcModCnt,#leftMenu>.mod-side-nav-recently-used.mod-side-nav,#like_button_pannel,#openVipButton,#openVipButton *,#pop_apps_sponsors,#qbossLogo_tip,#qz_notification,#tab_hide_list,#tab_menu_dianping,#tab_menu_me_cnt,#tab_menu_weibo,#tab_menu_yanchu,#tab_switch,#tb_app_li,#tb_dress_li,#tb_friend_li,#tb_vip_li,#today_lastyear_v2,#top_tips_container,#top_tips_seat,.f-aside>.qz-f-vip-l-1.qz-f-vip-l.qz-ichotclick[href^='http://vip.qzone.com/year.html'],.f-single.f-s-s.f-single-biz,.fix-layout,.head-detail-name,.layout-copyright,.search-box,.top-fix-extend,.trigger,.ui-icon.icon-diamond,.user-home,.user-medal,.user-vip-info,DIV[class='fn-checkin-btn deep'],DIV[class='fn_accessLog_tips bg2 bor2'],DIV[class='item bor3 bg4 item-funny'],[class*='_ad_'],[id*='_ad_'],li.feed-hot,li[id^=fct_20050606],li[type=app]{display:none}"
       },
       {
         "urls": [],
@@ -678,7 +658,7 @@
         ],
         "regexps": [],
         "exclude": [],
-        "code": ".p_author_face.j_frame_guide{background:0 0!important}.p_forbidden_tip+div{display:inline!important}.p_forbidden_tip{display:none}.threadlist_bright .threadlist_author .sign_highlight,.threadlist_bright .threadlist_author .sign_highlight:hover{color:unset}.d_nameplate,.post-foot-send-gift-container,.post_bubble_bottom,.post_bubble_top,.share_btn_wrapper,.showlist_wap,.split,.tbui_aside_float_bar,.u_app,.u_tbmall,.u_tshow,.u_wallet{display:none}.see-image-btn,.see-image-btn:hover{background-image:none;padding-left:14px}.card_head{padding:0!important;margin:0 0 4px!important;height:89px!important;width:89px!important}.card_head img{width:100%!important;height:100%!important}.icon-member-top,.icon_wrap,.right_section.right_bright,.u_member,.user_score,[class*=app_download],[id='pagelet_encourage-celebrity/pagelet/celebrity'],[id='pagelet_frs-aside/pagelet/hottopic'],[id='pagelet_frs-aside/pagelet/search_back']{display:none!important}.core_title_wrap_bright,.l_post,.left_section{width:980px}.d_post_content_main{width:829px;border-right:.633333px solid #e5e5e5}.j_lzl_container{width:99.9%!important}#j_editor_for_container,.edui-container{width:100%!important}.lzl_panel_wrapper{float:right}"
+        "code": ".p_author_face.j_frame_guide{background:0 0!important}.p_forbidden_tip+div{display:inline!important}.p_forbidden_tip{display:none}.threadlist_bright .threadlist_author .sign_highlight,.threadlist_bright .threadlist_author .sign_highlight:hover{color:unset}#userinfo_wrap .userinfo_right,.d_icons,.d_nameplate,.post-foot-send-gift-container,.post_bubble_bottom,.post_bubble_top,.share_btn_wrapper,.showlist_wap,.sign_tip_container,.split,.tbui_aside_float_bar,.u_app,.u_tbmall,.u_tshow,.u_wallet{display:none}.see-image-btn,.see-image-btn:hover{background-image:none;padding-left:14px}.card_head{padding:0!important;margin:0 0 4px!important;height:89px!important;width:89px!important}.card_head img{width:100%!important;height:100%!important}.icon-member-top,.icon_wrap,.right_section.right_bright,.u_member,.user_score,[class*=app_download],[id='pagelet_encourage-celebrity/pagelet/celebrity'],[id='pagelet_frs-aside/pagelet/hottopic'],[id='pagelet_frs-aside/pagelet/search_back']{display:none!important}.core_title_wrap_bright,.l_post,.left_section{width:980px}.d_post_content_main{width:829px;border-right:.633333px solid #e5e5e5}.j_lzl_container{width:99.9%!important}#j_editor_for_container,.edui-container{width:100%!important}.lzl_panel_wrapper{float:right}"
       },
       {
         "urls": [],
@@ -862,7 +842,7 @@
     "type": "less",
     "lastModified": 1539176035428,
     "name": "Beautify Pagerizer",
-    "enabled": false,
+    "enabled": true,
     "updateUrl": "",
     "code": ".autopagerize_page_separator {\n    display: none;\n}\n.autopagerize_page_info {\n    line-height: 1.6!important;\n    position: relative!important;\n    float: none!important;\n    top: 0!important;\n    left: 0!important;\n    min-width: 366px;\n    width: auto;\n    text-align: center!important;\n    font-size: 14px!important;\n    display: block!important;\n    padding: 3px 0!important;\n    margin: 5px 10px 8px;\n    clear: both!important;\n    border-top: 1px solid #ccc!important;\n    border-bottom: 1px solid #ccc!important;\n    -moz-border-radius: 30px!important;\n    border-radius: 30px!important;\n    background-color: #F5F5F5!important;\n    -moz-box-shadow: inset 0 16px 20px #fff, 0 2px 3px rgba(0, 0, 0, 0.1);\n    -webkit-box-shadow: inset 0 16px 20px #fff, 0 2px 3px rgba(0, 0, 0, 0.1);\n    box-shadow: inset 0 16px 20px #fff, 0 2px 3px rgba(0, 0, 0, 0.1);\n}",
     "sections": [
@@ -883,34 +863,6 @@
     "url": null,
     "originalMd5": null,
     "id": 49
-  },
-  {
-    "type": "less",
-    "lastModified": 1538038349136,
-    "name": "Hide Incompatible Addons on AMO",
-    "enabled": true,
-    "updateUrl": "",
-    "code": "@-moz-document domain(\"addons.mozilla.org\") {\n\t.incompatible {\n\t\tdisplay: none !important;\n    }\n}",
-    "sections": [
-      {
-        "urls": [],
-        "urlPrefixes": [],
-        "domains": [
-          "addons.mozilla.org"
-        ],
-        "regexps": [],
-        "exclude": [],
-        "code": ".incompatible{display:none!important}"
-      }
-    ],
-    "advanced": {
-      "item": {},
-      "saved": {}
-    },
-    "md5Url": null,
-    "url": null,
-    "originalMd5": null,
-    "id": 50
   },
   {
     "type": "less",
@@ -993,5 +945,165 @@
     "url": null,
     "originalMd5": null,
     "id": 53
+  },
+  {
+    "type": "less",
+    "lastModified": 1551443480426,
+    "name": "UnimelbEnhancer",
+    "enabled": true,
+    "updateUrl": "",
+    "code": "@-moz-document domain(\"prod.ss.unimelb.edu.au\") {\n    .cssActionLinkMoreDtls,\n    .cssActionLinkGroupDtls,\n    .cssActionLinkUnavailRsn,\n    .cssActionLinkReqstInfo,\n    .cssActionLinkRuleDtls,\n    .cssActionLinkAvailabilities {\n        color: white;\n        background-color: rgb(0, 109, 204);\n        background-image: -moz-linear-gradient(rgb(0, 136, 204), rgb(0, 68, 204));\n        border-radius: 2px;\n        border-bottom-color: rgba(0, 0, 0, 0.25);\n        border-bottom-left-radius: 4px;\n        border-bottom-right-radius: 4px;\n        border-bottom-style: solid;\n        border-bottom-width: 0.666667px;\n        border-image-outset: 0;\n        border-image-repeat: stretch;\n        border-image-slice: 100%;\n        border-image-source: none;\n        border-image-width: 1;\n        border-left-color: rgba(0, 0, 0, 0.1);\n        border-left-style: solid;\n        border-left-width: 0.666667px;\n        border-right-color: rgba(0, 0, 0, 0.1);\n        border-right-style: solid;\n        border-right-width: 0.666667px;\n        border-top-color: rgba(0, 0, 0, 0.1);\n        border-top-left-radius: 4px;\n        border-top-right-radius: 4px;\n        border-top-style: solid;\n        border-top-width: 0.666667px;\n        box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;\n        padding: 4px;\n        vertical-align: middle;\n    }\n    .cssActionLinkMoreDtls:hover,\n    .cssActionLinkGroupDtls:hover,\n    .cssActionLinkUnavailRsn:hover,\n    .cssActionLinkRuleDtls:hover,\n    .cssActionLinkReqstInfo:hover,\n    .cssActionLinkAvailabilities:hover {\n        color: white;\n        text-decoration: none;\n    }\n\n/*    .cssActionLinkMoreDtlsHide,\n    .cssActionLinkGroupDtls,\n    .cssActionLinkUnavailRsn,\n    .cssActionLinkRuleDtls,\n    .cssActionLinkReqstInfoHide,\n    .cssActionLinkAvailabilitiesHide {\n        color: white;\n        background-color: rgb(0, 109, 204);\n        background-image: -moz-linear-gradient(rgb(0, 136, 204), rgb(0, 68, 204));\n        border-radius: 2px;\n        border-bottom-color: rgba(0, 0, 0, 0.25);\n        border-bottom-left-radius: 4px;\n        border-bottom-right-radius: 4px;\n        border-bottom-style: solid;\n        border-bottom-width: 0.666667px;\n        border-image-outset: 0;\n        border-image-repeat: stretch;\n        border-image-slice: 100%;\n        border-image-source: none;\n        border-image-width: 1;\n        border-left-color: rgba(0, 0, 0, 0.1);\n        border-left-style: solid;\n        border-left-width: 0.666667px;\n        border-right-color: rgba(0, 0, 0, 0.1);\n        border-right-style: solid;\n        border-right-width: 0.666667px;\n        border-top-color: rgba(0, 0, 0, 0.1);\n        border-top-left-radius: 4px;\n        border-top-right-radius: 4px;\n        border-top-style: solid;\n        border-top-width: 0.666667px;\n        box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;\n        padding: 4px;\n        font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n        vertical-align: middle;\n    }\n    .cssActionLinkMoreDtlsHide:hover,\n    .cssActionLinkGroupDtls:hover,\n    .cssActionLinkUnavailRsn:hover,\n    .cssActionLinkRuleDtls:hover,\n    .cssActionLinkReqstInfoHide:hover,\n    .cssActionLinkAvailabilitiesHide:hover {\n        color: white;\n        text-decoration: none;\n    }*/\n}",
+    "sections": [
+      {
+        "urls": [],
+        "urlPrefixes": [],
+        "domains": [
+          "prod.ss.unimelb.edu.au"
+        ],
+        "regexps": [],
+        "exclude": [],
+        "code": ".cssActionLinkAvailabilities,.cssActionLinkGroupDtls,.cssActionLinkMoreDtls,.cssActionLinkReqstInfo,.cssActionLinkRuleDtls,.cssActionLinkUnavailRsn{color:#fff;background-color:#006dcc;background-image:-moz-linear-gradient(#08c,#04c);border-radius:4px;border-image-outset:0;border-image-repeat:stretch;border-image-slice:100%;border-image-source:none;border-image-width:1;box-shadow:rgba(255,255,255,.2) 0 1px 0 0 inset,rgba(0,0,0,.05) 0 1px 2px 0;padding:4px;vertical-align:middle;border-bottom:.666667px solid rgba(0,0,0,.25);border-left:.666667px solid rgba(0,0,0,.1);border-right:.666667px solid rgba(0,0,0,.1);border-color:rgba(0,0,0,.1) rgba(0,0,0,.1) rgba(0,0,0,.25);border-style:solid;border-width:.666667px;border-top:.666667px solid rgba(0,0,0,.1)}.cssActionLinkAvailabilities:hover,.cssActionLinkGroupDtls:hover,.cssActionLinkMoreDtls:hover,.cssActionLinkReqstInfo:hover,.cssActionLinkRuleDtls:hover,.cssActionLinkUnavailRsn:hover{color:#fff;text-decoration:none}"
+      }
+    ],
+    "advanced": {
+      "item": {},
+      "saved": {}
+    },
+    "md5Url": null,
+    "url": null,
+    "originalMd5": null,
+    "id": 59
+  },
+  {
+    "type": "less",
+    "lastModified": 1552003171299,
+    "name": "AMO Enhancer",
+    "enabled": true,
+    "updateUrl": "",
+    "code": "@namespace url(http://www.w3.org/1999/xhtml);\n\n@-moz-document domain(\"addons.mozilla.org\") {\n    .SearchResult--theme {\n        display: none;\n    }\n}",
+    "sections": [
+      {
+        "urls": [],
+        "urlPrefixes": [],
+        "domains": [
+          "addons.mozilla.org"
+        ],
+        "regexps": [],
+        "exclude": [],
+        "code": ".SearchResult--theme{display:none}"
+      }
+    ],
+    "advanced": {
+      "item": {},
+      "saved": {}
+    },
+    "md5Url": null,
+    "url": null,
+    "originalMd5": null,
+    "id": 60
+  },
+  {
+    "type": "css",
+    "lastModified": 1552778944768,
+    "name": "Greasy Fork Office 3.1.1",
+    "enabled": false,
+    "updateUrl": "https://userstyles.org/styles/101364.css",
+    "code": "@namespace url(http://www.w3.org/1999/xhtml);\r\n\r\n@-moz-document domain(\"greasyfork.org\") {\r\n  a {text-decoration:none !important;}\r\n/* 整体 */\r\n  html {background: /*[[bi]]*/ Lavender !important;}\r\n  body {width:1010px !important;margin:0 auto !important;box-sizing:border-box;/*[[bo]]*/}\r\n  body:not([class]) {background-image: url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAByCAYAAAB5lADlAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAiSURBVDhPY2RgYPgPxAxMIAIERhlAMMoAglEGEAxzBgMDAMczAeNv/jdzAAAAAElFTkSuQmCC\");background-repeat:repeat-x;\r\n  padding:10px 25px;}\r\n\r\n/* 头部 */\r\n  #main-header {margin-left:0px !important;height:96px !important;background:none !important;}\r\n  /* 左侧 */#site-name-text h1 {line-height:80px !important;}\r\n   #main-header .subtitle {font-size:11px !important;}\r\n  /* 右侧 */#site-nav {margin:0px !important;}\r\n    /* 上方 */#script-search input[name] {width: 130px !important;}\r\n    /* 下方 */#site-nav nav li {display:inline-block !important;margin-left:0px !important;}\r\n    #site-nav nav li:not(:nth-of-type(4)) {margin-right:-4px;}\r\n    #site-nav nav a {text-decoration:none !important;\r\n    padding: 0px 10px !important;}\r\n  .sign-in-link,.user-profile-link {margin-right:10px !important;}\r\n/* A sample of our scripts */\r\n  section > ul > li {margin-bottom:10px !important;} \r\n/*meta*/\r\n  :-moz-any(.script-list,#user-script-list) footer {margin-top: 10px !important;}\r\n  :-moz-any(.script-list,#user-script-list) dl {max-width: 940px !important;-moz-column-count: inherit !important;}\r\n  :-moz-any(.script-list,#user-script-list) dt {\r\n  width:auto !important;padding-right: 10px !important;float: none !important;\r\n  text-align: left !important;font-weight: 600 !important;display: inline-block !important;}\r\n    dt::after {content: \"：\"}\r\n  :-moz-any(.script-list,#user-script-list) dd {float: none !important;display: inline-block !important;margin-right: 15px !important;}\r\n  dt.script-list-author {width: 60px !important;}\r\n  dd.script-list-author {width: 80px !important;}\r\n  dd.script-show-version {width: 110px !important;}\r\n  dd.script-list-author,dd.script-show-version {\r\n  white-space:nowrap; overflow:hidden;text-overflow:ellipsis;\r\n  vertical-align: middle;}\r\n  dd.script-show-applies-to {width: 850px !important;}\r\n/*page*/\r\n  .pagination em {font-style:normal !important;}\r\n  .pagination a,.pagination em,.pagination span {padding:3px 6px !important;}\r\n  .pagination a {background:rgba(255,255,255,.5) !important;}\r\n  .pagination a:hover {background:rgba(255,255,255,.7) !important;}\r\n}\r\n\r\n@-moz-document regexp(\"https://greasyfork\\.org/scripts/?\"),\r\nurl-prefix(\"https://greasyfork.org/scripts?page=\") {\r\n\r\n  #script-list-option-groups {margin:0px !important;\r\n  float:none !important;width:100% !important;font-size:15px !important;}\r\n   #script-list-option-groups div {padding:4px 8px !important;margin-bottom:0px !important;\r\n   border-radius:0px !important;}\r\n   #script-list-sort ul,#script-list-sort li,#script-list-filter ul,#script-list-filter li {display:inline-block !important;}\r\n   #script-list-sort li,#script-list-filter li {margin-right:10px !important;}\r\n  #script-list-filter ul {width:750px !important;vertical-align:top !important;}\r\n  \r\n  #browse-script-list a {text-decoration:none !important;color:DarkBlue !important;}\r\n  #browse-script-list dl {max-width:100% !important;font-size:15px !important;margin:10px 0px 15px !important;}\r\n  #browse-script-list li{border-bottom: 2px #333 dashed !important;margin-top: 10px !important;}\r\n\r\n}\r\n\r\n@-moz-document regexp(\"https://greasyfork.org/scripts/.*/?\") {\r\n  #script-links li {margin-bottom:0px !important;}\r\n  #script-links li:not(first-child) {margin-right:-5px !important;}\r\n  #script-links .current {position:static !important;padding:0px !important;}\r\n  \r\n  #script-links {border-bottom:1px solid black}\r\n  #script-content {border:none !important;}\r\n  #additional-info img {max-width: -moz-available !important;}\r\n  #additional-info div {background:none !important;}\r\n  #script-meta {padding-bottom:10px !important;}\r\n  #additional-info:not(:empty) {border-top: 2px #333 dashed}\r\n\r\n}\r\n\r\n/* Code From @chbwdbd */\r\n@-moz-document regexp(\"https://greasyfork.org/scripts/[^\\/]+/code.*$\") {\r\n#script-content {border-top:none !important;margin-top:10px !important;padding-top:0px !important;\r\n  overflow-x:auto !important;width:960px !important;overflow-y:auto !important;height:660px !important;\r\nbackground:rgba(255,255,255,.5) !important;padding-left:0px !important;}\r\n  #script-content pre {background:none !important;border-right:none !important;}\r\n}",
+    "sections": [
+      {
+        "urls": [],
+        "urlPrefixes": [],
+        "domains": [
+          "greasyfork.org"
+        ],
+        "regexps": [],
+        "exclude": [],
+        "code": "a{text-decoration:none!important}html{background:url(http://1.su.bdimg.com/skin/12.jpg) 100% 100% fixed #e6e6fa!important}body{width:1010px!important;margin:0 auto!important;box-sizing:border-box;background-color:rgba(255,255,255,.65)}body:not([class]){background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAByCAYAAAB5lADlAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAiSURBVDhPY2RgYPgPxAxMIAIERhlAMMoAglEGEAxzBgMDAMczAeNv/jdzAAAAAElFTkSuQmCC);background-repeat:repeat-x;padding:10px 25px}#main-header{margin-left:0!important;height:96px!important;background:0 0!important}#site-name-text h1{line-height:80px!important}#main-header .subtitle{font-size:11px!important}#site-nav{margin:0!important}#script-search input[name]{width:130px!important}#site-nav nav li{display:inline-block!important;margin-left:0!important}#site-nav nav li:not(:nth-of-type(4)){margin-right:-4px}#site-nav nav a{text-decoration:none!important;padding:0 10px!important}.sign-in-link,.user-profile-link{margin-right:10px!important}section>ul>li{margin-bottom:10px!important}:-moz-any(.script-list,#user-script-list) footer{margin-top:10px!important}:-moz-any(.script-list,#user-script-list) dl{max-width:940px!important;-moz-column-count:inherit!important}:-moz-any(.script-list,#user-script-list) dt{width:auto!important;padding-right:10px!important;float:none!important;text-align:left!important;font-weight:600!important;display:inline-block!important}dt::after{content:\"：\"}:-moz-any(.script-list,#user-script-list) dd{float:none!important;display:inline-block!important;margin-right:15px!important}dt.script-list-author{width:60px!important}dd.script-list-author{width:80px!important}dd.script-show-version{width:110px!important}dd.script-list-author,dd.script-show-version{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;vertical-align:middle}dd.script-show-applies-to{width:850px!important}.pagination em{font-style:normal!important}.pagination a,.pagination em,.pagination span{padding:3px 6px!important}.pagination a{background:rgba(255,255,255,.5)!important}.pagination a:hover{background:rgba(255,255,255,.7)!important}"
+      },
+      {
+        "urls": [],
+        "urlPrefixes": [
+          "https://greasyfork.org/scripts?page="
+        ],
+        "domains": [],
+        "regexps": [
+          "https://greasyfork\\.org/scripts/?"
+        ],
+        "exclude": [],
+        "code": "#script-list-option-groups{margin:0!important;float:none!important;width:100%!important;font-size:15px!important}#script-list-option-groups div{padding:4px 8px!important;margin-bottom:0!important;border-radius:0!important}#script-list-filter li,#script-list-filter ul,#script-list-sort li,#script-list-sort ul{display:inline-block!important}#script-list-filter li,#script-list-sort li{margin-right:10px!important}#script-list-filter ul{width:750px!important;vertical-align:top!important}#browse-script-list a{text-decoration:none!important;color:#00008b!important}#browse-script-list dl{max-width:100%!important;font-size:15px!important;margin:10px 0 15px!important}#browse-script-list li{border-bottom:2px dashed #333!important;margin-top:10px!important}"
+      },
+      {
+        "urls": [],
+        "urlPrefixes": [],
+        "domains": [],
+        "regexps": [
+          "https://greasyfork.org/scripts/.*/?"
+        ],
+        "exclude": [],
+        "code": "#script-links li{margin-bottom:0!important}#script-links li:not(first-child){margin-right:-5px!important}#script-links .current{position:static!important;padding:0!important}#script-links{border-bottom:1px solid #000}#script-content{border:none!important}#additional-info img{max-width:-moz-available!important}#additional-info div{background:0 0!important}#script-meta{padding-bottom:10px!important}#additional-info:not(:empty){border-top:2px dashed #333}"
+      },
+      {
+        "urls": [],
+        "urlPrefixes": [],
+        "domains": [],
+        "regexps": [
+          "https://greasyfork.org/scripts/[^\\/]+/code.*$"
+        ],
+        "exclude": [],
+        "code": "#script-content{border-top:none!important;margin-top:10px!important;padding-top:0!important;overflow-x:auto!important;width:960px!important;overflow-y:auto!important;height:660px!important;background:rgba(255,255,255,.5)!important;padding-left:0!important}#script-content pre{background:0 0!important;border-right:none!important}"
+      }
+    ],
+    "md5Url": "https://update.userstyles.org/101364.md5",
+    "url": "http://userstyles.org/styles/101364",
+    "originalMd5": "1dbc80d497b6f0ed6e5df426be5fea37",
+    "advanced": {
+      "item": {
+        "bi": {
+          "type": "dropdown",
+          "title": "Background Image",
+          "option": {
+            "y": {
+              "title": "Yes",
+              "value": "url(\"/*[[url]]*/\") fixed 100% 100%"
+            },
+            "n": {
+              "title": "No",
+              "value": ""
+            }
+          }
+        },
+        "url": {
+          "type": "image",
+          "title": "Background Image",
+          "option": {
+            "12": {
+              "title": "12.jpg",
+              "value": "http://1.su.bdimg.com/skin/12.jpg"
+            }
+          }
+        },
+        "bo": {
+          "type": "dropdown",
+          "title": "Background Opacity",
+          "option": {
+            "y": {
+              "title": "Yes",
+              "value": "background-color:rgba(255,255,255,.65);"
+            },
+            "n": {
+              "title": "No",
+              "value": "background-color:#FFF;"
+            }
+          }
+        }
+      },
+      "saved": {
+        "bi": "y",
+        "bo": "y",
+        "url": "12"
+      }
+    },
+    "autoUpdate": true,
+    "id": 61
   }
 ]

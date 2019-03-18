@@ -1,6 +1,6 @@
 {
     "createdBy": "Redirector v3.2.1",
-    "createdAt": "2019-03-17T05:12:34.196Z",
+    "createdAt": "2019-03-18T01:20:22.015Z",
     "redirects": [
         {
             "description": "去Google域名跳转",
@@ -45,7 +45,7 @@
             "patternDesc": "",
             "redirectUrl": "$1",
             "patternType": "W",
-            "processMatches": "noProcessing",
+            "processMatches": "urlDecode",
             "disabled": false,
             "appliesTo": [
                 "main_frame"
@@ -373,7 +373,7 @@
             ]
         },
         {
-            "description": "Blogspot原图",
+            "description": "Blogspot大图",
             "exampleUrl": "https://2.bp.blogspot.com/-7gM0HtyWcTM/WZj5K5HmN_I/AAAAAAAFk8c/Soi3yeHW1t0D7Dqd8Ymko8FhW2FhpNx-QCLcBGAs/s640/Sun-Shining-through-Clouds-on-Lake.jpg",
             "exampleResult": "https://2.bp.blogspot.com/-7gM0HtyWcTM/WZj5K5HmN_I/AAAAAAAFk8c/Soi3yeHW1t0D7Dqd8Ymko8FhW2FhpNx-QCLcBGAs/s0/Sun-Shining-through-Clouds-on-Lake.jpg",
             "error": null,
@@ -406,7 +406,7 @@
             ]
         },
         {
-            "description": "知乎原图",
+            "description": "知乎大图",
             "exampleUrl": "https://pic2.zhimg.com/v2-83beb31cf01a23d6ab01151731822195_b.png",
             "exampleResult": "https://pic2.zhimg.com/v2-83beb31cf01a23d6ab01151731822195.png",
             "error": null,
@@ -617,7 +617,7 @@
             ]
         },
         {
-            "description": "userstyles.org原图",
+            "description": "userstyles.org大图",
             "exampleUrl": "https://userstyles.org/style_screenshot_thumbnails/135507_after.png",
             "exampleResult": "https://userstyles.org/style_screenshots/135507_after.png",
             "error": null,
@@ -662,7 +662,7 @@
             "redirectUrl": "https://$1.taobao.com/item/$2",
             "patternType": "R",
             "processMatches": "noProcessing",
-            "disabled": true,
+            "disabled": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -672,13 +672,13 @@
             "exampleUrl": "https://item.taobao.com/item.htm?spm=a230r.1.14.23.13e1baaflTu6N0&id=541144334083&ns=1&abbucket=9&wwlight=cntaobao%E9%87%8D%E5%90%AF%E4%B9%8B%E5%90%8E-%7B541144334083%7D#detail",
             "exampleResult": "https://item.taobao.com/item.htm?id=541144334083",
             "error": null,
-            "includePattern": "https://item\\.taobao\\.com/item\\.htm\\?.+&(id=\\d+).+",
+            "includePattern": "https://item\\.taobao\\.com/item\\.htm\\?.*&(id=\\d+).*",
             "excludePattern": "",
             "patternDesc": "",
             "redirectUrl": "https://item.taobao.com/item.htm?$1",
             "patternType": "R",
             "processMatches": "noProcessing",
-            "disabled": true,
+            "disabled": false,
             "appliesTo": [
                 "main_frame"
             ]
