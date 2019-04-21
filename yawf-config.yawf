@@ -1,8 +1,8 @@
 {
-  "ua": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0",
+  "ua": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0",
   "yawf": "Yet Another Weibo Filter",
-  "ver": "3.7.489",
-  "gm": "Violentmonkey2.9.7",
+  "ver": "3.7.497",
+  "gm": "Violentmonkey2.10.4",
   "conf": {
     "weibo.tool.load_weibo_by_search": true,
     "weibo.tool.use_fast_creator": true,
@@ -465,6 +465,12 @@
     "weibo.tool.video_no_auto_next": true,
     "weibo.original.by_follower.enabled": false,
     "weibo.original.by_follower.fans": 10,
-    "weibo.original.by_follower": []
+    "weibo.original.by_follower": [],
+    "weibo.tool.use_built_in_video_player": true,
+    "weibo.other.jinli_forward": true,
+    "weibo.layoutHideWeiboLikePopup": true,
+    "weibo.tool.use_built_in_video_player.volume": 100,
+    "weibo.tool.use_built_in_video_player.memorize": false,
+    "weibo.tool.message_current_page": false
   }
 }

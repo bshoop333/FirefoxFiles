@@ -1,1 +1,0 @@
-{"domains":"3dmgame.com, bbs.ntrqq.net, ezhanzy.com, gter.net, nju.edu.cn, rr-sc.com, ss.onekeyinstall.com, vc52.cn, 52pojie.cn, bilibili.com, coolapk.com, coursera.org, feedly.com, getpocket.com, github.com, google.com, mozilla.org, v2ex.com, tailsocks.com, xda-developers.com, youtube.com"}
