@@ -1,7 +1,120 @@
 {
     "createdBy": "Redirector v3.2.1",
-    "createdAt": "2019-03-18T01:20:22.015Z",
+    "createdAt": "2019-06-19T05:15:42.810Z",
     "redirects": [
+        {
+            "description": "Old Primer3 Manual >> New Primer3 Manual",
+            "exampleUrl": "http://primer3.ut.ee/cgi-bin/primer3/primer3/primer3web_help.cgi#p3w_primer_any",
+            "exampleResult": "http://primer3.ut.ee/cgi-bin/primer3/primer3web_help.cgi#p3w_primer_any",
+            "error": null,
+            "includePattern": "http://primer3.ut.ee/cgi-bin/primer3/primer3/*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "http://primer3.ut.ee/cgi-bin/primer3/$1",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "去ResearchGate跳转",
+            "exampleUrl": "https://www.researchgate.net/deref/http%3A%2F%2Farabidopsis.org",
+            "exampleResult": "http://arabidopsis.org",
+            "error": null,
+            "includePattern": "https://www.researchgate.net/deref/*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "$1",
+            "patternType": "W",
+            "processMatches": "urlDecode",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "火猫专题H5",
+            "exampleUrl": "https://www.huomao.com/zt/asdf.html?room_number=666",
+            "exampleResult": "https://www.huomao.com/zt/asdf.html?room_number=666#h5player",
+            "error": null,
+            "includePattern": "^https?:\\/\\/www\\.huomao\\.com\\/zt\\/(\\w+)\\.html\\?room_number=(\\d+)(#achannel_select)?",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://www.huomao.com/zt/$1.html?room_number=$2#h5player",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "Max+大图",
+            "exampleUrl": "http://bbsimg.maxjia.com//bbs/imgs/2018/12/10/d363d7b7f82920ea4ea67a4b5ec14684?imageMogr2/thumbnail/500x500/format/webp",
+            "exampleResult": "http://bbsimg.maxjia.com//bbs/imgs/2018/12/10/d363d7b7f82920ea4ea67a4b5ec14684",
+            "error": null,
+            "includePattern": "http://bbsimg.maxjia.com//bbs/imgs/*?image*/thumbnail/*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "http://bbsimg.maxjia.com//bbs/imgs/$1",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "Opendota>chat",
+            "exampleUrl": "https://www.opendota.com/matches/3167402556",
+            "exampleResult": "https://www.opendota.com/matches/3167402556/chat",
+            "error": null,
+            "includePattern": "^(https://www.opendota.com/matches/\\d+)$",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "$1/chat",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "去Slack跳转",
+            "exampleUrl": "https://slack-redir.net/link?url=https%3A%2F%2Fwww.arabidopsis.org%2Fbrowse%2Fgenefamily%2FWRKY-Som.jsp&v=3",
+            "exampleResult": "https://www.arabidopsis.org/browse/genefamily/WRKY-Som.jsp",
+            "error": null,
+            "includePattern": "https://slack-redir\\.net/link\\?url=(.*)&v=\\d+",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "$1",
+            "patternType": "R",
+            "processMatches": "urlDecode",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "网易云音乐原封面缩小",
+            "exampleUrl": "http://p2.music.126.net/7CVutW_QhmFdKxXIFr4k6w==/6660841442107880.jpg",
+            "exampleResult": "http://p2.music.126.net/7CVutW_QhmFdKxXIFr4k6w==/6660841442107880.jpg?param=800y800",
+            "error": null,
+            "includePattern": "http://*.music.126.net/*.jpg",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "http://$1.music.126.net/$2.jpg?param=800y800",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": true,
+            "appliesTo": [
+                "main_frame",
+                "image"
+            ]
+        },
         {
             "description": "去Google域名跳转",
             "exampleUrl": "https://www.google.com.sg/",
@@ -578,29 +691,6 @@
             ]
         },
         {
-            "description": "微信图片http>>https",
-            "exampleUrl": "http://wx.qlogo.cn/mmhead/Q3auHgzwzM6m3oHDlAG50VCGgXic7Dib3seArJjkpiaSVZHJDFYD00S5Q/0",
-            "exampleResult": "https://wx.qlogo.cn/mmhead/Q3auHgzwzM6m3oHDlAG50VCGgXic7Dib3seArJjkpiaSVZHJDFYD00S5Q/0",
-            "error": null,
-            "includePattern": "http(://.+)(qpic\\.cn|qlogo\\.cn)(.+)",
-            "excludePattern": "",
-            "patternDesc": "",
-            "redirectUrl": "https$1$2$3",
-            "patternType": "R",
-            "processMatches": "noProcessing",
-            "disabled": false,
-            "appliesTo": [
-                "main_frame",
-                "sub_frame",
-                "stylesheet",
-                "script",
-                "image",
-                "object",
-                "xmlhttprequest",
-                "other"
-            ]
-        },
-        {
             "description": "去除504 GAEProxy",
             "exampleUrl": "https://ipv4.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dthermofisher%2Bwater%2Bbath%26ie%3Dutf-8%26oe%3Dutf-8&q=EgTdBiiwGLmY1skFIhkA8aeDSz324T7K52aD3GXEQSo-5Uz9THzKMgNyY24",
             "exampleResult": "https://www.google.com/search?q=thermofisher+water+bath&ie=utf-8&oe=utf-8",
@@ -645,7 +735,7 @@
             "redirectUrl": "$1$2",
             "patternType": "R",
             "processMatches": "noProcessing",
-            "disabled": false,
+            "disabled": true,
             "appliesTo": [
                 "main_frame",
                 "sub_frame"
@@ -662,7 +752,7 @@
             "redirectUrl": "https://$1.taobao.com/item/$2",
             "patternType": "R",
             "processMatches": "noProcessing",
-            "disabled": false,
+            "disabled": true,
             "appliesTo": [
                 "main_frame"
             ]
@@ -678,7 +768,7 @@
             "redirectUrl": "https://item.taobao.com/item.htm?$1",
             "patternType": "R",
             "processMatches": "noProcessing",
-            "disabled": false,
+            "disabled": true,
             "appliesTo": [
                 "main_frame"
             ]
