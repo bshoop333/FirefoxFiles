@@ -560,7 +560,7 @@
 			},
 			"matchType": "domain",
 			"isFunction": false,
-			"enable": true,
+			"enable": false,
 			"exclude": "",
 			"group": "User-Agent"
 		},
@@ -638,27 +638,13 @@
 			"enable": false,
 			"name": "Fix Google on Android Firefox",
 			"ruleType": "modifySendHeader",
-			"matchType": "domain",
-			"pattern": "www.google.com",
+			"matchType": "regexp",
+			"pattern": "^https://[^/]*\\.google\\.com/",
 			"exclude": "",
 			"isFunction": false,
 			"action": {
 				"name": "user-agent",
-				"value": "Mozilla/5.0 (Linux; Android 7.1.2; ONEPLUS A3000 Build/NJH47F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 YaBrowser/17.6.0.279.00 (beta) Mobile Safari/537.36"
-			},
-			"group": "Phone"
-		},
-		{
-			"enable": false,
-			"name": "修复百度知道在手机Firefox上的显示问题",
-			"ruleType": "modifySendHeader",
-			"matchType": "domain",
-			"pattern": "zhidao.baidu.com",
-			"exclude": "",
-			"isFunction": false,
-			"action": {
-				"name": "user-agent",
-				"value": "Mozilla/5.0 (Linux; Android 7.1.2; ONEPLUS A3000 Build/NJH47F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 YaBrowser/17.6.0.279.00 (beta) Mobile Safari/537.36"
+				"value": "Mozilla/5.0 (Linux; Android 7.1.2; ONEPLUS A3000 Build/NJH47F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3029.110 YaBrowser/17.6.0.279.00 (beta) Mobile Safari/537.36"
 			},
 			"group": "Phone"
 		},
@@ -719,20 +705,6 @@
 			"group": "Referer"
 		},
 		{
-			"enable": false,
-			"name": "风车动漫手机版免加载广告",
-			"ruleType": "modifySendHeader",
-			"matchType": "domain",
-			"pattern": "m.dm530.net",
-			"exclude": "",
-			"isFunction": false,
-			"action": {
-				"name": "user-agent",
-				"value": ""
-			},
-			"group": "User-Agent"
-		},
-		{
 			"enable": true,
 			"name": "halihali.tv",
 			"ruleType": "modifySendHeader",
@@ -747,7 +719,7 @@
 			"group": "User-Agent"
 		},
 		{
-			"enable": false,
+			"enable": true,
 			"name": "斗鱼视频",
 			"ruleType": "modifySendHeader",
 			"matchType": "regexp",
@@ -756,7 +728,7 @@
 			"isFunction": false,
 			"action": {
 				"name": "user-agent",
-				"value": "blackberry"
+				"value": "Windows / Chrome 70 [Desktop]: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3440.106 Safari/537.36"
 			},
 			"group": "User-Agent"
 		},
@@ -801,6 +773,34 @@
 				"value": ""
 			},
 			"group": "Referer"
+		},
+		{
+			"enable": true,
+			"name": "Wechat Pages",
+			"ruleType": "modifySendHeader",
+			"matchType": "prefix",
+			"pattern": "https://mp.weixin.qq.com/",
+			"exclude": "",
+			"group": "User-Agent",
+			"isFunction": false,
+			"action": {
+				"name": "user-agent",
+				"value": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36 MicroMessenger/6.5.2.501 NetType/WIFI WindowsWechat QBCore/3.43.1021.400 QQBrowser/9.0.2524.400"
+			}
+		},
+		{
+			"enable": true,
+			"name": "MIUI",
+			"ruleType": "modifySendHeader",
+			"matchType": "domain",
+			"pattern": "web.vip.miui.com",
+			"exclude": "",
+			"group": "User-Agent",
+			"isFunction": false,
+			"action": {
+				"name": "user-agent",
+				"value": "Android"
+			}
 		}
 	],
 	"receiveHeader": [

@@ -1,7 +1,24 @@
 {
     "createdBy": "Redirector v3.2.1",
-    "createdAt": "2019-06-19T05:15:42.810Z",
+    "createdAt": "2019-07-22T12:08:40.390Z",
     "redirects": [
+        {
+            "description": "内嵌bilibili播放器",
+            "exampleUrl": "https://player.bilibili.com/player.html?aid=56080261&cid=98027009&page=1",
+            "exampleResult": "https://www.bilibili.com/video/av56080261",
+            "error": null,
+            "includePattern": "https://player\\.bilibili\\.com/player\\.html\\?aid=(\\d+).*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://www.bilibili.com/video/av$1",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": true,
+            "appliesTo": [
+                "main_frame",
+                "sub_frame"
+            ]
+        },
         {
             "description": "Old Primer3 Manual >> New Primer3 Manual",
             "exampleUrl": "http://primer3.ut.ee/cgi-bin/primer3/primer3/primer3web_help.cgi#p3w_primer_any",
@@ -67,7 +84,7 @@
             ]
         },
         {
-            "description": "Opendota>chat",
+            "description": "Opendota>>chat",
             "exampleUrl": "https://www.opendota.com/matches/3167402556",
             "exampleResult": "https://www.opendota.com/matches/3167402556/chat",
             "error": null,
