@@ -1,0 +1,25 @@
+{
+  "autoCollapseExpandSubtreeOnAttach": false,
+  "autoCollapseExpandSubtreeOnSelect": false,
+  "configsVersion": 6,
+  "insertNewChildAt": -1,
+  "labelOverflowStyle": "crop",
+  "lastConfirmedToCloseTabs": 1563705362739,
+  "notifiedFeaturesVersion": 3,
+  "optionsExpandedGroups": [
+    "group-allConfigs"
+  ],
+  "optionsExpandedSections": [
+    "section-appearance",
+    "section-contextMenu",
+    "section-newTab",
+    "section-treeBehavior",
+    "section-drag",
+    "section-shortcuts",
+    "section-advanced",
+    "section-debug",
+    "section-addons"
+  ],
+  "skipCollapsedTabsForTabSwitchingShortcuts": true,
+  "userStyleRules": "/* Show title of unread tabs with red and italic font */\n.tab.unread .label {\n  font-style: italic;\n  color: red;\n}\n\n\n/* Add private browsing indicator per tab */\n.tab.private-browsing .label:before {\n  content: \"🕶\";\n}\n\n\n/* Necessary CSS for counting tabs */\n#tabbar {\n  counter-reset: vtabs atabs tabs;\n  /* vtabs tracks visible tabs, atabs tracks active tabs, tabs tracks all tabs */\n}\n.tab:not(.collapsed):not(.discarded) {\n  counter-increment: vtabs atabs tabs;\n}\n.tab:not(.collapsed) {\n  counter-increment: vtabs tabs;\n}\n.tab:not(.discarded) {\n  counter-increment: atabs tabs;\n}\n.tab {\n  counter-increment: tabs;\n}\n\n/* Numbering of tabs */\n.tab .extra-items-container {\n  z-index: unset !important;\n}\n.tab .extra-items-container::after {\n  color: blue;\n  content: counter(vtabs);\n  left: 0;\n  padding: 0.2em;\n  pointer-events: none;\n  position: absolute;\n  z-index: 1000;\n}\n\n/* Only show numbering on hovered tabs */\n.tab .extra-items-container::after {\n  opacity: 0;\n  transition: 0.2s;\n}\n.tab:hover .extra-items-container::after {\n  opacity: 1;\n}\n\n\n/* Necessary CSS for displaying numbering on new tab button */\n.newtab-button::after {\n  content: var(--tab-count-text);\n  pointer-events: none;\n    \n  position: absolute;\n  left: 0.5em;\n\n  /* TST 2.4.0 - Fix for Issue #1664 */\n  background: transparent !important;\n  mask: none !important;\n}\n\n/* Tab counts in new tab button */\n.newtab-button {\n  --tab-count-text: counter(tabs) \" tabs\";\n}\n.newtab-button {\n  --tab-count-text: counter(atabs) \"/\" counter(tabs) \" tabs\";\n}\n\n/* Put \"new tab\" button at the top of the tab bar */\n.newtab-button-box {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: 20px;\n}\n#tabbar {\n  top: 20px !important;\n  bottom: 0 !important;\n}\n.tab.pinned {\n  margin-top: 20px;\n}\n\n\n/* Only show tab close button on hover */\n.tab:not(:hover) .closebox {\n  display: none;\n}\n\n\n/* Close boxes style */\n.closebox::after {\n  content: \"❌\";\n  background: none;\n  line-height: 1;\n  mask: none;\n  text-align: center;\n  width: 1.5em;\n}\n\n/* Show scrollbar in the tab bar rightside */\n:root.left #tabbar {\n  direction: ltr;\n  overflow-x: hidden;\n}"
+}
