@@ -1,8 +1,8 @@
 {
-  "timestamp": "2018-10-13T10:07:25.993Z",
-  "fileName": "foxyGestures.2018-10-13.json",
+  "timestamp": "2019-08-29T07:53:51.491Z",
+  "fileName": "foxyGestures.2019-08-29.json",
   "addonId": "{e839c3f9-298e-4cd0-99e0-464431cb7c34}",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "settings": {
     "gestureTimeout": 2000,
     "statusTimeout": 2000,
@@ -93,15 +93,41 @@
         "command": "userScript",
         "gesture": "DL",
         "userScript": "userScript:1528426558672"
+      },
+      {
+        "command": "userScript",
+        "gesture": "DLU",
+        "userScript": "userScript:1545096581121"
+      },
+      {
+        "command": "userScript",
+        "gesture": "DLD",
+        "userScript": "userScript:1545096432327"
+      },
+      {
+        "command": "userScript",
+        "gesture": "RU",
+        "userScript": "userScript:1553486364135"
+      },
+      {
+        "command": "userScript",
+        "gesture": "RDL",
+        "userScript": "userScript:1554077516291"
       }
     ],
     "disableOnAlt": true,
     "disableOnShift": true,
     "canSelectStart": false,
-    "wheelGestures": false,
+    "wheelGestures": true,
     "wheelMappings": {
-      "up": null,
-      "down": null,
+      "up": {
+        "command": "userScript",
+        "userScript": "userScript:1566994119085"
+      },
+      "down": {
+        "command": "userScript",
+        "userScript": "userScript:1567048882299"
+      },
       "left": null,
       "right": null
     },
@@ -134,6 +160,11 @@
         "script": "window.location.href = \"http://webcache.googleusercontent.com/search?q=cache:\" + document.location.href;"
       },
       {
+        "id": "userScript:1554077516291",
+        "label": "Open Sci-Hub link",
+        "script": "window.location.href = \"https://sci-hub.tw/\" + document.location.href;"
+      },
+      {
         "id": "userScript:1510964165122",
         "label": "Copy the abbreive title and URL of curret page",
         "script": "let src = document.title.replace(/\\s-\\s.*/i,\"\").replace(/_[^\\[\\]【】]+$/,\"\") + \"\\n\" + decodeURIComponent(decodeURIComponent(document.location));\nif (src) {\n    // Create a text area with the value we want to copy.\n    let textarea = document.createElement(\"textarea\");\n    textarea.value = src;\n    \n    // Style textarea to make it fairly invisible.\n    // Copy doesn't work when display: none.\n    textarea.style.maxHeight = '2em';\n    textarea.style.maxWidth = '2em';\n    textarea.style.position = 'fixed';\n    textarea.style.top = 0;\n    textarea.style.left = 0;\n    textarea.style.padding = 0;\n    textarea.style.border = 'none';\n    textarea.style.outline = 'none';\n    textarea.style.boxShadow = 'none';\n    textarea.style.background = 'transparent';\n    \n    // Append the textarea, copy its value, then remove it.\n    document.body.appendChild(textarea);\n    textarea.select();\n    document.execCommand(\"copy\");\n    textarea.remove();\n    \n    // Update status text for gesture.\n    setStatus('Copied: ' + src);\n}"
@@ -149,14 +180,39 @@
         "script": "// Translate.google tooltip user script\npostMessage('tgtooltip auto|zh-CN','*')"
       },
       {
+        "id": "userScript:1528426526111",
+        "label": "下一页",
+        "script": "// var next_page_pattern = new RegExp('((下|后|後)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集|季)|next|newer|more|continue)(›|▶|→|>|»)*|(›|▶|→|>|»)+|点击进入');\nvar next_page_pattern = new RegExp('(下|后|後)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集|季)|next|newer|more|continue|点击进入');\nvar elements1 = document.getElementsByTagName('a');\nvar elements2 = document.getElementsByTagName('button');\nfor (var i=0; i<elements1.length; i++){\n    if(next_page_pattern.test(elements1[i].innerText.toLowerCase())){\n        elements1[i].click();\n        break;\n    }\n}\nfor (var i=0; i<elements2.length; i++){\n    if(next_page_pattern.test(elements2[i].innerText.toLowerCase())){\n        elements2[i].click();\n        break;\n    }\n}"
+      },
+      {
         "id": "userScript:1528426558672",
         "label": "上一页",
         "script": "// 以前的代码参考了https://greasyfork.org/en/scripts/368169-%E6%8C%89-%E9%94%AE%E8%87%AA%E5%8A%A8%E7%BF%BB%E9%A1%B5/code，现在的是自己的\n// var prev_page_pattern = new RegExp('(‹|◀|←|<|«)*((上|前)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集|季)|pre(v)?(ious)?|elder|older|before|back)|(‹|◀|←|<|«)+');\nvar prev_page_pattern = new RegExp('(上|前)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集|季)|pre(v)?(ious)?|elder|older|before|back');\nvar elements1 = document.getElementsByTagName('a');\nvar elements2 = document.getElementsByTagName('button');\nfor (var i=0; i<elements1.length; i++){\n    if(prev_page_pattern.test(elements1[i].innerText.toLowerCase())){\n        elements1[i].click();\n    }\n}\nfor (var i=0; i<element2s.length; i++){\n    if(prev_page_pattern.test(elements2[i].innerText.toLowerCase())){\n        elements2[i].click();\n    }\n}"
       },
       {
-        "id": "userScript:1528426526111",
-        "label": "下一页",
-        "script": "// var next_page_pattern = new RegExp('((下|后|後)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集|季)|next|newer|more|continue)(›|▶|→|>|»)*|(›|▶|→|>|»)+|点击进入');\nvar next_page_pattern = new RegExp('(下|后|後)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集|季)|next|newer|more|continue|点击进入');\nvar elements1 = document.getElementsByTagName('a');\nvar elements2 = document.getElementsByTagName('button');\nfor (var i=0; i<elements1.length; i++){\n    if(next_page_pattern.test(elements1[i].innerText.toLowerCase())){\n        elements1[i].click();\n        break;\n    }\n}\nfor (var i=0; i<elements2.length; i++){\n    if(next_page_pattern.test(elements2[i].innerText.toLowerCase())){\n        elements2[i].click();\n        break;\n    }\n}"
+        "id": "userScript:1545096432327",
+        "label": "后台自动排版",
+        "script": "// 全选\ndocument.querySelector('#edui50_body').click();\n// 清除格式\ndocument.querySelector('#edui16_body').click();\n// 自动排版\ndocument.querySelector('#edui18_button_body').click();"
+      },
+      {
+        "id": "userScript:1545096581121",
+        "label": "后台图注居中",
+        "script": "// 首行缩进\ndocument.querySelector('#edui119_body').click();\n// 自动排版\ndocument.querySelector('#edui122_body').click();\n"
+      },
+      {
+        "id": "userScript:1553486364135",
+        "label": "高亮关键词",
+        "script": "window.wrappedJSObject.EWH_iSearch();"
+      },
+      {
+        "id": "userScript:1566994119085",
+        "label": "URL数字+1",
+        "script": "window.location = window.location.href.replace(/(\\d+)(?=\\D*$)/, function(x) {\n    return ('000000' + (+x + 1)).slice(-1 * x.length)\n})"
+      },
+      {
+        "id": "userScript:1567048882299",
+        "label": "URL数字-1",
+        "script": "window.location = window.location.href.replace(/(\\d+)(?=\\D*$)/, function(x) {\n    return ('000000' + (+x - 1)).slice(-1 * x.length)\n})"
       }
     ],
     "sawXSSWarning": true,
