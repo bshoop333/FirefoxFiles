@@ -801,6 +801,20 @@
 				"name": "user-agent",
 				"value": "Android"
 			}
+		},
+		{
+			"enable": true,
+			"name": "百度网盘|Pan",
+			"ruleType": "modifySendHeader",
+			"matchType": "regexp",
+			"pattern": "(pandownload|baidupcs)\\.com",
+			"exclude": "",
+			"group": "User-Agent",
+			"isFunction": false,
+			"action": {
+				"name": "user-agent",
+				"value": "Opera/9.80 (Windows NT 6.0) Presto/2.12.388 Version/12.14"
+			}
 		}
 	],
 	"receiveHeader": [
@@ -814,13 +828,13 @@
 			},
 			"matchType": "regexp",
 			"isFunction": false,
-			"enable": true,
+			"enable": false,
 			"exclude": "twitchcdn\\.net|ttvnw\\.net|twitch\\.tv",
 			"group": "Ungrouped",
 			"_exclude": {}
 		},
 		{
-			"enable": true,
+			"enable": false,
 			"name": "Cloud Front Audio",
 			"ruleType": "modifyReceiveHeader",
 			"matchType": "regexp",
