@@ -1,32 +1,44 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* 显示标签栏与导航栏间的横线 */
-/*.tabbrowser-tab[visuallyselected="true"] {
-    position: unset;
-}*/
+#main-window[sizemode="maximized"] .titlebar-spacer {
+    display:none;
+}
 
-/* 隐藏标签栏上那条蓝线 */
-/*.tab-line {
-    display: none !important;
-}*/
+/* Pin bookmarks on urlbar completion results */
+/* useless code */
+/*#urlbarView-results {
+    display: -moz-box !important;
+    -moz-box-orient: vertical !important;
+}
+#urlbarView-results > div[type="switchtab"] {
+    -moz-box-ordinal-group: 0 !important;
+    color: orange !important;
+}
+#urlbarView-results > div[type="bookmark"] {
+    -moz-box-ordinal-group: 1 !important;
+    color: green !important;
+}
+#urlbarView-results > div:not([type]) {
+    -moz-box-ordinal-group: 2 !important;
+    color: red !important;
+}
+#urlbarView-results > div[type="search"] {
+    -moz-box-ordinal-group: 3 !important;
+    color: purple !important;
+}
+*/
 
 /* 全屏时隐藏tooltip信息 */
 #main-window[sizemode="fullscreen"] #statuspanel{
     display: none !important;
 }
 
-/* 隐藏Pocket图标 */
-/*#pocket-button-box {
-    display: none;
-}
-*/
-
 /* Color User Agent Switcher Icon */
 #user-agent-switcher_ninetailed_ninja-browser-action[label="User-Agent Switcher – Disabled"] {
-    list-style-image: url('moz-extension://7af92ec5-f97b-457e-8325-aa7da955e7c9/assets/icon.svg') !important;
+    list-style-image: url('moz-extension://1a5c2c5f-f896-42de-8414-7e23c941e11c/assets/icon.svg') !important;
 }
 
-/******************************** Firefox Tabs Counter **************************************/
+/**************************** Firefox Tabs Counter ****************************/
 #main-window {
     counter-reset: tabs;
 }
@@ -35,21 +47,17 @@
 }
 #alltabs-button {
     visibility: visible !important;
-    margin-right: -30px !important;
 }
-/*#alltabs-button .toolbarbutton-badge-stack {
-    display: none;
-}*/
 #alltabs-button:after {
     content: counter(tabs);
     display: -moz-box;
 }
-/*#alltabs-button> :-moz-any(label, image) {
+#alltabs-button> :-moz-any(label, image) {
     display: none;
 }
-*/
 
-/******************************** Interface Adjustment **************************************/
+
+/************************** Interface Adjustment *****************************/
 /* 双行滚动书签栏 */
 /*#PlacesToolbarItems{
     margin-top: 7px !important;
@@ -60,10 +68,6 @@
     float: left !important;
 }*/
 
-/* Show close buttons when hovering on inactive tabs */
-tab:hover .close-icon {
-    display: block !important;
-}
 
 /* 标签页载入动画图标 */
 /* .tab-throbber {visibility: hidden;} */
@@ -83,19 +87,9 @@ tab:not([selected]) .close-icon {
     display: none;
 }
 
-/* Hide Page Action Button */
-#pageActionButton {
-    display: none;
-}
-
-/* Hide PanelUI Button */
-#PanelUI-button {
-    display: none;
-}
-
-/* Hide History AutoDelete Counters */
-#_7e79d10d-9667-4d38-838d-471281c568c3_-browser-action>stack>label {
-    display: none;
+/* Show close buttons when hovering on inactive tabs */
+tab:not([pinned]):hover .close-icon {
+    display: block !important;
 }
 
 /* hide triangles */
@@ -104,18 +98,18 @@ toolbarbutton dropmarker {
     display: none;
 }
 
-/*===================菜单调整=====================*/
-/* Hide Horizontal Menu */
+/*=================== Menu Adjustments =====================*/
+/* Horizontal Menu */
 #context-navigation {
     display: none;
 }
 
-/*去可能导致误操作的菜单*/
+/* Remove items that are prone to change webpages */
 #context-showonlythisframe {
     display: none;
 }
 
-/* Hide Invalid Menu Items */
+/* Invalid Menu Items */
 #contentAreaContextMenu menuitem[disabled="true"] {
     display: none !important;
 }
@@ -124,17 +118,12 @@ toolbarbutton dropmarker {
 #context-sendpagetodevice,
 #context-pocket,
 #context-savepage,
-#context-selectall,
-#context-viewpartialsource-selection,
-#xnotifier-bookmark,
-#uacontrol_options,
-#FavIconReloader {
+#context-selectall {
     display: none;
 }
 
 /* link menu */
 #context-sendlinktodevice,
-#context-savelinktopocket,
 #context-openlink,
 #context-openlinkintab,
 #context-savelink,
@@ -144,16 +133,13 @@ toolbarbutton dropmarker {
 
 /* image menu */
 #context-saveimage,
-/*#context-setDesktopBackground,*/
 #context-sendimage {
     display: none;
 }
 
 /* tab menu */
-#mafMenuSaveTabsInArchive_tabsContextMenu,
-#context_openTabInWindow，#context_reloadTab,
+#context_openTabInWindow,
 #context_reloadTab,
-#context_undoCloseTab,
 #context_openTabInWindow {
     display: none;
 }
@@ -164,16 +150,8 @@ toolbarbutton dropmarker {
     display: none;
 }
 
-/* video player menu */
-#context-media-pause,
-#context-media-mute,
-#context-media-unmute,
-#context-media-hidecontrols {
-    display: none;
-}
 
 /* Hide all seperators */
 menuseparator {
     display: none;
 }
-
