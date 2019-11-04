@@ -1,6 +1,6 @@
 {
-  "timestamp": "2019-08-29T07:53:51.491Z",
-  "fileName": "foxyGestures.2019-08-29.json",
+  "timestamp": "2019-11-04T03:17:48.995Z",
+  "fileName": "foxyGestures.2019-11-04.json",
   "addonId": "{e839c3f9-298e-4cd0-99e0-464431cb7c34}",
   "version": "1.2.4",
   "settings": {
@@ -118,7 +118,7 @@
     "disableOnAlt": true,
     "disableOnShift": true,
     "canSelectStart": false,
-    "wheelGestures": true,
+    "wheelGestures": false,
     "wheelMappings": {
       "up": {
         "command": "userScript",
@@ -131,27 +131,33 @@
       "left": null,
       "right": null
     },
-    "chordGestures": false,
+    "chordGestures": true,
     "chordMappings": [
       {
         "chord": [
           0,
           2
         ],
-        "mapping": null
+        "mapping": {
+          "command": "userScript",
+          "userScript": "userScript:1566994119085"
+        }
       },
       {
         "chord": [
           2,
           0
         ],
-        "mapping": null
+        "mapping": {
+          "command": "userScript",
+          "userScript": "userScript:1567048882299"
+        }
       }
     ],
     "userScripts": [
       {
         "id": "userScript:1510715985291",
-        "label": "繁化简",
+        "label": "T2S",
         "script": "var ele = document.createElement('script');\nele.src = 'https://rawgit.com/YandLiu/Userscripts/master/t2s%20Chinese%20by%20XinTongwentang.user.js';\ndocument.body.appendChild(ele);"
       },
       {
@@ -172,7 +178,7 @@
       {
         "id": "userScript:1511271040977",
         "label": "Copy the title and URL of curret page",
-        "script": "let src = document.title;\nsrc = src + '\\n' + decodeURIComponent(decodeURIComponent(document.location));\nif (src) {\n    // Create a text area with the value we want to copy.\n    let textarea = document.createElement(\"textarea\");\n    textarea.value = src;\n    \n    // Style textarea to make it fairly invisible.\n    // Copy doesn't work when display: none.\n    textarea.style.maxHeight = '2em';\n    textarea.style.maxWidth = '2em';\n    textarea.style.position = 'fixed';\n    textarea.style.top = 0;\n    textarea.style.left = 0;\n    textarea.style.padding = 0;\n    textarea.style.border = 'none';\n    textarea.style.outline = 'none';\n    textarea.style.boxShadow = 'none';\n    textarea.style.background = 'transparent';\n    \n    // Append the textarea, copy its value, then remove it.\n    document.body.appendChild(textarea);\n    textarea.select();\n    document.execCommand(\"copy\");\n    textarea.remove();\n    \n    // Update status text for gesture.\n    setStatus('Copied: ' + src);\n}"
+        "script": "let src = document.title + '\\n' + decodeURIComponent(decodeURIComponent(document.location));\nif (src) {\n    // Create a text area with the value we want to copy.\n    let textarea = document.createElement(\"textarea\");\n    textarea.value = src;\n    \n    // Style textarea to make it fairly invisible.\n    // Copy doesn't work when display: none.\n    textarea.style.maxHeight = '2em';\n    textarea.style.maxWidth = '2em';\n    textarea.style.position = 'fixed';\n    textarea.style.top = 0;\n    textarea.style.left = 0;\n    textarea.style.padding = 0;\n    textarea.style.border = 'none';\n    textarea.style.outline = 'none';\n    textarea.style.boxShadow = 'none';\n    textarea.style.background = 'transparent';\n    \n    // Append the textarea, copy its value, then remove it.\n    document.body.appendChild(textarea);\n    textarea.select();\n    document.execCommand(\"copy\");\n    textarea.remove();\n    \n    // Update status text for gesture.\n    setStatus('Copied: ' + src);\n}"
       },
       {
         "id": "userScript:1513044895327",
@@ -181,12 +187,12 @@
       },
       {
         "id": "userScript:1528426526111",
-        "label": "下一页",
+        "label": "Next Page",
         "script": "// var next_page_pattern = new RegExp('((下|后|後)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集|季)|next|newer|more|continue)(›|▶|→|>|»)*|(›|▶|→|>|»)+|点击进入');\nvar next_page_pattern = new RegExp('(下|后|後)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集|季)|next|newer|more|continue|点击进入');\nvar elements1 = document.getElementsByTagName('a');\nvar elements2 = document.getElementsByTagName('button');\nfor (var i=0; i<elements1.length; i++){\n    if(next_page_pattern.test(elements1[i].innerText.toLowerCase())){\n        elements1[i].click();\n        break;\n    }\n}\nfor (var i=0; i<elements2.length; i++){\n    if(next_page_pattern.test(elements2[i].innerText.toLowerCase())){\n        elements2[i].click();\n        break;\n    }\n}"
       },
       {
         "id": "userScript:1528426558672",
-        "label": "上一页",
+        "label": "Previous Page",
         "script": "// 以前的代码参考了https://greasyfork.org/en/scripts/368169-%E6%8C%89-%E9%94%AE%E8%87%AA%E5%8A%A8%E7%BF%BB%E9%A1%B5/code，现在的是自己的\n// var prev_page_pattern = new RegExp('(‹|◀|←|<|«)*((上|前)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集|季)|pre(v)?(ious)?|elder|older|before|back)|(‹|◀|←|<|«)+');\nvar prev_page_pattern = new RegExp('(上|前)一?(页|頁|张|張|话|話|回|篇|节|章|卷|本|集|季)|pre(v)?(ious)?|elder|older|before|back');\nvar elements1 = document.getElementsByTagName('a');\nvar elements2 = document.getElementsByTagName('button');\nfor (var i=0; i<elements1.length; i++){\n    if(prev_page_pattern.test(elements1[i].innerText.toLowerCase())){\n        elements1[i].click();\n    }\n}\nfor (var i=0; i<element2s.length; i++){\n    if(prev_page_pattern.test(elements2[i].innerText.toLowerCase())){\n        elements2[i].click();\n    }\n}"
       },
       {
@@ -201,17 +207,17 @@
       },
       {
         "id": "userScript:1553486364135",
-        "label": "高亮关键词",
+        "label": "Highlight Keywords",
         "script": "window.wrappedJSObject.EWH_iSearch();"
       },
       {
         "id": "userScript:1566994119085",
-        "label": "URL数字+1",
+        "label": "URL Number +1",
         "script": "window.location = window.location.href.replace(/(\\d+)(?=\\D*$)/, function(x) {\n    return ('000000' + (+x + 1)).slice(-1 * x.length)\n})"
       },
       {
         "id": "userScript:1567048882299",
-        "label": "URL数字-1",
+        "label": "URL Number -1",
         "script": "window.location = window.location.href.replace(/(\\d+)(?=\\D*$)/, function(x) {\n    return ('000000' + (+x - 1)).slice(-1 * x.length)\n})"
       }
     ],
@@ -223,7 +229,7 @@
     "newWindowUrl": null,
     "newPrivateWindowUrl": null,
     "useRelPrevNext": true,
-    "insertRelatedTab": true,
+    "insertRelatedTab": false,
     "zoomStep": 0.1,
     "activeTabAfterClose": "default",
     "statusTemplate": "<div style=\"all: initial; display: block; position: fixed; bottom: 0; right: 0; z-index: 2147483647\">\r\n  <div style=\"all: initial; background: #fff; border: 1px solid #ccc; color: #333; font-family: sans-serif; font-size: 12px; padding: 2px\" data-mg-status></div>\r\n</div>"
