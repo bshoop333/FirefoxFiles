@@ -1,6 +1,6 @@
 {
-  "timestamp": "2019-11-04T03:17:48.995Z",
-  "fileName": "foxyGestures.2019-11-04.json",
+  "timestamp": "2019-11-21T08:11:12.054Z",
+  "fileName": "foxyGestures.2019-11-21.json",
   "addonId": "{e839c3f9-298e-4cd0-99e0-464431cb7c34}",
   "version": "1.2.4",
   "settings": {
@@ -131,7 +131,7 @@
       "left": null,
       "right": null
     },
-    "chordGestures": true,
+    "chordGestures": false,
     "chordMappings": [
       {
         "chord": [
