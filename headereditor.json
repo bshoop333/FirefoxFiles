@@ -556,11 +556,11 @@
 			"pattern": "note.youdao.com",
 			"action": {
 				"name": "user-agent",
-				"value": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.81 Safari/537.36"
+				"value": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3029.81 Safari/537.36"
 			},
 			"matchType": "domain",
 			"isFunction": false,
-			"enable": false,
+			"enable": true,
 			"exclude": "",
 			"group": "User-Agent"
 		},
@@ -807,13 +807,41 @@
 			"name": "百度网盘|Pan",
 			"ruleType": "modifySendHeader",
 			"matchType": "regexp",
-			"pattern": "(pandownload|baidupcs)\\.com",
+			"pattern": "(pandownload|baidupcs|baiduwp)\\.com",
 			"exclude": "",
 			"group": "User-Agent",
 			"isFunction": false,
 			"action": {
 				"name": "user-agent",
 				"value": "Opera/9.80 (Windows NT 6.0) Presto/2.12.388 Version/12.14"
+			}
+		},
+		{
+			"enable": false,
+			"name": "Netease Email",
+			"ruleType": "modifySendHeader",
+			"matchType": "regexp",
+			"pattern": "mail\\.126\\.com",
+			"exclude": "",
+			"group": "User-Agent",
+			"isFunction": false,
+			"action": {
+				"name": "user-agent",
+				"value": "Mozilla/5.0 (Android 9.0; Tablet; rv:68.0) Gecko/68.0 Firefox/68.0"
+			}
+		},
+		{
+			"enable": true,
+			"name": "Panc",
+			"ruleType": "modifySendHeader",
+			"matchType": "domain",
+			"pattern": "www.panc.cc",
+			"exclude": "",
+			"group": "Referer",
+			"isFunction": false,
+			"action": {
+				"name": "referer",
+				"value": "https://www.panc.cc/"
 			}
 		}
 	],
