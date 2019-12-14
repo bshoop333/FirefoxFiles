@@ -1,7 +1,40 @@
 {
     "createdBy": "Redirector v3.2.1",
-    "createdAt": "2019-07-22T12:08:40.390Z",
+    "createdAt": "2019-12-14T01:21:09.344Z",
     "redirects": [
+        {
+            "description": "Twitter High Resolution Image",
+            "exampleUrl": "https://pbs.twimg.com/media/EHdwT_AU4AA-TXj?format=jpg&name=orig",
+            "exampleResult": "https://pbs.twimg.com/media/EHdwT_AU4AA-TXj?format=png&name=4096x4096",
+            "error": null,
+            "includePattern": "https://pbs.twimg.com/media/*?format=jpg&name=orig",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://pbs.twimg.com/media/$1?format=png&name=4096x4096",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": true,
+            "appliesTo": [
+                "main_frame",
+                "image"
+            ]
+        },
+        {
+            "description": "百度网盘>>Pan",
+            "exampleUrl": "https://pan.baidu.com/s/1CC_SMRVAqYH7EiBbo4Vmew",
+            "exampleResult": "https://pan.baiduwp.com/s/1CC_SMRVAqYH7EiBbo4Vmew",
+            "error": null,
+            "includePattern": "https?://pan\\.baidu\\.com/(s/.+)",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://pan.baiduwp.com/$1",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": true,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
         {
             "description": "内嵌bilibili播放器",
             "exampleUrl": "https://player.bilibili.com/player.html?aid=56080261&cid=98027009&page=1",

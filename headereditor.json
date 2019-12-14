@@ -905,16 +905,16 @@
 		},
 		{
 			"enable": true,
-			"name": "Unblock CSP",
+			"name": "Modify CSP",
 			"ruleType": "modifyReceiveHeader",
-			"matchType": "all",
-			"pattern": "",
+			"matchType": "domain",
+			"pattern": "mp.weixin.qq.com",
 			"exclude": "",
 			"group": "Ungrouped",
 			"isFunction": false,
 			"action": {
 				"name": "content-security-policy",
-				"value": "connect-src 'self' https://vm.gtimg.cn/;"
+				"value": "frame-src https://v.qq.com ;"
 			}
 		}
 	]
