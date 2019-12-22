@@ -1,4 +1,4 @@
-MY_SITEINFO = [
+[
   // url, nextLink, pageElement are necessary elements
   {
     "name": "¿´Âþ»­",
@@ -54,7 +54,18 @@ MY_SITEINFO = [
     "pageElement": "//div[@class=\"left2\"]",
     "insertBefore": "//div[@class=\"epages\"]",
     "exampleUrl": "http://life.china.com.cn/news/"
-  }
+  },
+  {
+     name: "KuKu¶¯Âþ",
+     url: /^https?:\/\/comic\.(ikkdm|kukudm)\.com\/comiclist\/\d+\/\d+.*\.htm/i,
+     exampleUrl: "http://comic.ikkdm.com/comiclist/4/17099/3.htm",
+     useiframe: true,
+     nextLink: '//a[img[contains(@src,"images/d.gif")]]',
+     autopager: {
+       useiframe: true,
+       pageElement: "//body/table[2]"
+     }
+   },
 ];
 
 // MICROFORMAT ÅäÁÐ¤Ë SITEINFO ¤òÓ›Êö¤¹¤ë
