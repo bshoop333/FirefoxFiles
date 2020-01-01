@@ -1,7 +1,24 @@
 {
-    "createdBy": "Redirector v3.2.1",
-    "createdAt": "2019-12-14T01:21:09.344Z",
+    "createdBy": "Redirector v3.5.2",
+    "createdAt": "2020-01-01T01:13:23.641Z",
     "redirects": [
+        {
+            "description": "豆瓣移动版>>PC版",
+            "exampleUrl": "https://m.douban.com/music/subject/2075636/",
+            "exampleResult": "https://douban.com/music/subject/2075636/",
+            "error": null,
+            "includePattern": "https://m.douban.com/*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://douban.com/$1",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame",
+                "stylesheet"
+            ]
+        },
         {
             "description": "Twitter High Resolution Image",
             "exampleUrl": "https://pbs.twimg.com/media/EHdwT_AU4AA-TXj?format=jpg&name=orig",
