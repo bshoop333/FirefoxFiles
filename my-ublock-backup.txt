@@ -1,5 +1,5 @@
 {
-  "timeStamp": 1578049246471,
+  "timeStamp": 1578050580346,
   "version": "1.24.2",
   "userSettings": {
     "advancedUserEnabled": true,
@@ -10,7 +10,7 @@
     "colorBlindFriendly": false,
     "contextMenuEnabled": true,
     "dynamicFilteringEnabled": true,
-    "externalLists": "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt\nhttps://raw.githubusercontent.com/jspenguin2017/uBlockProtector/master/uBlockProtectorList.txt\nhttps://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt\nhttps://www.i-dont-care-about-cookies.eu/abp/",
+    "externalLists": "https://gitcdn.xyz/repo/NanoAdblocker/NanoFilters/master/NanoFilters/NanoBase.txt\nhttps://gitcdn.xyz/repo/NanoAdblocker/NanoFilters/master/NanoFilters/NanoWhitelist.txt\nhttps://gitcdn.xyz/repo/NanoAdblocker/NanoFilters/master/NanoMirror/NanoDefender.txt\nhttps://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt\nhttps://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt\nhttps://www.i-dont-care-about-cookies.eu/abp/",
     "firewallPaneMinimized": true,
     "hyperlinkAuditingDisabled": true,
     "ignoreGenericCosmeticFilters": false,
@@ -44,10 +44,12 @@
     "fanboy-thirdparty_social",
     "fanboy-annoyance",
     "CHN-0",
-    "https://raw.githubusercontent.com/jspenguin2017/uBlockProtector/master/uBlockProtectorList.txt",
     "https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt",
     "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt",
-    "https://www.i-dont-care-about-cookies.eu/abp/"
+    "https://www.i-dont-care-about-cookies.eu/abp/",
+    "https://gitcdn.xyz/repo/NanoAdblocker/NanoFilters/master/NanoMirror/NanoDefender.txt",
+    "https://gitcdn.xyz/repo/NanoAdblocker/NanoFilters/master/NanoFilters/NanoBase.txt",
+    "https://gitcdn.xyz/repo/NanoAdblocker/NanoFilters/master/NanoFilters/NanoWhitelist.txt"
   ],
   "hiddenSettings": {
     "allowGenericProceduralFilters": true,
