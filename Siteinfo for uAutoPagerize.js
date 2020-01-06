@@ -80,7 +80,6 @@
     url: "^https?://[^/]+\\.douban\\.com/tag/.*",
     exampleUrl: "https://music.douban.com/tag/Beethoven",
     nextLink: "//a[contains(text(),'บ๓าณ')]",
-    pageElement: "css;div#subject_list",
-    insertBefore: "//div[@class='paginator']"
+    pageElement: "css;div#subject_list"
   }
 ];
