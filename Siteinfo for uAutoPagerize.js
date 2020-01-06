@@ -67,13 +67,20 @@
     exampleUrl: "http://blog.sina.com.cn/s/articlelist_1343656690_0_1.html",
     nextLink: "//li[@class='SG_pgnext']/a",
     pageElement: "//div[@class='articleList']"
+  },
+  {
+    name: "豆瓣艺术家的全部唱片",
+    url: "^https?://[^/]+\\.douban\\.com/.*\\?.*",
+    exampleUrl: "https://music.douban.com/musician/106006/albums?sortby=vote&format=pic",
+    nextLink: "//a[contains(text(),'后页')]",
+    pageElement: "//div[@class='grid_view']//ul"
+  },
+  {
+    name: "豆瓣标签",
+    url: "^https?://[^/]+\\.douban\\.com/tag/.*",
+    exampleUrl: "https://music.douban.com/tag/Beethoven",
+    nextLink: "//a[contains(text(),'后页')]",
+    pageElement: "css;div#subject_list",
+    insertBefore: "//div[@class='paginator']"
   }
 ];
-
-// MICROFORMAT 配列に SITEINFO を記述する
-// Wedata に登録された SITEINFO より後にチェックされる
-MICROFORMAT = [{
-  url: '^http://example\\.com/',
-  nextLink: 'id("nextPage")',
-  pageElement: '//div[@class="entry"]',
-}];
