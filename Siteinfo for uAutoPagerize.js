@@ -69,6 +69,12 @@
     pageElement: "//div[@class='articleList']"
   },
   {
+    name: "豆瓣",
+    url: "^https://www\\.douban\\.com/",
+    nextLink: "//a[contains(text(),'后页')]",
+    pageElement: "//div[@class='stream-items']"
+  },
+  {
     name: "豆瓣艺术家的全部唱片",
     url: "^https?://[^/]+\\.douban\\.com/.*\\?.*",
     exampleUrl: "https://music.douban.com/musician/106006/albums?sortby=vote&format=pic",
@@ -81,5 +87,12 @@
     exampleUrl: "https://music.douban.com/tag/Beethoven",
     nextLink: "//a[contains(text(),'后页')]",
     pageElement: "css;div#subject_list"
+  },
+  {
+    name: "yeeyi",
+    url: "^https?://www\\.yeeyi\\.com/forum/.*",
+    nextLink: "//a[text()=\"下一页\"]",
+    pageElement: "//div[@id=\"qtcShow\"]",
+    exampleUrl: "http://www.yeeyi.com/forum/index.php?app=forum&act=display&fid=142&renttype1=4"
   }
 ];
