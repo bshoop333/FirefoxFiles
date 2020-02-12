@@ -1,7 +1,41 @@
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+/* find bar */
+.browserContainer findbar {
+    -moz-box-ordinal-group: 0;
+    position: fixed !important;
+    right: 20px;
+    margin-top: -1px !important;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.25) !important;
+    border: 1px solid #a7a9aa !important;
+    border-top: none !important;
+    border-radius: 0 0 3px 3px;
+    transition-property: margin-top, opacity, visibility !important;
+    display: flex !important;
+    z-index: 999 !important;
+}
+
+/* Blur the url bar list */
+/*@-moz-document url("chrome://browser/content/browser.xhtml") {
+    #urlbar.megabar[breakout]:not([breakout-extend])[open],
+    #urlbar.megabar[breakout-extend]>#urlbar-background,
+    .urlbarView:not(.megabar) {
+        background: rgba(255, 255, 255, 0.8) !important;
+        backdrop-filter: blur(4px);
+    }
+    #urlbar.megabar[breakout]:not([breakout-extend])[open]:-moz-lwtheme-brighttext,
+    #urlbar.megabar[breakout-extend]:-moz-lwtheme-brighttext>#urlbar-background,
+    .urlbarView:not(.megabar):-moz-lwtheme-brighttext {
+        background: rgba(42, 42, 46, 0.8) !important;
+    }
+}*/
 
 #main-window[sizemode="maximized"] .titlebar-spacer {
-    display:none;
+    display: none;
+}
+
+/************************* hide badges *************************/
+/* redirector */
+#redirector_einaregilsson_com-browser-action .toolbarbutton-badge {
+    display: none;
 }
 
 /* Pin bookmarks on urlbar completion results */
@@ -29,13 +63,24 @@
 */
 
 /* 全屏时隐藏tooltip信息 */
-#main-window[sizemode="fullscreen"] #statuspanel{
+#main-window[sizemode="fullscreen"] #statuspanel {
     display: none !important;
 }
 
 /* Color User Agent Switcher Icon */
 #user-agent-switcher_ninetailed_ninja-browser-action[label="User-Agent Switcher – Disabled"] {
-    list-style-image: url('moz-extension://1a5c2c5f-f896-42de-8414-7e23c941e11c/assets/icon.svg') !important;
+    list-style-image: url("moz-extension://1a5c2c5f-f896-42de-8414-7e23c941e11c/assets/icon.svg") !important;
+}
+
+/* Change Unblock Youku Icon */
+#_bfce6844-0d42-4209-a2fd-e32029491567_-browser-action .toolbarbutton-badge {
+    display: none;
+}
+#_bfce6844-0d42-4209-a2fd-e32029491567_-browser-action[label="Unblock Youku (OFF)"] {
+    list-style-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAACXBIWXMAAC4jAAAuIwF4pT92AAAF+mlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDUgNzkuMTYzNDk5LCAyMDE4LzA4LzEzLTE2OjQwOjIyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoV2luZG93cykiIHhtcDpDcmVhdGVEYXRlPSIyMDE5LTExLTMwVDE0OjIyOjE2KzExOjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAxOS0xMS0zMFQxNDozMjoyNysxMTowMCIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAxOS0xMS0zMFQxNDozMjoyNysxMTowMCIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIHBob3Rvc2hvcDpJQ0NQcm9maWxlPSJzUkdCIElFQzYxOTY2LTIuMSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0MjU3ZGE2My0wZDBlLWFkNDMtODc0NS02NmRmNzA4YjhlNTQiIHhtcE1NOkRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpiZjRhNTEzZC01NDAyLTkzNDEtOTJmYS0xNTEzMzA5N2UwZjciIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoxNTA2ZDdjMi02NTk0LTRmNDAtYjI1Ny1mNDZjYTU2YWFhNWMiPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjcmVhdGVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjE1MDZkN2MyLTY1OTQtNGY0MC1iMjU3LWY0NmNhNTZhYWE1YyIgc3RFdnQ6d2hlbj0iMjAxOS0xMS0zMFQxNDoyMjoxNisxMTowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKFdpbmRvd3MpIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo0MjU3ZGE2My0wZDBlLWFkNDMtODc0NS02NmRmNzA4YjhlNTQiIHN0RXZ0OndoZW49IjIwMTktMTEtMzBUMTQ6MzI6MjcrMTE6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE5IChXaW5kb3dzKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6c4fWGAAAEQElEQVQ4jX2SfUyVZRjGf8973vMFHM4BBIFwyqcSZGuo4NQwF4qmbtaynMPKPuZaTddqWlups5VztVyS86OWqU1Xqc3ShREVOdFSEWiAgoC2OoB8Hs457+E95zxPf1SuhHX9e9/377523be43m+iAH9EoqQEguR4RrBbQRf+JBXte14aoT5pdPuRkULdPX2zsKWGpK8LFQmBcwpCSZTpQ+dOCQ0R6MPX1rhi2Nu+zWZeK3DfuorVHhsyHDaHSMl42Dl1wR5rfOYuNN1U/x79x1kgIrHrGu093bN+qD67q/6mZdagdCKsOpmih4r+Y9zPRYKeBOSkZNwzS5tjMotfUXH5p0XURJk+REe/SR/vYlMv5dS09G757Ez76tGwQAjF3PxEpqbFU3ttmCveEBtu7eex3uMYTgvDS5aQkpKAK3vGur0/Hdl76cINNENG8Rsvln988bcLh061rlZSooiwZl4Gm5bn4YnRqayYxvwsJ/sSV3GVPIYzi/CmVdAet5Cr9d/vXjtrzSIhQPzs9d1V2xuqP3iyNdnpH0Wz64RGo3y0rohz1/qxWy1MiLcTjko2fXmTDcZRpi0pJxz+Ky2HUxBva1TXOweWak6r2NLWbySbgTC6RYACiaL5dx8LCpMZDoYpyUmgoWsIXUBu+YLbIICQoej15YmRpsvb9EtD5vKajiESlURZdObdPUCKxUZlVQdPlk6mJC+JPdWdVNV388LMIDJqHfMAdV+/w9Opo2l6lddIGeoPkgQ8eM8QJXF2lBJsKDbY/m0HSkos0SiZ6YJsh2UMyIh4mXyuFVWQJ7WQFJgjo6yYEaA41oZSAgCXUGx9wMSloqBZWJsfHQMCOL9/C8UxDowuGavH6lr40cKb1sKYpDGNelSxcZEkYkYAbUz91/Z9lIXDuDQdM0bGaAWxlp1VdX/gs7aNu1kzBbZxQEoLEP78LLkJOvQqLFM8hjY72X5E5pTx5jfJdITOjgscT3XV77MoBixohDwRHHOLe7Qsp2h4Znb6zoQ5czh0pZRjLYcRlsj/gvw0kj/gwG3XMEdNwkVpA66SshVaSOmyPD1uR26Krc2SNpHqG6vZcfJThDU0liIUQkiaTpymMC6KpiSGy4N67q3Dza4Zfk2qMAP1td6H0u0bJ2a6cU/LoMP2FK9VnkGzG3cEJejo/orZQR/Wlsu0DrpoXPk2/smLa20i0qspJADO1vMnHsn2vJqb4QjFTXHT4y7l5Te+Q9qG/3YlUZpJ43tf0NTZxycZZbS8XhmWBQufmKACp4tSPaH/nCmxrW77+pmTlt2bmxbWAyaxbXa2rjpJb6AFEBw4/gGnIstoePxDcjYf8E/MmV+R1PzjwfbztUZDT9AtWvoGyZ+QcBv4izdoG4pEs2tu+J89cvTyesPbr5lilKKsGpo6syhevJSV86f7B0fM3Xnx1t0pTt17X6rDPNPlz/4TfYHlQE4+ORgAAAAASUVORK5CYII=") !important;
+}
+#_bfce6844-0d42-4209-a2fd-e32029491567_-browser-action[label="Unblock Youku (FULL)"] {
+    list-style-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAACXBIWXMAAC4jAAAuIwF4pT92AAAF+mlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDUgNzkuMTYzNDk5LCAyMDE4LzA4LzEzLTE2OjQwOjIyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoV2luZG93cykiIHhtcDpDcmVhdGVEYXRlPSIyMDE5LTExLTMwVDE0OjIyOjE2KzExOjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAxOS0xMS0zMFQxNDozMjo0OSsxMTowMCIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAxOS0xMS0zMFQxNDozMjo0OSsxMTowMCIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIHBob3Rvc2hvcDpJQ0NQcm9maWxlPSJzUkdCIElFQzYxOTY2LTIuMSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpiYTMwM2Y2MC1kMmFiLWI2NDktYTI4OS1jODg0YjJjY2Y2YWUiIHhtcE1NOkRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpiYTM1MzdkMS04OTgxLWQwNDAtOTU1OS1lMTJlNDc2YjNiNmUiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo4ZGVmMmUwMy1mZWU4LTYwNDYtYjZhZi1mYjBlNmRkOWM4ZTQiPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjcmVhdGVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjhkZWYyZTAzLWZlZTgtNjA0Ni1iNmFmLWZiMGU2ZGQ5YzhlNCIgc3RFdnQ6d2hlbj0iMjAxOS0xMS0zMFQxNDoyMjoxNisxMTowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKFdpbmRvd3MpIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDpiYTMwM2Y2MC1kMmFiLWI2NDktYTI4OS1jODg0YjJjY2Y2YWUiIHN0RXZ0OndoZW49IjIwMTktMTEtMzBUMTQ6MzI6NDkrMTE6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE5IChXaW5kb3dzKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4+W65CAAAEMElEQVQ4jYXSeWxUVRTH8e9982am022mO1NLaOlCSRGCQFsEpCJVKIWIBNQgaLAgMZEtIUIiS0IUJZo0QiogKIIRJMEFLbGEVFNBAoHWAtKNpYA4benYbdp582bmXv8w1qVN/P177v2ce06uuOk1UYAvJFFSAgNkufqwW0EXvgQV7nxV+o1O6W/zIUPjdOf4bcI2wpC9raiQAY50hJIosxed/0ZoiP5OeluuLOzx3NhhM5vznA+asNqjDH+ELUIkpz3jGDNrrzU2Yzeabqp/Xv3rZf0hiV3XuNHelv/DmbO76+5a8rukA2HVyRDtLPOe4DEuMeCKQ45Mwjll5vXIjIKNKnrsKRE2UWYv4pbXpJP3sKkNWdUNHduPn76xNBAUCKGYPjaeMe5Yapp7+NljsO7Bhzzb8QV+h4WekhKSk+OIyZy8et+PR/ddvnAHzS/D+Pyvzfn40r0LRyoblyopUYRYPiONTQtycEXq7FmWS9FoB/vjn6eJHHqyJpK2KJWB3FE01X1fsSJ/+VNCgLjo6X2opsOoO3yyMcnhC6DZdYxAmIOrJ/FTsxe71UJirJ1gWLLpq7us8x+j7N0GNEsfAGbATUvtI6rlZl+p5rCK7S1ef5LZH0S3CFAgUVy/38uscUn0DAQpzIqjvrUbXcBL71wbhABsdg+5+VWi72rtDu1yt7mg+lY3TiVRFguPj2/j/ZdPsKfqFjUNXgpzEth75jZVdW2UPdqIzTYw5AMc/6Cb2dFdbr3K40/u9g6QAJQW3mRDyQEATm9tYMYbW0BKLOEw8Ykaa+btHwIZAQuhg7+h8nKkZkiB2Rdg1fyLgxCATQ9wfudWomQYQ1r4dvO2IRBAeVkrBZER+FtllHjhnMdU97+2Hlx8aNjDij/3KIQaUmtqVrStaSWnX8eMdJtaXpSlvOZcN5fuRQ2LCdSwkFJQuaqF7DgdOhSWdJdfm5pkPyqzinmlfAWfnR0eHC6ff2RQbBdY0DBcISKmF7Rrox2ivmxqannctGnsPb2R9RWx/wt19VrQzyXitGuYAZPgJPfvMYXFCzVD6XJOavSu7GRbi8WdQmXjGkrXpzJ0sL9z5E2TcdFhNCXxx7hQq9769HrMZJ8mVZCJ7mLPvFT76ykZTpy5aTSzksKnJyCVNgQ6+Z0g71cTa0MtjV0xXFmyE9+ouTU2EerQFBKA0tHzvlyU6dqcnRZhRKc76YidyZTpEwgE7YNQWAmqNzVx9XYnn6QV07BlT1DmPfliouo/NWmEy/hX68XZJW+vnTJy/oRsd1DvN4lqsfNEqpu6XxIB2LEryDfmfOqfO0DWtkO+lKyiZUvSZx8eFV/sr28fcIqGzi4yEuYOglfbqm3doXBm9R3fyqPHatf6PV7NFAFmPlzJ+Wt5FMwtZUnReF9Xn1mRE2utSHbonrEpRWbNnTOZfwARLNQNPBQAOQAAAABJRU5ErkJggg==") !important;
 }
 
 /**************************** Firefox Tabs Counter ****************************/
@@ -52,10 +97,9 @@
     content: counter(tabs);
     display: -moz-box;
 }
-#alltabs-button> :-moz-any(label, image) {
+#alltabs-button > :-moz-any(label, image) {
     display: none;
 }
-
 
 /************************** Interface Adjustment *****************************/
 /* 双行滚动书签栏 */
@@ -68,18 +112,12 @@
     float: left !important;
 }*/
 
-
 /* 标签页载入动画图标 */
 /* .tab-throbber {visibility: hidden;} */
 
 /* 图标黑白化处理 */
 /*#nav-bar-customization-target toolbarbutton {
   filter:grayscale(1) saturate(1) contrast(0.65) brightness(1.4);
-}*/
-
-/* 和谐化微博图床图标 */
-/*#weibopic_ac-browser-action image {
-    filter: contrast(0.5);
 }*/
 
 /* Hide close buttons of inactive tabs */
@@ -149,7 +187,6 @@ toolbarbutton dropmarker {
 [command="placesCmd_open:tab"] {
     display: none;
 }
-
 
 /* Hide all seperators */
 menuseparator {
