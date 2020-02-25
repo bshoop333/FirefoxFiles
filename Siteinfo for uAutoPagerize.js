@@ -1,98 +1,98 @@
 [
-  // url, nextLink, pageElement are necessary elements
-  {
-    name: "¿´Âþ»­",
-    url: "^https://www\\.manhuagui\\.com/comic/\\d+/\\d+\\.html",
-    nextLink: "//a[@href='javascript:SMH.utils.goPage(2)']",
-    pageElement: "//div[@class=\"clearfix\"]",
-    exampleUrl: "https://www.manhuagui.com/comic/17332/372862.html"
-  },
-  {
-    name: "„ÓÂþ¿ñ",
-    url: "^http://www\\.cartoonmad\\.com/comic/\\d{5,}\\.html",
-    nextLink: "//a[normalize-space(text())=\"ÏÂÒ»í“\"]",
-    pageElement: "//a[@class='pages']/../../../tr[last()-2]",
-    //insertBefore: "//td[@height=\"36\"][@align=\"center\"]",
-    exampleUrl: "http://www.cartoonmad.com/comic/408501852015001.html"
-  },
-  {
-    name: "·Ç³£°®Âþ",
-    url: "^http://www\\.verydm\\.com/chapter\\.php\\?id=\\d+",
-    nextLink: "//a[text()=\"ÏÂÒ»Ò³\"]",
-    pageElement: "//img[@id=\"mainImage2\"]",
-    insertBefore: "",
-    exampleUrl: "http://www.verydm.com/chapter.php?id=32182"
-  },
-  {
-    name: "º«·¹Íø",
-    url: "^https://www\\.hanfan\\.cc/.*",
-    nextLink: "//a[text()=\"ÏÂÒ»Ò³\"]",
-    pageElement: "//div[@class=\"content\"]",
-    insertBefore: "",
-    exampleUrl: "https://www.hanfan.cc/variety/"
-  },
-  {
-    name: "Manga Stream Homepage",
-    url: "^https://readms\\.net/",
-    nextLink: "//a[text()=\"Older ¡ú\"]",
-    pageElement: "//div[@class=\"blog\"]",
-    insertBefore: "",
-    exampleUrl: "https://readms.net/"
-  },
-  {
-    name: "Manga Stream Manga Pages",
-    url: "^https://readms\\.net/r/.*",
-    nextLink: "//a[text()=\"Next ¡ú\"]",
-    pageElement: "//img[@id=\"manga-page\"]",
-    insertBefore: "",
-    exampleUrl: "https://readms.net/r/yona/163/5334/1"
-  },
-  {
-    name: "ÖÐ¹úÍøÉú»îÆµµÀ",
-    url: "^http://life\\.china\\.com\\.cn/.*",
-    nextLink: "//div[@class=\"left2\"]//a[text()=\"ÏÂÒ»Ò³\"]",
-    pageElement: "//div[@class=\"left2\"]",
-    insertBefore: "//div[@class=\"epages\"]",
-    exampleUrl: "http://life.china.com.cn/news/"
-  },
-  {
-    name: "ÇáÖ®ÎÄ¿âËÑË÷",
-    url: "^https://www\\.lightnovel\\.cn/search\\.php.*",
-    nextLink: "//a[@class='nxt']",
-    pageElement: "//div[@id='threadlist']"
-  },
-  {
-    name: "ÐÂÀË²©¿Í²©ÎÄÄ¿Â¼",
-    url: "^https?://blog\\.sina\\.com\\.cn/s/articlelist_.*",
-    exampleUrl: "http://blog.sina.com.cn/s/articlelist_1343656690_0_1.html",
-    nextLink: "//li[@class='SG_pgnext']/a",
-    pageElement: "//div[@class='articleList']"
-  },
-  {
-    name: "¶¹°ê",
-    url: "^https://www\\.douban\\.com/",
-    nextLink: "//a[contains(text(),'ºóÒ³')]",
-    pageElement: "//div[@class='stream-items']"
-  },
-  {
-    name: "¶¹°êÒÕÊõ¼ÒµÄÈ«²¿³ªÆ¬",
-    url: "^https?://[^/]+\\.douban\\.com/.*\\?.*",
-    exampleUrl: "https://music.douban.com/musician/106006/albums?sortby=vote&format=pic",
-    nextLink: "//a[contains(text(),'ºóÒ³')]",
-    pageElement: "//div[@class='grid_view']//ul"
-  },
-  {
-    name: "¶¹°ê±êÇ©",
-    url: "^https?://[^/]+\\.douban\\.com/tag/.*",
-    exampleUrl: "https://music.douban.com/tag/Beethoven",
-    nextLink: "//a[contains(text(),'ºóÒ³')]",
-    pageElement: "css;div#subject_list"
-  },
-  {
-    name: "yeeyi",
-    url: "^https?://www\\.yeeyi\\.com/forum/.*",
-    nextLink: "//a[text()=\"ÏÂÒ»Ò³\"]",
-    pageElement: "//div[@id=\"qtcShow\"]",
-    exampleUrl: "http://www.yeeyi.com/forum/index.php?app=forum&act=display&fid=142&renttype1=4"
-  }
+    {
+        name: "çœ‹æ¼«ç”»",
+        url: "^https://www\\.manhuagui\\.com/comic/\\d+/\\d+\\.html",
+        nextLink: "//a[@href='javascript:SMH.utils.goPage(2)']",
+        pageElement: '//div[@class="clearfix"]',
+        exampleUrl: "https://www.manhuagui.com/comic/17332/372862.html"
+    },
+    {
+        name: "éžå¸¸çˆ±æ¼«",
+        url: "^http://www\\.verydm\\.com/chapter\\.php\\?id=\\d+",
+        nextLink: '//a[text()="ä¸‹ä¸€é¡µ"]',
+        pageElement: '//img[@id="mainImage2"]',
+        insertBefore: "",
+        exampleUrl: "http://www.verydm.com/chapter.php?id=32182"
+    },
+    {
+        name: "éŸ©é¥­ç½‘",
+        url: "^https://www\\.hanfan\\.cc/.*",
+        nextLink: '//a[text()="ä¸‹ä¸€é¡µ"]',
+        pageElement: '//div[@class="content"]',
+        insertBefore: "",
+        exampleUrl: "https://www.hanfan.cc/variety/"
+    },
+    {
+        name: "Manga Stream Homepage",
+        url: "^https://readms\\.net/",
+        nextLink: '//a[text()="Older â†’"]',
+        pageElement: '//div[@class="blog"]',
+        insertBefore: "",
+        exampleUrl: "https://readms.net/"
+    },
+    {
+        name: "Manga Stream Manga Pages",
+        url: "^https://readms\\.net/r/.*",
+        nextLink: '//a[text()="Next â†’"]',
+        pageElement: '//img[@id="manga-page"]',
+        insertBefore: "",
+        exampleUrl: "https://readms.net/r/yona/163/5334/1"
+    },
+    {
+        name: "ä¸­å›½ç½‘ç”Ÿæ´»é¢‘é“",
+        url: "^http://life\\.china\\.com\\.cn/.*",
+        nextLink: '//div[@class="left2"]//a[text()="ä¸‹ä¸€é¡µ"]',
+        pageElement: '//div[@class="left2"]',
+        insertBefore: '//div[@class="epages"]',
+        exampleUrl: "http://life.china.com.cn/news/"
+    },
+    {
+        name: "è½»ä¹‹æ–‡åº“æœç´¢",
+        url: "^https://www\\.lightnovel\\.cn/search\\.php.*",
+        nextLink: "//a[@class='nxt']",
+        pageElement: "//div[@id='threadlist']"
+    },
+    {
+        name: "æ–°æµªåšå®¢åšæ–‡ç›®å½•",
+        url: "^https?://blog\\.sina\\.com\\.cn/s/articlelist_.*",
+        exampleUrl: "http://blog.sina.com.cn/s/articlelist_1343656690_0_1.html",
+        nextLink: "//li[@class='SG_pgnext']/a",
+        pageElement: "//div[@class='articleList']"
+    },
+    {
+        name: "è±†ç“£",
+        url: "^https://www\\.douban\\.com/",
+        nextLink: "//a[contains(text(),'åŽé¡µ')]",
+        pageElement: "//div[@class='stream-items']"
+    },
+    {
+        name: "è±†ç“£è‰ºæœ¯å®¶çš„å…¨éƒ¨å”±ç‰‡",
+        url: "^https?://[^/]+\\.douban\\.com/.*\\?.*",
+        exampleUrl:
+            "https://music.douban.com/musician/106006/albums?sortby=vote&format=pic",
+        nextLink: "//a[contains(text(),'åŽé¡µ')]",
+        pageElement: "//div[@class='grid_view']//ul"
+    },
+    {
+        name: "è±†ç“£æ ‡ç­¾",
+        url: "^https?://[^/]+\\.douban\\.com/tag/.*",
+        exampleUrl: "https://music.douban.com/tag/Beethoven",
+        nextLink: "//a[contains(text(),'åŽé¡µ')]",
+        pageElement: "css;div#subject_list"
+    },
+    {
+        name: "yeeyi",
+        url: "^https?://www\\.yeeyi\\.com/forum/.*",
+        nextLink: '//a[text()="ä¸‹ä¸€é¡µ"]',
+        pageElement: '//div[@id="qtcShow"]',
+        exampleUrl:
+            "http://www.yeeyi.com/forum/index.php?app=forum&act=display&fid=142&renttype1=4"
+    },
+    {
+        name: "å‹•æ¼«ç‹‚",
+        url: "^https?://www\\.cartoonmad\\.com/comic/\\d{5,}.html",
+        nextLink: "css;body>table>tbody>tr:nth-child(6) a.pages:last-child",
+        pageElement: "css;body>table>tbody>tr:nth-child(5)",
+        exampleUrl: "https://www.cartoonmad.com/comic/358301662016001.html"
+    }
 ];
