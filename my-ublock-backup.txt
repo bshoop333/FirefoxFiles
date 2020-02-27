@@ -1,5 +1,5 @@
 {
-  "timeStamp": 1582689293017,
+  "timeStamp": 1582787187214,
   "version": "1.25.0",
   "userSettings": {
     "advancedUserEnabled": true,
@@ -34,7 +34,6 @@
     "easylist",
     "adguard-spyware",
     "easyprivacy",
-    "fanboy-enhanced",
     "disconnect-malvertising",
     "malware-0",
     "malware-1",
