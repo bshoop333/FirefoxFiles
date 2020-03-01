@@ -1,6 +1,6 @@
 {
     "createdBy": "Redirector v3.5.2",
-    "createdAt": "2020-01-03T11:29:54.390Z",
+    "createdAt": "2020-03-01T03:13:50.086Z",
     "redirects": [
         {
             "description": "豆瓣移动版>>PC版",
@@ -127,22 +127,6 @@
             "patternDesc": "",
             "redirectUrl": "http://bbsimg.maxjia.com//bbs/imgs/$1",
             "patternType": "W",
-            "processMatches": "noProcessing",
-            "disabled": false,
-            "appliesTo": [
-                "main_frame"
-            ]
-        },
-        {
-            "description": "Opendota>>chat",
-            "exampleUrl": "https://www.opendota.com/matches/3167402556",
-            "exampleResult": "https://www.opendota.com/matches/3167402556/chat",
-            "error": null,
-            "includePattern": "^(https://www.opendota.com/matches/\\d+)$",
-            "excludePattern": "",
-            "patternDesc": "",
-            "redirectUrl": "$1/chat",
-            "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": false,
             "appliesTo": [
@@ -1221,6 +1205,39 @@
             "disabled": false,
             "appliesTo": [
                 "main_frame"
+            ]
+        },
+        {
+            "description": "亿忆移动版>>PC版",
+            "exampleUrl": "http://m.yeeyi.com/mobile/index.php?app=thread&act=view&tid=4117576",
+            "exampleResult": "http://www.yeeyi.com/bbs/thread-4117576-1-1.html",
+            "error": null,
+            "includePattern": "http://m.yeeyi.com/mobile/index.php?app=thread&act=view&tid=*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "http://www.yeeyi.com/bbs/thread-$1-1-1.html",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "Discuz!论坛链接统一化",
+            "exampleUrl": "https://www.pdawiki.com/forum/forum.php?mod=viewthread&tid=38318&highlight=%E6%9C%97%E6%96%87",
+            "exampleResult": "https://www.pdawiki.com/forum/thread-38318-1-1.html",
+            "error": null,
+            "includePattern": "(.+?)/forum/forum\\.php\\?mod=(.+)&tid=(\\d+)(.*)",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "$1/forum/thread-$3-1-1.html",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "appliesTo": [
+                "main_frame",
+                "history"
             ]
         }
     ]
