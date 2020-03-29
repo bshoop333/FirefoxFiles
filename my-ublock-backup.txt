@@ -1,5 +1,5 @@
 {
-  "timeStamp": 1585453777211,
+  "timeStamp": 1585453941906,
   "version": "1.25.2",
   "userSettings": {
     "advancedUserEnabled": true,
@@ -36,8 +36,10 @@
     "malware-0",
     "malware-1",
     "spam404-0",
+    "adguard-annoyance",
     "adguard-social",
     "fanboy-thirdparty_social",
+    "fanboy-annoyance",
     "ublock-annoyances",
     "CHN-0",
     "https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt",
