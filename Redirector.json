@@ -1,6 +1,6 @@
 {
-    "createdBy": "Redirector v3.5.2",
-    "createdAt": "2020-03-01T03:13:50.086Z",
+    "createdBy": "Redirector v3.5.3",
+    "createdAt": "2020-04-05T01:45:35.022Z",
     "redirects": [
         {
             "description": "豆瓣移动版>>PC版",
@@ -14,6 +14,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "stylesheet"
@@ -31,6 +32,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": true,
+            "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "image"
@@ -48,6 +50,7 @@
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": true,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -64,6 +67,7 @@
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": true,
+            "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "sub_frame"
@@ -81,6 +85,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -97,6 +102,7 @@
             "patternType": "W",
             "processMatches": "urlDecode",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -113,6 +119,7 @@
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -129,6 +136,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -145,6 +153,7 @@
             "patternType": "R",
             "processMatches": "urlDecode",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -161,6 +170,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": true,
+            "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "image"
@@ -178,6 +188,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -194,6 +205,7 @@
             "patternType": "R",
             "processMatches": "urlDecode",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "image"
@@ -211,6 +223,7 @@
             "patternType": "W",
             "processMatches": "urlDecode",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -227,6 +240,7 @@
             "patternType": "R",
             "processMatches": "urlDecode",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -243,6 +257,7 @@
             "patternType": "W",
             "processMatches": "urlDecode",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -259,6 +274,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "image",
@@ -277,6 +293,7 @@
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "sub_frame"
@@ -294,6 +311,7 @@
             "patternType": "W",
             "processMatches": "urlDecode",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -310,6 +328,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "image"
@@ -327,6 +346,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": true,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -343,6 +363,7 @@
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "image"
@@ -360,6 +381,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": true,
+            "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "image"
@@ -377,6 +399,7 @@
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -393,6 +416,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": true,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -409,6 +433,7 @@
             "patternType": "W",
             "processMatches": "urlDecode",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -425,6 +450,7 @@
             "patternType": "R",
             "processMatches": "urlDecode",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -441,6 +467,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": true,
+            "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "sub_frame",
@@ -464,6 +491,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -480,6 +508,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "image",
@@ -498,6 +527,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": true,
+            "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "script",
@@ -516,6 +546,7 @@
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": true,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -532,6 +563,7 @@
             "patternType": "W",
             "processMatches": "urlDecode",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -542,12 +574,13 @@
             "exampleResult": "https://2.bp.blogspot.com/-7gM0HtyWcTM/WZj5K5HmN_I/AAAAAAAFk8c/Soi3yeHW1t0D7Dqd8Ymko8FhW2FhpNx-QCLcBGAs/s0/Sun-Shining-through-Clouds-on-Lake.jpg",
             "error": null,
             "includePattern": "https://*.bp.blogspot.com/*/*/*/*/s*/*",
-            "excludePattern": "https://*.bp.blogspot.com/*/*/*/*/s0/*",
+            "excludePattern": "https://*.bp.blogspot.com/*/*/*/*/s35/*",
             "patternDesc": "",
             "redirectUrl": "https://$1.bp.blogspot.com/$2/$3/$4/$5/s0/$7",
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "image"
@@ -565,6 +598,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -581,6 +615,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "image"
@@ -598,6 +633,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "sub_frame"
@@ -615,6 +651,7 @@
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": true,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -631,6 +668,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "sub_frame"
@@ -648,6 +686,7 @@
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "sub_frame"
@@ -665,6 +704,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "sub_frame"
@@ -682,6 +722,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -698,6 +739,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -714,6 +756,7 @@
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "sub_frame",
@@ -737,6 +780,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": true,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -753,6 +797,7 @@
             "patternType": "R",
             "processMatches": "urlDecode",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -769,6 +814,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "sub_frame",
@@ -787,6 +833,7 @@
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": true,
+            "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "sub_frame"
@@ -804,6 +851,7 @@
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": true,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -820,6 +868,7 @@
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": true,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -836,6 +885,7 @@
             "patternType": "W",
             "processMatches": "urlDecode",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -852,6 +902,7 @@
             "patternType": "R",
             "processMatches": "urlDecode",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -861,13 +912,14 @@
             "exampleUrl": "http://partner.tieba.com/f?kw=%E7%94%B5%E6%B3%A2%E5%A5%B3%E4%B8%8E%E9%9D%92%E6%98%A5%E7%94%B7",
             "exampleResult": "https://tieba.baidu.com/f?kw=%E7%94%B5%E6%B3%A2%E5%A5%B3%E4%B8%8E%E9%9D%92%E6%98%A5%E7%94%B7",
             "error": null,
-            "includePattern": "https?://(.+\\.tieba\\.com|jump\\d+\\.bdimg\\.com|.+\\.tieba\\.baidu\\.com)/(.*)",
+            "includePattern": "https?://(.+\\.tieba\\.com|jump\\d+\\.bdimg\\.com|.+\\.tieba\\.baidu\\.com|wefan.baidu.com)/(.*)",
             "excludePattern": "",
             "patternDesc": "",
             "redirectUrl": "https://tieba.baidu.com/$2",
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -884,6 +936,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": true,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -900,6 +953,7 @@
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": true,
+            "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "image"
@@ -917,6 +971,7 @@
             "patternType": "W",
             "processMatches": "urlDecode",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -933,6 +988,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -949,6 +1005,7 @@
             "patternType": "W",
             "processMatches": "urlDecode",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -965,6 +1022,7 @@
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": true,
+            "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "sub_frame",
@@ -988,6 +1046,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -1004,6 +1063,7 @@
             "patternType": "R",
             "processMatches": "urlDecode",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -1020,6 +1080,7 @@
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": true,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -1036,6 +1097,7 @@
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -1052,6 +1114,7 @@
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": true,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -1068,6 +1131,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -1084,6 +1148,7 @@
             "patternType": "W",
             "processMatches": "urlDecode",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -1100,6 +1165,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -1116,6 +1182,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -1132,6 +1199,7 @@
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": true,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -1148,6 +1216,7 @@
             "patternType": "R",
             "processMatches": "urlDecode",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -1164,6 +1233,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "sub_frame",
@@ -1187,6 +1257,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": true,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -1203,6 +1274,7 @@
             "patternType": "R",
             "processMatches": "urlDecode",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -1219,6 +1291,7 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame"
             ]
@@ -1235,6 +1308,7 @@
             "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": false,
+            "grouped": false,
             "appliesTo": [
                 "main_frame",
                 "history"
