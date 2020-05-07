@@ -1,6 +1,6 @@
 {
     "createdBy": "Redirector v3.5.3",
-    "createdAt": "2020-05-07T13:06:22.625Z",
+    "createdAt": "2020-05-07T13:42:15.380Z",
     "redirects": [
         {
             "description": "大图 - Bilibili动态",
@@ -100,42 +100,6 @@
             ]
         },
         {
-            "description": "大图 - 贴吧",
-            "exampleUrl": "https://imgsa.baidu.com/forum/w%3D580/sign=d49aa1235dda81cb4ee683c56264d0a4/a067bf17fdfaaf518a2ac868805494eef21f7a9d.jpg",
-            "exampleResult": "https://imgsa.baidu.com/forum/pic/item/a067bf17fdfaaf518a2ac868805494eef21f7a9d.jpg",
-            "error": null,
-            "includePattern": "https://imgsa.baidu.com/forum/*/sign=*/*",
-            "excludePattern": "",
-            "patternDesc": "",
-            "redirectUrl": "https://imgsa.baidu.com/forum/pic/item/$3",
-            "patternType": "W",
-            "processMatches": "noProcessing",
-            "disabled": true,
-            "grouped": false,
-            "appliesTo": [
-                "main_frame",
-                "image"
-            ]
-        },
-        {
-            "description": "大图 - 百度贴吧",
-            "exampleUrl": "http://imgsrc.baidu.com/forum/w%3D580/sign=621ea05d269759ee4a5060c382fa434e/aa11f4d3572c11dfc3087b73632762d0f503c2ca.jpg",
-            "exampleResult": "http://imgsrc.baidu.com/forum/pic/item/aa11f4d3572c11dfc3087b73632762d0f503c2ca.jpg",
-            "error": null,
-            "includePattern": "http://((?:imgsrc|[a-z].hiphotos)\\.baidu\\.com/(?:forum|image)/)[^=]+=[^/]+/([\\da-f]{40}.+)",
-            "excludePattern": "",
-            "patternDesc": "",
-            "redirectUrl": "http://$1pic/item/$2",
-            "patternType": "R",
-            "processMatches": "noProcessing",
-            "disabled": true,
-            "grouped": false,
-            "appliesTo": [
-                "main_frame",
-                "image"
-            ]
-        },
-        {
             "description": "大图 - Blogspot",
             "exampleUrl": "https://2.bp.blogspot.com/-7gM0HtyWcTM/WZj5K5HmN_I/AAAAAAAFk8c/Soi3yeHW1t0D7Dqd8Ymko8FhW2FhpNx-QCLcBGAs/s640/Sun-Shining-through-Clouds-on-Lake.jpg",
             "exampleResult": "https://2.bp.blogspot.com/-7gM0HtyWcTM/WZj5K5HmN_I/AAAAAAAFk8c/Soi3yeHW1t0D7Dqd8Ymko8FhW2FhpNx-QCLcBGAs/s0/Sun-Shining-through-Clouds-on-Lake.jpg",
@@ -147,24 +111,6 @@
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
-            "grouped": false,
-            "appliesTo": [
-                "main_frame",
-                "image"
-            ]
-        },
-        {
-            "description": "大图 - Twitter",
-            "exampleUrl": "https://pbs.twimg.com/media/EHdwT_AU4AA-TXj?format=jpg&name=orig",
-            "exampleResult": "https://pbs.twimg.com/media/EHdwT_AU4AA-TXj?format=png&name=4096x4096",
-            "error": null,
-            "includePattern": "https://pbs.twimg.com/media/*?format=jpg&name=orig",
-            "excludePattern": "",
-            "patternDesc": "",
-            "redirectUrl": "https://pbs.twimg.com/media/$1?format=png&name=4096x4096",
-            "patternType": "W",
-            "processMatches": "noProcessing",
-            "disabled": true,
             "grouped": false,
             "appliesTo": [
                 "main_frame",
@@ -205,6 +151,60 @@
                 "main_frame",
                 "image",
                 "xmlhttprequest"
+            ]
+        },
+        {
+            "description": "大图 - 百度贴吧",
+            "exampleUrl": "http://imgsrc.baidu.com/forum/w%3D580/sign=621ea05d269759ee4a5060c382fa434e/aa11f4d3572c11dfc3087b73632762d0f503c2ca.jpg",
+            "exampleResult": "http://imgsrc.baidu.com/forum/pic/item/aa11f4d3572c11dfc3087b73632762d0f503c2ca.jpg",
+            "error": null,
+            "includePattern": "http://((?:imgsrc|[a-z].hiphotos)\\.baidu\\.com/(?:forum|image)/)[^=]+=[^/]+/([\\da-f]{40}.+)",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "http://$1pic/item/$2",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": true,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame",
+                "image"
+            ]
+        },
+        {
+            "description": "大图 - 贴吧",
+            "exampleUrl": "https://imgsa.baidu.com/forum/w%3D580/sign=d49aa1235dda81cb4ee683c56264d0a4/a067bf17fdfaaf518a2ac868805494eef21f7a9d.jpg",
+            "exampleResult": "https://imgsa.baidu.com/forum/pic/item/a067bf17fdfaaf518a2ac868805494eef21f7a9d.jpg",
+            "error": null,
+            "includePattern": "https://imgsa.baidu.com/forum/*/sign=*/*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://imgsa.baidu.com/forum/pic/item/$3",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": true,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame",
+                "image"
+            ]
+        },
+        {
+            "description": "大图 - Twitter",
+            "exampleUrl": "https://pbs.twimg.com/media/EHdwT_AU4AA-TXj?format=jpg&name=orig",
+            "exampleResult": "https://pbs.twimg.com/media/EHdwT_AU4AA-TXj?format=png&name=4096x4096",
+            "error": null,
+            "includePattern": "https://pbs.twimg.com/media/*?format=jpg&name=orig",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://pbs.twimg.com/media/$1?format=png&name=4096x4096",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": true,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame",
+                "image"
             ]
         },
         {
@@ -330,72 +330,21 @@
             ]
         },
         {
-            "description": "手机版>>PC版 - 豆瓣",
-            "exampleUrl": "https://m.douban.com/music/subject/2075636/",
-            "exampleResult": "https://douban.com/music/subject/2075636/",
+            "description": "PC版>>手机版 - 动漫之家",
+            "exampleUrl": "http://manhua.dmzj.com/yuekanshaonvyeqijun/56044.shtml",
+            "exampleResult": "http://m.dmzj.com/view/yuekanshaonvyeqijun/56044.html",
             "error": null,
-            "includePattern": "https://m.douban.com/*",
+            "includePattern": "http://manhua.dmzj.com/*.shtml",
             "excludePattern": "",
             "patternDesc": "",
-            "redirectUrl": "https://douban.com/$1",
+            "redirectUrl": "http://m.dmzj.com/view/$1.html",
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
             "grouped": false,
             "appliesTo": [
                 "main_frame",
-                "stylesheet"
-            ]
-        },
-        {
-            "description": "手机版>>PC版 - 中国网生活频道",
-            "exampleUrl": "http://life.china.com.cn/app/2018-08/28/content_106991.html",
-            "exampleResult": "http://life.china.com.cn/2018-08/28/content_106991.html",
-            "error": null,
-            "includePattern": "http://*.china.com.cn/app/*",
-            "excludePattern": "",
-            "patternDesc": "",
-            "redirectUrl": "http://$1.china.com.cn/$2",
-            "patternType": "W",
-            "processMatches": "noProcessing",
-            "disabled": true,
-            "grouped": false,
-            "appliesTo": [
-                "main_frame"
-            ]
-        },
-        {
-            "description": "手机版>>PC版 - 搜狐",
-            "exampleUrl": "https://m.sohu.com/a/233909442_798118?spm=smwp.media.fd-s.1",
-            "exampleResult": "https://www.sohu.com/a/233909442_798118?spm=smwp.media.fd-s.1",
-            "error": null,
-            "includePattern": "http*://m.sohu.com/*",
-            "excludePattern": "",
-            "patternDesc": "",
-            "redirectUrl": "https://www.sohu.com/$2",
-            "patternType": "W",
-            "processMatches": "noProcessing",
-            "disabled": true,
-            "grouped": false,
-            "appliesTo": [
-                "main_frame"
-            ]
-        },
-        {
-            "description": "手机版>>PC版 - CSDN",
-            "exampleUrl": "http://m.blog.csdn.net/lvshaorong/article/details/52788521",
-            "exampleResult": "http://blog.csdn.net/lvshaorong/article/details/52788521",
-            "error": null,
-            "includePattern": "http://m.blog.csdn.net/*",
-            "excludePattern": "",
-            "patternDesc": "",
-            "redirectUrl": "http://blog.csdn.net/$1",
-            "patternType": "W",
-            "processMatches": "noProcessing",
-            "disabled": false,
-            "grouped": false,
-            "appliesTo": [
-                "main_frame"
+                "sub_frame"
             ]
         },
         {
@@ -471,24 +420,6 @@
             "grouped": false,
             "appliesTo": [
                 "main_frame"
-            ]
-        },
-        {
-            "description": "PC版>>手机版 - 动漫之家",
-            "exampleUrl": "http://manhua.dmzj.com/yuekanshaonvyeqijun/56044.shtml",
-            "exampleResult": "http://m.dmzj.com/view/yuekanshaonvyeqijun/56044.html",
-            "error": null,
-            "includePattern": "http://manhua.dmzj.com/*.shtml",
-            "excludePattern": "",
-            "patternDesc": "",
-            "redirectUrl": "http://m.dmzj.com/view/$1.html",
-            "patternType": "W",
-            "processMatches": "noProcessing",
-            "disabled": false,
-            "grouped": false,
-            "appliesTo": [
-                "main_frame",
-                "sub_frame"
             ]
         },
         {
@@ -1005,6 +936,75 @@
             "excludePattern": "",
             "patternDesc": "",
             "redirectUrl": "http://bbs.$1.com/thread-$2-1-1.html",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "手机版>>PC版 - 豆瓣",
+            "exampleUrl": "https://m.douban.com/music/subject/2075636/",
+            "exampleResult": "https://douban.com/music/subject/2075636/",
+            "error": null,
+            "includePattern": "https://m.douban.com/*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://douban.com/$1",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame",
+                "stylesheet"
+            ]
+        },
+        {
+            "description": "手机版>>PC版 - 中国网生活频道",
+            "exampleUrl": "http://life.china.com.cn/app/2018-08/28/content_106991.html",
+            "exampleResult": "http://life.china.com.cn/2018-08/28/content_106991.html",
+            "error": null,
+            "includePattern": "http://*.china.com.cn/app/*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "http://$1.china.com.cn/$2",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "手机版>>PC版 - 搜狐",
+            "exampleUrl": "https://m.sohu.com/a/233909442_798118?spm=smwp.media.fd-s.1",
+            "exampleResult": "https://www.sohu.com/a/233909442_798118?spm=smwp.media.fd-s.1",
+            "error": null,
+            "includePattern": "http*://m.sohu.com/*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://www.sohu.com/$2",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "手机版>>PC版 - CSDN",
+            "exampleUrl": "http://m.blog.csdn.net/lvshaorong/article/details/52788521",
+            "exampleResult": "http://blog.csdn.net/lvshaorong/article/details/52788521",
+            "error": null,
+            "includePattern": "http://m.blog.csdn.net/*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "http://blog.csdn.net/$1",
             "patternType": "W",
             "processMatches": "noProcessing",
             "disabled": false,
