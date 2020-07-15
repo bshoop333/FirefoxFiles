@@ -1,6 +1,6 @@
 {
-  "timeStamp": 1592022522990,
-  "version": "1.27.10",
+  "timeStamp": 1594733856180,
+  "version": "1.28.2",
   "userSettings": {
     "advancedUserEnabled": true,
     "alwaysDetachLogger": false,
@@ -10,7 +10,7 @@
     "colorBlindFriendly": false,
     "contextMenuEnabled": true,
     "dynamicFilteringEnabled": false,
-    "externalLists": "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt\nhttps://filters.adtidy.org/extension/chromium/filters/15.txt\nhttps://gitcdn.xyz/repo/NanoAdblocker/NanoFilters/master/NanoFilters/NanoBase.txt\nhttps://gitcdn.xyz/repo/NanoAdblocker/NanoFilters/master/NanoFilters/NanoWhitelist.txt\nhttps://gitcdn.xyz/repo/NanoAdblocker/NanoFilters/master/NanoMirror/NanoDefender.txt\nhttps://gitee.com/xinggsf/Adblock-Rule/raw/master/mv.txt\nhttps://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt\nhttps://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt\nhttps://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt\nhttps://www.i-dont-care-about-cookies.eu/abp/",
+    "externalLists": "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt\nhttps://filters.adtidy.org/extension/chromium/filters/15.txt\nhttps://gitcdn.xyz/repo/NanoAdblocker/NanoFilters/master/NanoFilters/NanoBase.txt\nhttps://gitcdn.xyz/repo/NanoAdblocker/NanoFilters/master/NanoFilters/NanoWhitelist.txt\nhttps://gitcdn.xyz/repo/NanoAdblocker/NanoFilters/master/NanoMirror/NanoDefender.txt\nhttps://gitee.com/xinggsf/Adblock-Rule/raw/master/mv.txt\nhttps://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt\nhttps://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt\nhttps://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt\nhttps://www.i-dont-care-about-cookies.eu/abp/\nhttps://gitcdn.xyz/repo/NanoMeow/MDLMirror/master/hosts.txt\nhttps://mirror.cedia.org.ec/malwaredomains/justdomains",
     "firewallPaneMinimized": true,
     "hyperlinkAuditingDisabled": true,
     "ignoreGenericCosmeticFilters": false,
@@ -24,6 +24,9 @@
     "webrtcIPAddressHidden": true
   },
   "selectedFilterLists": [
+    "https://mirror.cedia.org.ec/malwaredomains/justdomains",
+    "https://gitcdn.xyz/repo/NanoMeow/MDLMirror/master/hosts.txt",
+    "urlhaus-1",
     "user-filters",
     "ublock-filters",
     "ublock-badware",
@@ -39,7 +42,6 @@
     "adguard-annoyance",
     "adguard-social",
     "fanboy-thirdparty_social",
-    "fanboy-annoyance",
     "ublock-annoyances",
     "CHN-0",
     "https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt",
@@ -85,12 +87,14 @@
     "popupFontSize": "unset",
     "popupPanelDisabledSections": 0,
     "popupPanelLockedSections": 0,
+    "popupPanelHeightMode": 0,
     "requestJournalProcessPeriod": 1000,
     "selfieAfter": 3,
     "strictBlockingBypassDuration": 120,
     "suspendTabsUntilReady": "unset",
     "uiPopupConfig": "undocumented",
     "uiFlavor": "unset",
+    "uiStyles": "unset",
     "updateAssetBypassBrowserCache": true,
     "userResourcesLocation": "https://gitcdn.xyz/repo/NanoAdblocker/NanoFilters/master/NanoFilters/NanoResources.txt"
   },

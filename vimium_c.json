@@ -1,9 +1,9 @@
 {
 	"name": "Vimium C",
-	"@time": "2/20/2020, 1:46:09 AM",
-	"time": 1582123569629,
+	"@time": "7/15/2020, 12:08:40 AM",
+	"time": 1594735720408,
 	"environment": {
-		"extension": "1.80.2",
+		"extension": "1.84.1",
 		"platform": "win"
 	},
 	"exclusionRules": [
@@ -51,8 +51,8 @@
 		"",
 		"unmap [[",
 		"unmap ]]",
-		"map , goPrevious",
-		"map . goNext",
+		"map < goPrevious",
+		"map > goNext",
 		"",
 		"unmap i",
 		"unmap <f8>",
@@ -129,6 +129,7 @@
 		"# qw: https://www.qwant.com/?q=%s Qwant",
 		""
 	],
+	"searchUrl": "https://www.google.com/search?q=$s 百度",
 	"showAdvancedCommands": true,
 	"showAdvancedOptions": true,
 	"vimSync": false

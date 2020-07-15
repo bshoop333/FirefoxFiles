@@ -1,6 +1,6 @@
 {
     "createdBy": "Redirector v3.5.3",
-    "createdAt": "2020-05-07T13:42:15.380Z",
+    "createdAt": "2020-05-07T13:53:56.030Z",
     "redirects": [
         {
             "description": "大图 - Bilibili动态",
@@ -1229,14 +1229,14 @@
         },
         {
             "description": "去强制App - 今日澳洲",
-            "exampleUrl": "https://applink.jinriaozhou.com/id2114/content-102018278436012",
+            "exampleUrl": "http://applink.jinriaozhou.com/id2114/content-102018278436012",
             "exampleResult": "https://www.meltoday.com/content-102018278436012",
             "error": null,
-            "includePattern": "https://applink.jinriaozhou.com/id*/*",
+            "includePattern": "https?://applink\\.jinriaozhou\\.com/id\\d+/(.+)",
             "excludePattern": "",
             "patternDesc": "",
-            "redirectUrl": "https://www.meltoday.com/$2",
-            "patternType": "W",
+            "redirectUrl": "https://www.meltoday.com/$1",
+            "patternType": "R",
             "processMatches": "noProcessing",
             "disabled": false,
             "grouped": false,
